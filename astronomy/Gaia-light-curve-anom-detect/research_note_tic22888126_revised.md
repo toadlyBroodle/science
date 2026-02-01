@@ -314,7 +314,7 @@ This research made use of data from:
 
 Computational resources provided by Google Colab.
 
-Analysis assistance provided by Anthropic Claude Opus 4.5.
+Project inspiration from xAI Grok. Analysis assistance provided by Anthropic Claude Opus 4.5.
 
 Machine learning analysis used scikit-learn (Pedregosa et al. 2011).
 
