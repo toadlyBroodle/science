@@ -1,0 +1,67 @@
+SUPPORTING DOCUMENT FOR VSX REVISION
+Gaia DR3 5947829831449228800 - Dwarf Nova Candidate
+================================================================================
+
+COORDINATES (J2000): 17 55 28.37 -47 35 34.0
+TIC ID: 22888126
+Gaia DR3: 5947829831449229312
+
+PROPOSED RECLASSIFICATION: VAR -> UG: (dwarf nova candidate)
+
+================================================================================
+EVIDENCE SUMMARY
+================================================================================
+
+1. TESS OUTBURST (Sector 13, 2019 July 18-August 14)
+   - Amplitude: ~2.5 magnitudes (flux ratio ~10x)
+   - Rise time: <1 day
+   - Decline time: ~5-7 days
+   - Morphology: Classic dwarf nova disk instability outburst
+
+2. X-RAY DETECTION
+   - Source detected in ROSAT All-Sky Survey
+   - Indicates accretion-powered emission consistent with CV
+
+3. ULTRA-SHORT PERIOD
+   - P = 0.0398 d (57.3 min) from VSX
+   - Below the CV period gap (~75-115 min)
+   - Suggests evolved system with degenerate donor
+
+4. INFRARED DETECTIONS
+   - 2MASS: J = 15.03
+   - AllWISE: W1 = 14.19
+
+================================================================================
+MAGNITUDE RANGE UPDATE
+================================================================================
+
+Current VSX:  16.52 - 16.59 G (quiescent only)
+Proposed:     14.1 - 16.6 G (including TESS outburst)
+
+================================================================================
+METHOD
+================================================================================
+
+Object identified via Isolation Forest anomaly detection on Gaia DR3 
+vari_summary statistics. Extreme negative skewness (-3.94) and high 
+kurtosis (+18.5) flagged this as unusual, prompting archival investigation.
+
+================================================================================
+SPECTROSCOPIC CONFIRMATION NEEDED
+================================================================================
+
+This classification is based on photometric evidence only. 
+Spectroscopic observations are recommended to:
+- Confirm CV nature via emission lines (H-alpha, He II)
+- Verify orbital period via radial velocity
+- Determine donor composition
+
+================================================================================
+REFERENCE
+================================================================================
+
+Full analysis notebook and figures:
+https://github.com/toadlyBroodle/science/tree/main/astronomy/Gaia-light-curve-anom-detect
+
+Submitted by: L. Mutch
+Date: 2026-02-01

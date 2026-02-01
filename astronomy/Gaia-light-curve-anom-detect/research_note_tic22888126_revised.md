@@ -1,26 +1,31 @@
 
-# Characterization of an Overlooked Dwarf Nova: TESS Reveals Outburst in the Ultra-Short Period Variable TIC 22888126
+# Characterization of a Dwarf Nova Candidate: TESS Reveals Outburst in the Ultra-Short Period Variable TIC 22888126
 
-**Authors:** [Your Name]  
+**Authors:** Landon Mutch; Opus 4.5
 **Date:** February 01, 2026  
 **Status:** Draft for RNAAS / PASP / ATel
 
-**Repository:** [Gaia-light-curve-anom-detect](.)  
-**Notebook:** [Gaia_LightCurve_Anomaly_Detection.ipynb](Gaia_LightCurve_Anomaly_Detection.ipynb)
+**Repository:** [toadlyBroodle/science](https://github.com/toadlyBroodle/science)  
+**Project:** [astronomy/Gaia-light-curve-anom-detect](https://github.com/toadlyBroodle/science/tree/main/astronomy/Gaia-light-curve-anom-detect)  
+**Notebook:** [Gaia_LightCurve_Anomaly_Detection.ipynb](https://github.com/toadlyBroodle/science/blob/main/astronomy/Gaia-light-curve-anom-detect/Gaia_LightCurve_Anomaly_Detection.ipynb)
 
 ---
 
 ## Abstract
 
 We report the characterization of TIC 22888126 (Gaia DR3 5947829831449229312) as a dwarf nova 
-based on archival TESS photometry showing a ~2.5 magnitude outburst. This object was previously 
-catalogued in VSX as a generic variable ("VAR") with a 57.3-minute period, but its nature was 
-never determined. Our machine learning analysis of Gaia DR3 variability statistics flagged 
-this object as anomalous, prompting archival investigation. TESS Sector 13 data reveals classic 
-dwarf nova outburst morphology: rapid rise (<1 day) and gradual decline (~5-7 days). Combined 
-with archival X-ray detection (ROSAT) and the ultra-short orbital period (below the CV period 
-gap), we classify this system as a dwarf nova and recommend spectroscopic follow-up to confirm 
-its cataclysmic variable nature.
+candidate based on archival TESS photometry showing a ~2.5 magnitude outburst. This object was 
+previously catalogued in VSX as a generic variable ("VAR") with a 57.3-minute period, but its 
+nature was never determined. Our machine learning analysis of Gaia DR3 variability statistics 
+flagged this object as anomalous, prompting archival investigation. TESS Sector 13 data reveals 
+classic dwarf nova outburst morphology: rapid rise (<1 day) and gradual decline (~5-7 days). 
+Combined with archival X-ray detection (ROSAT) and the ultra-short orbital period (below the 
+CV period gap), we propose this system as a strong dwarf nova candidate and recommend 
+spectroscopic follow-up to confirm its cataclysmic variable nature.
+
+> **Note:** This classification is based solely on photometric evidence. Spectroscopic 
+> observations are required to definitively confirm the cataclysmic variable nature of 
+> this system.
 
 ---
 
@@ -35,7 +40,7 @@ We applied Isolation Forest anomaly detection to Gaia DR3 variability statistics
 (`gaiadr3.vari_summary`) to identify stars with unusual light curve morphologies. One 
 flagged object, catalogued in VSX as a generic "VAR" with P=57.3 minutes, showed extreme 
 skewness and kurtosis values suggesting transient brightening events. Archival investigation 
-reveals this to be a previously unrecognized dwarf nova.
+reveals this to be a strong dwarf nova candidate requiring spectroscopic confirmation.
 
 ---
 
@@ -160,7 +165,7 @@ accretion disk.
 **Figure 4** shows the TESS Sector 13 light curve with the dwarf nova outburst.
 
 ![TESS Light Curve](figs/tess_ffi_tic22888126.png)
-*Figure 4: TESS Sector 13 FFI photometry of TIC 22888126 showing a ~2.5 magnitude dwarf nova outburst. Red points indicate measurements >3σ above quiescence (all during outburst phase).*
+*Figure 4: TESS Sector 13 FFI photometry of TIC 22888126 showing a ~2.5 magnitude outburst consistent with dwarf nova behavior. Red points indicate measurements >3σ above quiescence (all during outburst phase).*
 
 ### 4.4 Period Analysis
 
@@ -174,7 +179,7 @@ shows the periodogram and phase-folded light curves.
 
 ## 5. Classification
 
-### 5.1 Evidence for Dwarf Nova
+### 5.1 Evidence Supporting Dwarf Nova Classification
 
 | Evidence | Observation | DN Consistent? |
 |----------|-------------|----------------|
@@ -221,7 +226,7 @@ short-period modulations) are consistent with either subtype.
 
 ## 7. Why Was This Object Overlooked?
 
-Several factors contributed to this dwarf nova remaining uncharacterized:
+Several factors contributed to this dwarf nova candidate remaining uncharacterized:
 
 1. **Faint quiescent magnitude** (G=16.6): Below threshold for many surveys
 2. **Southern declination** (−47°): Less coverage by northern facilities
@@ -238,18 +243,19 @@ in existing survey data that have "fallen through the cracks."
 
 ## 8. Conclusions
 
-1. **TIC 22888126 is a dwarf nova** based on TESS-detected outburst morphology, 
-   consistent with disk instability model predictions.
+1. **TIC 22888126 is a strong dwarf nova candidate** based on TESS-detected outburst 
+   morphology consistent with disk instability model predictions. Spectroscopic 
+   confirmation is required for definitive classification.
 
-2. **The 57.3-minute orbital period** places this system below the CV period gap, 
-   among the scientifically valuable ultra-short period population.
+2. **The 57.3-minute orbital period** would place this system below the CV period gap, 
+   among the scientifically valuable ultra-short period population if confirmed.
 
 3. **Machine learning anomaly detection** on Gaia DR3 statistics successfully 
    identified this overlooked object from its unusual light curve morphology.
 
-4. **Spectroscopic confirmation is needed** to:
-   - Verify CV nature via emission lines
-   - Measure orbital period precisely
+4. **Spectroscopic confirmation is essential** to:
+   - Verify CV nature via emission lines (H-alpha, He II)
+   - Measure orbital period precisely via radial velocities
    - Determine donor composition (H-rich vs He-rich AM CVn)
    - Establish definitive subtype classification
 
@@ -268,21 +274,21 @@ in existing survey data that have "fallen through the cracks."
 
 ## Figures
 
-All figures are available in the [`figs/`](figs/) directory:
+All figures are available in the [`figs/`](https://github.com/toadlyBroodle/science/tree/main/astronomy/Gaia-light-curve-anom-detect/figs) directory:
 
 | Figure | Filename | Description |
 |--------|----------|-------------|
-| 1 | [variable_stars_overview.png](figs/variable_stars_overview.png) | Initial Gaia DR3 variable star sample |
-| 2 | [anomaly_detection_results.png](figs/anomaly_detection_results.png) | Isolation Forest anomaly detection |
-| 3 | [lightcurve_shape_anomalies.png](figs/lightcurve_shape_anomalies.png) | Skewness-kurtosis feature space |
-| 4 | [tess_ffi_tic22888126.png](figs/tess_ffi_tic22888126.png) | TESS Sector 13 light curve |
-| 5 | [period_analysis_tic22888126.png](figs/period_analysis_tic22888126.png) | Periodogram and phase-folded plots |
-| 6 | [discovery_summary.png](figs/discovery_summary.png) | Visual summary of findings |
+| 1 | [variable_stars_overview.png](https://github.com/toadlyBroodle/science/blob/main/astronomy/Gaia-light-curve-anom-detect/figs/variable_stars_overview.png) | Initial Gaia DR3 variable star sample |
+| 2 | [anomaly_detection_results.png](https://github.com/toadlyBroodle/science/blob/main/astronomy/Gaia-light-curve-anom-detect/figs/anomaly_detection_results.png) | Isolation Forest anomaly detection |
+| 3 | [lightcurve_shape_anomalies.png](https://github.com/toadlyBroodle/science/blob/main/astronomy/Gaia-light-curve-anom-detect/figs/lightcurve_shape_anomalies.png) | Skewness-kurtosis feature space |
+| 4 | [tess_ffi_tic22888126.png](https://github.com/toadlyBroodle/science/blob/main/astronomy/Gaia-light-curve-anom-detect/figs/tess_ffi_tic22888126.png) | TESS Sector 13 light curve |
+| 5 | [period_analysis_tic22888126.png](https://github.com/toadlyBroodle/science/blob/main/astronomy/Gaia-light-curve-anom-detect/figs/period_analysis_tic22888126.png) | Periodogram and phase-folded plots |
+| 6 | [discovery_summary.png](https://github.com/toadlyBroodle/science/blob/main/astronomy/Gaia-light-curve-anom-detect/figs/discovery_summary.png) | Visual summary of findings |
 
 **Additional figures:**
-- [anomaly_candidates.png](figs/anomaly_candidates.png) - All anomaly candidates
-- [lightcurve_anomalies.png](figs/lightcurve_anomalies.png) - Light curve anomaly visualization
-- [tess_ffi_tic22888126_optimized.png](figs/tess_ffi_tic22888126_optimized.png) - Optimized TESS extraction
+- [anomaly_candidates.png](https://github.com/toadlyBroodle/science/blob/main/astronomy/Gaia-light-curve-anom-detect/figs/anomaly_candidates.png) - All anomaly candidates
+- [lightcurve_anomalies.png](https://github.com/toadlyBroodle/science/blob/main/astronomy/Gaia-light-curve-anom-detect/figs/lightcurve_anomalies.png) - Light curve anomaly visualization
+- [tess_ffi_tic22888126_optimized.png](https://github.com/toadlyBroodle/science/blob/main/astronomy/Gaia-light-curve-anom-detect/figs/tess_ffi_tic22888126_optimized.png) - Optimized TESS extraction
 
 ---
 
@@ -290,7 +296,7 @@ All figures are available in the [`figs/`](figs/) directory:
 
 | File | Description |
 |------|-------------|
-| [Gaia_LightCurve_Anomaly_Detection.ipynb](Gaia_LightCurve_Anomaly_Detection.ipynb) | Full analysis notebook |
+| [Gaia_LightCurve_Anomaly_Detection.ipynb](https://github.com/toadlyBroodle/science/blob/main/astronomy/Gaia-light-curve-anom-detect/Gaia_LightCurve_Anomaly_Detection.ipynb) | Full analysis notebook ([Open in Colab](https://colab.research.google.com/github/toadlyBroodle/science/blob/main/astronomy/Gaia-light-curve-anom-detect/Gaia_LightCurve_Anomaly_Detection.ipynb)) |
 | `gaia_variable_stars.csv` | Initial Gaia query results |
 | `vsx_submission_candidates.csv` | Formal discovery table |
 | `vsx_submission.txt` | VSX submission format |
@@ -305,6 +311,10 @@ This research made use of data from:
 - AAVSO International Variable Star Index (VSX)
 - ROSAT All-Sky Survey
 - VizieR catalogue access tool (CDS, Strasbourg)
+
+Computational resources provided by Google Colab.
+
+Analysis assistance provided by Anthropic Claude Opus 4.5.
 
 Machine learning analysis used scikit-learn (Pedregosa et al. 2011).
 
