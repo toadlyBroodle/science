@@ -37,6 +37,9 @@ Thumbs.db
 # TESS data downloads
 tess_data/
 
+# Documents
+*.pdf
+
 # Credentials
 *.env
 credentials.json

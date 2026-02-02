@@ -1,0 +1,62 @@
+\documentclass[RNAAS]{aastex631}
+\usepackage{lineno}
+\usepackage{graphicx}
+\linenumbers
+
+\begin{document}
+
+\title{Machine Learning Identification of a Dwarf Nova Candidate with Ultra-Short Orbital Period from Gaia DR3}
+
+\author{Landon Mutch}
+\affiliation{Independent Researcher}
+\email{landonmutch@protonmail.com}
+
+\begin{abstract}
+We report TIC~22888126 (Gaia DR3 5947829831449229312) as a dwarf nova candidate identified through machine learning analysis of Gaia DR3 variability statistics. TESS Sector 13 photometry reveals a $\sim$2.5~mag outburst with classic dwarf nova morphology. The 57.3-minute period from VSX places this below the cataclysmic variable period gap if confirmed. Spectroscopic follow-up is recommended.
+\end{abstract}
+
+\keywords{cataclysmic variables --- novae, dwarf --- methods: statistical --- catalogs --- surveys}
+
+The International Variable Star Index \citep[VSX;][]{Watson2006} contains millions of variable stars lacking physical classification. We applied Isolation Forest anomaly detection \citep{Liu2008} to Gaia DR3 \texttt{vari\_summary} statistics to identify unusual objects. TIC~22888126, catalogued as generic ``VAR'' with $P=57.3$~min, showed extreme skewness ($-3.94$) and kurtosis ($+18.5$), prompting archival investigation.
+
+\textbf{Observations.} TIC~22888126 ($\alpha=17^{\rm h}55^{\rm m}28\fs37$, $\delta=-47\degr35\arcmin34\farcs1$, $G=16.58$) is detected in the ROSAT All-Sky Survey but absent from SIMBAD and cataclysmic variable catalogs. TESS Input Catalog parameters ($T_{\rm eff}=4828$~K, $M=0.78~M_\odot$, $d=1171$~pc) likely reflect the donor star. We extracted TESS Full Frame Image photometry from Sectors 13, 39, 66, and 93 using $3\times3$ pixel apertures.
+
+\textbf{TESS Outburst.} Sector 13 (2019 July) captured a dramatic outburst: amplitude $\sim$2.5~mag (flux ratio $\sim$10$\times$), rise time $<$1~day, decline $\sim$5--7~days (Figure~\ref{fig:tess}). This morphology---rapid rise with exponential decline---is characteristic of dwarf nova disk instability outbursts \citep{Osaki1996}.
+
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{tess_ffi_tic22888126.png}
+\caption{TESS Sector 13 FFI light curve of TIC~22888126 showing a $\sim$2.5~mag outburst with rapid rise and exponential decline characteristic of dwarf novae. Red points indicate flux exceeding $3\sigma$ above quiescence.}
+\label{fig:tess}
+\end{figure}
+
+\textbf{Classification Evidence.} The outburst properties (amplitude 2--6~mag typical, fast rise, thermal decline timescale), X-ray detection (boundary layer emission), and ultra-short period (below the 75--115~min period gap) strongly support dwarf nova classification \citep{Knigge2011}. The 57.3-min period would place this among rare systems that have evolved past the period minimum with degenerate donors.
+
+\textbf{Why Overlooked.} Several factors contributed: faint quiescent magnitude ($G=16.6$), southern declination ($-47\degr$), generic VSX classification, no SIMBAD entry, Gaia eclipsing binary catalog excluding $P<0.2$~days, and lack of dedicated TESS light curve products \citep{Ricker2015}.
+
+\textbf{Conclusions.} TIC~22888126 is a strong dwarf nova candidate based on photometric evidence. Spectroscopic confirmation is essential to verify cataclysmic variable nature via emission lines, measure the orbital period precisely, and determine donor composition. This case demonstrates machine learning's utility for recovering misclassified objects from large surveys.
+
+\textbf{Data Availability.} The TESS data used in this paper can be found in MAST: \dataset[10.17909/t3jq-kp18]{https://doi.org/10.17909/t3jq-kp18}. Analysis notebook and figures available at: \url{https://github.com/toadlyBroodle/science/tree/main/astronomy/Gaia-light-curve-anom-detect}
+
+\begin{acknowledgments}
+This work has made use of data from the European Space Agency (ESA) mission Gaia (\url{https://www.cosmos.esa.int/gaia}), processed by the Gaia Data Processing and Analysis Consortium (DPAC). This paper includes data collected by the TESS mission, obtained from the MAST data archive at the Space Telescope Science Institute (STScI). Funding for the TESS mission is provided by the NASA Explorer Program. STScI is operated by the Association of Universities for Research in Astronomy, Inc., under NASA contract NAS 5-26555. This research has made use of the ROSAT All-Sky Survey, the AAVSO International Variable Star Index (VSX), and the VizieR catalogue access tool (CDS, Strasbourg, France). Computational resources provided by Google Colab. Project inspiration from xAI Grok. Analysis assistance by Anthropic Claude Opus 4.5.
+\end{acknowledgments}
+
+\facilities{Gaia, TESS, ROSAT}
+
+\software{astropy \citep{Astropy2022}, scikit-learn \citep{Pedregosa2011}, astroquery}
+
+\bibliography{references}
+
+\begin{thebibliography}{10}
+\bibitem[Astropy Collaboration et al.(2022)]{Astropy2022} Astropy Collaboration, Price-Whelan, A.~M., Lim, P.~L., et al.\ 2022, \apj, 935, 167
+\bibitem[Gaia Collaboration et al.(2023)]{Gaia2023} Gaia Collaboration, Vallenari, A., Brown, A.~G.~A., et al.\ 2023, \aap, 674, A1, doi:10.1051/0004-6361/202243940
+\bibitem[Knigge et al.(2011)]{Knigge2011} Knigge, C., Baraffe, I., \& Patterson, J.\ 2011, \apjs, 194, 28
+\bibitem[Liu et al.(2008)]{Liu2008} Liu, F.~T., Ting, K.~M., \& Zhou, Z.-H.\ 2008, in Proc.\ ICDM, 413
+\bibitem[Osaki(1996)]{Osaki1996} Osaki, Y.\ 1996, \pasp, 108, 39
+\bibitem[Pedregosa et al.(2011)]{Pedregosa2011} Pedregosa, F., Varoquaux, G., Gramfort, A., et al.\ 2011, JMLR, 12, 2825
+\bibitem[Ricker et al.(2015)]{Ricker2015} Ricker, G.~R., Winn, J.~N., Vanderspek, R., et al.\ 2015, JATIS, 1, 014003
+\bibitem[Watson et al.(2006)]{Watson2006} Watson, C.~L., Henden, A.~A., \& Price, A.\ 2006, SASS, 25, 47
+\end{thebibliography}
+
+\end{document}
