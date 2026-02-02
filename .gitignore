@@ -39,6 +39,7 @@ tess_data/
 
 # Documents
 *.pdf
+*.html
 
 # Credentials
 *.env
