@@ -1,13 +1,11 @@
 \documentclass[RNAAS]{aastex631}
-\usepackage{lineno}
 \usepackage{graphicx}
-\linenumbers
 
 \begin{document}
 
 \title{Machine Learning Identification of a Dwarf Nova Candidate with Ultra-Short Orbital Period from Gaia DR3}
 
-\author{Landon Mutch}
+\author[0009-0003-3859-9565]{Landon Mutch}
 \affiliation{Independent Researcher}
 \email{landonmutch@protonmail.com}
 
@@ -17,13 +15,13 @@ We report TIC~22888126 (Gaia DR3 5947829831449229312) as a dwarf nova candidate 
 
 \keywords{cataclysmic variables --- novae, dwarf --- methods: statistical --- catalogs --- surveys}
 
-The International Variable Star Index \citep[VSX;][]{Watson2006} contains millions of variable stars lacking physical classification. We applied Isolation Forest anomaly detection \citep{Liu2008} to Gaia DR3 \texttt{vari\_summary} statistics to identify unusual objects. TIC~22888126, catalogued as generic ``VAR'' with $P=57.3$~min, showed extreme skewness ($-3.94$) and kurtosis ($+18.5$), prompting archival investigation.
+The International Variable Star Index \citep[VSX;][]{Watson2006} contains millions of variable stars lacking physical classification. We applied Isolation Forest anomaly detection \citep{Liu2008} to Gaia DR3 \citep{Gaia2023} \texttt{vari\_summary} statistics to identify unusual objects. TIC~22888126, catalogued as generic ``VAR'' with $P=57.3$~min, showed extreme skewness ($-3.94$) and kurtosis ($+18.5$), prompting archival investigation.
 
 \textbf{Observations.} TIC~22888126 ($\alpha=17^{\rm h}55^{\rm m}28\fs37$, $\delta=-47\degr35\arcmin34\farcs1$, $G=16.58$) is detected in the ROSAT All-Sky Survey but absent from SIMBAD and cataclysmic variable catalogs. TESS Input Catalog parameters ($T_{\rm eff}=4828$~K, $M=0.78~M_\odot$, $d=1171$~pc) likely reflect the donor star. We extracted TESS Full Frame Image photometry from Sectors 13, 39, 66, and 93 using $3\times3$ pixel apertures.
 
 \textbf{TESS Outburst.} Sector 13 (2019 July) captured a dramatic outburst: amplitude $\sim$2.5~mag (flux ratio $\sim$10$\times$), rise time $<$1~day, decline $\sim$5--7~days (Figure~\ref{fig:tess}). This morphology---rapid rise with exponential decline---is characteristic of dwarf nova disk instability outbursts \citep{Osaki1996}.
 
-\begin{figure}
+\begin{figure}[h!]
 \centering
 \includegraphics[width=\columnwidth]{tess_ffi_tic22888126.png}
 \caption{TESS Sector 13 FFI light curve of TIC~22888126 showing a $\sim$2.5~mag outburst with rapid rise and exponential decline characteristic of dwarf novae. Red points indicate flux exceeding $3\sigma$ above quiescence.}
@@ -45,8 +43,6 @@ This work has made use of data from the European Space Agency (ESA) mission Gaia
 \facilities{Gaia, TESS, ROSAT}
 
 \software{astropy \citep{Astropy2022}, scikit-learn \citep{Pedregosa2011}, astroquery}
-
-\bibliography{references}
 
 \begin{thebibliography}{10}
 \bibitem[Astropy Collaboration et al.(2022)]{Astropy2022} Astropy Collaboration, Price-Whelan, A.~M., Lim, P.~L., et al.\ 2022, \apj, 935, 167
