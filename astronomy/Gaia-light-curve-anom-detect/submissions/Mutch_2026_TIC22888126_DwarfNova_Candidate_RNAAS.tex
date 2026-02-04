@@ -3,56 +3,74 @@
 
 \begin{document}
 
-\title{Machine Learning Identification of a Dwarf Nova Candidate with Ultra-Short Orbital Period from Gaia DR3}
+\title{Characterization of TIC~22888126 as an Active Dwarf Nova Candidate with Possible Ultra-Short Period}
 
 \author[0009-0003-3859-9565]{Landon Mutch}
 \affiliation{Independent Researcher}
 \email{landonmutch@protonmail.com}
 
 \begin{abstract}
-We report TIC~22888126 (Gaia DR3 5947829831449229312) as a dwarf nova candidate identified through machine learning analysis of Gaia DR3 variability statistics. TESS Sector 13 photometry reveals a $\sim$2.5~mag outburst with classic dwarf nova morphology. The 57.3-minute period from VSX places this below the cataclysmic variable period gap if confirmed. Spectroscopic follow-up is recommended.
+We characterize TIC~22888126 (Gaia DR3 5947829831449229312) as an active dwarf nova candidate based on TESS photometry revealing seven distinct outbursts across 6~years (Sectors 13, 39, 66, 93). Outburst amplitudes range from 1--5~mag with classic dwarf nova morphology. The Gaia DR3 short-timescale variability catalog reports a photometric period of 57.3~minutes; if this represents the orbital period, TIC~22888126 would join V485~Cen and $\sim$10 other CVs known below the 75-minute period minimum. Spectroscopic confirmation of the orbital period is required.
 \end{abstract}
 
-\keywords{cataclysmic variables --- novae, dwarf --- methods: statistical --- catalogs --- surveys}
+\keywords{cataclysmic variables --- novae, dwarf --- methods: statistical --- catalogs}
 
-The International Variable Star Index \citep[VSX;][]{Watson2006} contains millions of variable stars lacking physical classification. We applied Isolation Forest anomaly detection \citep{Liu2008} to Gaia DR3 \citep{Gaia2023} \texttt{vari\_summary} statistics to identify unusual objects. TIC~22888126, catalogued as generic ``VAR'' with $P=57.3$~min, showed extreme skewness ($-3.94$) and kurtosis ($+18.5$), prompting archival investigation.
+\textbf{Introduction.} The International Variable Star Index \citep[VSX;][]{Watson2006} lists TIC~22888126 as a generic variable (``VAR'') with photometric period $P=57.3$~min derived from Gaia DR3 short-timescale variability analysis \citep{Gaia2023}. We identified this object through Isolation Forest anomaly detection \citep{Liu2008} applied to Gaia DR3 \texttt{vari\_summary} statistics, where it showed extreme negative skewness ($-3.94$) and high kurtosis ($+18.5$)---signatures consistent with outbursting behavior.
 
-\textbf{Observations.} TIC~22888126 ($\alpha=17^{\rm h}55^{\rm m}28\fs37$, $\delta=-47\degr35\arcmin34\farcs1$, $G=16.58$) is detected in the ROSAT All-Sky Survey but absent from SIMBAD and cataclysmic variable catalogs. TESS Input Catalog parameters ($T_{\rm eff}=4828$~K, $M=0.78~M_\odot$, $d=1171$~pc) likely reflect the donor star. We extracted TESS Full Frame Image photometry from Sectors 13, 39, 66, and 93 using $3\times3$ pixel apertures.
+\textbf{Observations.} TIC~22888126 ($\alpha=17^{\rm h}55^{\rm m}28\fs37$, $\delta=-47\degr35\arcmin34\farcs1$, $G=16.58$) is detected in the ROSAT All-Sky Survey but absent from SIMBAD and cataclysmic variable catalogs. We extracted TESS Full Frame Image photometry from Sectors 13, 39, 66, and 93 (spanning 2019--2025) using $3\times3$ pixel apertures without background subtraction to preserve outburst flux.
 
-\textbf{TESS Outburst.} Sector 13 (2019 July) captured a dramatic outburst: amplitude $\sim$2.5~mag (flux ratio $\sim$10$\times$), rise time $<$1~day, decline $\sim$5--7~days (Figure~\ref{fig:tess}). This morphology---rapid rise with exponential decline---is characteristic of dwarf nova disk instability outbursts \citep{Osaki1996}.
+\textbf{TESS Outbursts.} We detect seven distinct outbursts across 6~years of TESS coverage (Figure~\ref{fig:tess}, Table~\ref{tab:outbursts}). The outbursts exhibit classic dwarf nova morphology---rapid rise with exponential decline \citep{Osaki1996}. Amplitudes vary from $\sim$1~mag (Sector 39) to $\sim$5~mag (Sector 93), suggesting a mix of normal outbursts and superoutbursts characteristic of SU~UMa-type systems. The presence of multiple outbursts within single 27-day sectors (Sectors 66 and 93) indicates a recurrence time of $\sim$2 weeks during active states.
+
+\begin{table}[h!]
+\centering
+\small
+\caption{TIC~22888126 Outburst Properties}
+\label{tab:outbursts}
+\begin{tabular}{ccccc}
+\hline
+Sector & Date & Amplitude & $\Delta$mag & Duration \\
+\hline
+13 & 2019-06-20 & 10$\times$ & $-2.5$ & 3.1~d \\
+39 & 2021-06-22 & 2.5$\times$ & $-1.0$ & 1.6~d \\
+66 & 2023-06-12 & 10$\times$ & $-2.5$ & 1.5~d \\
+66 & 2023-06-27 & 16$\times$ & $-3.0$ & 4.1~d \\
+93 & 2025-06-03 & 3$\times$ & $-1.3$ & 0.2~d \\
+93 & 2025-06-16 & 130$\times$ & $-5.3$ & 1.5~d \\
+93 & 2025-06-28 & 93$\times$ & $-4.9$ & 0.3~d \\
+\hline
+\end{tabular}
+\end{table}
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=\columnwidth]{tess_ffi_tic22888126.png}
-\caption{TESS Sector 13 FFI light curve of TIC~22888126 showing a $\sim$2.5~mag outburst with rapid rise and exponential decline characteristic of dwarf novae. Red points indicate flux exceeding $3\sigma$ above quiescence.}
+\includegraphics[width=\columnwidth]{tic22888126_publication_log.png}
+\caption{TESS light curve of TIC~22888126 (log scale) showing seven outbursts across Sectors 13, 39, 66, and 93 (2019--2025). Red points indicate flux $>2\times$ quiescent. The 5-mag events in Sector 93 suggest superoutbursts.}
 \label{fig:tess}
 \end{figure}
 
-\textbf{Classification Evidence.} The outburst properties (amplitude 2--6~mag typical, fast rise, thermal decline timescale), X-ray detection (boundary layer emission), and ultra-short period (below the 75--115~min period gap) strongly support dwarf nova classification \citep{Knigge2011}. The 57.3-min period would place this among rare systems that have evolved past the period minimum with degenerate donors.
+\textbf{Classification and Period.} The frequent outbursts, variable amplitude (1--5~mag), X-ray detection, and outburst morphology strongly support dwarf nova classification. The Gaia-derived 57.3-min photometric period, if confirmed as the orbital period, would place TIC~22888126 among $\sim$12 known CVs below the 75-minute period minimum, comparable to V485~Cen \citep[$P_{\rm orb}=59$~min;][]{Augusteijn1996}. Such short-period systems have evolved past the CV period minimum and likely host degenerate or semi-degenerate donors \citep{Knigge2011}. However, we caution that the Gaia period is photometric and could represent a superhump period (typically 1--5\% longer than orbital in SU~UMa stars) or other periodic signal. Time-resolved spectroscopy is essential to confirm the orbital period.
 
-\textbf{Why Overlooked.} Several factors contributed: faint quiescent magnitude ($G=16.6$), southern declination ($-47\degr$), generic VSX classification, no SIMBAD entry, Gaia eclipsing binary catalog excluding $P<0.2$~days, and lack of dedicated TESS light curve products \citep{Ricker2015}.
+\textbf{Conclusions.} TIC~22888126 is a strong dwarf nova candidate showing frequent outbursts with SU~UMa-like behavior. If the 57.3-min photometric period is confirmed as orbital, this would be a rare, highly-evolved system valuable for testing CV evolution models. We recommend spectroscopic observations to: (1) confirm the cataclysmic variable nature via emission lines, (2) measure the true orbital period, and (3) determine whether the large-amplitude events are superoutbursts.
 
-\textbf{Conclusions.} TIC~22888126 is a strong dwarf nova candidate based on photometric evidence. Spectroscopic confirmation is essential to verify cataclysmic variable nature via emission lines, measure the orbital period precisely, and determine donor composition. This case demonstrates machine learning's utility for recovering misclassified objects from large surveys.
-
-\textbf{Data Availability.} The TESS data used in this paper can be found in MAST: \dataset[10.17909/t3jq-kp18]{https://doi.org/10.17909/t3jq-kp18}. Analysis notebook and figures available at: \url{https://github.com/toadlyBroodle/science/tree/main/astronomy/Gaia-light-curve-anom-detect}
+\textbf{Data Availability.} TESS data: MAST \dataset[10.17909/t3jq-kp18]{https://doi.org/10.17909/t3jq-kp18}. Analysis code: \url{https://github.com/toadlyBroodle/science}
 
 \begin{acknowledgments}
-This work has made use of data from the European Space Agency (ESA) mission Gaia (\url{https://www.cosmos.esa.int/gaia}), processed by the Gaia Data Processing and Analysis Consortium (DPAC). This paper includes data collected by the TESS mission, obtained from the MAST data archive at the Space Telescope Science Institute (STScI). Funding for the TESS mission is provided by the NASA Explorer Program. STScI is operated by the Association of Universities for Research in Astronomy, Inc., under NASA contract NAS 5-26555. This research has made use of the ROSAT All-Sky Survey, the AAVSO International Variable Star Index (VSX), and the VizieR catalogue access tool (CDS, Strasbourg, France). Computational resources provided by Google Colab. Project inspiration from xAI Grok. Analysis assistance by Anthropic Claude Opus 4.5.
+This work used data from ESA Gaia (processed by DPAC) and NASA TESS (via MAST/STScI). This research used ROSAT, AAVSO VSX, and VizieR (CDS). Computing: Google Colab. Analysis: Anthropic Claude.
 \end{acknowledgments}
 
 \facilities{Gaia, TESS, ROSAT}
 
 \software{astropy \citep{Astropy2022}, scikit-learn \citep{Pedregosa2011}, astroquery}
 
-\begin{thebibliography}{10}
-\bibitem[Astropy Collaboration et al.(2022)]{Astropy2022} Astropy Collaboration, Price-Whelan, A.~M., Lim, P.~L., et al.\ 2022, \apj, 935, 167
-\bibitem[Gaia Collaboration et al.(2023)]{Gaia2023} Gaia Collaboration, Vallenari, A., Brown, A.~G.~A., et al.\ 2023, \aap, 674, A1, doi:10.1051/0004-6361/202243940
+\begin{thebibliography}{12}
+\bibitem[Astropy Collaboration(2022)]{Astropy2022} Astropy Collaboration 2022, \apj, 935, 167
+\bibitem[Augusteijn et al.(1996)]{Augusteijn1996} Augusteijn, T., van der Hooft, F., de Jong, J.~A., \& van Paradijs, J.\ 1996, \aap, 311, 889
+\bibitem[Gaia Collaboration(2023)]{Gaia2023} Gaia Collaboration 2023, \aap, 674, A1
 \bibitem[Knigge et al.(2011)]{Knigge2011} Knigge, C., Baraffe, I., \& Patterson, J.\ 2011, \apjs, 194, 28
-\bibitem[Liu et al.(2008)]{Liu2008} Liu, F.~T., Ting, K.~M., \& Zhou, Z.-H.\ 2008, in Proc.\ ICDM, 413
+\bibitem[Liu et al.(2008)]{Liu2008} Liu, F.~T., Ting, K.~M., \& Zhou, Z.-H.\ 2008, Proc.\ ICDM, 413
 \bibitem[Osaki(1996)]{Osaki1996} Osaki, Y.\ 1996, \pasp, 108, 39
-\bibitem[Pedregosa et al.(2011)]{Pedregosa2011} Pedregosa, F., Varoquaux, G., Gramfort, A., et al.\ 2011, JMLR, 12, 2825
-\bibitem[Ricker et al.(2015)]{Ricker2015} Ricker, G.~R., Winn, J.~N., Vanderspek, R., et al.\ 2015, JATIS, 1, 014003
-\bibitem[Watson et al.(2006)]{Watson2006} Watson, C.~L., Henden, A.~A., \& Price, A.\ 2006, SASS, 25, 47
+\bibitem[Pedregosa et al.(2011)]{Pedregosa2011} Pedregosa, F.\ et al.\ 2011, JMLR, 12, 2825
+\bibitem[Watson et al.(2006)]{Watson2006} Watson, C.~L.\ et al.\ 2006, SASS, 25, 47
 \end{thebibliography}
 
 \end{document}
