@@ -32,6 +32,7 @@ Thumbs.db
 *.fits
 *.fits.gz
 *.csv
+*.pkl
 !*_example.csv
 
 # TESS data downloads
