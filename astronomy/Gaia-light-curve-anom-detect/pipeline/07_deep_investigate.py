@@ -76,6 +76,24 @@ for col in ['teff', 'logg', 'rv', 'ruwe', 'nss']:
     df[f'gaia_{col}'] = [ext_map.get(int(row['source_id']), {}).get(col) for _, row in df.iterrows()]
 
 
+# --- Load TESS data for classification ---
+lc_path = os.path.join(DATA_DIR, '05_lc_data.pkl')
+pr_path = os.path.join(DATA_DIR, '06_period_results.pkl')
+lc_data = {}
+period_results = {}
+if os.path.exists(lc_path):
+    with open(lc_path, 'rb') as f:
+        lc_data = pickle.load(f)
+    # Ensure plain numpy arrays
+    for k, v in lc_data.items():
+        v['time'] = np.array(v['time'], dtype=float)
+        v['flux'] = np.array(v['flux'], dtype=float)
+    print(f"  Loaded {len(lc_data)} TESS light curves for classification")
+if os.path.exists(pr_path):
+    with open(pr_path, 'rb') as f:
+        period_results = pickle.load(f)
+    print(f"  Loaded {len(period_results)} period results for classification")
+
 # --- Per-candidate catalog searches ---
 print("\n--- CV-specific catalog searches ---")
 
@@ -143,52 +161,109 @@ for i, (_, row) in enumerate(df.iterrows()):
         known_cv = True
 
     # --- Physical CV indicators (for novel candidates) ---
-    indicators = []
+    # Hard indicators: direct physical evidence of CV nature
+    hard_indicators = []
+    # Soft indicators: catalog absence or marginal flags
+    soft_indicators = []
 
     bp_rp = row.get('bp_rp')
     if pd.notna(bp_rp) and bp_rp < 0.5:
-        indicators.append('blue')
+        hard_indicators.append('blue')
 
     has_xray = row.get('has_xray', False) or xmm
     has_fuv = pd.notna(row.get('galex_fuv')) and row.get('galex_fuv') == row.get('galex_fuv')
     if has_xray and has_fuv:
-        indicators.append('xray+uv')
+        hard_indicators.append('xray+uv')
     elif has_xray:
-        indicators.append('xray')
+        hard_indicators.append('xray')
     elif has_fuv:
-        indicators.append('fuv')
+        soft_indicators.append('fuv')
 
     ruwe = ep.get('ruwe')
     if ruwe and ruwe > 1.4:
-        indicators.append('binary')
+        soft_indicators.append('binary')
 
     teff = ep.get('teff')
     if teff and teff > 10000:
-        indicators.append('hot')
+        soft_indicators.append('hot')
 
     amp = row.get('amplitude', 0) or 0
     if amp > 2.0:
-        indicators.append('high_amp')
+        soft_indicators.append('high_gaia_amp')
 
     skew = row.get('skewness_mag_g_fov', 0) or 0
     if abs(skew) > 1:
-        indicators.append('outburst')
+        soft_indicators.append('outburst_skew')
 
     if not row.get('in_simbad', True):
-        indicators.append('novel')
+        soft_indicators.append('novel')
     if not row.get('in_vsx', True):
-        indicators.append('no_vsx')
+        soft_indicators.append('no_vsx')
+
+    # TESS-based hard indicators (from light curve data)
+    tic = row.get('tic_id')
+    tic_id = int(tic) if pd.notna(tic) else None
+
+    if tic_id and tic_id in lc_data:
+        lc = lc_data[tic_id]
+        t_lc = np.array(lc['time'], dtype=float)
+        f_lc = np.array(lc['flux'], dtype=float)
+        med_f = np.nanmedian(f_lc)
+        if med_f > 0:
+            # Outburst morphology: check that bright excursions dominate over dips
+            # DN outbursts are brightenings; dips suggest eclipses/spots
+            bright_amp = np.nanmax(f_lc) / med_f        # max above median
+            dip_amp = med_f / np.nanmin(f_lc[f_lc > 0]) # max below median
+            is_brightening = bright_amp > dip_amp
+
+            if is_brightening and bright_amp >= 2.0:  # >= 2x flux = ~0.75 mag outburst
+                hard_indicators.append(f'tess_outburst_{bright_amp:.1f}x')
+            elif is_brightening and bright_amp >= 1.5:
+                soft_indicators.append(f'tess_var_{bright_amp:.1f}x')
+            elif not is_brightening and dip_amp >= 1.5:
+                soft_indicators.append(f'tess_dips_{dip_amp:.1f}x')
+
+    # TESS period detection (from period results)
+    # Filter: periods < 10 min are non-orbital (pulsation or systematics)
+    if tic_id and tic_id in period_results:
+        pr = period_results[tic_id]
+        p_min = pr['best_period'] * 24 * 60  # convert to minutes
+        if p_min >= 10:  # plausible CV orbital period
+            if pr['fap'] < 0.001:
+                hard_indicators.append(f'tess_period_{p_min:.0f}m')
+            elif pr['fap'] < 0.01:
+                soft_indicators.append(f'tess_period_{p_min:.0f}m')
+        elif pr['fap'] < 0.01:
+            soft_indicators.append(f'tess_pulsation_{p_min:.0f}m')
+
+    # Brightness prior: CVs are intrinsically faint (G > ~13 in quiescence)
+    g_mag = row.get('phot_g_mean_mag', 99)
+    if pd.notna(g_mag) and g_mag < 13:
+        soft_indicators.append('bright_G<13')
+
+    indicators = hard_indicators + soft_indicators
 
     # --- Assessment ---
+    # STRONG requires hard physical evidence (TESS outburst with brightening
+    # morphology, X-ray, blue color, or significant CV-plausible period),
+    # not just catalog absence or short pulsation periods.
+    # Bright sources (G < 13) are capped at MODERATE since CVs are faint.
     if known_cv:
         assess = f'KNOWN CV ({", ".join(known_labels)})'
     else:
-        n_ind = len(indicators)
-        if n_ind >= 4:
+        n_hard = len(hard_indicators)
+        n_total = len(indicators)
+        is_bright = pd.notna(g_mag) and g_mag < 13
+
+        if n_hard >= 2 and not is_bright:
             assess = 'STRONG NEW CANDIDATE'
-        elif n_ind >= 3:
+        elif n_hard >= 2 and is_bright:
+            assess = 'MODERATE NEW CANDIDATE'  # bright cap
+        elif n_hard >= 1 and n_total >= 3:
             assess = 'MODERATE NEW CANDIDATE'
-        elif n_ind >= 2:
+        elif n_total >= 3:
+            assess = 'MODERATE NEW CANDIDATE'
+        elif n_total >= 2:
             assess = 'WEAK NEW CANDIDATE'
         else:
             assess = 'UNCERTAIN'
@@ -261,19 +336,9 @@ print(f"\n  Saved to {out}")
 # --- Plots for novel candidates only ---
 os.makedirs(PLOT_DIR, exist_ok=True)
 
-lc_path = os.path.join(DATA_DIR, '05_lc_data.pkl')
-pr_path = os.path.join(DATA_DIR, '06_period_results.pkl')
-
-if not os.path.exists(lc_path):
+if not lc_data:
     print("\n  No light curve data found, skipping novel candidate plots")
 else:
-    with open(lc_path, 'rb') as f:
-        lc_data = pickle.load(f)
-    period_results = {}
-    if os.path.exists(pr_path):
-        with open(pr_path, 'rb') as f:
-            period_results = pickle.load(f)
-
     # Get TIC IDs for novel candidates
     novel_tics = []
     for _, row in novel.iterrows():
@@ -286,10 +351,12 @@ else:
 
     if n_novel > 0:
 
-        # --- Light curves ---
-        fig, axes = plt.subplots(n_novel, 1, figsize=(16, 4 * n_novel), squeeze=False)
+        # --- Light curves (compact 2-column grid) ---
+        lc_cols = 2
+        lc_rows = max((n_novel + lc_cols - 1) // lc_cols, 1)
+        fig, axes = plt.subplots(lc_rows, lc_cols, figsize=(18, 2.5 * lc_rows), squeeze=False)
         for idx, tic_id in enumerate(novel_tics):
-            ax = axes[idx, 0]
+            ax = axes[idx // lc_cols, idx % lc_cols]
             lc = lc_data[tic_id]
             t, flux = lc['time'], lc['flux']
             sectors = lc.get('sectors', [lc.get('sector', '?')])
@@ -306,8 +373,12 @@ else:
 
             plot_lc(ax, t, flux, title, sector_str)
 
+        # Hide unused axes
+        for j in range(n_novel, lc_rows * lc_cols):
+            axes[j // lc_cols, j % lc_cols].set_visible(False)
+
         plt.tight_layout()
-        plt.savefig(os.path.join(PLOT_DIR, 'novel_lightcurves.png'), dpi=150)
+        plt.savefig(os.path.join(PLOT_DIR, 'novel_lightcurves.png'), dpi=120)
         plt.close()
         print(f"  Plot: {PLOT_DIR}/novel_lightcurves.png")
 
@@ -315,7 +386,10 @@ else:
         novel_with_periods = [t for t in novel_tics if t in period_results]
         n_per = len(novel_with_periods)
         if n_per > 0:
-            fig2, axes2 = plt.subplots(n_per, 2, figsize=(16, 4.5 * n_per), squeeze=False)
+            # Compact: 3 candidates per row, each with LC + periodogram = 6 cols
+            np_per_row = 3
+            np_rows = max((n_per + np_per_row - 1) // np_per_row, 1)
+            fig2, axes2 = plt.subplots(np_rows, np_per_row * 2, figsize=(20, 2.8 * np_rows), squeeze=False)
             for idx, tic_id in enumerate(novel_with_periods):
                 lc = lc_data[tic_id]
                 t, flux = lc['time'], lc['flux']
@@ -344,35 +418,48 @@ else:
                     periods = 1 / freq
                     power = mask_tess_systematics(periods, power_raw)
 
-                    # Detrended LC (clip y-axis to quiescent range)
-                    ax_lc = axes2[idx, 0]
-                    ax_lc.scatter(t_q, flux_detrend, s=1, alpha=0.5, c='steelblue')
+                    # Compact grid indexing
+                    np_row = idx // np_per_row
+                    np_col = (idx % np_per_row) * 2
+
+                    # Detrended LC
+                    ax_lc = axes2[np_row, np_col]
+                    ax_lc.scatter(t_q, flux_detrend, s=0.3, alpha=0.4, c='steelblue')
                     ax_lc.axhline(1, color='gray', ls='--', alpha=0.3)
                     y_lo, y_hi = np.percentile(flux_detrend, [0.5, 99.5])
                     y_pad = (y_hi - y_lo) * 0.15
                     ax_lc.set_ylim(y_lo - y_pad, y_hi + y_pad)
-                    ax_lc.set_xlabel('Time (BTJD)')
-                    ax_lc.set_ylabel('Detrended Flux')
-                    ax_lc.set_title(f'TIC {tic_id} (quiescent, detrended)', fontsize=10)
+                    ax_lc.set_xlabel('BTJD', fontsize=7)
+                    ax_lc.set_ylabel('Flux', fontsize=7)
+                    ax_lc.set_title(f'TIC {tic_id}', fontsize=8)
+                    ax_lc.tick_params(labelsize=6)
 
                     # Periodogram
-                    ax_ls = axes2[idx, 1]
+                    ax_ls = axes2[np_row, np_col + 1]
                     best_period = pr['best_period']
                     fap = pr['fap']
                     vsx_period = pr.get('vsx_period')
-                    ax_ls.semilogx(periods * 24 * 60, power, 'k-', lw=0.5)
-                    ax_ls.axvline(best_period * 24 * 60, color='red', ls='--', alpha=0.7,
-                                  label=f'Best: {best_period*24*60:.1f}m')
+                    ax_ls.semilogx(periods * 24 * 60, power, 'k-', lw=0.4)
+                    ax_ls.axvline(best_period * 24 * 60, color='red', ls='--', alpha=0.7, lw=0.8,
+                                  label=f'{best_period*24*60:.1f}m')
                     if vsx_period:
-                        ax_ls.axvline(vsx_period * 24 * 60, color='blue', ls=':', alpha=0.7,
-                                      label=f'VSX: {vsx_period*24*60:.1f}m')
-                    ax_ls.set_xlabel('Period (min, log)')
-                    ax_ls.set_ylabel('L-S Power')
-                    ax_ls.set_title(f'Periodogram (FAP={fap:.1e})', fontsize=10)
-                    ax_ls.legend(fontsize=8)
+                        ax_ls.axvline(vsx_period * 24 * 60, color='blue', ls=':', alpha=0.7, lw=0.8,
+                                      label=f'V:{vsx_period*24*60:.0f}m')
+                    ax_ls.set_xlabel('P (min)', fontsize=7)
+                    ax_ls.set_ylabel('Power', fontsize=7)
+                    ax_ls.set_title(f'FAP={fap:.0e}', fontsize=8)
+                    ax_ls.legend(fontsize=6)
+                    ax_ls.tick_params(labelsize=6)
+
+            # Hide unused axes
+            for j in range(n_per, np_rows * np_per_row):
+                r, c = j // np_per_row, (j % np_per_row) * 2
+                if r < np_rows:
+                    axes2[r, c].set_visible(False)
+                    axes2[r, c + 1].set_visible(False)
 
             plt.tight_layout()
-            plt.savefig(os.path.join(PLOT_DIR, 'novel_periods.png'), dpi=150)
+            plt.savefig(os.path.join(PLOT_DIR, 'novel_periods.png'), dpi=120)
             plt.close()
             print(f"  Plot: {PLOT_DIR}/novel_periods.png")
         else:

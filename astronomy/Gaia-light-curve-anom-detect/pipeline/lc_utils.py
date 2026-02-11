@@ -32,23 +32,15 @@ def collapse_gaps(t, flux, gap_days=1.0, gap_insert=0.5):
 def plot_lc(ax, t, flux, title, sector_str):
     """Plot light curve with log scale, collapsed gaps, and BTJD annotations."""
     t_plot, flux_plot, breaks, segments = collapse_gaps(t, flux)
-    ax.scatter(t_plot, flux_plot, s=1, alpha=0.5, c='steelblue')
+    ax.scatter(t_plot, flux_plot, s=0.3, alpha=0.4, c='steelblue')
     ax.axhline(1, color='gray', ls='--', alpha=0.3)
     for bp in breaks:
-        ax.axvline(bp, color='orange', ls=':', alpha=0.4, lw=0.8)
-    # Annotate each sector segment with BTJD range at top
-    y_top = 0.97
-    for j, (btjd_start, btjd_end) in enumerate(segments):
-        seg_start_plot = t_plot[0] if j == 0 else breaks[j - 1]
-        seg_end_plot = breaks[j] if j < len(breaks) else t_plot[-1]
-        x_mid = (seg_start_plot + seg_end_plot) / 2
-        ax.text(x_mid, y_top, f'{btjd_start:.0f}-{btjd_end:.0f}',
-                transform=ax.get_xaxis_transform(), ha='center', va='top',
-                fontsize=6, color='dimgray', alpha=0.8)
+        ax.axvline(bp, color='orange', ls=':', alpha=0.4, lw=0.6)
     ax.set_yscale('log')
-    ax.set_title(title, fontsize=10)
-    ax.set_xlabel('Days (gaps collapsed)')
-    ax.set_ylabel('Norm Flux (log)')
+    ax.set_title(title, fontsize=7)
+    ax.set_xlabel('Days', fontsize=7)
+    ax.set_ylabel('Flux', fontsize=7)
+    ax.tick_params(labelsize=6)
 
 
 def isolate_quiescent(t, flux, sigma_thresh=2.0, buffer_pts=5):

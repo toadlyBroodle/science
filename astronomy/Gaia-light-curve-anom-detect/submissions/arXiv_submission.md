@@ -8,12 +8,12 @@
 
 **Category:** astro-ph.SR (Solar and Stellar Astrophysics)
 
-**Title:** Characterization of a Dwarf Nova Candidate: TESS Reveals Outburst in the Ultra-Short Period Variable TIC 22888126
+**Title:** Characterization of TIC 22888126 as an Active Dwarf Nova Candidate from TESS Photometry
 
 **Authors:** Landon Mutch; Opus 4.5
 
 **Abstract:**
-We report the characterization of TIC 22888126 (Gaia DR3 5947829831449229312) as a dwarf nova candidate based on archival TESS photometry showing a ~2.5 magnitude outburst. This object was previously catalogued in VSX as a generic variable ("VAR") with a 57.3-minute period, but its nature was never determined. Our machine learning analysis of Gaia DR3 variability statistics flagged this object as anomalous, prompting archival investigation. TESS Sector 13 data reveals classic dwarf nova outburst morphology: rapid rise (<1 day) and gradual decline (~5-7 days). Combined with archival X-ray detection (ROSAT) and the ultra-short orbital period (below the CV period gap), we propose this system as a strong dwarf nova candidate and recommend spectroscopic follow-up to confirm its cataclysmic variable nature.
+We characterize TIC 22888126 (Gaia DR3 5947829831449228800) as an active dwarf nova candidate based on TESS photometry revealing seven distinct outbursts across 6 years (Sectors 13, 39, 66, 93). Outburst amplitudes range from 1--5 mag with classic dwarf nova morphology. A Lomb-Scargle analysis of ~23,500 background-subtracted quiescent TESS data points finds a candidate photometric period of ~90 min (FAP = 2.5e-85), consistent across three of four sectors. A 57.3-min period reported by Gaia DR3 short-timescale variability analysis is not recovered (FAP = 1) and is likely a sampling alias. If the 90-min period reflects the orbital period, this system lies at the upper edge of the CV period gap. Combined with ROSAT X-ray detection, we propose this as a strong dwarf nova candidate and recommend spectroscopic follow-up.
 
 ---
 
@@ -33,12 +33,12 @@ For arXiv, you'll need LaTeX format. Use this template:
 
 \begin{document}
 
-\title{Characterization of a Dwarf Nova Candidate: TESS Reveals Outburst in the Ultra-Short Period Variable TIC 22888126}
+\title{Characterization of TIC 22888126 as an Active Dwarf Nova Candidate from TESS Photometry}
 
 \author{Landon Mutch}
 
 \begin{abstract}
-We report the characterization of TIC 22888126 (Gaia DR3 5947829831449229312) as a dwarf nova candidate based on archival TESS photometry showing a $\sim$2.5 magnitude outburst...
+We characterize TIC 22888126 (Gaia DR3 5947829831449228800) as an active dwarf nova candidate based on TESS photometry revealing seven outbursts across 6 years with 1--5 mag amplitudes. A candidate $\sim$90-min photometric period is detected (FAP $= 2.5 \times 10^{-85}$). The Gaia/VSX 57.3-min period is not recovered...
 \end{abstract}
 
 \keywords{cataclysmic variables --- novae, dwarf --- methods: statistical --- surveys}

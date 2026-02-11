@@ -67,7 +67,7 @@ def create_concatenated_figure(sector_data):
     ax.set_xlabel('Days from sector start (concatenated)', fontsize=11)
     ax.set_ylabel('Normalized Flux', fontsize=11)
     ax.set_title('TIC 22888126: Complete TESS Light Curve (6 years, 4 sectors)\n'
-                 'Single outburst in Sector 13 suggests WZ Sge-type dwarf nova',
+                 'Seven outbursts across 4 sectors; candidate P ~ 90 min (period gap boundary)',
                  fontsize=12, fontweight='bold')
     
     # Custom x-ticks showing sector numbers
@@ -140,9 +140,9 @@ def create_panel_figure(sector_data):
         ax.set_ylim(-0.1, 13 if sector == 13 else 2)
         ax.grid(True, alpha=0.2)
     
-    fig.suptitle('TIC 22888126 / Gaia DR3 5947829831449229312\n'
-                 'WZ Sge-type Dwarf Nova Candidate | P = 57.3 min | '
-                 '1 outburst in 6 years',
+    fig.suptitle('TIC 22888126 / Gaia DR3 5947829831449228800\n'
+                 'Dwarf Nova Candidate | P ~ 90 min (TESS L-S) | '
+                 '7 outbursts in 6 years',
                  fontsize=12, fontweight='bold')
     
     plt.tight_layout()

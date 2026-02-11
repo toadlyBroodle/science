@@ -4,28 +4,31 @@ Gaia DR3 5947829831449228800 - Dwarf Nova Candidate
 
 COORDINATES (J2000): 17 55 28.37 -47 35 34.0
 TIC ID: 22888126
-Gaia DR3: 5947829831449229312
+Gaia DR3: 5947829831449228800
 
-PROPOSED RECLASSIFICATION: VAR -> UG: (dwarf nova candidate)
+PROPOSED RECLASSIFICATION: VAR -> UGSU: (SU UMa-type dwarf nova candidate)
 
 ================================================================================
 EVIDENCE SUMMARY
 ================================================================================
 
-1. TESS OUTBURST (Sector 13, 2019 July 18-August 14)
-   - Amplitude: ~2.5 magnitudes (flux ratio ~10x)
-   - Rise time: <1 day
-   - Decline time: ~5-7 days
-   - Morphology: Classic dwarf nova disk instability outburst
+1. TESS OUTBURSTS (Sectors 13, 39, 66, 93; 2019-2025)
+   - Seven distinct outbursts across 6 years
+   - Amplitudes: 1--5 magnitudes with classic dwarf nova morphology
+   - Rise time: <1 day; Decline time: ~5-7 days
+   - Sector 93: two large-amplitude events (~5 mag, possible superoutbursts)
+   - ~2-week recurrence during active states
 
 2. X-RAY DETECTION
    - Source detected in ROSAT All-Sky Survey
    - Indicates accretion-powered emission consistent with CV
 
-3. ULTRA-SHORT PERIOD
-   - P = 0.0398 d (57.3 min) from VSX
-   - Below the CV period gap (~75-115 min)
-   - Suggests evolved system with degenerate donor
+3. PERIOD ANALYSIS (background-subtracted TESS photometry)
+   - Candidate photometric period: ~90 min (FAP = 2.5e-85)
+     Consistent across Sectors 39, 66, 93 (quiescent sectors)
+   - VSX period P = 0.0398 d (57.3 min) NOT RECOVERED (FAP = 1)
+     Likely sampling alias from sparse Gaia epochs
+   - If 90-min period is orbital: system at upper edge of CV period gap
 
 4. INFRARED DETECTIONS
    - 2MASS: J = 15.03
@@ -36,7 +39,12 @@ MAGNITUDE RANGE UPDATE
 ================================================================================
 
 Current VSX:  16.52 - 16.59 G (quiescent only)
-Proposed:     14.1 - 16.6 G (including TESS outburst)
+Proposed:     11.7 - 16.6 G (including TESS outbursts, Sector 93 superoutbursts)
+
+PERIOD UPDATE:
+Current VSX:  P = 0.0398 d (57.3 min)
+Proposed:     P = 0.0625 d (~90 min, candidate from TESS L-S; needs spectroscopic confirmation)
+Note: The 57.3-min period is not detected in TESS data and is likely spurious.
 
 ================================================================================
 METHOD

@@ -1,10 +1,10 @@
-# Machine Learning Identification of a Dwarf Nova Candidate with Ultra-Short Orbital Period from Gaia DR3
+# Characterization of TIC 22888126 as an Active Dwarf Nova Candidate from TESS Photometry
 
 ---
 
 ## Abstract
 
-We report TIC 22888126 (Gaia DR3 5947829831449229312) as a dwarf nova candidate identified through machine learning analysis of Gaia DR3 variability statistics. TESS Sector 13 photometry reveals a ~2.5 mag outburst with classic dwarf nova morphology. The 57.3-minute period from VSX places this below the CV period gap if confirmed. Spectroscopic follow-up is recommended.
+We characterize TIC 22888126 (Gaia DR3 5947829831449228800) as an active dwarf nova candidate based on TESS photometry revealing seven distinct outbursts across 6 years (Sectors 13, 39, 66, 93). Outburst amplitudes range from 1--5 mag with classic dwarf nova morphology. A Lomb-Scargle analysis of background-subtracted quiescent data finds a candidate ~90-min photometric period (FAP = 2.5e-85). The Gaia/VSX 57.3-min period is not recovered (FAP = 1). Spectroscopic follow-up is recommended to confirm the orbital period and CV nature.
 
 ---
 
@@ -14,16 +14,11 @@ The International Variable Star Index (VSX) contains millions of variable stars 
 
 ## 2. Observations
 
-TIC 22888126 (RA=17:55:28.37, Dec=-47:35:34.1, G=16.58) is detected in the ROSAT All-Sky Survey but absent from SIMBAD and CV catalogs. TIC parameters (Teff=4828 K, M=0.78 solar masses, d=1171 pc) likely reflect the donor star. We extracted TESS FFI photometry from Sectors 13, 39, 66, and 93 using 3x3 pixel apertures.
+TIC 22888126 (RA=17:55:28.37, Dec=-47:35:34.1, G=16.58) is detected in the ROSAT All-Sky Survey but absent from SIMBAD and CV catalogs. TIC parameters (Teff=4828 K, M=0.78 solar masses, d=1171 pc) likely reflect the donor star. We extracted TESS FFI photometry from Sectors 13, 39, 66, and 93 using lightkurve with threshold aperture masks and median background subtraction.
 
-### 2.1 TESS Outburst
+### 2.1 TESS Outbursts
 
-Sector 13 (2019 July) captured a dramatic outburst:
-- Amplitude: ~2.5 mag (flux ratio ~10x)
-- Rise time: <1 day
-- Decline time: ~5-7 days
-
-This morphology (rapid rise with exponential decline) is characteristic of dwarf nova disk instability outbursts.
+Seven distinct outbursts are detected across 6 years of TESS coverage. Amplitudes range from 1--5 mag with classic dwarf nova morphology (rapid rise, exponential decline). Sector 93 shows two large-amplitude events (~5 mag) suggestive of superoutbursts. The ~2-week recurrence during active states is typical of short-period dwarf novae.
 
 ![TESS Light Curve](figs/tess_ffi_tic22888126.png)
 *Figure 1: TESS Sector 13 FFI photometry of TIC 22888126 showing a ~2.5 magnitude outburst consistent with dwarf nova behavior. Red points indicate measurements >3 sigma above quiescence.*
@@ -49,19 +44,14 @@ This morphology (rapid rise with exponential decline) is characteristic of dwarf
 | Rise time | <1 day | Yes (fast rise expected) |
 | Decline time | ~5-7 days | Yes (thermal timescale) |
 | X-ray emission | ROSAT detected | Yes (boundary layer) |
-| Orbital period | 57.3 min | Yes (below period gap) |
+| Candidate period | ~90 min (TESS L-S) | Yes (period gap boundary) |
 | Quiescent magnitude | G=16.6 | Yes (faint CV) |
 
-### 3.2 Ultra-Short Period Significance
+### 3.2 Period Analysis
 
-The 57.3-minute period places this system below the cataclysmic variable period gap (~75-115 minutes). CVs in this regime:
+The Gaia/VSX 57.3-min period is **not recovered** in background-subtracted TESS data (FAP = 1.0) and is likely a sampling alias from ~31 sparse Gaia epochs.
 
-- Have evolved past the period minimum (~80 min)
-- Contain degenerate or semi-degenerate donors
-- Are relatively rare (~150 confirmed systems)
-- Include WZ Sge stars, SU UMa stars, and AM CVn candidates
-
-If confirmed spectroscopically, TIC 22888126 would join this scientifically valuable population.
+A candidate photometric period of **~90 min** is detected at high significance (FAP = 2.5e-85) in the combined quiescent data, and independently in Sectors 39, 66, and 93. If confirmed as the orbital period, this places TIC 22888126 at the upper edge of the CV period gap (~75--130 min; Knigge et al. 2011), consistent with an SU UMa-type system re-emerging from the period gap.
 
 ## 4. Machine Learning Method
 
@@ -97,17 +87,18 @@ Several factors contributed to this dwarf nova candidate remaining uncharacteriz
 
 ## 6. Conclusions
 
-1. TIC 22888126 is a strong dwarf nova candidate based on TESS-detected outburst morphology consistent with disk instability model predictions. Spectroscopic confirmation is required for definitive classification.
+1. TIC 22888126 is a strong dwarf nova candidate based on seven TESS-detected outbursts with classic disk instability morphology. Spectroscopic confirmation is required.
 
-2. The 57.3-minute orbital period would place this system below the CV period gap, among the scientifically valuable ultra-short period population if confirmed.
+2. A candidate ~90-min photometric period is detected at high significance across three TESS sectors, placing this system at the upper edge of the CV period gap if confirmed.
 
-3. Machine learning anomaly detection on Gaia DR3 statistics successfully identified this overlooked object from its unusual light curve morphology.
+3. The Gaia/VSX 57.3-min period is spurious -- not recovered in background-subtracted TESS data.
 
-4. Spectroscopic confirmation is essential to:
+4. Machine learning anomaly detection on Gaia DR3 statistics successfully identified this overlooked object.
+
+5. Spectroscopic confirmation is essential to:
    - Verify CV nature via emission lines (H-alpha, He II)
-   - Measure orbital period precisely via radial velocities
-   - Determine donor composition (H-rich vs He-rich AM CVn)
-   - Establish definitive subtype classification
+   - Confirm the orbital period via radial velocities
+   - Determine donor composition and subtype (SU UMa vs other)
 
 ## 7. Recommended Follow-Up
 

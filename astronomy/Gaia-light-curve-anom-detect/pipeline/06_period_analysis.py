@@ -27,11 +27,16 @@ print(f"  Analyzing {n} light curves\n")
 period_results = {}
 detrended_cache = {}  # Cache quiescent detrended data for phase folding
 
-fig, axes = plt.subplots(max(n, 1), 2, figsize=(16, 4.5 * max(n, 1)), squeeze=False)
+# Compact grid: 2 cols per candidate (LC + periodogram), 3 candidates per row = 6 columns
+n_per_row = 3
+n_grid_rows = max((n + n_per_row - 1) // n_per_row, 1)
+fig, axes = plt.subplots(n_grid_rows, n_per_row * 2, figsize=(20, 2.8 * n_grid_rows), squeeze=False)
 
 for plot_idx, (tic_id, lc) in enumerate(lc_data.items()):
-    ax_lc = axes[plot_idx][0]
-    ax_ls = axes[plot_idx][1]
+    grid_row = plot_idx // n_per_row
+    grid_col = (plot_idx % n_per_row) * 2
+    ax_lc = axes[grid_row][grid_col]
+    ax_ls = axes[grid_row][grid_col + 1]
     t = lc['time']
     flux = lc['flux']
     gaia_id = lc['gaia_id']
@@ -121,25 +126,34 @@ for plot_idx, (tic_id, lc) in enumerate(lc_data.items()):
     }
 
     # Plot: detrended LC (clip y-axis to quiescent range)
-    ax_lc.scatter(t_q, flux_detrend, s=1, alpha=0.5, c='steelblue')
+    ax_lc.scatter(t_q, flux_detrend, s=0.3, alpha=0.4, c='steelblue')
     ax_lc.axhline(1, color='gray', ls='--', alpha=0.3)
     y_lo, y_hi = np.percentile(flux_detrend, [0.5, 99.5])
     y_pad = (y_hi - y_lo) * 0.15
     ax_lc.set_ylim(y_lo - y_pad, y_hi + y_pad)
-    ax_lc.set_xlabel('Time (BTJD)'); ax_lc.set_ylabel('Detrended Flux')
-    ax_lc.set_title(f'TIC {tic_id} (quiescent, detrended)', fontsize=10)
+    ax_lc.set_xlabel('BTJD', fontsize=7); ax_lc.set_ylabel('Flux', fontsize=7)
+    ax_lc.set_title(f'TIC {tic_id}', fontsize=8)
+    ax_lc.tick_params(labelsize=6)
 
     # Plot: periodogram (whitened, log period axis)
-    ax_ls.semilogx(periods * 24 * 60, power, 'k-', lw=0.5)
-    ax_ls.axvline(best_period * 24 * 60, color='red', ls='--', alpha=0.7, label=f'Best: {best_period*24*60:.1f}m')
+    ax_ls.semilogx(periods * 24 * 60, power, 'k-', lw=0.4)
+    ax_ls.axvline(best_period * 24 * 60, color='red', ls='--', alpha=0.7, lw=0.8, label=f'{best_period*24*60:.1f}m')
     if vsx_period:
-        ax_ls.axvline(vsx_period * 24 * 60, color='blue', ls=':', alpha=0.7, label=f'VSX: {vsx_period*24*60:.1f}m')
-    ax_ls.set_xlabel('Period (min, log)'); ax_ls.set_ylabel('L-S Power')
-    ax_ls.set_title(f'Periodogram (FAP={fap:.1e})', fontsize=10)
-    ax_ls.legend(fontsize=8)
+        ax_ls.axvline(vsx_period * 24 * 60, color='blue', ls=':', alpha=0.7, lw=0.8, label=f'V:{vsx_period*24*60:.0f}m')
+    ax_ls.set_xlabel('P (min)', fontsize=7); ax_ls.set_ylabel('Power', fontsize=7)
+    ax_ls.set_title(f'FAP={fap:.0e}', fontsize=8)
+    ax_ls.legend(fontsize=6, loc='upper right')
+    ax_ls.tick_params(labelsize=6)
+
+# Hide unused axes
+for j in range(plot_idx + 1, n_grid_rows * n_per_row):
+    r, c = j // n_per_row, (j % n_per_row) * 2
+    if r < n_grid_rows:
+        axes[r][c].set_visible(False)
+        axes[r][c + 1].set_visible(False)
 
 plt.tight_layout()
-plt.savefig(os.path.join(PLOT_DIR, 'period_analysis.png'), dpi=150)
+plt.savefig(os.path.join(PLOT_DIR, 'period_analysis.png'), dpi=120)
 plt.close()
 print(f"\n  Plot: {PLOT_DIR}/period_analysis.png")
 
@@ -153,14 +167,15 @@ foldable = {tid: pr for tid, pr in period_results.items()
 n_fold = len(foldable)
 
 if n_fold > 0:
-    fig2, axes2 = plt.subplots(max(n_fold, 1), 2, figsize=(14, 3.5 * max(n_fold, 1)), squeeze=False)
+    # Compact grid: 3 candidates per row, each gets 2 columns (L-S fold + VSX fold)
+    pf_per_row = 3
+    pf_rows = max((n_fold + pf_per_row - 1) // pf_per_row, 1)
+    fig2, axes2 = plt.subplots(pf_rows, pf_per_row * 2, figsize=(20, 2.8 * pf_rows), squeeze=False)
 
     fold_idx = 0
     for tic_id, pr in foldable.items():
-        # Use cached quiescent detrended data
         t_q, flux_detrend = detrended_cache[tic_id]
 
-        # Clip outliers for cleaner phase plots (3-sigma)
         med_d = np.nanmedian(flux_detrend)
         std_d = np.nanstd(flux_detrend)
         clip = np.abs(flux_detrend - med_d) < 3 * std_d
@@ -170,15 +185,17 @@ if n_fold > 0:
         ls_p = pr['best_period']
         ls_sig = pr['fap'] < 0.01
 
-        # Build fold list: L-S only if significant, VSX always if available
         fold_list = []
         if ls_sig:
-            fold_list.append((ls_p, f"L-S: {ls_p*24*60:.1f}m"))
+            fold_list.append((ls_p, f"L-S={ls_p*24*60:.1f}m"))
         if vsx_p and vsx_p > 0:
-            fold_list.append((vsx_p, f"VSX: {vsx_p*24*60:.1f}m"))
+            fold_list.append((vsx_p, f"V={vsx_p*24*60:.1f}m"))
+
+        pf_row = fold_idx // pf_per_row
+        pf_col_base = (fold_idx % pf_per_row) * 2
 
         for col_idx in range(2):
-            ax = axes2[fold_idx][col_idx]
+            ax = axes2[pf_row][pf_col_base + col_idx]
             if col_idx >= len(fold_list):
                 ax.set_visible(False)
                 continue
@@ -186,18 +203,16 @@ if n_fold > 0:
             fold_period, label = fold_list[col_idx]
             phase = ((t_clip - t_clip[0]) / fold_period) % 1.0
 
-            # Subsample if too many points
-            if len(phase) > 5000:
+            if len(phase) > 3000:
                 rng = np.random.default_rng(42)
-                sub = rng.choice(len(phase), 5000, replace=False)
-                ax.scatter(phase[sub], flux_clip[sub], s=0.5, alpha=0.08, c='steelblue')
-                ax.scatter(phase[sub] + 1, flux_clip[sub], s=0.5, alpha=0.08, c='steelblue')
+                sub = rng.choice(len(phase), 3000, replace=False)
+                ax.scatter(phase[sub], flux_clip[sub], s=0.3, alpha=0.06, c='steelblue')
+                ax.scatter(phase[sub] + 1, flux_clip[sub], s=0.3, alpha=0.06, c='steelblue')
             else:
-                ax.scatter(phase, flux_clip, s=1, alpha=0.15, c='steelblue')
-                ax.scatter(phase + 1, flux_clip, s=1, alpha=0.15, c='steelblue')
+                ax.scatter(phase, flux_clip, s=0.5, alpha=0.1, c='steelblue')
+                ax.scatter(phase + 1, flux_clip, s=0.5, alpha=0.1, c='steelblue')
 
-            # Binned median with error envelope
-            n_bins = 40
+            n_bins = 30
             bin_edges = np.linspace(0, 1, n_bins + 1)
             bin_centers, bin_medians, bin_errs = [], [], []
             for b in range(n_bins):
@@ -212,18 +227,18 @@ if n_fold > 0:
                 be = np.array(bin_errs)
                 ax.fill_between(bc, bm - be, bm + be, color='red', alpha=0.15)
                 ax.fill_between(bc + 1, bm - be, bm + be, color='red', alpha=0.15)
-                ax.plot(bc, bm, 'r-', lw=2, label='Binned median')
-                ax.plot(bc + 1, bm, 'r-', lw=2)
+                ax.plot(bc, bm, 'r-', lw=1.5)
+                ax.plot(bc + 1, bm, 'r-', lw=1.5)
 
             ax.axhline(1, color='gray', ls='--', alpha=0.3)
             ax.set_xlim(0, 2)
             y_lo, y_hi = np.percentile(flux_clip, [1, 99])
             y_pad = (y_hi - y_lo) * 0.2
             ax.set_ylim(y_lo - y_pad, y_hi + y_pad)
-            ax.set_xlabel('Phase')
-            ax.set_ylabel('Detrended Flux')
-            ax.set_title(f'TIC {tic_id} | {label}', fontsize=10)
-            ax.legend(fontsize=8, loc='upper right')
+            ax.set_xlabel('Phase', fontsize=7)
+            ax.set_ylabel('Flux', fontsize=7)
+            ax.set_title(f'{tic_id} {label}', fontsize=7)
+            ax.tick_params(labelsize=6)
 
         labels = []
         if ls_sig:
@@ -233,8 +248,15 @@ if n_fold > 0:
         print(f"  TIC {tic_id}: folded on {', '.join(labels)}")
         fold_idx += 1
 
+    # Hide unused axes
+    for j in range(fold_idx, pf_rows * pf_per_row):
+        r, c = j // pf_per_row, (j % pf_per_row) * 2
+        if r < pf_rows:
+            axes2[r][c].set_visible(False)
+            axes2[r][c + 1].set_visible(False)
+
     plt.tight_layout()
-    plt.savefig(os.path.join(PLOT_DIR, 'phase_folded.png'), dpi=150)
+    plt.savefig(os.path.join(PLOT_DIR, 'phase_folded.png'), dpi=120)
     plt.close()
     print(f"  Plot: {PLOT_DIR}/phase_folded.png")
 else:
