@@ -1,0 +1,48 @@
+{
+  "variability": [
+    "range_mag_g_fov",
+    "std_dev_mag_g_fov",
+    "skewness_mag_g_fov",
+    "kurtosis_mag_g_fov",
+    "rel_std",
+    "proper_motion"
+  ],
+  "cmd": [
+    "abs_mag_g",
+    "bp_rp"
+  ],
+  "spectral": [
+    "blue_red_ratio",
+    "balmer_jump",
+    "halpha_excess",
+    "spectral_slope",
+    "uv_excess",
+    "teff_residual_rms",
+    "spec_pca_0",
+    "spec_pca_1",
+    "spec_pca_2",
+    "spec_pca_3",
+    "spec_pca_4"
+  ],
+  "all": [
+    "range_mag_g_fov",
+    "std_dev_mag_g_fov",
+    "skewness_mag_g_fov",
+    "kurtosis_mag_g_fov",
+    "rel_std",
+    "proper_motion",
+    "abs_mag_g",
+    "bp_rp",
+    "blue_red_ratio",
+    "balmer_jump",
+    "halpha_excess",
+    "spectral_slope",
+    "uv_excess",
+    "teff_residual_rms",
+    "spec_pca_0",
+    "spec_pca_1",
+    "spec_pca_2",
+    "spec_pca_3",
+    "spec_pca_4"
+  ]
+}
