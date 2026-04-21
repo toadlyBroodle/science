@@ -18,6 +18,14 @@ See the [research note](https://github.com/toadlyBroodle/science/blob/main/astro
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/toadlyBroodle/science/blob/main/astronomy/Gaia-light-curve-anom-detect/Gaia_LightCurve_Anomaly_Detection.ipynb)
 
+### [Longevity Research: Knowledge Tree](https://github.com/toadlyBroodle/science/tree/main/biology/longevity)
+
+Markdown-source knowledge base of computational entry points into
+longevity and reverse-aging research. 40 curated sources, 32 topics,
+TF-IDF + wikilink graph index, license-aware download pipeline.
+
+See [`biology/longevity/README.md`](biology/longevity/README.md) for usage.
+
 ## Structure
 
 ```
@@ -27,6 +35,13 @@ science/
 │       ├── Gaia_LightCurve_Anomaly_Detection.ipynb
 │       ├── research_note_tic22888126_revised.md
 │       └── figs/
+├── biology/
+│   ├── longevity/
+│   │   ├── README.md         # full pipeline + usage docs
+│   │   ├── sources.json      # 40-source manifest
+│   │   ├── scripts/          # download, convert, index, lint, licenses
+│   │   └── wiki/             # papers/, topics/, analysis/, index.md
+│   └── LICENSES.md           # generated; per-source license table
 └── README.md
 ```
 

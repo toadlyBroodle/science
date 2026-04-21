@@ -1,0 +1,729 @@
+{
+  "description": "Canonical source manifest for the longevity knowledge tree. pdf_url and alt_url may each be a string or a list of strings; download.py walks pdf_url -> url -> alt_url in order.",
+  "sources": [
+    {
+      "id": "biomarkers-aging-challenge",
+      "title": "Biomarkers of Aging Consortium Challenge (portal)",
+      "url": "https://www.agingconsortium.org/challenge",
+      "topics": [
+        "biomarkers-of-aging",
+        "competitions"
+      ],
+      "kind": "resource",
+      "access": "open",
+      "license": "website-tos",
+      "license_note": "Consortium portal; subject to agingconsortium.org site terms."
+    },
+    {
+      "id": "nunez2024-open-competition",
+      "title": "An Open Competition for Biomarkers of Aging",
+      "pdf_url": [
+        "https://www.biorxiv.org/content/10.1101/2024.10.29.620782v1.full.pdf"
+      ],
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11565782/",
+      "alt_url": [
+        "https://www.biorxiv.org/content/10.1101/2024.10.29.620782v1"
+      ],
+      "topics": [
+        "biomarkers-of-aging",
+        "aging-clocks",
+        "competitions"
+      ],
+      "kind": "paper",
+      "access": "open",
+      "license": "CC-BY-4.0",
+      "license_note": "PMC OA primary (PMC11565782); bioRxiv preprint is author-choice."
+    },
+    {
+      "id": "computagebench",
+      "title": "ComputAgeBench: Epigenetic Aging Clocks Benchmark",
+      "pdf_url": [
+        "https://www.biorxiv.org/content/10.1101/2024.06.06.597715v2.full.pdf"
+      ],
+      "url": "https://www.biorxiv.org/content/10.1101/2024.06.06.597715v2",
+      "alt_url": [
+        "https://openreview.net/forum?id=0ApkwFlCxq"
+      ],
+      "topics": [
+        "aging-clocks",
+        "benchmarks"
+      ],
+      "kind": "paper",
+      "access": "open",
+      "license": "preprint-author-choice",
+      "license_note": "bioRxiv primary; KDD 2025 proceedings may differ. GitHub code usually MIT/Apache."
+    },
+    {
+      "id": "nc-2025-14clocks",
+      "title": "Unbiased comparison of 14 epigenetic clocks in relation to 174 incident disease outcomes",
+      "pdf_url": [
+        "https://www.medrxiv.org/content/10.1101/2025.07.14.25331494v1.full.pdf",
+        "https://www.nature.com/articles/s41467-025-66106-y.pdf"
+      ],
+      "url": "https://www.nature.com/articles/s41467-025-66106-y",
+      "alt_url": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12338881/",
+        "https://www.medrxiv.org/content/10.1101/2025.07.14.25331494v1"
+      ],
+      "topics": [
+        "aging-clocks",
+        "epigenetics",
+        "disease-prediction"
+      ],
+      "kind": "paper",
+      "access": "open",
+      "license": "CC-BY-4.0",
+      "license_note": "Nature Communications (fully OA)."
+    },
+    {
+      "id": "deep-aging-clocks-review-2025",
+      "title": "Deep aging clocks: AI-powered strategies for biological age estimation",
+      "url": "https://www.sciencedirect.com/science/article/pii/S1568163725002351",
+      "topics": [
+        "aging-clocks",
+        "deep-learning",
+        "review"
+      ],
+      "kind": "paper",
+      "access": "gated",
+      "note": "No known open-access version; ScienceDirect paywall. Obtain via institutional access.",
+      "license": "ARR",
+      "license_note": "Elsevier (Ageing Research Reviews). Not redistributable."
+    },
+    {
+      "id": "epinflammage",
+      "title": "EpInflammAge: Epigenetic-Inflammatory Clock for Disease-Associated Biological Aging Based on Deep Learning",
+      "pdf_url": [
+        "https://www.mdpi.com/1422-0067/26/13/6284/pdf",
+        "https://www.biorxiv.org/content/10.1101/2025.03.11.642648v1.full.pdf"
+      ],
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12249966/",
+      "alt_url": [
+        "https://www.mdpi.com/1422-0067/26/13/6284"
+      ],
+      "topics": [
+        "aging-clocks",
+        "deep-learning",
+        "inflammation"
+      ],
+      "kind": "paper",
+      "access": "open",
+      "license": "CC-BY-4.0",
+      "license_note": "MDPI IJMS (fully OA)."
+    },
+    {
+      "id": "pathwayage",
+      "title": "Decoding disease-specific ageing mechanisms through pathway-level epigenetic clock (PathwayAge)",
+      "pdf_url": [
+        "https://www.thelancet.com/action/showPdf?pii=S2352-3964%2825%2900273-7"
+      ],
+      "url": "https://www.thelancet.com/journals/ebiom/article/PIIS2352-3964(25)00273-7/fulltext",
+      "alt_url": [
+        "https://www.sciencedirect.com/science/article/pii/S2352396425002737"
+      ],
+      "topics": [
+        "aging-clocks",
+        "pathway-analysis",
+        "interpretability"
+      ],
+      "kind": "paper",
+      "access": "open",
+      "license": "CC-BY-4.0",
+      "license_note": "Lancet eBioMedicine (fully OA)."
+    },
+    {
+      "id": "itp-nia",
+      "title": "NIA Interventions Testing Program (ITP) \u2014 overview",
+      "url": "https://www.nia.nih.gov/research/dab/interventions-testing-program-itp",
+      "topics": [
+        "itp-mice",
+        "interventions"
+      ],
+      "kind": "resource",
+      "access": "open",
+      "license": "public-domain",
+      "license_note": "US Government (NIA/NIH) web page."
+    },
+    {
+      "id": "itp-mpd-portal",
+      "title": "ITP Data Portal \u2014 Mouse Phenome Database",
+      "url": "https://phenome.jax.org/projects/ITP1",
+      "topics": [
+        "itp-mice",
+        "datasets"
+      ],
+      "kind": "resource",
+      "access": "open",
+      "license": "website-tos",
+      "license_note": "Jackson Lab Mouse Phenome Database site terms."
+    },
+    {
+      "id": "dr-960-mice-nature-2024",
+      "title": "Dietary restriction impacts health and lifespan of genetically diverse mice",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11485257/",
+      "alt_url": [
+        "https://www.nature.com/articles/s41586-024-08026-3"
+      ],
+      "topics": [
+        "caloric-restriction",
+        "itp-mice",
+        "lifespan"
+      ],
+      "kind": "paper",
+      "access": "open",
+      "license": "CC-BY-4.0",
+      "license_note": "PMC author-manuscript (NIH public access); Nature version is paywalled."
+    },
+    {
+      "id": "itp-sex-specific-2025",
+      "title": "Sex-specific insights into drug-induced lifespan extension and weight loss in mice",
+      "pdf_url": [
+        "https://www.biorxiv.org/content/10.1101/2024.11.30.626149v1.full.pdf",
+        "https://www.nature.com/articles/s41514-025-00229-w.pdf"
+      ],
+      "url": "https://www.nature.com/articles/s41514-025-00229-w",
+      "alt_url": [
+        "https://www.biorxiv.org/content/10.1101/2024.11.30.626149v1"
+      ],
+      "topics": [
+        "itp-mice",
+        "sex-specific",
+        "lifespan"
+      ],
+      "kind": "paper",
+      "access": "open",
+      "license": "CC-BY-4.0",
+      "license_note": "npj Aging (fully OA)."
+    },
+    {
+      "id": "network-repurposing-aging",
+      "title": "Network-driven discovery of repurposable drugs targeting hallmarks of aging",
+      "pdf_url": [
+        "https://arxiv.org/pdf/2509.03330.pdf"
+      ],
+      "url": "https://arxiv.org/abs/2509.03330",
+      "alt_url": [
+        "https://arxiv.org/html/2509.03330",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12425021/"
+      ],
+      "topics": [
+        "drug-repurposing",
+        "network-medicine",
+        "hallmarks-of-aging"
+      ],
+      "kind": "paper",
+      "access": "open",
+      "license": "preprint-author-choice",
+      "license_note": "arXiv default license + PMC version; check arXiv abstract page."
+    },
+    {
+      "id": "smerbarreto2023-senolytics",
+      "title": "Discovery of senolytics using machine learning",
+      "pdf_url": [
+        "https://www.nature.com/articles/s41467-023-39120-1.pdf"
+      ],
+      "url": "https://www.nature.com/articles/s41467-023-39120-1",
+      "alt_url": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10257182/",
+        "https://zenodo.org/records/7870357"
+      ],
+      "topics": [
+        "senolytics",
+        "drug-discovery",
+        "machine-learning"
+      ],
+      "kind": "paper",
+      "access": "open",
+      "license": "CC-BY-4.0",
+      "license_note": "Nature Communications (fully OA). Zenodo code typically MIT-like; check repo."
+    },
+    {
+      "id": "senolytic-predictor-2025",
+      "title": "Development and Application of a Senolytic Predictor",
+      "pdf_url": [
+        "https://www.mdpi.com/1420-3049/30/12/2653/pdf"
+      ],
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12196162/",
+      "alt_url": [
+        "https://www.mdpi.com/1420-3049/30/12/2653"
+      ],
+      "topics": [
+        "senolytics",
+        "drug-discovery",
+        "cheminformatics"
+      ],
+      "kind": "paper",
+      "access": "open",
+      "license": "CC-BY-4.0",
+      "license_note": "MDPI Molecules (fully OA)."
+    },
+    {
+      "id": "mesenchymal-drift-cell-2025",
+      "title": "Prevalent mesenchymal drift in aging and disease is reversed by partial reprogramming",
+      "url": "https://www.cell.com/cell/abstract/S0092-8674(25)00853-0",
+      "alt_url": [
+        "https://pubmed.ncbi.nlm.nih.gov/40816266/"
+      ],
+      "topics": [
+        "partial-reprogramming",
+        "yamanaka",
+        "transcriptomics"
+      ],
+      "kind": "paper",
+      "access": "gated",
+      "note": "Cell paywall. No preprint known at time of writing.",
+      "license": "ARR",
+      "license_note": "Cell (Elsevier). Paywalled; no known preprint at time of writing."
+    },
+    {
+      "id": "organ-proteomic-clocks-2025",
+      "title": "Organ-specific proteomic aging clocks predict disease and longevity across diverse populations",
+      "url": "https://www.nature.com/articles/s43587-025-01016-8",
+      "alt_url": [
+        "https://pubmed.ncbi.nlm.nih.gov/41299092/"
+      ],
+      "topics": [
+        "aging-clocks",
+        "proteomics",
+        "organ-specific",
+        "uk-biobank"
+      ],
+      "kind": "paper",
+      "access": "gated",
+      "note": "Nature Aging paywall. No preprint known.",
+      "license": "ARR",
+      "license_note": "Nature Aging. Paywalled unless CC-BY paid; verify per-article."
+    },
+    {
+      "id": "ukb-nmr-metabolomic-2024",
+      "title": "A metabolomic profile of biological aging in 250,341 individuals from the UK Biobank",
+      "pdf_url": [
+        "https://www.nature.com/articles/s41467-024-52310-9.pdf"
+      ],
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11402978/",
+      "alt_url": [
+        "https://www.nature.com/articles/s41467-024-52310-9"
+      ],
+      "topics": [
+        "uk-biobank",
+        "metabolomics",
+        "biomarkers-of-aging"
+      ],
+      "kind": "paper",
+      "access": "open",
+      "license": "CC-BY-4.0",
+      "license_note": "Nature Communications (fully OA)."
+    },
+    {
+      "id": "ai-aging-review-2026",
+      "title": "A comprehensive review of artificial intelligence as a catalyst in aging research",
+      "pdf_url": [
+        "https://www.frontiersin.org/journals/aging/articles/10.3389/fragi.2026.1644669/pdf"
+      ],
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12891069/",
+      "alt_url": [
+        "https://www.frontiersin.org/journals/aging/articles/10.3389/fragi.2026.1644669/full"
+      ],
+      "topics": [
+        "review",
+        "machine-learning",
+        "aging-research"
+      ],
+      "kind": "paper",
+      "access": "open",
+      "license": "CC-BY-4.0",
+      "license_note": "Frontiers in Aging (fully OA)."
+    },
+    {
+      "id": "shift-sb000-2025",
+      "title": "A single factor for safer cellular rejuvenation (SB000, Shift Bioscience)",
+      "pdf_url": [
+        "https://www.biorxiv.org/content/10.1101/2025.06.05.657370v1.full.pdf"
+      ],
+      "url": "https://www.biorxiv.org/content/10.1101/2025.06.05.657370v1.full",
+      "topics": [
+        "partial-reprogramming",
+        "reprogramming",
+        "machine-learning",
+        "aging-clocks"
+      ],
+      "kind": "paper",
+      "access": "open",
+      "license": "preprint-author-choice",
+      "license_note": "bioRxiv; verify Shift Bioscience's chosen license on the abstract page."
+    },
+    {
+      "id": "clockbase-agent-2025",
+      "title": "Autonomous AI Agents Discover Aging Interventions from Millions of Molecular Profiles (ClockBase Agent)",
+      "pdf_url": [
+        "https://www.biorxiv.org/content/10.1101/2023.02.28.530532v2.full.pdf"
+      ],
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12667862/",
+      "alt_url": [
+        "https://www.biorxiv.org/content/10.1101/2023.02.28.530532v2"
+      ],
+      "topics": [
+        "machine-learning",
+        "interventions",
+        "aging-clocks",
+        "drug-repurposing",
+        "benchmarks"
+      ],
+      "kind": "paper",
+      "access": "open",
+      "license": "CC-BY-4.0",
+      "license_note": "PMC OA primary (PMC12667862); bioRxiv preprint author-choice."
+    },
+    {
+      "id": "singular-rejuv-atlas-2024",
+      "title": "The cell rejuvenation atlas: leveraging network biology to identify master regulators of rejuvenation strategies (SINGULAR)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11424581/",
+      "alt_url": [
+        "https://www.aging-us.com/article/206105/text"
+      ],
+      "topics": [
+        "reprogramming",
+        "network-medicine",
+        "transcriptomics",
+        "machine-learning"
+      ],
+      "kind": "paper",
+      "access": "open",
+      "license": "CC-BY-3.0",
+      "license_note": "Aging (Albany NY) \u2014 CC-BY-3.0 by default."
+    },
+    {
+      "id": "agextend-2025",
+      "title": "Discovering geroprotectors through the explainable artificial intelligence-based platform AgeXtend",
+      "url": "https://www.nature.com/articles/s43587-024-00763-4",
+      "alt_url": [
+        "https://pubmed.ncbi.nlm.nih.gov/39627462/"
+      ],
+      "topics": [
+        "machine-learning",
+        "drug-discovery",
+        "interventions",
+        "cheminformatics"
+      ],
+      "kind": "paper",
+      "access": "gated",
+      "note": "Nature Aging published Jan 2025. PMC version may appear later.",
+      "license": "ARR",
+      "license_note": "Nature Aging. Paywalled unless CC-BY paid."
+    },
+    {
+      "id": "scbayesage-2025",
+      "title": "Determining the age of single cells using scBayesAge",
+      "pdf_url": [
+        "https://www.biorxiv.org/content/10.64898/2025.12.04.692166v1.full.pdf"
+      ],
+      "url": "https://www.biorxiv.org/content/10.64898/2025.12.04.692166v1.full",
+      "topics": [
+        "aging-clocks",
+        "single-cell",
+        "transcriptomics",
+        "machine-learning"
+      ],
+      "kind": "paper",
+      "access": "open",
+      "license": "preprint-author-choice",
+      "license_note": "bioRxiv; verify author license selection."
+    },
+    {
+      "id": "yang-chemical-cocktails-2023",
+      "title": "Chemically induced reprogramming to reverse cellular aging (Sinclair lab chemical cocktails)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10373966/",
+      "alt_url": [
+        "https://www.aging-us.com/article/204896/text"
+      ],
+      "topics": [
+        "chemical-reprogramming",
+        "reprogramming",
+        "drug-discovery"
+      ],
+      "kind": "paper",
+      "access": "open",
+      "license": "CC-BY-3.0",
+      "license_note": "Aging (Albany NY) \u2014 CC-BY-3.0."
+    },
+    {
+      "id": "chemical-reprog-lifespan-2025",
+      "title": "Chemical reprogramming ameliorates cellular hallmarks of aging and extends lifespan",
+      "pdf_url": [
+        "https://www.biorxiv.org/content/10.1101/2022.08.29.505222v2.full.pdf"
+      ],
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12340157/",
+      "alt_url": [
+        "https://www.embopress.org/doi/abs/10.1038/s44321-025-00265-9"
+      ],
+      "topics": [
+        "chemical-reprogramming",
+        "reprogramming",
+        "lifespan",
+        "hallmarks-of-aging"
+      ],
+      "kind": "paper",
+      "access": "open",
+      "license": "CC-BY-4.0",
+      "license_note": "EMBO Mol Med (fully OA) + PMC."
+    },
+    {
+      "id": "lipid-droplets-reprog-2025",
+      "title": "In vivo chemical reprogramming is associated with a toxic accumulation of lipid droplets hindering rejuvenation",
+      "pdf_url": [
+        "https://www.biorxiv.org/content/10.1101/2025.06.25.661123v1.full.pdf"
+      ],
+      "url": "https://www.biorxiv.org/content/10.1101/2025.06.25.661123v1.full",
+      "alt_url": [
+        "https://onlinelibrary.wiley.com/doi/10.1111/acel.70390"
+      ],
+      "topics": [
+        "chemical-reprogramming",
+        "reprogramming",
+        "safety",
+        "itp-mice"
+      ],
+      "kind": "paper",
+      "access": "open",
+      "license": "preprint-author-choice",
+      "license_note": "bioRxiv primary; Wiley Aging Cell version may be paywalled."
+    },
+    {
+      "id": "paine-partial-reprog-review-2024",
+      "title": "Partial cellular reprogramming: A deep dive into an emerging rejuvenation technology",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/acel.14039",
+      "topics": [
+        "partial-reprogramming",
+        "reprogramming",
+        "review",
+        "yamanaka"
+      ],
+      "kind": "paper",
+      "access": "gated",
+      "license": "ARR",
+      "license_note": "Wiley Aging Cell. Check OA status per-article; often paywalled."
+    },
+    {
+      "id": "reprogramming-rejuv-review-ncomms-2024",
+      "title": "The long and winding road of reprogramming-induced rejuvenation",
+      "url": "https://www.nature.com/articles/s41467-024-46020-5",
+      "pdf_url": [
+        "https://www.nature.com/articles/s41467-024-46020-5.pdf"
+      ],
+      "topics": [
+        "partial-reprogramming",
+        "reprogramming",
+        "review",
+        "yamanaka"
+      ],
+      "kind": "paper",
+      "access": "open",
+      "license": "CC-BY-4.0",
+      "license_note": "Nature Communications (fully OA)."
+    },
+    {
+      "id": "aav-osk-lifespan-2024",
+      "title": "Gene Therapy-Mediated Partial Reprogramming Extends Lifespan and Reverses Age-Related Changes in Aged Mice",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10909732/",
+      "alt_url": [
+        "https://www.liebertpub.com/doi/10.1089/cell.2023.0072"
+      ],
+      "topics": [
+        "partial-reprogramming",
+        "gene-therapy",
+        "yamanaka",
+        "lifespan"
+      ],
+      "kind": "paper",
+      "access": "open",
+      "license": "CC-BY-4.0",
+      "license_note": "PMC author-manuscript (PMC10909732); Liebert Cellular Reprogramming paywalled."
+    },
+    {
+      "id": "pedf-parabiosis-2024",
+      "title": "In vitro heterochronic parabiosis identifies pigment epithelium-derived factor as a systemic mediator of rejuvenation by young blood",
+      "pdf_url": [
+        "https://www.biorxiv.org/content/10.1101/2024.05.02.592258v1.full.pdf"
+      ],
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11092633/",
+      "alt_url": [
+        "https://www.biorxiv.org/content/10.1101/2024.05.02.592258v1"
+      ],
+      "topics": [
+        "parabiosis-blood-factors",
+        "proteomics",
+        "interventions"
+      ],
+      "kind": "paper",
+      "access": "open",
+      "license": "CC-BY-4.0",
+      "license_note": "PMC OA primary (PMC11092633); bioRxiv preprint author-choice."
+    },
+    {
+      "id": "fgf17-young-csf-2022",
+      "title": "Young CSF restores oligodendrogenesis and memory in aged mice via Fgf17",
+      "url": "https://www.nature.com/articles/s41586-022-04722-0",
+      "pdf_url": [
+        "https://www.nature.com/articles/s41586-022-04722-0.pdf"
+      ],
+      "topics": [
+        "parabiosis-blood-factors",
+        "brain-rejuvenation",
+        "interventions"
+      ],
+      "kind": "paper",
+      "access": "gated",
+      "note": "Nature paywall; free-read available via Nature sharable link from paper page.",
+      "license": "ARR",
+      "license_note": "Nature (main). Paywalled; no known preprint."
+    },
+    {
+      "id": "hcpb-review-2024",
+      "title": "Aging insights from heterochronic parabiosis models",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11330497/",
+      "alt_url": [
+        "https://www.nature.com/articles/s41514-024-00166-0"
+      ],
+      "topics": [
+        "parabiosis-blood-factors",
+        "review",
+        "interventions"
+      ],
+      "kind": "paper",
+      "access": "open",
+      "license": "CC-BY-4.0",
+      "license_note": "npj Aging (fully OA)."
+    },
+    {
+      "id": "senolytic-mci-ebiomed-2025",
+      "title": "A pilot study of senolytics to improve cognition and mobility in older adults at risk for Alzheimer's disease (STAMINA)",
+      "url": "https://www.thelancet.com/journals/ebiom/article/PIIS2352-3964(25)00056-8/fulltext",
+      "pdf_url": [
+        "https://www.thelancet.com/action/showPdf?pii=S2352-3964%2825%2900056-8"
+      ],
+      "topics": [
+        "senolytics",
+        "clinical-trials",
+        "brain-rejuvenation"
+      ],
+      "kind": "paper",
+      "access": "open",
+      "license": "CC-BY-4.0",
+      "license_note": "Lancet eBioMedicine (fully OA)."
+    },
+    {
+      "id": "senolytic-methylation-2024",
+      "title": "Exploring the effects of Dasatinib, Quercetin, and Fisetin on DNA methylation clocks: a longitudinal study on senolytic interventions",
+      "url": "https://www.aging-us.com/article/205581/text",
+      "topics": [
+        "senolytics",
+        "clinical-trials",
+        "aging-clocks"
+      ],
+      "kind": "paper",
+      "access": "open",
+      "license": "CC-BY-3.0",
+      "license_note": "Aging (Albany NY) \u2014 CC-BY-3.0."
+    },
+    {
+      "id": "nr-longcovid-2025",
+      "title": "Effects of nicotinamide riboside on NAD+ levels, cognition, and symptom recovery in long-COVID: a randomized controlled trial",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12675013/",
+      "alt_url": [
+        "https://www.thelancet.com/journals/eclinm/article/PIIS2589-5370(25)00567-X/fulltext"
+      ],
+      "topics": [
+        "nad-mitophagy",
+        "clinical-trials",
+        "interventions"
+      ],
+      "kind": "paper",
+      "access": "open",
+      "license": "CC-BY-4.0",
+      "license_note": "Lancet eClinicalMedicine (fully OA) + PMC."
+    },
+    {
+      "id": "pearl-rapamycin-2025",
+      "title": "Influence of rapamycin on safety and healthspan metrics after one year: PEARL trial results",
+      "pdf_url": [
+        "https://www.medrxiv.org/content/10.1101/2024.08.21.24312372v1.full.pdf"
+      ],
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12074816/",
+      "alt_url": [
+        "https://www.frontiersin.org/journals/aging/articles/10.3389/fragi.2025.1628187/full"
+      ],
+      "topics": [
+        "clinical-trials",
+        "interventions",
+        "mtor"
+      ],
+      "kind": "paper",
+      "access": "open",
+      "license": "CC-BY-4.0",
+      "license_note": "Frontiers in Aging + PMC; medRxiv preprint author-choice."
+    },
+    {
+      "id": "urolithin-a-immune-2025",
+      "title": "Effect of the mitophagy inducer urolithin A on age-related immune decline: a randomized, placebo-controlled trial",
+      "url": "https://www.nature.com/articles/s43587-025-00996-x",
+      "alt_url": [
+        "https://pubmed.ncbi.nlm.nih.gov/41174221/"
+      ],
+      "topics": [
+        "nad-mitophagy",
+        "clinical-trials",
+        "immune-rejuvenation"
+      ],
+      "kind": "paper",
+      "access": "gated",
+      "note": "Nature Aging paywall.",
+      "license": "ARR",
+      "license_note": "Nature Aging. Verify CC-BY OA status per-article."
+    },
+    {
+      "id": "tert-knockin-2025",
+      "title": "Telomerase reverse transcriptase gene knock-in unleashes enhanced longevity and accelerated damage repair in mice",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/acel.14445",
+      "topics": [
+        "telomeres",
+        "gene-therapy",
+        "lifespan"
+      ],
+      "kind": "paper",
+      "access": "gated",
+      "note": "Aging Cell 2025; check Wiley OA status \u2014 Aging Cell is increasingly OA.",
+      "license": "ARR",
+      "license_note": "Wiley Aging Cell. Verify CC-BY OA status per-article; some articles are OA."
+    },
+    {
+      "id": "adsc-exosomes-2022",
+      "title": "Small extracellular vesicles from young adipose-derived stem cells prevent frailty, improve health span, and decrease epigenetic age in old mice",
+      "url": "https://www.science.org/doi/10.1126/sciadv.abq2226",
+      "topics": [
+        "exosomes-extracellular-vesicles",
+        "stem-cells",
+        "interventions",
+        "aging-clocks"
+      ],
+      "kind": "paper",
+      "access": "open",
+      "note": "Science Advances is fully open access.",
+      "license": "CC-BY-4.0",
+      "license_note": "Science Advances (fully OA)."
+    },
+    {
+      "id": "xprize-healthspan",
+      "title": "XPRIZE Healthspan \u2014 $101M global competition",
+      "url": "https://www.xprize.org/competitions/healthspan",
+      "topics": [
+        "competitions",
+        "clinical-trials",
+        "biomarkers-of-aging"
+      ],
+      "kind": "resource",
+      "access": "open",
+      "license": "website-tos",
+      "license_note": "XPRIZE Foundation website; subject to xprize.org site terms."
+    }
+  ]
+}

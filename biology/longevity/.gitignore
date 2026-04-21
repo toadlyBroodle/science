@@ -1,0 +1,12 @@
+# Build artifacts — regenerate with scripts/index.py
+wiki/build/
+
+# Raw downloads — regenerate with scripts/download.py + scripts/convert.py
+sources/html/
+sources/pdf/
+sources/md/
+sources/download_log.json
+
+# Python
+__pycache__/
+*.pyc

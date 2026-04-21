@@ -1,0 +1,2033 @@
+[
+  {
+    "rel": "analysis/promising-reverse-aging",
+    "kind": "analysis",
+    "title": "Most promising reverse-aging technologies (April 2026)",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "papers/mesenchymal-drift-cell-2025",
+      "papers/aav-osk-lifespan-2024",
+      "papers/shift-sb000-2025",
+      "papers/paine-partial-reprog-review-2024",
+      "papers/reprogramming-rejuv-review-ncomms-2024",
+      "papers/senolytic-mci-ebiomed-2025",
+      "papers/senolytic-methylation-2024",
+      "papers/smerbarreto2023-senolytics",
+      "papers/senolytic-predictor-2025",
+      "papers/itp-nia",
+      "papers/pearl-rapamycin-2025",
+      "papers/urolithin-a-immune-2025",
+      "topics/nad-mitophagy",
+      "papers/pedf-parabiosis-2024",
+      "papers/fgf17-young-csf-2022",
+      "papers/hcpb-review-2024",
+      "papers/adsc-exosomes-2022",
+      "topics/exosomes-extracellular-vesicles",
+      "papers/yang-chemical-cocktails-2023",
+      "papers/chemical-reprog-lifespan-2025",
+      "papers/lipid-droplets-reprog-2025",
+      "papers/tert-knockin-2025",
+      "topics/telomeres",
+      "papers/clockbase-agent-2025",
+      "papers/agextend-2025",
+      "papers/singular-rejuv-atlas-2024",
+      "papers/shift-sb000-2025",
+      "papers/network-repurposing-aging",
+      "papers/nr-longcovid-2025",
+      "papers/pedf-parabiosis-2024",
+      "papers/fgf17-young-csf-2022",
+      "papers/clockbase-agent-2025",
+      "papers/pathwayage",
+      "papers/epinflammage",
+      "papers/network-repurposing-aging",
+      "papers/itp-mpd-portal",
+      "papers/shift-sb000-2025",
+      "papers/biomarkers-aging-challenge",
+      "papers/xprize-healthspan",
+      "topics/reprogramming",
+      "topics/senolytics",
+      "topics/parabiosis-blood-factors",
+      "topics/clinical-trials",
+      "topics/machine-learning",
+      "topics/drug-repurposing"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "index",
+    "kind": "index",
+    "title": "Longevity Research \u2014 Knowledge Tree",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "topics/aging-research",
+      "topics/biomarkers-of-aging",
+      "topics/aging-clocks",
+      "topics/reprogramming",
+      "topics/partial-reprogramming",
+      "topics/chemical-reprogramming",
+      "analysis/promising-reverse-aging",
+      "papers/clockbase-agent-2025",
+      "papers/network-repurposing-aging",
+      "papers/itp-mpd-portal",
+      "papers/shift-sb000-2025",
+      "papers/biomarkers-aging-challenge",
+      "papers/xprize-healthspan",
+      "topics/aging-clocks",
+      "topics/biomarkers-of-aging",
+      "topics/disease-prediction",
+      "topics/deep-learning",
+      "topics/machine-learning",
+      "topics/cheminformatics",
+      "topics/network-medicine",
+      "topics/interpretability",
+      "topics/pathway-analysis",
+      "topics/single-cell",
+      "topics/hallmarks-of-aging",
+      "topics/epigenetics",
+      "topics/proteomics",
+      "topics/metabolomics",
+      "topics/transcriptomics",
+      "topics/inflammation",
+      "topics/organ-specific",
+      "topics/reprogramming",
+      "topics/partial-reprogramming",
+      "topics/chemical-reprogramming",
+      "topics/yamanaka",
+      "topics/senolytics",
+      "topics/parabiosis-blood-factors",
+      "topics/brain-rejuvenation",
+      "topics/nad-mitophagy",
+      "topics/gene-therapy",
+      "topics/telomeres",
+      "topics/exosomes-extracellular-vesicles",
+      "topics/stem-cells",
+      "topics/immune-rejuvenation",
+      "topics/mtor",
+      "topics/caloric-restriction",
+      "topics/interventions",
+      "topics/drug-repurposing",
+      "topics/drug-discovery",
+      "topics/uk-biobank",
+      "topics/itp-mice",
+      "topics/datasets",
+      "topics/benchmarks",
+      "topics/competitions",
+      "topics/clinical-trials",
+      "topics/disease-prediction",
+      "topics/lifespan",
+      "topics/sex-specific",
+      "topics/safety",
+      "topics/review"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "papers/aav-osk-lifespan-2024",
+    "kind": "paper",
+    "title": "Gene Therapy-Mediated Partial Reprogramming Extends Lifespan and Reverses Age-Related Changes in Aged Mice",
+    "year": "2024",
+    "venue": "Cellular Reprogramming",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10909732/",
+    "access": "open",
+    "topics": [
+      "partial-reprogramming",
+      "gene-therapy",
+      "yamanaka",
+      "lifespan"
+    ],
+    "wikilinks": [
+      "papers/paine-partial-reprog-review-2024",
+      "papers/reprogramming-rejuv-review-ncomms-2024",
+      "papers/chemical-reprog-lifespan-2025",
+      "topics/gene-therapy",
+      "topics/partial-reprogramming",
+      "topics/lifespan"
+    ],
+    "urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10909732/",
+      "https://www.liebertpub.com/doi/10.1089/cell.2023.0072"
+    ]
+  },
+  {
+    "rel": "papers/adsc-exosomes-2022",
+    "kind": "paper",
+    "title": "Small extracellular vesicles from young adipose-derived stem cells prevent frailty, improve health span, and decrease epigenetic age in old mice",
+    "year": "2022",
+    "venue": "Science Advances (fully open access)",
+    "url": "https://www.science.org/doi/10.1126/sciadv.abq2226",
+    "access": "open",
+    "topics": [
+      "exosomes-extracellular-vesicles",
+      "stem-cells",
+      "interventions",
+      "aging-clocks"
+    ],
+    "wikilinks": [
+      "topics/aging-clocks",
+      "topics/exosomes-extracellular-vesicles",
+      "papers/pedf-parabiosis-2024",
+      "papers/hcpb-review-2024",
+      "topics/stem-cells",
+      "topics/exosomes-extracellular-vesicles"
+    ],
+    "urls": [
+      "https://www.science.org/doi/10.1126/sciadv.abq2226"
+    ]
+  },
+  {
+    "rel": "papers/agextend-2025",
+    "kind": "paper",
+    "title": "Discovering geroprotectors through the explainable AI-based platform AgeXtend",
+    "year": "2025",
+    "venue": "Nature Aging, Jan 2025",
+    "url": "https://www.nature.com/articles/s43587-024-00763-4",
+    "access": "gated",
+    "topics": [
+      "machine-learning",
+      "drug-discovery",
+      "interventions",
+      "cheminformatics"
+    ],
+    "wikilinks": [
+      "papers/smerbarreto2023-senolytics",
+      "papers/senolytic-predictor-2025",
+      "papers/network-repurposing-aging",
+      "papers/clockbase-agent-2025",
+      "topics/cheminformatics",
+      "topics/drug-discovery"
+    ],
+    "urls": [
+      "https://pubmed.ncbi.nlm.nih.gov/39627462/",
+      "https://www.nature.com/articles/s43587-024-00763-4"
+    ]
+  },
+  {
+    "rel": "papers/ai-aging-review-2026",
+    "kind": "paper",
+    "title": "A comprehensive review of artificial intelligence as a catalyst in aging research",
+    "year": "2026",
+    "venue": "Frontiers in Aging",
+    "url": "https://www.frontiersin.org/journals/aging/articles/10.3389/fragi.2026.1644669/full",
+    "access": "open",
+    "topics": [
+      "review",
+      "machine-learning",
+      "aging-research"
+    ],
+    "wikilinks": [
+      "papers/deep-aging-clocks-review-2025",
+      "topics/review",
+      "topics/machine-learning"
+    ],
+    "urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12891069/",
+      "https://www.frontiersin.org/journals/aging/articles/10.3389/fragi.2026.1644669/full"
+    ]
+  },
+  {
+    "rel": "papers/biomarkers-aging-challenge",
+    "kind": "paper",
+    "title": "Biomarkers of Aging Consortium \u2014 Challenge portal",
+    "year": null,
+    "venue": null,
+    "url": "https://www.agingconsortium.org/challenge",
+    "access": "open",
+    "topics": [
+      "biomarkers-of-aging",
+      "competitions"
+    ],
+    "wikilinks": [
+      "papers/nunez2024-open-competition",
+      "papers/nunez2024-open-competition",
+      "topics/competitions",
+      "topics/biomarkers-of-aging"
+    ],
+    "urls": [
+      "https://www.agingconsortium.org/challenge"
+    ]
+  },
+  {
+    "rel": "papers/chemical-reprog-lifespan-2025",
+    "kind": "paper",
+    "title": "Chemical reprogramming ameliorates cellular hallmarks of aging and extends lifespan",
+    "year": "2025",
+    "venue": "EMBO Mol Med",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12340157/",
+    "access": "open",
+    "topics": [
+      "chemical-reprogramming",
+      "reprogramming",
+      "lifespan",
+      "hallmarks-of-aging"
+    ],
+    "wikilinks": [
+      "papers/yang-chemical-cocktails-2023",
+      "topics/hallmarks-of-aging",
+      "papers/lipid-droplets-reprog-2025",
+      "papers/aav-osk-lifespan-2024",
+      "papers/itp-mpd-portal",
+      "topics/chemical-reprogramming",
+      "topics/lifespan"
+    ],
+    "urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12340157/",
+      "https://www.biorxiv.org/content/10.1101/2022.08.29.505222v2",
+      "https://www.embopress.org/doi/abs/10.1038/s44321-025-00265-9"
+    ]
+  },
+  {
+    "rel": "papers/clockbase-agent-2025",
+    "kind": "paper",
+    "title": "Autonomous AI Agents Discover Aging Interventions from Millions of Molecular Profiles (ClockBase Agent)",
+    "year": "2025",
+    "venue": "bioRxiv / PMC",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12667862/",
+    "access": "open",
+    "topics": [
+      "machine-learning",
+      "interventions",
+      "aging-clocks",
+      "drug-repurposing",
+      "benchmarks"
+    ],
+    "wikilinks": [
+      "papers/network-repurposing-aging",
+      "papers/agextend-2025",
+      "papers/computagebench",
+      "topics/machine-learning",
+      "topics/drug-repurposing"
+    ],
+    "urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12667862/",
+      "https://pubmed.ncbi.nlm.nih.gov/41332661/",
+      "https://www.biorxiv.org/content/10.1101/2023.02.28.530532v2"
+    ]
+  },
+  {
+    "rel": "papers/computagebench",
+    "kind": "paper",
+    "title": "ComputAgeBench: Epigenetic Aging Clocks Benchmark",
+    "year": "2024",
+    "venue": "KDD 2025 / bioRxiv 2024.06.06.597715",
+    "url": "https://openreview.net/forum?id=0ApkwFlCxq",
+    "access": "open",
+    "topics": [
+      "aging-clocks",
+      "benchmarks"
+    ],
+    "wikilinks": [
+      "topics/aging-clocks",
+      "papers/nc-2025-14clocks",
+      "papers/epinflammage",
+      "papers/pathwayage",
+      "topics/aging-clocks",
+      "topics/benchmarks"
+    ],
+    "urls": [
+      "https://github.com/ComputationalAgingLab/ComputAge",
+      "https://huggingface.co/datasets/computage/computage_bench",
+      "https://openreview.net/forum?id=0ApkwFlCxq",
+      "https://www.biorxiv.org/content/10.1101/2024.06.06.597715v2"
+    ]
+  },
+  {
+    "rel": "papers/deep-aging-clocks-review-2025",
+    "kind": "paper",
+    "title": "Deep aging clocks: AI-powered strategies for biological age estimation",
+    "year": "2025",
+    "venue": "Ageing Research Reviews, vol. 112",
+    "url": "https://www.sciencedirect.com/science/article/pii/S1568163725002351",
+    "access": "gated",
+    "topics": [
+      "aging-clocks",
+      "deep-learning",
+      "review"
+    ],
+    "wikilinks": [
+      "topics/aging-clocks",
+      "papers/computagebench",
+      "papers/nc-2025-14clocks",
+      "papers/ai-aging-review-2026"
+    ],
+    "urls": [
+      "https://www.sciencedirect.com/science/article/pii/S1568163725002351"
+    ]
+  },
+  {
+    "rel": "papers/dr-960-mice-nature-2024",
+    "kind": "paper",
+    "title": "Dietary restriction impacts health and lifespan of genetically diverse mice",
+    "year": "2024",
+    "venue": "Nature",
+    "url": "https://www.nature.com/articles/s41586-024-08026-3",
+    "access": "open",
+    "topics": [
+      "caloric-restriction",
+      "itp-mice",
+      "lifespan"
+    ],
+    "wikilinks": [
+      "papers/itp-mpd-portal",
+      "papers/itp-nia",
+      "papers/itp-sex-specific-2025",
+      "topics/caloric-restriction"
+    ],
+    "urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11485257/",
+      "https://www.nature.com/articles/s41586-024-08026-3"
+    ]
+  },
+  {
+    "rel": "papers/epinflammage",
+    "kind": "paper",
+    "title": "EpInflammAge: Epigenetic-Inflammatory Clock for Disease-Associated Biological Aging Based on Deep Learning",
+    "year": "2025",
+    "venue": "Int. J. Mol. Sci., MDPI",
+    "url": "https://www.mdpi.com/1422-0067/26/13/6284",
+    "access": "open",
+    "topics": [
+      "aging-clocks",
+      "deep-learning",
+      "inflammation"
+    ],
+    "wikilinks": [
+      "papers/pathwayage",
+      "papers/computagebench",
+      "topics/aging-clocks",
+      "topics/inflammation"
+    ],
+    "urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12249966/",
+      "https://www.biorxiv.org/content/biorxiv/early/2025/03/14/2025.03.11.642648.full.pdf",
+      "https://www.mdpi.com/1422-0067/26/13/6284"
+    ]
+  },
+  {
+    "rel": "papers/fgf17-young-csf-2022",
+    "kind": "paper",
+    "title": "Young CSF restores oligodendrogenesis and memory in aged mice via Fgf17",
+    "year": "2022",
+    "venue": "Nature",
+    "url": "https://www.nature.com/articles/s41586-022-04722-0",
+    "access": "gated",
+    "topics": [
+      "parabiosis-blood-factors",
+      "brain-rejuvenation",
+      "interventions"
+    ],
+    "wikilinks": [
+      "papers/pedf-parabiosis-2024",
+      "papers/hcpb-review-2024",
+      "topics/brain-rejuvenation",
+      "topics/parabiosis-blood-factors"
+    ],
+    "urls": [
+      "https://www.nature.com/articles/s41586-022-04722-0"
+    ]
+  },
+  {
+    "rel": "papers/hcpb-review-2024",
+    "kind": "paper",
+    "title": "Aging insights from heterochronic parabiosis models",
+    "year": "2024",
+    "venue": "npj Aging",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11330497/",
+    "access": "open",
+    "topics": [
+      "parabiosis-blood-factors",
+      "review",
+      "interventions"
+    ],
+    "wikilinks": [
+      "papers/pedf-parabiosis-2024",
+      "papers/clockbase-agent-2025",
+      "topics/parabiosis-blood-factors",
+      "topics/review"
+    ],
+    "urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11330497/",
+      "https://www.nature.com/articles/s41514-024-00166-0"
+    ]
+  },
+  {
+    "rel": "papers/itp-mpd-portal",
+    "kind": "paper",
+    "title": "ITP Data Portal \u2014 Mouse Phenome Database",
+    "year": null,
+    "venue": null,
+    "url": "https://phenome.jax.org/projects/ITP1",
+    "access": "open",
+    "topics": [
+      "itp-mice",
+      "datasets"
+    ],
+    "wikilinks": [
+      "papers/itp-nia",
+      "papers/dr-960-mice-nature-2024",
+      "papers/itp-sex-specific-2025",
+      "topics/datasets",
+      "topics/itp-mice"
+    ],
+    "urls": [
+      "https://phenome.jax.org/projects/ITP1"
+    ]
+  },
+  {
+    "rel": "papers/itp-nia",
+    "kind": "paper",
+    "title": "NIA Interventions Testing Program (ITP) \u2014 program overview",
+    "year": null,
+    "venue": null,
+    "url": "https://www.nia.nih.gov/research/dab/interventions-testing-program-itp",
+    "access": "open",
+    "topics": [
+      "itp-mice",
+      "interventions"
+    ],
+    "wikilinks": [
+      "papers/itp-mpd-portal",
+      "papers/dr-960-mice-nature-2024",
+      "papers/itp-sex-specific-2025",
+      "topics/interventions",
+      "topics/itp-mice",
+      "papers/network-repurposing-aging"
+    ],
+    "urls": [
+      "https://www.nia.nih.gov/research/dab/interventions-testing-program-itp"
+    ]
+  },
+  {
+    "rel": "papers/itp-sex-specific-2025",
+    "kind": "paper",
+    "title": "Sex-specific insights into drug-induced lifespan extension and weight loss in mice",
+    "year": "2025",
+    "venue": "npj Aging, vol. 11, art. 37",
+    "url": "https://www.nature.com/articles/s41514-025-00229-w",
+    "access": "open",
+    "topics": [
+      "itp-mice",
+      "sex-specific",
+      "lifespan"
+    ],
+    "wikilinks": [
+      "papers/itp-nia",
+      "papers/itp-nia",
+      "papers/itp-mpd-portal",
+      "papers/dr-960-mice-nature-2024",
+      "topics/interventions"
+    ],
+    "urls": [
+      "https://www.biorxiv.org/content/10.1101/2024.11.30.626149v1.full",
+      "https://www.nature.com/articles/s41514-025-00229-w"
+    ]
+  },
+  {
+    "rel": "papers/lipid-droplets-reprog-2025",
+    "kind": "paper",
+    "title": "In vivo chemical reprogramming is associated with a toxic accumulation of lipid droplets hindering rejuvenation",
+    "year": "2025",
+    "venue": "bioRxiv 2025.06.25.661123 / Aging Cell 2026",
+    "url": "https://www.biorxiv.org/content/10.1101/2025.06.25.661123v1.full",
+    "access": "open",
+    "topics": [
+      "chemical-reprogramming",
+      "reprogramming",
+      "safety",
+      "itp-mice"
+    ],
+    "wikilinks": [
+      "papers/itp-nia",
+      "papers/yang-chemical-cocktails-2023",
+      "papers/chemical-reprog-lifespan-2025",
+      "topics/chemical-reprogramming",
+      "topics/safety"
+    ],
+    "urls": [
+      "https://onlinelibrary.wiley.com/doi/10.1111/acel.70390",
+      "https://www.biorxiv.org/content/10.1101/2025.06.25.661123v1.full"
+    ]
+  },
+  {
+    "rel": "papers/mesenchymal-drift-cell-2025",
+    "kind": "paper",
+    "title": "Prevalent mesenchymal drift in aging and disease is reversed by partial reprogramming",
+    "year": "2025",
+    "venue": "Cell, August 2025",
+    "url": "https://www.cell.com/cell/abstract/S0092-8674(25)00853-0",
+    "access": "gated",
+    "topics": [
+      "partial-reprogramming",
+      "yamanaka",
+      "transcriptomics"
+    ],
+    "wikilinks": [
+      "topics/partial-reprogramming",
+      "topics/yamanaka",
+      "papers/organ-proteomic-clocks-2025"
+    ],
+    "urls": [
+      "https://pubmed.ncbi.nlm.nih.gov/40816266/",
+      "https://www.cell.com/cell/abstract/S0092-8674(25)00853-0"
+    ]
+  },
+  {
+    "rel": "papers/nc-2025-14clocks",
+    "kind": "paper",
+    "title": "An unbiased comparison of 14 epigenetic clocks in relation to 174 incident disease outcomes",
+    "year": "2025",
+    "venue": "Nature Communications",
+    "url": "https://www.nature.com/articles/s41467-025-66106-y",
+    "access": "open",
+    "topics": [
+      "aging-clocks",
+      "epigenetics",
+      "disease-prediction"
+    ],
+    "wikilinks": [
+      "papers/computagebench",
+      "papers/epinflammage",
+      "papers/pathwayage",
+      "topics/disease-prediction"
+    ],
+    "urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12338881/",
+      "https://www.medrxiv.org/content/10.1101/2025.07.14.25331494v1",
+      "https://www.nature.com/articles/s41467-025-66106-y"
+    ]
+  },
+  {
+    "rel": "papers/network-repurposing-aging",
+    "kind": "paper",
+    "title": "Network-driven discovery of repurposable drugs targeting hallmarks of aging",
+    "year": "2025",
+    "venue": "arXiv 2509.03330 / PMC",
+    "url": "https://arxiv.org/abs/2509.03330",
+    "access": "open",
+    "topics": [
+      "drug-repurposing",
+      "network-medicine",
+      "hallmarks-of-aging"
+    ],
+    "wikilinks": [
+      "papers/itp-nia",
+      "papers/itp-mpd-portal",
+      "papers/smerbarreto2023-senolytics",
+      "papers/senolytic-predictor-2025",
+      "topics/drug-repurposing",
+      "topics/network-medicine",
+      "topics/hallmarks-of-aging"
+    ],
+    "urls": [
+      "https://arxiv.org/abs/2509.03330",
+      "https://arxiv.org/html/2509.03330",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12425021/"
+    ]
+  },
+  {
+    "rel": "papers/nr-longcovid-2025",
+    "kind": "paper",
+    "title": "Effects of nicotinamide riboside on NAD+ levels, cognition, and symptom recovery in long-COVID",
+    "year": "2025",
+    "venue": "eClinicalMedicine (Lancet)",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12675013/",
+    "access": "open",
+    "topics": [
+      "nad-mitophagy",
+      "clinical-trials",
+      "interventions"
+    ],
+    "wikilinks": [
+      "topics/nad-mitophagy",
+      "papers/urolithin-a-immune-2025",
+      "papers/pearl-rapamycin-2025",
+      "topics/nad-mitophagy",
+      "topics/clinical-trials"
+    ],
+    "urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12675013/",
+      "https://www.thelancet.com/journals/eclinm/article/PIIS2589-5370(25)00567-X/fulltext"
+    ]
+  },
+  {
+    "rel": "papers/nunez2024-open-competition",
+    "kind": "paper",
+    "title": "An Open Competition for Biomarkers of Aging",
+    "year": "2024",
+    "venue": "bioRxiv / PMC",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11565782/",
+    "access": "open",
+    "topics": [
+      "biomarkers-of-aging",
+      "aging-clocks",
+      "competitions"
+    ],
+    "wikilinks": [
+      "topics/biomarkers-of-aging",
+      "papers/computagebench",
+      "papers/nc-2025-14clocks",
+      "topics/competitions"
+    ],
+    "urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11565782/",
+      "https://www.biorxiv.org/content/10.1101/2024.10.29.620782v1"
+    ]
+  },
+  {
+    "rel": "papers/organ-proteomic-clocks-2025",
+    "kind": "paper",
+    "title": "Organ-specific proteomic aging clocks predict disease and longevity across diverse populations",
+    "year": "2025",
+    "venue": "Nature Aging",
+    "url": "https://www.nature.com/articles/s43587-025-01016-8",
+    "access": "gated",
+    "topics": [
+      "aging-clocks",
+      "proteomics",
+      "organ-specific",
+      "uk-biobank"
+    ],
+    "wikilinks": [
+      "papers/ukb-nmr-metabolomic-2024",
+      "topics/uk-biobank",
+      "topics/proteomics"
+    ],
+    "urls": [
+      "https://pubmed.ncbi.nlm.nih.gov/41299092/",
+      "https://www.nature.com/articles/s43587-025-01016-8"
+    ]
+  },
+  {
+    "rel": "papers/paine-partial-reprog-review-2024",
+    "kind": "paper",
+    "title": "Partial cellular reprogramming: A deep dive into an emerging rejuvenation technology",
+    "year": "2024",
+    "venue": "Aging Cell",
+    "url": "https://onlinelibrary.wiley.com/doi/10.1111/acel.14039",
+    "access": "gated",
+    "topics": [
+      "partial-reprogramming",
+      "reprogramming",
+      "review",
+      "yamanaka"
+    ],
+    "wikilinks": [
+      "papers/singular-rejuv-atlas-2024",
+      "papers/shift-sb000-2025",
+      "papers/reprogramming-rejuv-review-ncomms-2024",
+      "papers/aav-osk-lifespan-2024",
+      "papers/mesenchymal-drift-cell-2025",
+      "topics/partial-reprogramming",
+      "topics/yamanaka"
+    ],
+    "urls": [
+      "https://onlinelibrary.wiley.com/doi/10.1111/acel.14039"
+    ]
+  },
+  {
+    "rel": "papers/pathwayage",
+    "kind": "paper",
+    "title": "Decoding disease-specific ageing mechanisms through pathway-level epigenetic clock (PathwayAge)",
+    "year": "2025",
+    "venue": "eBioMedicine (The Lancet)",
+    "url": "https://www.thelancet.com/journals/ebiom/article/PIIS2352-3964(25)00273-7/fulltext",
+    "access": "open",
+    "topics": [
+      "aging-clocks",
+      "pathway-analysis",
+      "interpretability"
+    ],
+    "wikilinks": [
+      "papers/epinflammage",
+      "papers/computagebench",
+      "topics/interpretability"
+    ],
+    "urls": [
+      "https://www.sciencedirect.com/science/article/pii/S2352396425002737",
+      "https://www.thelancet.com/journals/ebiom/article/PIIS2352-3964(25)00273-7/fulltext"
+    ]
+  },
+  {
+    "rel": "papers/pearl-rapamycin-2025",
+    "kind": "paper",
+    "title": "Influence of rapamycin on safety and healthspan metrics after one year: PEARL trial results",
+    "year": "2025",
+    "venue": "Frontiers in Aging / PMC",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12074816/",
+    "access": "open",
+    "topics": [
+      "clinical-trials",
+      "interventions",
+      "mtor"
+    ],
+    "wikilinks": [
+      "papers/itp-sex-specific-2025",
+      "papers/itp-nia",
+      "topics/clinical-trials",
+      "topics/interventions",
+      "topics/mtor"
+    ],
+    "urls": [
+      "https://clinicaltrials.gov/study/NCT04488601",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12074816/",
+      "https://www.frontiersin.org/journals/aging/articles/10.3389/fragi.2025.1628187/full",
+      "https://www.medrxiv.org/content/10.1101/2024.08.21.24312372v1"
+    ]
+  },
+  {
+    "rel": "papers/pedf-parabiosis-2024",
+    "kind": "paper",
+    "title": "In vitro heterochronic parabiosis identifies pigment epithelium-derived factor as a systemic mediator of rejuvenation by young blood",
+    "year": "2024",
+    "venue": "bioRxiv / PMC",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11092633/",
+    "access": "open",
+    "topics": [
+      "parabiosis-blood-factors",
+      "proteomics",
+      "interventions"
+    ],
+    "wikilinks": [
+      "papers/fgf17-young-csf-2022",
+      "papers/hcpb-review-2024",
+      "topics/parabiosis-blood-factors",
+      "topics/proteomics"
+    ],
+    "urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11092633/",
+      "https://www.biorxiv.org/content/10.1101/2024.05.02.592258v1"
+    ]
+  },
+  {
+    "rel": "papers/reprogramming-rejuv-review-ncomms-2024",
+    "kind": "paper",
+    "title": "The long and winding road of reprogramming-induced rejuvenation",
+    "year": "2024",
+    "venue": "Nature Communications",
+    "url": "https://www.nature.com/articles/s41467-024-46020-5",
+    "access": "open",
+    "topics": [
+      "partial-reprogramming",
+      "reprogramming",
+      "review",
+      "yamanaka"
+    ],
+    "wikilinks": [
+      "papers/paine-partial-reprog-review-2024",
+      "papers/mesenchymal-drift-cell-2025",
+      "papers/aav-osk-lifespan-2024",
+      "topics/partial-reprogramming",
+      "topics/review"
+    ],
+    "urls": [
+      "https://www.nature.com/articles/s41467-024-46020-5"
+    ]
+  },
+  {
+    "rel": "papers/scbayesage-2025",
+    "kind": "paper",
+    "title": "Determining the age of single cells using scBayesAge",
+    "year": "2025",
+    "venue": "bioRxiv 2025.12.04.692166",
+    "url": "https://www.biorxiv.org/content/10.64898/2025.12.04.692166v1.full",
+    "access": "open",
+    "topics": [
+      "aging-clocks",
+      "single-cell",
+      "transcriptomics",
+      "machine-learning"
+    ],
+    "wikilinks": [
+      "topics/transcriptomics",
+      "papers/singular-rejuv-atlas-2024",
+      "papers/clockbase-agent-2025",
+      "papers/mesenchymal-drift-cell-2025",
+      "papers/shift-sb000-2025",
+      "topics/aging-clocks",
+      "topics/single-cell"
+    ],
+    "urls": [
+      "https://www.biorxiv.org/content/10.64898/2025.12.04.692166v1.full"
+    ]
+  },
+  {
+    "rel": "papers/senolytic-mci-ebiomed-2025",
+    "kind": "paper",
+    "title": "A pilot study of senolytics to improve cognition and mobility in older adults at risk for Alzheimer's disease (STAMINA)",
+    "year": "2025",
+    "venue": "eBioMedicine (The Lancet)",
+    "url": "https://www.thelancet.com/journals/ebiom/article/PIIS2352-3964(25)00056-8/fulltext",
+    "access": "open",
+    "topics": [
+      "senolytics",
+      "clinical-trials",
+      "brain-rejuvenation"
+    ],
+    "wikilinks": [
+      "papers/senolytic-methylation-2024",
+      "papers/smerbarreto2023-senolytics",
+      "papers/senolytic-predictor-2025",
+      "topics/senolytics",
+      "topics/clinical-trials"
+    ],
+    "urls": [
+      "https://www.thelancet.com/journals/ebiom/article/PIIS2352-3964(25)00056-8/fulltext"
+    ]
+  },
+  {
+    "rel": "papers/senolytic-methylation-2024",
+    "kind": "paper",
+    "title": "Exploring the effects of Dasatinib, Quercetin, and Fisetin on DNA methylation clocks: a longitudinal study on senolytic interventions",
+    "year": "2024",
+    "venue": "Aging (Albany NY)",
+    "url": "https://www.aging-us.com/article/205581/text",
+    "access": "open",
+    "topics": [
+      "senolytics",
+      "clinical-trials",
+      "aging-clocks"
+    ],
+    "wikilinks": [
+      "topics/senolytics",
+      "topics/aging-clocks",
+      "papers/senolytic-mci-ebiomed-2025",
+      "papers/nc-2025-14clocks",
+      "topics/clinical-trials"
+    ],
+    "urls": [
+      "https://www.aging-us.com/article/205581/text"
+    ]
+  },
+  {
+    "rel": "papers/senolytic-predictor-2025",
+    "kind": "paper",
+    "title": "Development and Application of a Senolytic Predictor for Discovery of Novel Senolytic Compounds and Herbs",
+    "year": "2025",
+    "venue": "Molecules, MDPI, 30(12):2653",
+    "url": "https://www.mdpi.com/1420-3049/30/12/2653",
+    "access": "open",
+    "topics": [
+      "senolytics",
+      "drug-discovery",
+      "cheminformatics"
+    ],
+    "wikilinks": [
+      "papers/smerbarreto2023-senolytics",
+      "papers/smerbarreto2023-senolytics",
+      "papers/network-repurposing-aging",
+      "topics/cheminformatics",
+      "topics/senolytics"
+    ],
+    "urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12196162/",
+      "https://www.mdpi.com/1420-3049/30/12/2653"
+    ]
+  },
+  {
+    "rel": "papers/shift-sb000-2025",
+    "kind": "paper",
+    "title": "A single factor for safer cellular rejuvenation (SB000)",
+    "year": "2025",
+    "venue": "bioRxiv 2025.06.05.657370",
+    "url": "https://www.biorxiv.org/content/10.1101/2025.06.05.657370v1.full",
+    "access": "open",
+    "topics": [
+      "partial-reprogramming",
+      "reprogramming",
+      "machine-learning",
+      "aging-clocks"
+    ],
+    "wikilinks": [
+      "papers/mesenchymal-drift-cell-2025",
+      "papers/reprogramming-rejuv-review-ncomms-2024",
+      "papers/paine-partial-reprog-review-2024",
+      "topics/partial-reprogramming",
+      "topics/reprogramming",
+      "topics/machine-learning"
+    ],
+    "urls": [
+      "https://www.biorxiv.org/content/10.1101/2025.06.05.657370v1.full"
+    ]
+  },
+  {
+    "rel": "papers/singular-rejuv-atlas-2024",
+    "kind": "paper",
+    "title": "The cell rejuvenation atlas: leveraging network biology to identify master regulators of rejuvenation strategies (SINGULAR)",
+    "year": "2024",
+    "venue": "Aging (Albany NY), vol. 16(17)",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11424581/",
+    "access": "open",
+    "topics": [
+      "reprogramming",
+      "network-medicine",
+      "transcriptomics",
+      "machine-learning"
+    ],
+    "wikilinks": [
+      "papers/mesenchymal-drift-cell-2025",
+      "papers/shift-sb000-2025",
+      "papers/clockbase-agent-2025",
+      "topics/reprogramming",
+      "topics/network-medicine"
+    ],
+    "urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11424581/",
+      "https://www.aging-us.com/article/206105/text"
+    ]
+  },
+  {
+    "rel": "papers/smerbarreto2023-senolytics",
+    "kind": "paper",
+    "title": "Discovery of senolytics using machine learning",
+    "year": "2023",
+    "venue": "Nature Communications 14:3445",
+    "url": "https://www.nature.com/articles/s41467-023-39120-1",
+    "access": "open",
+    "topics": [
+      "senolytics",
+      "drug-discovery",
+      "machine-learning"
+    ],
+    "wikilinks": [
+      "topics/senolytics",
+      "papers/senolytic-predictor-2025",
+      "papers/network-repurposing-aging",
+      "topics/senolytics",
+      "topics/drug-discovery"
+    ],
+    "urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10257182/",
+      "https://www.nature.com/articles/s41467-023-39120-1",
+      "https://zenodo.org/records/7870357"
+    ]
+  },
+  {
+    "rel": "papers/tert-knockin-2025",
+    "kind": "paper",
+    "title": "Telomerase reverse transcriptase gene knock-in unleashes enhanced longevity and accelerated damage repair in mice",
+    "year": "2025",
+    "venue": "Aging Cell",
+    "url": "https://onlinelibrary.wiley.com/doi/10.1111/acel.14445",
+    "access": "gated",
+    "topics": [
+      "telomeres",
+      "gene-therapy",
+      "lifespan"
+    ],
+    "wikilinks": [
+      "papers/aav-osk-lifespan-2024",
+      "topics/telomeres",
+      "topics/gene-therapy"
+    ],
+    "urls": [
+      "https://onlinelibrary.wiley.com/doi/10.1111/acel.14445"
+    ]
+  },
+  {
+    "rel": "papers/ukb-nmr-metabolomic-2024",
+    "kind": "paper",
+    "title": "A metabolomic profile of biological aging in 250,341 individuals from the UK Biobank",
+    "year": "2024",
+    "venue": "Nature Communications, Sep 15 2024",
+    "url": "https://www.nature.com/articles/s41467-024-52310-9",
+    "access": "open",
+    "topics": [
+      "uk-biobank",
+      "metabolomics",
+      "biomarkers-of-aging"
+    ],
+    "wikilinks": [
+      "papers/organ-proteomic-clocks-2025",
+      "topics/uk-biobank",
+      "topics/metabolomics"
+    ],
+    "urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11402978/",
+      "https://www.nature.com/articles/s41467-024-52310-9"
+    ]
+  },
+  {
+    "rel": "papers/urolithin-a-immune-2025",
+    "kind": "paper",
+    "title": "Effect of the mitophagy inducer urolithin A on age-related immune decline: a randomized, placebo-controlled trial",
+    "year": "2025",
+    "venue": "Nature Aging",
+    "url": "https://www.nature.com/articles/s43587-025-00996-x",
+    "access": "gated",
+    "topics": [
+      "nad-mitophagy",
+      "clinical-trials",
+      "immune-rejuvenation"
+    ],
+    "wikilinks": [
+      "topics/hallmarks-of-aging",
+      "topics/aging-clocks",
+      "papers/nr-longcovid-2025",
+      "topics/nad-mitophagy",
+      "topics/immune-rejuvenation"
+    ],
+    "urls": [
+      "https://pubmed.ncbi.nlm.nih.gov/41174221/",
+      "https://www.nature.com/articles/s43587-025-00996-x"
+    ]
+  },
+  {
+    "rel": "papers/xprize-healthspan",
+    "kind": "paper",
+    "title": "XPRIZE Healthspan \u2014 $101M global competition",
+    "year": null,
+    "venue": null,
+    "url": "https://www.xprize.org/competitions/healthspan",
+    "access": "open",
+    "topics": [
+      "competitions",
+      "clinical-trials",
+      "biomarkers-of-aging"
+    ],
+    "wikilinks": [
+      "topics/biomarkers-of-aging",
+      "papers/biomarkers-aging-challenge",
+      "topics/competitions",
+      "topics/clinical-trials"
+    ],
+    "urls": [
+      "https://www.xprize.org/competitions/healthspan"
+    ]
+  },
+  {
+    "rel": "papers/yang-chemical-cocktails-2023",
+    "kind": "paper",
+    "title": "Chemically induced reprogramming to reverse cellular aging (Sinclair lab chemical cocktails)",
+    "year": "2023",
+    "venue": "Aging (Albany NY)",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10373966/",
+    "access": "open",
+    "topics": [
+      "chemical-reprogramming",
+      "reprogramming",
+      "drug-discovery"
+    ],
+    "wikilinks": [
+      "papers/lipid-droplets-reprog-2025",
+      "papers/chemical-reprog-lifespan-2025",
+      "papers/lipid-droplets-reprog-2025",
+      "papers/shift-sb000-2025",
+      "topics/chemical-reprogramming"
+    ],
+    "urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10373966/",
+      "https://www.aging-us.com/article/204896/text"
+    ]
+  },
+  {
+    "rel": "topics/aging-clocks",
+    "kind": "topic",
+    "title": "aging-clocks",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "papers/deep-aging-clocks-review-2025",
+      "papers/computagebench",
+      "papers/nc-2025-14clocks",
+      "papers/epinflammage",
+      "papers/pathwayage",
+      "papers/organ-proteomic-clocks-2025",
+      "papers/scbayesage-2025",
+      "papers/clockbase-agent-2025",
+      "papers/shift-sb000-2025"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/aging-research",
+    "kind": "topic",
+    "title": "aging-research",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "topics/aging-clocks",
+      "topics/biomarkers-of-aging",
+      "topics/disease-prediction",
+      "topics/hallmarks-of-aging",
+      "topics/epigenetics",
+      "topics/proteomics",
+      "topics/metabolomics",
+      "topics/transcriptomics",
+      "topics/single-cell",
+      "topics/interventions",
+      "topics/reprogramming",
+      "topics/partial-reprogramming",
+      "topics/chemical-reprogramming",
+      "topics/senolytics",
+      "topics/parabiosis-blood-factors",
+      "topics/gene-therapy",
+      "topics/nad-mitophagy",
+      "topics/exosomes-extracellular-vesicles",
+      "topics/stem-cells",
+      "topics/drug-repurposing",
+      "topics/uk-biobank",
+      "topics/itp-mice",
+      "topics/datasets",
+      "topics/benchmarks",
+      "topics/competitions",
+      "topics/clinical-trials",
+      "topics/safety",
+      "papers/ai-aging-review-2026",
+      "papers/deep-aging-clocks-review-2025",
+      "papers/paine-partial-reprog-review-2024",
+      "papers/reprogramming-rejuv-review-ncomms-2024",
+      "papers/hcpb-review-2024"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/benchmarks",
+    "kind": "topic",
+    "title": "benchmarks",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "papers/computagebench",
+      "papers/nc-2025-14clocks",
+      "papers/clockbase-agent-2025",
+      "topics/competitions",
+      "topics/aging-clocks"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/biomarkers-of-aging",
+    "kind": "topic",
+    "title": "biomarkers-of-aging",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "papers/biomarkers-aging-challenge",
+      "papers/nunez2024-open-competition",
+      "papers/ukb-nmr-metabolomic-2024",
+      "papers/organ-proteomic-clocks-2025",
+      "topics/aging-clocks",
+      "topics/uk-biobank"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/brain-rejuvenation",
+    "kind": "topic",
+    "title": "brain-rejuvenation",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "papers/fgf17-young-csf-2022",
+      "papers/senolytic-mci-ebiomed-2025",
+      "papers/organ-proteomic-clocks-2025",
+      "topics/parabiosis-blood-factors",
+      "topics/senolytics",
+      "topics/aging-clocks"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/caloric-restriction",
+    "kind": "topic",
+    "title": "caloric-restriction",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "papers/dr-960-mice-nature-2024",
+      "topics/itp-mice",
+      "topics/interventions"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/chemical-reprogramming",
+    "kind": "topic",
+    "title": "chemical-reprogramming",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "papers/yang-chemical-cocktails-2023",
+      "papers/chemical-reprog-lifespan-2025",
+      "papers/lipid-droplets-reprog-2025",
+      "topics/reprogramming",
+      "topics/partial-reprogramming"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/cheminformatics",
+    "kind": "topic",
+    "title": "cheminformatics",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "papers/smerbarreto2023-senolytics",
+      "papers/senolytic-predictor-2025",
+      "papers/agextend-2025"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/clinical-trials",
+    "kind": "topic",
+    "title": "clinical-trials",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "papers/pearl-rapamycin-2025",
+      "papers/urolithin-a-immune-2025",
+      "papers/nr-longcovid-2025",
+      "papers/senolytic-mci-ebiomed-2025",
+      "papers/senolytic-methylation-2024",
+      "papers/xprize-healthspan",
+      "papers/biomarkers-aging-challenge",
+      "topics/interventions",
+      "topics/biomarkers-of-aging"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/competitions",
+    "kind": "topic",
+    "title": "competitions",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "papers/biomarkers-aging-challenge",
+      "papers/xprize-healthspan",
+      "papers/computagebench",
+      "papers/nc-2025-14clocks"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/datasets",
+    "kind": "topic",
+    "title": "datasets",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "papers/itp-mpd-portal",
+      "papers/dr-960-mice-nature-2024",
+      "papers/computagebench",
+      "papers/nunez2024-open-competition",
+      "topics/uk-biobank",
+      "papers/clockbase-agent-2025",
+      "papers/singular-rejuv-atlas-2024",
+      "papers/smerbarreto2023-senolytics",
+      "papers/senolytic-predictor-2025",
+      "papers/network-repurposing-aging"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/deep-learning",
+    "kind": "topic",
+    "title": "deep-learning",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "papers/deep-aging-clocks-review-2025",
+      "papers/epinflammage",
+      "papers/smerbarreto2023-senolytics",
+      "papers/senolytic-predictor-2025",
+      "papers/ai-aging-review-2026",
+      "papers/agextend-2025",
+      "papers/clockbase-agent-2025",
+      "papers/shift-sb000-2025",
+      "topics/machine-learning",
+      "topics/aging-clocks",
+      "topics/cheminformatics"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/disease-prediction",
+    "kind": "topic",
+    "title": "disease-prediction",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "papers/nc-2025-14clocks",
+      "topics/aging-clocks",
+      "topics/biomarkers-of-aging",
+      "topics/uk-biobank"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/drug-discovery",
+    "kind": "topic",
+    "title": "drug-discovery",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "topics/drug-repurposing",
+      "topics/senolytics",
+      "topics/cheminformatics",
+      "topics/network-medicine",
+      "papers/smerbarreto2023-senolytics",
+      "papers/senolytic-predictor-2025",
+      "papers/network-repurposing-aging",
+      "papers/agextend-2025",
+      "papers/clockbase-agent-2025"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/drug-repurposing",
+    "kind": "topic",
+    "title": "drug-repurposing",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "papers/network-repurposing-aging",
+      "papers/clockbase-agent-2025",
+      "papers/agextend-2025",
+      "papers/smerbarreto2023-senolytics",
+      "papers/senolytic-predictor-2025",
+      "papers/itp-nia"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/epigenetics",
+    "kind": "topic",
+    "title": "epigenetics",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "papers/computagebench",
+      "papers/nc-2025-14clocks",
+      "papers/epinflammage",
+      "papers/pathwayage",
+      "topics/aging-clocks",
+      "topics/partial-reprogramming"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/exosomes-extracellular-vesicles",
+    "kind": "topic",
+    "title": "exosomes-extracellular-vesicles",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "papers/adsc-exosomes-2022",
+      "topics/stem-cells",
+      "topics/parabiosis-blood-factors",
+      "topics/interventions"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/gene-therapy",
+    "kind": "topic",
+    "title": "gene-therapy",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "papers/aav-osk-lifespan-2024",
+      "papers/tert-knockin-2025",
+      "topics/partial-reprogramming",
+      "topics/telomeres",
+      "topics/reprogramming"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/hallmarks-of-aging",
+    "kind": "topic",
+    "title": "hallmarks-of-aging",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "papers/network-repurposing-aging",
+      "papers/epinflammage",
+      "papers/mesenchymal-drift-cell-2025",
+      "papers/chemical-reprog-lifespan-2025",
+      "papers/clockbase-agent-2025",
+      "topics/drug-repurposing",
+      "topics/aging-clocks"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/immune-rejuvenation",
+    "kind": "topic",
+    "title": "immune-rejuvenation",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "papers/urolithin-a-immune-2025",
+      "papers/epinflammage",
+      "topics/inflammation",
+      "topics/nad-mitophagy",
+      "topics/clinical-trials"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/inflammation",
+    "kind": "topic",
+    "title": "inflammation",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "papers/epinflammage",
+      "topics/hallmarks-of-aging",
+      "topics/aging-clocks"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/interpretability",
+    "kind": "topic",
+    "title": "interpretability",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "papers/pathwayage",
+      "papers/organ-proteomic-clocks-2025",
+      "papers/epinflammage"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/interventions",
+    "kind": "topic",
+    "title": "interventions",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "papers/itp-nia",
+      "papers/itp-mpd-portal",
+      "papers/itp-sex-specific-2025",
+      "papers/dr-960-mice-nature-2024",
+      "papers/network-repurposing-aging",
+      "papers/clockbase-agent-2025",
+      "papers/agextend-2025",
+      "papers/smerbarreto2023-senolytics",
+      "papers/senolytic-predictor-2025",
+      "topics/reprogramming",
+      "topics/parabiosis-blood-factors",
+      "topics/exosomes-extracellular-vesicles",
+      "topics/gene-therapy",
+      "topics/nad-mitophagy",
+      "topics/immune-rejuvenation",
+      "topics/brain-rejuvenation"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/itp-mice",
+    "kind": "topic",
+    "title": "itp-mice",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "papers/itp-nia",
+      "papers/itp-mpd-portal",
+      "papers/dr-960-mice-nature-2024",
+      "papers/itp-sex-specific-2025",
+      "papers/network-repurposing-aging",
+      "topics/drug-repurposing"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/lifespan",
+    "kind": "topic",
+    "title": "lifespan",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "papers/dr-960-mice-nature-2024",
+      "papers/itp-sex-specific-2025",
+      "papers/itp-nia",
+      "papers/itp-mpd-portal",
+      "papers/aav-osk-lifespan-2024",
+      "papers/chemical-reprog-lifespan-2025",
+      "papers/tert-knockin-2025",
+      "topics/itp-mice",
+      "topics/interventions",
+      "topics/caloric-restriction",
+      "topics/gene-therapy",
+      "topics/telomeres"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/machine-learning",
+    "kind": "topic",
+    "title": "machine-learning",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "topics/deep-learning",
+      "topics/cheminformatics",
+      "topics/network-medicine",
+      "topics/aging-clocks",
+      "papers/deep-aging-clocks-review-2025",
+      "papers/ai-aging-review-2026",
+      "papers/clockbase-agent-2025",
+      "papers/agextend-2025",
+      "papers/shift-sb000-2025",
+      "papers/singular-rejuv-atlas-2024"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/metabolomics",
+    "kind": "topic",
+    "title": "metabolomics",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "papers/ukb-nmr-metabolomic-2024",
+      "topics/uk-biobank",
+      "topics/biomarkers-of-aging"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/mtor",
+    "kind": "topic",
+    "title": "mtor",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "papers/pearl-rapamycin-2025",
+      "papers/itp-nia",
+      "topics/interventions",
+      "topics/clinical-trials",
+      "topics/caloric-restriction"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/nad-mitophagy",
+    "kind": "topic",
+    "title": "nad-mitophagy",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "papers/nr-longcovid-2025",
+      "papers/urolithin-a-immune-2025",
+      "topics/clinical-trials",
+      "topics/interventions",
+      "topics/hallmarks-of-aging",
+      "topics/immune-rejuvenation"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/network-medicine",
+    "kind": "topic",
+    "title": "network-medicine",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "papers/network-repurposing-aging",
+      "papers/singular-rejuv-atlas-2024",
+      "topics/drug-repurposing",
+      "topics/hallmarks-of-aging"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/organ-specific",
+    "kind": "topic",
+    "title": "organ-specific",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "papers/organ-proteomic-clocks-2025",
+      "topics/proteomics",
+      "topics/aging-clocks",
+      "topics/uk-biobank"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/parabiosis-blood-factors",
+    "kind": "topic",
+    "title": "parabiosis-blood-factors",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "papers/hcpb-review-2024",
+      "papers/pedf-parabiosis-2024",
+      "papers/fgf17-young-csf-2022",
+      "topics/brain-rejuvenation",
+      "topics/proteomics",
+      "topics/interventions"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/partial-reprogramming",
+    "kind": "topic",
+    "title": "partial-reprogramming",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "papers/mesenchymal-drift-cell-2025",
+      "papers/aav-osk-lifespan-2024",
+      "papers/shift-sb000-2025",
+      "papers/paine-partial-reprog-review-2024",
+      "papers/reprogramming-rejuv-review-ncomms-2024",
+      "topics/yamanaka",
+      "topics/transcriptomics",
+      "topics/aging-clocks"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/pathway-analysis",
+    "kind": "topic",
+    "title": "pathway-analysis",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "papers/pathwayage",
+      "topics/interpretability",
+      "topics/aging-clocks"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/proteomics",
+    "kind": "topic",
+    "title": "proteomics",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "papers/organ-proteomic-clocks-2025",
+      "papers/nunez2024-open-competition",
+      "topics/uk-biobank",
+      "topics/aging-clocks"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/reprogramming",
+    "kind": "topic",
+    "title": "reprogramming",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "topics/partial-reprogramming",
+      "topics/chemical-reprogramming",
+      "papers/shift-sb000-2025",
+      "papers/paine-partial-reprog-review-2024",
+      "papers/reprogramming-rejuv-review-ncomms-2024",
+      "papers/mesenchymal-drift-cell-2025",
+      "papers/aav-osk-lifespan-2024",
+      "papers/yang-chemical-cocktails-2023",
+      "papers/chemical-reprog-lifespan-2025",
+      "papers/shift-sb000-2025",
+      "papers/lipid-droplets-reprog-2025",
+      "papers/singular-rejuv-atlas-2024",
+      "papers/clockbase-agent-2025"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/review",
+    "kind": "topic",
+    "title": "review",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "papers/ai-aging-review-2026",
+      "papers/deep-aging-clocks-review-2025",
+      "papers/paine-partial-reprog-review-2024",
+      "papers/reprogramming-rejuv-review-ncomms-2024",
+      "papers/hcpb-review-2024"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/safety",
+    "kind": "topic",
+    "title": "safety",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "papers/lipid-droplets-reprog-2025",
+      "papers/itp-sex-specific-2025",
+      "papers/tert-knockin-2025",
+      "topics/chemical-reprogramming",
+      "topics/itp-mice",
+      "topics/clinical-trials"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/senolytics",
+    "kind": "topic",
+    "title": "senolytics",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "papers/smerbarreto2023-senolytics",
+      "papers/senolytic-predictor-2025",
+      "papers/agextend-2025",
+      "papers/senolytic-mci-ebiomed-2025",
+      "papers/senolytic-methylation-2024",
+      "topics/drug-discovery",
+      "topics/cheminformatics",
+      "papers/network-repurposing-aging"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/sex-specific",
+    "kind": "topic",
+    "title": "sex-specific",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "papers/itp-sex-specific-2025",
+      "papers/itp-nia",
+      "topics/itp-mice",
+      "topics/interventions"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/single-cell",
+    "kind": "topic",
+    "title": "single-cell",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "papers/scbayesage-2025",
+      "papers/singular-rejuv-atlas-2024",
+      "papers/mesenchymal-drift-cell-2025",
+      "topics/transcriptomics",
+      "topics/aging-clocks"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/stem-cells",
+    "kind": "topic",
+    "title": "stem-cells",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "papers/adsc-exosomes-2022",
+      "topics/exosomes-extracellular-vesicles",
+      "topics/reprogramming",
+      "topics/interventions"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/telomeres",
+    "kind": "topic",
+    "title": "telomeres",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "topics/hallmarks-of-aging",
+      "papers/tert-knockin-2025",
+      "topics/gene-therapy",
+      "topics/hallmarks-of-aging",
+      "topics/lifespan"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/transcriptomics",
+    "kind": "topic",
+    "title": "transcriptomics",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "papers/mesenchymal-drift-cell-2025",
+      "papers/network-repurposing-aging",
+      "papers/singular-rejuv-atlas-2024",
+      "papers/scbayesage-2025",
+      "papers/clockbase-agent-2025"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/uk-biobank",
+    "kind": "topic",
+    "title": "uk-biobank",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "papers/organ-proteomic-clocks-2025",
+      "papers/ukb-nmr-metabolomic-2024",
+      "papers/organ-proteomic-clocks-2025"
+    ],
+    "urls": []
+  },
+  {
+    "rel": "topics/yamanaka",
+    "kind": "topic",
+    "title": "yamanaka",
+    "year": null,
+    "venue": null,
+    "url": null,
+    "access": null,
+    "topics": [],
+    "wikilinks": [
+      "papers/mesenchymal-drift-cell-2025",
+      "papers/aav-osk-lifespan-2024",
+      "papers/shift-sb000-2025",
+      "papers/paine-partial-reprog-review-2024",
+      "papers/reprogramming-rejuv-review-ncomms-2024",
+      "topics/partial-reprogramming"
+    ],
+    "urls": []
+  }
+]
