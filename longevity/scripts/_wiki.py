@@ -92,6 +92,8 @@ def load_page(path: pathlib.Path) -> Page:
         kind = "paper"
     elif rel.startswith("topics/"):
         kind = "topic"
+    elif rel.startswith("analysis/"):
+        kind = "analysis"
     else:
         kind = "index"
     return Page(

@@ -16,6 +16,10 @@ markdown-as-source, wikilinks, linting, and indexed querying.
 - [[topics/reprogramming]] / [[topics/partial-reprogramming]] /
   [[topics/chemical-reprogramming]] — how we reverse it
 
+## Analyses
+- [[analysis/promising-reverse-aging]] — tier ranking of current
+  reverse-aging technologies (April 2026)
+
 ## Highest-leverage projects
 1. **Extend / stress-test [[papers/clockbase-agent-2025]]'s agent
    architecture** — the dataset is public, the clocks are swappable,
