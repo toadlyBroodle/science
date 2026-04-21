@@ -1,0 +1,269 @@
+{
+  "aging-clocks": [
+    "papers/adsc-exosomes-2022",
+    "papers/clockbase-agent-2025",
+    "papers/computagebench",
+    "papers/deep-aging-clocks-review-2025",
+    "papers/epinflammage",
+    "papers/nc-2025-14clocks",
+    "papers/nunez2024-open-competition",
+    "papers/organ-proteomic-clocks-2025",
+    "papers/pathwayage",
+    "papers/scbayesage-2025",
+    "papers/senolytic-methylation-2024",
+    "papers/shift-sb000-2025",
+    "topics/aging-clocks"
+  ],
+  "aging-research": [
+    "papers/ai-aging-review-2026",
+    "topics/aging-research"
+  ],
+  "benchmarks": [
+    "papers/clockbase-agent-2025",
+    "papers/computagebench",
+    "topics/benchmarks"
+  ],
+  "biomarkers-of-aging": [
+    "papers/biomarkers-aging-challenge",
+    "papers/nunez2024-open-competition",
+    "papers/ukb-nmr-metabolomic-2024",
+    "papers/xprize-healthspan",
+    "topics/biomarkers-of-aging"
+  ],
+  "brain-rejuvenation": [
+    "papers/fgf17-young-csf-2022",
+    "papers/senolytic-mci-ebiomed-2025",
+    "topics/brain-rejuvenation"
+  ],
+  "caloric-restriction": [
+    "papers/dr-960-mice-nature-2024",
+    "topics/caloric-restriction"
+  ],
+  "chemical-reprogramming": [
+    "papers/chemical-reprog-lifespan-2025",
+    "papers/lipid-droplets-reprog-2025",
+    "papers/yang-chemical-cocktails-2023",
+    "topics/chemical-reprogramming"
+  ],
+  "cheminformatics": [
+    "papers/agextend-2025",
+    "papers/senolytic-predictor-2025",
+    "topics/cheminformatics"
+  ],
+  "clinical-trials": [
+    "papers/nr-longcovid-2025",
+    "papers/pearl-rapamycin-2025",
+    "papers/senolytic-mci-ebiomed-2025",
+    "papers/senolytic-methylation-2024",
+    "papers/urolithin-a-immune-2025",
+    "papers/xprize-healthspan",
+    "topics/clinical-trials"
+  ],
+  "competitions": [
+    "papers/biomarkers-aging-challenge",
+    "papers/nunez2024-open-competition",
+    "papers/xprize-healthspan",
+    "topics/competitions"
+  ],
+  "datasets": [
+    "papers/itp-mpd-portal",
+    "topics/datasets"
+  ],
+  "deep-learning": [
+    "papers/deep-aging-clocks-review-2025",
+    "papers/epinflammage",
+    "topics/deep-learning"
+  ],
+  "disease-prediction": [
+    "papers/nc-2025-14clocks",
+    "topics/disease-prediction"
+  ],
+  "drug-discovery": [
+    "papers/agextend-2025",
+    "papers/senolytic-predictor-2025",
+    "papers/smerbarreto2023-senolytics",
+    "papers/yang-chemical-cocktails-2023",
+    "topics/drug-discovery"
+  ],
+  "drug-repurposing": [
+    "papers/clockbase-agent-2025",
+    "papers/network-repurposing-aging",
+    "topics/drug-repurposing"
+  ],
+  "epigenetics": [
+    "papers/nc-2025-14clocks",
+    "topics/epigenetics"
+  ],
+  "exosomes-extracellular-vesicles": [
+    "papers/adsc-exosomes-2022",
+    "topics/exosomes-extracellular-vesicles"
+  ],
+  "gene-therapy": [
+    "papers/aav-osk-lifespan-2024",
+    "papers/tert-knockin-2025",
+    "topics/gene-therapy"
+  ],
+  "hallmarks-of-aging": [
+    "papers/chemical-reprog-lifespan-2025",
+    "papers/network-repurposing-aging",
+    "topics/hallmarks-of-aging"
+  ],
+  "immune-rejuvenation": [
+    "papers/urolithin-a-immune-2025",
+    "topics/immune-rejuvenation"
+  ],
+  "inflammation": [
+    "papers/epinflammage",
+    "topics/inflammation"
+  ],
+  "interpretability": [
+    "papers/pathwayage",
+    "topics/interpretability"
+  ],
+  "interventions": [
+    "papers/adsc-exosomes-2022",
+    "papers/agextend-2025",
+    "papers/clockbase-agent-2025",
+    "papers/fgf17-young-csf-2022",
+    "papers/hcpb-review-2024",
+    "papers/itp-nia",
+    "papers/nr-longcovid-2025",
+    "papers/pearl-rapamycin-2025",
+    "papers/pedf-parabiosis-2024",
+    "topics/interventions"
+  ],
+  "itp-mice": [
+    "papers/dr-960-mice-nature-2024",
+    "papers/itp-mpd-portal",
+    "papers/itp-nia",
+    "papers/itp-sex-specific-2025",
+    "papers/lipid-droplets-reprog-2025",
+    "topics/itp-mice"
+  ],
+  "lifespan": [
+    "papers/aav-osk-lifespan-2024",
+    "papers/chemical-reprog-lifespan-2025",
+    "papers/dr-960-mice-nature-2024",
+    "papers/itp-sex-specific-2025",
+    "papers/tert-knockin-2025",
+    "topics/lifespan"
+  ],
+  "machine-learning": [
+    "papers/agextend-2025",
+    "papers/ai-aging-review-2026",
+    "papers/clockbase-agent-2025",
+    "papers/scbayesage-2025",
+    "papers/shift-sb000-2025",
+    "papers/singular-rejuv-atlas-2024",
+    "papers/smerbarreto2023-senolytics",
+    "topics/machine-learning"
+  ],
+  "metabolomics": [
+    "papers/ukb-nmr-metabolomic-2024",
+    "topics/metabolomics"
+  ],
+  "mtor": [
+    "papers/pearl-rapamycin-2025",
+    "topics/mtor"
+  ],
+  "nad-mitophagy": [
+    "papers/nr-longcovid-2025",
+    "papers/urolithin-a-immune-2025",
+    "topics/nad-mitophagy"
+  ],
+  "network-medicine": [
+    "papers/network-repurposing-aging",
+    "papers/singular-rejuv-atlas-2024",
+    "topics/network-medicine"
+  ],
+  "organ-specific": [
+    "papers/organ-proteomic-clocks-2025",
+    "topics/organ-specific"
+  ],
+  "parabiosis-blood-factors": [
+    "papers/fgf17-young-csf-2022",
+    "papers/hcpb-review-2024",
+    "papers/pedf-parabiosis-2024",
+    "topics/parabiosis-blood-factors"
+  ],
+  "partial-reprogramming": [
+    "papers/aav-osk-lifespan-2024",
+    "papers/mesenchymal-drift-cell-2025",
+    "papers/paine-partial-reprog-review-2024",
+    "papers/reprogramming-rejuv-review-ncomms-2024",
+    "papers/shift-sb000-2025",
+    "topics/partial-reprogramming"
+  ],
+  "pathway-analysis": [
+    "papers/pathwayage",
+    "topics/pathway-analysis"
+  ],
+  "proteomics": [
+    "papers/organ-proteomic-clocks-2025",
+    "papers/pedf-parabiosis-2024",
+    "topics/proteomics"
+  ],
+  "reprogramming": [
+    "papers/chemical-reprog-lifespan-2025",
+    "papers/lipid-droplets-reprog-2025",
+    "papers/paine-partial-reprog-review-2024",
+    "papers/reprogramming-rejuv-review-ncomms-2024",
+    "papers/shift-sb000-2025",
+    "papers/singular-rejuv-atlas-2024",
+    "papers/yang-chemical-cocktails-2023",
+    "topics/reprogramming"
+  ],
+  "review": [
+    "papers/ai-aging-review-2026",
+    "papers/deep-aging-clocks-review-2025",
+    "papers/hcpb-review-2024",
+    "papers/paine-partial-reprog-review-2024",
+    "papers/reprogramming-rejuv-review-ncomms-2024",
+    "topics/review"
+  ],
+  "safety": [
+    "papers/lipid-droplets-reprog-2025",
+    "topics/safety"
+  ],
+  "senolytics": [
+    "papers/senolytic-mci-ebiomed-2025",
+    "papers/senolytic-methylation-2024",
+    "papers/senolytic-predictor-2025",
+    "papers/smerbarreto2023-senolytics",
+    "topics/senolytics"
+  ],
+  "sex-specific": [
+    "papers/itp-sex-specific-2025",
+    "topics/sex-specific"
+  ],
+  "single-cell": [
+    "papers/scbayesage-2025",
+    "topics/single-cell"
+  ],
+  "stem-cells": [
+    "papers/adsc-exosomes-2022",
+    "topics/stem-cells"
+  ],
+  "telomeres": [
+    "papers/tert-knockin-2025",
+    "topics/telomeres"
+  ],
+  "transcriptomics": [
+    "papers/mesenchymal-drift-cell-2025",
+    "papers/scbayesage-2025",
+    "papers/singular-rejuv-atlas-2024",
+    "topics/transcriptomics"
+  ],
+  "uk-biobank": [
+    "papers/organ-proteomic-clocks-2025",
+    "papers/ukb-nmr-metabolomic-2024",
+    "topics/uk-biobank"
+  ],
+  "yamanaka": [
+    "papers/aav-osk-lifespan-2024",
+    "papers/mesenchymal-drift-cell-2025",
+    "papers/paine-partial-reprog-review-2024",
+    "papers/reprogramming-rejuv-review-ncomms-2024",
+    "topics/yamanaka"
+  ]
+}

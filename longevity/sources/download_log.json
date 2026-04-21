@@ -1,0 +1,207 @@
+[
+  {
+    "id": "biomarkers-aging-challenge",
+    "attempts": [
+      {
+        "label": "primary",
+        "url": "https://www.agingconsortium.org/challenge",
+        "status": "error"
+      }
+    ]
+  },
+  {
+    "id": "nunez2024-open-competition",
+    "attempts": [
+      {
+        "label": "primary",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11565782/",
+        "status": "error"
+      }
+    ]
+  },
+  {
+    "id": "computagebench",
+    "attempts": [
+      {
+        "label": "primary",
+        "url": "https://openreview.net/forum?id=0ApkwFlCxq",
+        "status": "error"
+      }
+    ]
+  },
+  {
+    "id": "nc-2025-14clocks",
+    "attempts": [
+      {
+        "label": "primary",
+        "url": "https://www.nature.com/articles/s41467-025-66106-y",
+        "status": "error"
+      }
+    ]
+  },
+  {
+    "id": "deep-aging-clocks-review-2025",
+    "attempts": [
+      {
+        "label": "primary",
+        "url": "https://www.sciencedirect.com/science/article/pii/S1568163725002351",
+        "status": "error"
+      }
+    ]
+  },
+  {
+    "id": "epinflammage",
+    "attempts": [
+      {
+        "label": "primary",
+        "url": "https://www.mdpi.com/1422-0067/26/13/6284",
+        "status": "error"
+      }
+    ]
+  },
+  {
+    "id": "pathwayage",
+    "attempts": [
+      {
+        "label": "primary",
+        "url": "https://www.thelancet.com/journals/ebiom/article/PIIS2352-3964(25)00273-7/fulltext",
+        "status": "error"
+      }
+    ]
+  },
+  {
+    "id": "itp-nia",
+    "attempts": [
+      {
+        "label": "primary",
+        "url": "https://www.nia.nih.gov/research/dab/interventions-testing-program-itp",
+        "status": "error"
+      }
+    ]
+  },
+  {
+    "id": "itp-mpd-portal",
+    "attempts": [
+      {
+        "label": "primary",
+        "url": "https://phenome.jax.org/projects/ITP1",
+        "status": "error"
+      }
+    ]
+  },
+  {
+    "id": "dr-960-mice-nature-2024",
+    "attempts": [
+      {
+        "label": "primary",
+        "url": "https://www.nature.com/articles/s41586-024-08026-3",
+        "status": "error"
+      },
+      {
+        "label": "alt",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11485257/",
+        "status": "error"
+      }
+    ]
+  },
+  {
+    "id": "itp-sex-specific-2025",
+    "attempts": [
+      {
+        "label": "primary",
+        "url": "https://www.nature.com/articles/s41514-025-00229-w",
+        "status": "error"
+      }
+    ]
+  },
+  {
+    "id": "network-repurposing-aging",
+    "attempts": [
+      {
+        "label": "pdf",
+        "url": "https://arxiv.org/pdf/2509.03330.pdf",
+        "status": "error"
+      },
+      {
+        "label": "primary",
+        "url": "https://arxiv.org/abs/2509.03330",
+        "status": "error"
+      }
+    ]
+  },
+  {
+    "id": "smerbarreto2023-senolytics",
+    "attempts": [
+      {
+        "label": "primary",
+        "url": "https://www.nature.com/articles/s41467-023-39120-1",
+        "status": "error"
+      },
+      {
+        "label": "alt",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10257182/",
+        "status": "error"
+      }
+    ]
+  },
+  {
+    "id": "senolytic-predictor-2025",
+    "attempts": [
+      {
+        "label": "primary",
+        "url": "https://www.mdpi.com/1420-3049/30/12/2653",
+        "status": "error"
+      }
+    ]
+  },
+  {
+    "id": "mesenchymal-drift-cell-2025",
+    "attempts": [
+      {
+        "label": "primary",
+        "url": "https://www.cell.com/cell/abstract/S0092-8674(25)00853-0",
+        "status": "error"
+      }
+    ]
+  },
+  {
+    "id": "organ-proteomic-clocks-2025",
+    "attempts": [
+      {
+        "label": "primary",
+        "url": "https://www.nature.com/articles/s43587-025-01016-8",
+        "status": "error"
+      },
+      {
+        "label": "alt",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41299092/",
+        "status": "error"
+      }
+    ]
+  },
+  {
+    "id": "ukb-nmr-metabolomic-2024",
+    "attempts": [
+      {
+        "label": "primary",
+        "url": "https://www.nature.com/articles/s41467-024-52310-9",
+        "status": "error"
+      }
+    ]
+  },
+  {
+    "id": "ai-aging-review-2026",
+    "attempts": [
+      {
+        "label": "primary",
+        "url": "https://www.frontiersin.org/journals/aging/articles/10.3389/fragi.2026.1644669/full",
+        "status": "error"
+      },
+      {
+        "label": "alt",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12891069/",
+        "status": "error"
+      }
+    ]
+  }
+]
