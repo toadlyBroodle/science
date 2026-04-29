@@ -150,6 +150,9 @@ LICENSE_MAP: dict[str, tuple[str, str]] = {
     "sniderman-2011-apob-meta": ("CC-BY-NC-4.0", "Circ CV Qual Outcomes article paywalled; PMC author manuscript OA."),
     "vital-2019-vitd-omega3": ("CC-BY-NC-4.0", "NEJM article paywalled; PMC author manuscript OA."),
     "chilibeck-2017-creatine-older-adults": ("CC-BY-NC-3.0", "Open Access J Sports Med (Dove Press) CC-BY-NC."),
+    "laukkanen-2015-sauna-mortality": ("ARR", "JAMA Intern Med paywalled; PubMed abstract free. No PMC OA available."),
+    "select-2023-semaglutide-cv-outcomes": ("ARR", "NEJM paywalled; abstract + figures free."),
+    "ma-2019-glucosamine-cv-mortality": ("CC-BY-NC-4.0", "BMJ open-access, CC-BY-NC."),
 }
 
 

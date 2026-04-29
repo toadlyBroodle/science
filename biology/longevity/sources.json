@@ -1463,6 +1463,61 @@
       "note": "Chilibeck et al. 2017 Open Access J Sports Med. Meta-analysis of 22 RCTs in older adults (n=721, mean age 57+) of creatine + resistance training vs RT alone. Creatine added +1.37 kg lean tissue mass (95% CI 0.97-1.76, p<0.00001) and significantly larger gains in chest press and leg press 1RM. Effect size on the same biomarkers (lean mass, strength) the wiki uses to justify resistance training.",
       "license": "CC-BY-NC-3.0",
       "license_note": "Open Access J Sports Med (Dove Press) CC-BY-NC."
+    },
+    {
+      "id": "laukkanen-2015-sauna-mortality",
+      "title": "Association between sauna bathing and fatal cardiovascular and all-cause mortality events",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25705824/",
+      "alt_url": [
+        "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2130724"
+      ],
+      "topics": [
+        "cardiovascular-prevention",
+        "interventions",
+        "lifespan"
+      ],
+      "kind": "paper",
+      "access": "gated",
+      "note": "Laukkanen et al. 2015 JAMA Internal Medicine. KIHD cohort, n=2,315 middle-aged Finnish men, 20.7 yr median follow-up. 4-7 sauna sessions/week vs 1/week: HR 0.37 sudden cardiac death, HR 0.50 fatal CVD, HR 0.60 all-cause mortality. Each additional sauna minute >19 min/session was associated with lower risk.",
+      "license": "ARR",
+      "license_note": "JAMA Intern Med paywalled; PubMed abstract free. No PMC OA available."
+    },
+    {
+      "id": "select-2023-semaglutide-cv-outcomes",
+      "title": "Semaglutide and cardiovascular outcomes in obesity without diabetes (SELECT)",
+      "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2307563",
+      "alt_url": [
+        "https://pubmed.ncbi.nlm.nih.gov/37952131/"
+      ],
+      "topics": [
+        "cardiovascular-prevention",
+        "clinical-trials",
+        "interventions"
+      ],
+      "kind": "paper",
+      "access": "gated",
+      "note": "Lincoff et al. 2023 NEJM. SELECT trial, n=17,604 patients age 45+ with prior CVD and BMI >=27 without diabetes, randomised 1:1 to semaglutide 2.4 mg/week or placebo. Mean follow-up 39.8 mo. Primary composite endpoint (CV death + nonfatal MI + nonfatal stroke): 6.5% vs 8.0%, HR 0.80 (95% CI 0.72-0.90, p<0.001). Permanent discontinuation due to AEs 16.6% vs 8.2%.",
+      "license": "ARR",
+      "license_note": "NEJM paywalled; abstract + figures free."
+    },
+    {
+      "id": "ma-2019-glucosamine-cv-mortality",
+      "title": "Association of habitual glucosamine use with risk of cardiovascular disease: prospective study in UK Biobank",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6515311/",
+      "alt_url": [
+        "https://www.bmj.com/content/365/bmj.l1628",
+        "https://pubmed.ncbi.nlm.nih.gov/31088786/"
+      ],
+      "topics": [
+        "cardiovascular-prevention",
+        "vitamins-supplements",
+        "interventions"
+      ],
+      "kind": "paper",
+      "access": "open",
+      "note": "Ma et al. 2019 BMJ. UK Biobank, n=466,039 without CVD at baseline, ~7 yr median follow-up. Habitual glucosamine use: HR 0.85 (95% CI 0.80-0.90) total CVD events, HR 0.78 (0.70-0.87) CVD death, HR 0.82 (0.76-0.88) CHD. Observational; residual confounding plausible since glucosamine users in UK Biobank are systematically different (more health-conscious, exercise more, etc.).",
+      "license": "CC-BY-NC-4.0",
+      "license_note": "BMJ open-access, CC-BY-NC."
     }
   ]
 }

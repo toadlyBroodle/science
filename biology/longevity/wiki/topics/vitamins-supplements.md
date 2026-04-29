@@ -36,6 +36,13 @@ don't bother."
   well-validated as a mortality predictor (see
   [[topics/muscle-strength]]).
 
+## Observational signal, no RCT confirmation
+- [[papers/ma-2019-glucosamine-cv-mortality]] — UK Biobank
+  prospective, n=466,039, ~7-yr follow-up. Glucosamine HR 0.85
+  CVD events, HR 0.78 CVD death. Healthy-user confounding is the
+  leading alternative explanation; no phase-3 RCT exists. Treat as
+  signal, not as evidence to start supplementation on.
+
 ## Adjacent
 - [[topics/clinical-trials]], [[topics/interventions]],
   [[topics/nad-mitophagy]]

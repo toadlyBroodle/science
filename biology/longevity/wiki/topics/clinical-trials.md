@@ -21,6 +21,9 @@ Human RCTs testing interventions with aging-related endpoints.
   IVIG, no rejuvenation (negative result).
 - [[papers/semaglutide-glp1-epigenetic-age-rct-2025]] — first GLP-1
   agonist RCT with epigenetic-age outcomes.
+- [[papers/select-2023-semaglutide-cv-outcomes]] — SELECT trial
+  (n=17,604, ~40 mo): semaglutide 2.4 mg/week cuts MACE 20%
+  in obese non-diabetic adults with prior CVD.
 - [[papers/lifestyle-atlas-tirolgesund-2025]] — TirolGESUND
   intermittent-fasting / smoking-cessation multi-omic atlas.
 

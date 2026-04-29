@@ -26,6 +26,27 @@ systematically underprescribed in primary prevention.
   (~39 mg/dL) LDL-C reduction yields ~21% lower vascular events
   per year, including in low-risk primary-prevention adults.
 
+## GLP-1s for prevention in obesity
+- [[papers/select-2023-semaglutide-cv-outcomes]] — SELECT trial,
+  n=17,604 obese adults with prior CVD but no diabetes.
+  Semaglutide 2.4 mg/week vs placebo: HR 0.80 on the primary MACE
+  endpoint (p<0.001) over ~40 mo follow-up.
+
+## Heat exposure (observational)
+- [[papers/laukkanen-2015-sauna-mortality]] — Finnish KIHD cohort,
+  n=2,315 men, 20.7 yr follow-up. 4–7 sauna sessions/week vs 1/week:
+  HR 0.50 fatal CVD, HR 0.37 sudden cardiac death, HR 0.60
+  all-cause mortality. Observational; healthy-user bias plausible
+  but the comparison is dose ("more sauna" vs "less sauna") in a
+  population where sauna use is universal.
+
+## Supplements and CVD: signal, not proof
+- [[papers/ma-2019-glucosamine-cv-mortality]] — UK Biobank
+  observational, n=466,039, ~7 yr follow-up. Glucosamine: HR 0.85
+  CVD events, HR 0.78 CVD death. **Observational only; no RCT
+  confirmation.** Healthy-user bias is the leading alternative
+  explanation.
+
 ## Practical
 - Home BP cuff > clinic measurement; sustained <120/80 if at CV
   risk, <130/80 otherwise.

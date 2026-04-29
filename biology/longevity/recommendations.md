@@ -177,11 +177,15 @@ risk estimate, not a generic "everyone should take statins" rule.
 - **HbA1c**, fasting glucose, and **fasting insulin** annually.
 - A continuous glucose monitor for 2 weeks gives more signal than any
   single fasting measurement.
-- The [[papers/semaglutide-glp1-epigenetic-age-rct-2025]] result is
-  early but the GLP-1 class is showing biological-age effects beyond
-  weight loss; relevant if you have prediabetes or T2D risk.
-  **Evidence: T6** for biological-age endpoint, T7 for cardiovascular
-  hard endpoint in T2D / obesity.
+- GLP-1 agonists in obesity: the
+  [[papers/semaglutide-glp1-epigenetic-age-rct-2025]] biological-age
+  RCT is early-stage; the
+  [[papers/select-2023-semaglutide-cv-outcomes]] SELECT trial
+  (n=17,604, semaglutide 2.4 mg/week vs placebo, ~40 mo) is **T7**:
+  HR 0.80 on the primary MACE endpoint (p<0.001) in obese adults
+  with prior CVD but no diabetes. Semaglutide is now a CV-prevention
+  drug in obesity, not just a weight-loss drug. Discontinuation rate
+  ~17% (mostly GI) is meaningful in real-world adherence.
 
 ### Treat documented deficiencies, don't megadose (Tier 6 negative for non-deficient)
 - Cheap baseline panel: vitamin D, B12, ferritin, TSH, hsCRP.
@@ -238,6 +242,27 @@ mouse-only (T3) at this writing.
 Mechanism is specific (gut microbial metabolite) and the RCT effect
 was real but modest. Reasonable bet if you've maxed out Tier A and
 want to add something with actual human data.
+
+### Heat exposure (Tier 6 observational)
+**Evidence: T6 observational, no RCT.**
+[[papers/laukkanen-2015-sauna-mortality]]: Finnish KIHD cohort
+(n=2,315 men, 20.7 yr median follow-up). 4–7 sauna sessions/week vs
+1/week was associated with HR 0.50 fatal CVD, HR 0.37 sudden cardiac
+death, HR 0.60 all-cause mortality. Effect was dose-responsive on
+both frequency and per-session duration (>19 min better than
+<11 min).
+
+This is observational, not randomized. Healthy-user bias is a real
+alternative explanation, although the comparison is dose ("more"
+vs "less" sauna in a population where almost everyone uses one)
+rather than "any" vs "none." Generalisation to infrared saunas or
+other thermal protocols is not direct.
+
+If you have access to a traditional Finnish sauna and no
+contraindications (uncontrolled hypertension, recent MI, advanced
+arrhythmia, pregnancy without medical advice), 4+ sessions per
+week of ~20 min is the regimen most associated with the cohort
+result.
 
 ---
 
@@ -399,6 +424,20 @@ if it just happens to correlate with being healthy.
   for longitudinal tracking.
 
 ---
+
+# Interesting but unconfirmed
+
+The Reddit thread asked about several supplements with observational
+or mechanism-based signals but no RCT confirmation. These are filed
+as "interesting, watch this space" rather than "do this."
+
+- **Glucosamine.** [[papers/ma-2019-glucosamine-cv-mortality]]: UK
+  Biobank n=466,039, ~7-yr follow-up, glucosamine HR 0.85 CVD events
+  / HR 0.78 CVD death. Observational only; healthy-user confounding
+  plausible. The Reddit claim that glucosamine has "much better data
+  than vitamin D" is overstated — vitamin D had a clean negative
+  phase-3 RCT (VITAL); glucosamine has only large prospective
+  cohort data without RCT confirmation.
 
 # Don't bother (or actively avoid)
 
