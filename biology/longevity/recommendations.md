@@ -591,12 +591,24 @@ The 2024-2026 negative results in the wiki rule these out:
 
 # How to think about the rest of the wiki
 
-The wiki's [[analysis/promising-reverse-aging]] page covers the full
-research-frontier landscape (partial reprogramming, gene therapies,
-foundation-model clocks). Most of that is not actionable for an
-individual today, but it's where the next 5-10 years of clinically
-relevant therapies will come from. Worth tracking, not worth
-chasing.
+Three companion analysis pages cover the parts of the field not
+captured here:
+
+- [[analysis/promising-reverse-aging]] — frontier research
+  (partial reprogramming, gene therapies, foundation-model clocks).
+  Most of it is not actionable for an individual today, but it is
+  where the next 5-10 years of clinically relevant therapies will
+  come from. Worth tracking, not worth chasing.
+- [[analysis/evidence-tiers]] — the T0-T7 evidence-maturity ladder
+  used to grade every intervention here, plus within-tier quality
+  dimensions (endpoint clarity, effect size, replication,
+  population, confounding, dose-response).
+- [[analysis/yet-to-publish]] — pending trial readouts the wiki
+  will ingest when they publish. The ones most likely to change a
+  recommendation here are the Lp(a)-lowering Phase 3 trials
+  (HORIZON, OCEAN(a), ACCLAIM-Lp(a)), the tirzepatide
+  cardiovascular outcomes trial (SURMOUNT-MMO), and a putative
+  trametinib + rapamycin Phase 2 combination trial.
 
 # Disclaimer
 
