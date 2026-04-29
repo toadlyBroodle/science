@@ -591,9 +591,15 @@ The 2024-2026 negative results in the wiki rule these out:
 
 # How to think about the rest of the wiki
 
-Three companion analysis pages cover the parts of the field not
+Four companion analysis pages cover the parts of the field not
 captured here:
 
+- [[analysis/intervention-impact-ranking]] — top-20 ranking of the
+  interventions on this page by tier-weighted impact (effect ×
+  tier_weight × population_applicability) with transparent
+  methodology and honest caveats. Useful when you want a
+  prioritised "where do I get the most lift per unit effort"
+  view rather than the comprehensive list above.
 - [[analysis/promising-reverse-aging]] — frontier research
   (partial reprogramming, gene therapies, foundation-model clocks).
   Most of it is not actionable for an individual today, but it is

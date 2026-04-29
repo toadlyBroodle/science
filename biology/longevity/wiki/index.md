@@ -101,6 +101,10 @@ Follow in order; each step assumes the previous one.
   OCEAN(a), ACCLAIM-Lp(a)), tirzepatide CV (SURMOUNT-MMO),
   trametinib+rapamycin combo, anti-IL-11 human, klotho s-KL,
   partial-reprogramming FIH, more.
+- [[analysis/intervention-impact-ranking]]: top-20 longevity
+  interventions ranked by tier-weighted impact (effect ×
+  tier_weight × population_applicability), with explicit
+  methodology and honest caveats.
 - [[topics/competitions]]: [[papers/biomarkers-aging-challenge]],
   [[papers/xprize-healthspan]]. Active coordinated efforts that
   reveal what the field believes is close to tractable.
@@ -202,6 +206,8 @@ Follow in order; each step assumes the previous one.
 - [[analysis/promising-reverse-aging]] — tier-ranked frontier.
 - [[analysis/evidence-tiers]] — T0–T7 ladder + within-tier
   quality rubric.
+- [[analysis/intervention-impact-ranking]] — top-20 by
+  tier-weighted impact.
 - [[analysis/yet-to-publish]] — pending trial readouts.
 
 ## All papers
