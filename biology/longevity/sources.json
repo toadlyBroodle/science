@@ -1518,6 +1518,62 @@
       "note": "Ma et al. 2019 BMJ. UK Biobank, n=466,039 without CVD at baseline, ~7 yr median follow-up. Habitual glucosamine use: HR 0.85 (95% CI 0.80-0.90) total CVD events, HR 0.78 (0.70-0.87) CVD death, HR 0.82 (0.76-0.88) CHD. Observational; residual confounding plausible since glucosamine users in UK Biobank are systematically different (more health-conscious, exercise more, etc.).",
       "license": "CC-BY-NC-4.0",
       "license_note": "BMJ open-access, CC-BY-NC."
+    },
+    {
+      "id": "manson-2017-whi-hrt-mortality",
+      "title": "Menopausal hormone therapy and long-term all-cause and cause-specific mortality: the Women's Health Initiative randomized trials",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5728370/",
+      "alt_url": [
+        "https://jamanetwork.com/journals/jama/fullarticle/2653735",
+        "https://pubmed.ncbi.nlm.nih.gov/28898378/"
+      ],
+      "topics": [
+        "cardiovascular-prevention",
+        "clinical-trials",
+        "interventions",
+        "lifespan"
+      ],
+      "kind": "paper",
+      "access": "open",
+      "note": "Manson et al. 2017 JAMA. 18-yr cumulative follow-up of the WHI hormone-therapy RCTs, n=27,347 postmenopausal women age 50-79 randomised in 1993-1998. All-cause mortality: 27.1% HRT vs 27.6% placebo, HR 0.99 (95% CI 0.94-1.03). CEE+MPA arm HR 1.02; CEE-alone arm HR 0.94. Neutral on mortality overall. Age-stratified: HRs nominally lower in women initiating at 50-59 vs 70-79, supporting the timing hypothesis but not statistically significant for all-cause mortality.",
+      "license": "CC-BY-NC-4.0",
+      "license_note": "JAMA paywalled; PMC author manuscript OA."
+    },
+    {
+      "id": "mortensen-2014-coq10-qsymbio",
+      "title": "The effect of coenzyme Q10 on morbidity and mortality in chronic heart failure: results from Q-SYMBIO, a randomized double-blind trial",
+      "url": "https://www.jacc.org/doi/10.1016/j.jchf.2014.06.008",
+      "alt_url": [
+        "https://pubmed.ncbi.nlm.nih.gov/25282031/"
+      ],
+      "topics": [
+        "cardiovascular-prevention",
+        "clinical-trials",
+        "interventions",
+        "vitamins-supplements"
+      ],
+      "kind": "paper",
+      "access": "gated",
+      "note": "Mortensen et al. 2014 JACC Heart Failure. Q-SYMBIO RCT, n=420 chronic HF (NYHA III-IV), CoQ10 100 mg TID vs placebo, 2-yr follow-up. Primary MACE composite: 15% CoQ10 vs 26% placebo, HR 0.50 (p=0.003). Secondary: all-cause mortality HR 0.51 (p=0.018), CV mortality HR 0.43 (p=0.013). HF-specific result; no comparable RCT in healthy adults.",
+      "license": "ARR",
+      "license_note": "JACC paywalled; PubMed abstract free."
+    },
+    {
+      "id": "buijze-2016-cold-shower-rct",
+      "title": "The effect of cold showering on health and work: a randomized controlled trial",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0161749",
+      "alt_url": [
+        "https://pubmed.ncbi.nlm.nih.gov/27631616/"
+      ],
+      "topics": [
+        "interventions",
+        "clinical-trials"
+      ],
+      "kind": "paper",
+      "access": "open",
+      "note": "Buijze et al. 2016 PLOS ONE. n=3,018 adults 18-65, randomised to 30/60/90-second cold shower or no cold shower x 30 days. Cold pooled vs control: 29% reduction in self-reported sickness absence (IRR 0.71, p=0.003). No significant change in number of illness days, only absence. Soft surrogate endpoint; no mortality data.",
+      "license": "CC-BY-4.0",
+      "license_note": "PLOS ONE CC-BY-4.0; full text OA."
     }
   ]
 }

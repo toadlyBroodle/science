@@ -153,6 +153,9 @@ LICENSE_MAP: dict[str, tuple[str, str]] = {
     "laukkanen-2015-sauna-mortality": ("ARR", "JAMA Intern Med paywalled; PubMed abstract free. No PMC OA available."),
     "select-2023-semaglutide-cv-outcomes": ("ARR", "NEJM paywalled; abstract + figures free."),
     "ma-2019-glucosamine-cv-mortality": ("CC-BY-NC-4.0", "BMJ open-access, CC-BY-NC."),
+    "manson-2017-whi-hrt-mortality": ("CC-BY-NC-4.0", "JAMA paywalled; PMC author manuscript OA."),
+    "mortensen-2014-coq10-qsymbio": ("ARR", "JACC paywalled; PubMed abstract free."),
+    "buijze-2016-cold-shower-rct": ("CC-BY-4.0", "PLOS ONE CC-BY-4.0; full text OA."),
 }
 
 

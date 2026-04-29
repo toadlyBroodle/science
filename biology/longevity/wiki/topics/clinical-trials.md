@@ -24,6 +24,16 @@ Human RCTs testing interventions with aging-related endpoints.
 - [[papers/select-2023-semaglutide-cv-outcomes]] — SELECT trial
   (n=17,604, ~40 mo): semaglutide 2.4 mg/week cuts MACE 20%
   in obese non-diabetic adults with prior CVD.
+- [[papers/manson-2017-whi-hrt-mortality]] — WHI hormone-therapy
+  18-yr follow-up (n=27,347): all-cause mortality HR 0.99,
+  resolves the 2002 fearmongering but does not establish a
+  longevity indication.
+- [[papers/mortensen-2014-coq10-qsymbio]] — Q-SYMBIO (n=420
+  chronic HF NYHA III-IV): CoQ10 100 mg TID HR 0.50 MACE,
+  HR 0.51 all-cause mortality at 2 yr.
+- [[papers/buijze-2016-cold-shower-rct]] — n=3,018 cold-shower
+  RCT: 29% reduction in self-reported sickness absence (soft
+  endpoint).
 - [[papers/lifestyle-atlas-tirolgesund-2025]] — TirolGESUND
   intermittent-fasting / smoking-cessation multi-omic atlas.
 

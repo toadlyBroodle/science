@@ -36,6 +36,12 @@ don't bother."
   well-validated as a mortality predictor (see
   [[topics/muscle-strength]]).
 
+## Indication-specific RCT evidence
+- [[papers/mortensen-2014-coq10-qsymbio]] — CoQ10 100 mg TID in
+  symptomatic chronic heart failure (NYHA III-IV): primary MACE
+  HR 0.50, all-cause mortality HR 0.51. **Specific to advanced
+  HF; no comparable RCT in healthy adults.**
+
 ## Observational signal, no RCT confirmation
 - [[papers/ma-2019-glucosamine-cv-mortality]] — UK Biobank
   prospective, n=466,039, ~7-yr follow-up. Glucosamine HR 0.85

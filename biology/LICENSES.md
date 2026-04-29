@@ -17,6 +17,7 @@ per-paper before redistributing full text.
 | `aav-osk-lifespan-2024` | `CC-BY-4.0` | https://pmc.ncbi.nlm.nih.gov/articles/PMC10909732/ | PMC author-manuscript (PMC10909732); Liebert Cellular Reprogramming paywalled. |
 | `adsc-exosomes-2022` | `CC-BY-4.0` | https://www.science.org/doi/10.1126/sciadv.abq2226 | Science Advances (fully OA). |
 | `ai-aging-review-2026` | `CC-BY-4.0` | https://pmc.ncbi.nlm.nih.gov/articles/PMC12891069/ | Frontiers in Aging (fully OA). |
+| `buijze-2016-cold-shower-rct` | `CC-BY-4.0` | https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0161749 | PLOS ONE CC-BY-4.0; full text OA. |
 | `chemical-reprog-lifespan-2025` | `CC-BY-4.0` | https://pmc.ncbi.nlm.nih.gov/articles/PMC12340157/ | EMBO Mol Med (fully OA) + PMC. |
 | `clockbase-agent-2025` | `CC-BY-4.0` | https://pmc.ncbi.nlm.nih.gov/articles/PMC12667862/ | PMC OA primary (PMC12667862); bioRxiv preprint author-choice. |
 | `ctt-2012-statins-low-risk` | `CC-BY-4.0` | https://pmc.ncbi.nlm.nih.gov/articles/PMC2988224/ | Lancet (CC-BY-4.0); PMC OA primary. |
@@ -61,6 +62,7 @@ per-paper before redistributing full text.
 | `klotho-skl-aav-2025` | `CC-BY-NC-4.0` | https://pmc.ncbi.nlm.nih.gov/articles/PMC11997498/ | Molecular Therapy article CC-BY-NC-ND-4.0 (PMC author manuscript OA); classified here as restricted (NC). |
 | `leong-2015-pure-grip-strength` | `CC-BY-NC-4.0` | https://pmc.ncbi.nlm.nih.gov/articles/PMC4470673/ | Lancet article paywalled; PMC author manuscript OA. |
 | `ma-2019-glucosamine-cv-mortality` | `CC-BY-NC-4.0` | https://pmc.ncbi.nlm.nih.gov/articles/PMC6515311/ | BMJ open-access, CC-BY-NC. |
+| `manson-2017-whi-hrt-mortality` | `CC-BY-NC-4.0` | https://pmc.ncbi.nlm.nih.gov/articles/PMC5728370/ | JAMA paywalled; PMC author manuscript OA. |
 | `pischon-2008-waist-mortality` | `CC-BY-NC-4.0` | https://pmc.ncbi.nlm.nih.gov/articles/PMC2723953/ | NEJM article paywalled; PMC author manuscript OA. |
 | `plasmapheresis-aging-trial-2025` | `CC-BY-NC-4.0` | https://pmc.ncbi.nlm.nih.gov/articles/PMC12218284/ | Scientific Reports article notes CC-BY-NC-ND-4.0; classified here as restricted (NC). PMC OA primary. |
 | `saeidifard-2019-resistance-mortality` | `CC-BY-NC-4.0` | https://pmc.ncbi.nlm.nih.gov/articles/PMC6815753/ | Eur J Prev Cardiol article paywalled; PMC author manuscript OA. |
@@ -99,6 +101,7 @@ per-paper before redistributing full text.
 | `itp-mpd-portal` | `website-tos` | https://phenome.jax.org/projects/ITP1 | Jackson Lab Mouse Phenome Database site terms. |
 | `laukkanen-2015-sauna-mortality` | `ARR` | https://pubmed.ncbi.nlm.nih.gov/25705824/ | JAMA Intern Med paywalled; PubMed abstract free. No PMC OA available. |
 | `mesenchymal-drift-cell-2025` | `ARR` | https://www.cell.com/cell/abstract/S0092-8674(25)00853-0 | Cell (Elsevier). Paywalled; no known preprint at time of writing. |
+| `mortensen-2014-coq10-qsymbio` | `ARR` | https://www.jacc.org/doi/10.1016/j.jchf.2014.06.008 | JACC paywalled; PubMed abstract free. |
 | `organ-proteomic-clocks-2025` | `ARR` | https://www.nature.com/articles/s43587-025-01016-8 | Nature Aging. Paywalled unless CC-BY paid; verify per-article. |
 | `paine-partial-reprog-review-2024` | `ARR` | https://onlinelibrary.wiley.com/doi/10.1111/acel.14039 | Wiley Aging Cell. Check OA status per-article; often paywalled. |
 | `plasma-proteomics-brain-immune-2025` | `ARR` | https://www.nature.com/articles/s41591-025-03798-1 | Nature Medicine (paywalled unless CC-BY paid); bioRxiv preprint author-choice. |
@@ -118,12 +121,12 @@ per-paper before redistributing full text.
 
 | Category | Count |
 |---|---|
-| Redistributable | 36 |
-| Restricted | 13 |
+| Redistributable | 37 |
+| Restricted | 14 |
 | Varies per paper | 10 |
-| Not redistributable | 19 |
+| Not redistributable | 20 |
 | Unknown | 1 |
-| **Total** | **79** |
+| **Total** | **82** |
 
 ## Safe-to-commit pipeline contract
 

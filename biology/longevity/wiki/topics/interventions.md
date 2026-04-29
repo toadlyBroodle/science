@@ -14,6 +14,14 @@ Drug, diet, or genetic manipulations that extend lifespan or healthspan.
 - [[papers/itp-sex-specific-2025]]
 - [[papers/dr-960-mice-nature-2024]]
 
+## Lifestyle interventions (cold / heat exposure)
+- [[papers/laukkanen-2015-sauna-mortality]] — KIHD cohort,
+  4-7 sauna sessions/week vs 1/week associated with HR 0.50
+  fatal CVD over 20.7 yr (T6 observational).
+- [[papers/buijze-2016-cold-shower-rct]] — n=3,018, 30-day cold
+  shower trial: 29% reduction in self-reported sickness absence
+  (soft endpoint).
+
 ## New mouse-lifespan hits (>20% extension)
 - [[papers/il11-inhibition-2024]] — anti-IL-11 antibody +22–25%.
 - [[papers/klotho-skl-aav-2025]] — AAV9-s-KL +20% (males).

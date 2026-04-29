@@ -187,6 +187,29 @@ risk estimate, not a generic "everyone should take statins" rule.
   drug in obesity, not just a weight-loss drug. Discontinuation rate
   ~17% (mostly GI) is meaningful in real-world adherence.
 
+### Hormone replacement therapy (postmenopausal women, Tier 7 mortality-neutral)
+**Evidence: T7** (RCT 18-yr follow-up).
+[[papers/manson-2017-whi-hrt-mortality]]: 18-year follow-up of the
+WHI hormone-therapy RCTs (n=27,347). All-cause mortality
+**HR 0.99 (95% CI 0.94-1.03)** — neutral overall. Age-stratified
+analysis showed nominally lower HRs in women initiating at age
+50-59 vs 70-79, consistent with the timing hypothesis but not
+statistically significant for all-cause mortality.
+
+The 2002 WHI early termination drove a worldwide collapse in HRT
+prescribing on the basis of relative-risk increases that, in
+absolute terms, were small and largely confined to older
+late-initiation users. The 2017 long-term follow-up shows no excess
+mortality.
+
+For women with bothersome menopausal symptoms (vasomotor,
+genitourinary, sleep), modern HRT (typically transdermal estradiol
++ micronised progesterone, not the WHI's oral CEE+MPA) carries a
+risk-benefit profile that is not the catastrophic profile the 2002
+readout was misinterpreted to imply. For asymptomatic longevity
+purposes, RCT evidence does not currently support starting HRT.
+Decisions are highly individualised.
+
 ### Treat documented deficiencies, don't megadose (Tier 6 negative for non-deficient)
 - Cheap baseline panel: vitamin D, B12, ferritin, TSH, hsCRP.
   Deficiencies are common and mimic aging symptoms.
@@ -425,11 +448,20 @@ if it just happens to correlate with being healthy.
 
 ---
 
+# Indication-specific (only if you have the indication)
+
+- **CoQ10 100 mg TID for symptomatic chronic heart failure (NYHA
+  III-IV).** [[papers/mortensen-2014-coq10-qsymbio]]: Q-SYMBIO RCT,
+  n=420, primary MACE HR 0.50, all-cause mortality HR 0.51 over
+  2 yr on top of standard HF therapy. **HF-specific; no comparable
+  RCT in healthy adults.** Discuss with a cardiologist.
+
 # Interesting but unconfirmed
 
-The Reddit thread asked about several supplements with observational
-or mechanism-based signals but no RCT confirmation. These are filed
-as "interesting, watch this space" rather than "do this."
+The Reddit thread asked about several supplements and lifestyle
+practices with observational or mechanism-based signals but no
+mortality-grade RCT confirmation. These are filed as "interesting,
+watch this space" rather than "do this."
 
 - **Glucosamine.** [[papers/ma-2019-glucosamine-cv-mortality]]: UK
   Biobank n=466,039, ~7-yr follow-up, glucosamine HR 0.85 CVD events
@@ -438,6 +470,16 @@ as "interesting, watch this space" rather than "do this."
   than vitamin D" is overstated — vitamin D had a clean negative
   phase-3 RCT (VITAL); glucosamine has only large prospective
   cohort data without RCT confirmation.
+
+- **Cold exposure (cold showers / cold-water immersion).**
+  [[papers/buijze-2016-cold-shower-rct]]: n=3,018, 30-day RCT.
+  29% reduction in self-reported sickness absence (IRR 0.71,
+  p=0.003) but no change in number of illness days. Soft endpoint;
+  unblinded; no mortality or biomarker-validated outcome. Brown-fat
+  activation and cold-shock protein induction are mechanism-supported
+  but not endpoint-validated. 30 seconds at the end of a regular
+  shower is the simplest evidence-positive protocol; longer
+  durations did not help in this trial.
 
 # Don't bother (or actively avoid)
 

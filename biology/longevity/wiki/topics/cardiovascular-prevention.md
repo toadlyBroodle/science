@@ -32,6 +32,20 @@ systematically underprescribed in primary prevention.
   Semaglutide 2.4 mg/week vs placebo: HR 0.80 on the primary MACE
   endpoint (p<0.001) over ~40 mo follow-up.
 
+## Hormone therapy in postmenopausal women
+- [[papers/manson-2017-whi-hrt-mortality]] — 18-yr follow-up of
+  the WHI hormone-therapy RCTs (n=27,347). All-cause mortality
+  HR 0.99. Neutral overall; the 50-59 early-initiation subgroup
+  is consistent with the timing hypothesis but not statistically
+  significant.
+
+## CoQ10 in advanced heart failure
+- [[papers/mortensen-2014-coq10-qsymbio]] — Q-SYMBIO RCT, n=420
+  NYHA III-IV chronic HF. CoQ10 100 mg TID vs placebo:
+  primary MACE HR 0.50 (p=0.003), all-cause mortality HR 0.51
+  (p=0.018) over 2 yr. **HF-specific result; not validated in
+  healthy adults.**
+
 ## Heat exposure (observational)
 - [[papers/laukkanen-2015-sauna-mortality]] — Finnish KIHD cohort,
   n=2,315 men, 20.7 yr follow-up. 4–7 sauna sessions/week vs 1/week:
