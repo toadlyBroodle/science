@@ -8,6 +8,8 @@ alt_url: https://www.ahajournals.org/doi/10.1161/CIRCOUTCOMES.111.962100
 access: open
 kind: paper
 topics: [cardiovascular-prevention, interventions, review]
+evidence_tier: T7
+endpoint: observational
 ---
 
 # apoB beats LDL-C as a CV risk marker (head-to-head meta-analysis)

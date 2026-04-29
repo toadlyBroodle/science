@@ -8,6 +8,8 @@ alt_url: https://journals.lww.com/acsm-msse/fulltext/2007/04000/aerobic_high_int
 access: gated
 kind: paper
 topics: [cardiorespiratory-fitness, interventions]
+evidence_tier: T5
+endpoint: primary_met
 ---
 
 # The 4x4 protocol that raises VO2max ~7% in 8 weeks

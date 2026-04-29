@@ -8,6 +8,8 @@ alt_url: https://journals.sagepub.com/doi/10.1177/2047487319850718
 access: open
 kind: paper
 topics: [muscle-strength, interventions, lifespan, review]
+evidence_tier: T7
+endpoint: observational
 ---
 
 # Resistance training is independently associated with lower mortality

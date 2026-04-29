@@ -8,6 +8,8 @@ alt_url: https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2707428
 access: open
 kind: paper
 topics: [cardiorespiratory-fitness, interventions, lifespan, clinical-trials]
+evidence_tier: T6
+endpoint: observational
 ---
 
 # Cardiorespiratory fitness and mortality: 122,000 patients, no upper limit

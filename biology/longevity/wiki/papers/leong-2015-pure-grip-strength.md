@@ -8,6 +8,8 @@ alt_url: https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(14)6200
 access: open
 kind: paper
 topics: [muscle-strength, interventions, lifespan]
+evidence_tier: T7
+endpoint: observational
 ---
 
 # Grip strength predicts mortality more than systolic BP (PURE, n=139,691)

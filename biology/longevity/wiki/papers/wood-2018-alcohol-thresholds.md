@@ -8,6 +8,8 @@ alt_url: https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(18)3013
 access: open
 kind: paper
 topics: [alcohol, interventions, lifespan]
+evidence_tier: T7
+endpoint: observational
 ---
 
 # Lowest-risk alcohol intake is ~100 g/week (~7 standard drinks)

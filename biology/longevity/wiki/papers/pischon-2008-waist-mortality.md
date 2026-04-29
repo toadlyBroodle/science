@@ -8,6 +8,8 @@ alt_url: https://www.nejm.org/doi/full/10.1056/NEJMoa0801891
 access: open
 kind: paper
 topics: [body-composition, interventions, lifespan]
+evidence_tier: T7
+endpoint: observational
 ---
 
 # Waist circumference predicts mortality independently of BMI (EPIC, n=359k)

@@ -8,6 +8,8 @@ alt_url: https://www.nejm.org/doi/full/10.1056/NEJMsa1211128
 access: open
 kind: paper
 topics: [smoking, interventions, lifespan]
+evidence_tier: T7
+endpoint: observational
 ---
 
 # Smoking shortens life by 10 years; quitting recovers most of it

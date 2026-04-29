@@ -22,8 +22,8 @@ reproducibility within tier matter at least as much.
 | **T3** | Replicated mouse studies; ITP-grade or independent labs | Rapamycin, 17α-estradiol, acarbose |
 | **T4** | Non-human primate or large mammal | Caloric restriction in rhesus (NIA, Wisconsin) |
 | **T5** | Small human trial (n < 100), surrogate endpoint | Many pilot RCTs of off-label longevity drugs |
-| **T6** | Phase 2/3 human RCT, surrogate endpoint (ApoB, BP, biological age) | PEARL (rapamycin), VITAL (vitamin D) |
-| **T7** | Phase 3 RCT or meta-analysis, hard endpoint (MACE, all-cause mortality) | CTT statin meta-analysis, SPRINT BP trial |
+| **T6** | Phase 2/3 human RCT, surrogate endpoint, **or** large prospective cohort (n>10k) with hard endpoint | PEARL (rapamycin), VITAL (vitamin D), Mandsager VO2max cohort |
+| **T7** | Phase 3 RCT or meta-analysis with hard endpoint (MACE, all-cause mortality), **or** large multi-cohort meta-analysis with hard endpoint where randomization is infeasible | CTT statin meta-analysis, SPRINT BP trial, Cappuccio sleep-mortality meta-analysis, Wood alcohol pooled IPD |
 
 ## Within-tier quality dimension
 
@@ -43,7 +43,13 @@ assess:
   matters.
 - **Confounding / bias risks.** P-hacking, selection bias,
   industry-funded with no independent confirmation, retracted source
-  papers in the chain.
+  papers in the chain. For observational data: residual confounding,
+  reverse causation, healthy-user bias.
+- **Design (RCT vs. observational).** RCT > observational at the
+  same tier. For interventions where RCT is infeasible (lifelong
+  smoking, sleep duration, occupational exercise), observational
+  evidence with Mendelian-randomization triangulation is the
+  realistic ceiling and should be flagged as such, not penalised.
 - **Dose-response.** Was a dose-response curve shown? Was the
   effective dose identified, or is it educated guesswork?
 

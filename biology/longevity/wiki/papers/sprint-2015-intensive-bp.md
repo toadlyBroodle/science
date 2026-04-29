@@ -8,6 +8,8 @@ alt_url: https://www.nejm.org/doi/full/10.1056/NEJMoa1511939
 access: open
 kind: paper
 topics: [cardiovascular-prevention, clinical-trials, interventions]
+evidence_tier: T7
+endpoint: primary_met
 ---
 
 # Intensive BP control (target <120) cuts mortality by 27% (SPRINT)

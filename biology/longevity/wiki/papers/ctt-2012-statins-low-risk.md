@@ -8,6 +8,8 @@ alt_url: https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(12)6036
 access: open
 kind: paper
 topics: [cardiovascular-prevention, interventions, lifespan, review]
+evidence_tier: T7
+endpoint: primary_met
 ---
 
 # Statins work for primary prevention too (CTT IPD meta-analysis, 27 RCTs)

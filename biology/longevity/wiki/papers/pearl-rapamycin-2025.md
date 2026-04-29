@@ -10,6 +10,8 @@ clinicaltrials: https://clinicaltrials.gov/study/NCT04488601
 access: open
 kind: paper
 topics: [clinical-trials, interventions, mtor]
+evidence_tier: T6
+endpoint: primary_not_met
 ---
 
 # PEARL — crowd-funded rapamycin RCT

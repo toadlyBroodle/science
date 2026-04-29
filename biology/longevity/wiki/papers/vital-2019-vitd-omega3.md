@@ -8,6 +8,8 @@ alt_url: https://www.nejm.org/doi/full/10.1056/NEJMoa1809944
 access: open
 kind: paper
 topics: [vitamins-supplements, clinical-trials, interventions]
+evidence_tier: T7
+endpoint: primary_not_met
 ---
 
 # VITAL: vitamin D supplementation does not reduce mortality (negative RCT)

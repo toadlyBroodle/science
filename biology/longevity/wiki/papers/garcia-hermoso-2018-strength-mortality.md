@@ -8,6 +8,8 @@ alt_url: https://www.archives-pmr.org/article/S0003-9993(18)30079-0/abstract
 access: open
 kind: paper
 topics: [muscle-strength, interventions, lifespan, review]
+evidence_tier: T7
+endpoint: observational
 ---
 
 # Muscular strength and mortality, pooled across ~2M adults

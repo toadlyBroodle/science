@@ -8,6 +8,8 @@ alt_url: https://academic.oup.com/sleep/article-abstract/33/5/585/2454478
 access: open
 kind: paper
 topics: [sleep, interventions, lifespan, review]
+evidence_tier: T7
+endpoint: observational
 ---
 
 # The U-shaped sleep-mortality curve, ~1.4M adults
