@@ -56,4 +56,8 @@ death. Causal interpretation is cleaner for short sleep.
 ## Related
 - [[papers/plasma-proteomics-brain-immune-2025]] — brain proteomic
   age dominates healthspan; supports sleep mattering for aging.
+- [[papers/save-2016-cpap-cv-prevention]] — CPAP for OSA does NOT
+  reduce CV events (RCT). Different question (apnea treatment vs
+  duration), useful corrective: not all sleep interventions
+  produce hard-endpoint benefit.
 - [[topics/sleep]], [[topics/interventions]], [[topics/lifespan]].

@@ -64,6 +64,10 @@ not just a downstream effect of cardiorespiratory fitness.
   training intervention evidence.
 - [[papers/garcia-hermoso-2018-strength-mortality]] — meta-analysis
   of muscular strength and mortality (~2M subjects).
+- [[papers/chilibeck-2017-creatine-older-adults]] — creatine
+  meta-analysis: +1.37 kg lean mass when added to RT in older
+  adults; the same biomarker grip strength tracks at population
+  scale.
 - [[papers/mandsager-2018-vo2max-mortality]] — cardio fitness
   counterpart.
 - [[topics/muscle-strength]], [[topics/interventions]],

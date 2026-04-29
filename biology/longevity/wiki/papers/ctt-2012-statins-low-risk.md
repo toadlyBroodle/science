@@ -63,7 +63,12 @@ effective preventive interventions in medicine, and remains
 ## Related
 - [[papers/sniderman-2011-apob-meta]] — apoB as the better lipid
   metric.
+- [[papers/kamstrup-2009-lpa-mendelian]] — Lp(a) is the major
+  residual lipid risk factor that statins do not address.
 - [[papers/sprint-2015-intensive-bp]] — BP counterpart for
   primary prevention.
+- [[papers/select-2023-semaglutide-cv-outcomes]] — GLP-1 in
+  obesity is now in the same primary-prevention conversation
+  as statins, with comparable T7 evidence.
 - [[topics/cardiovascular-prevention]], [[topics/interventions]],
   [[topics/lifespan]].

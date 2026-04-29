@@ -78,5 +78,10 @@ apoB-targeting agents are in clinical trials.
 ## Related
 - [[papers/ctt-2012-statins-low-risk]] — LDL-lowering benefit
   evidence.
+- [[papers/kamstrup-2009-lpa-mendelian]] — Lp(a) is causal for
+  MI independent of ApoB; the residual atherogenic-particle
+  signal that ApoB cannot fully capture.
 - [[papers/sprint-2015-intensive-bp]] — BP counterpart.
+- [[papers/select-2023-semaglutide-cv-outcomes]] — GLP-1 hard
+  cardiovascular endpoint in obesity (T7).
 - [[topics/cardiovascular-prevention]], [[topics/interventions]].

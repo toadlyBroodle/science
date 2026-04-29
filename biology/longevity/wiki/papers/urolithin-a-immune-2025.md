@@ -37,4 +37,8 @@ biomarker. Pairs well with any [[topics/aging-clocks]]-based reanalysis.
 
 ## Related
 - [[papers/nr-longcovid-2025]] — sibling mitochondrial-axis trial
+  (NAD+ precursor; null on clinical endpoints).
+- [[papers/mortensen-2014-coq10-qsymbio]] — separate
+  mitochondrial-axis intervention (CoQ10) with hard-endpoint
+  benefit, but only in symptomatic chronic heart failure.
 - [[topics/nad-mitophagy]], [[topics/immune-rejuvenation]]

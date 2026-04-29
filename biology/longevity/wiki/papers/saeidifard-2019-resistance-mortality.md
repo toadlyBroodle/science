@@ -57,6 +57,9 @@ observational biomarker association.
 - [[papers/leong-2015-pure-grip-strength]] — biomarker side.
 - [[papers/garcia-hermoso-2018-strength-mortality]] — strength
   meta-analysis (~2M).
+- [[papers/chilibeck-2017-creatine-older-adults]] — creatine
+  monohydrate as a meta-analysis-supported RT adjunct on the
+  same biomarker (lean mass, 1RM strength).
 - [[papers/mandsager-2018-vo2max-mortality]] — aerobic-fitness
   counterpart.
 - [[topics/muscle-strength]], [[topics/interventions]],

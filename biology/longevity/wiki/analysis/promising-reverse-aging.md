@@ -11,6 +11,17 @@ Ranking by **evidence strength × translational readiness ×
 computational tractability**. Every claim here is backed by a paper
 page in this wiki; chase the wikilinks for primary sources.
 
+**Tier-rubric note.** Throughout this page, "Tier 1 / 2 / 3" refers
+to *this analysis page's frontier-readiness ranking*, not the
+[[analysis/evidence-tiers]] T0–T7 evidence-maturity ladder used on
+the per-paper pages. The two are distinct: a frontier-Tier-1 entry
+here (partial reprogramming, IL-11) may be at evidence-T2 (single
+mouse study) on the underlying paper pages. The frontier-readiness
+ranking weights *expected* translation rate and computational
+tractability; the evidence-tier ranking weights *current* trial
+maturity. Forward-looking trial readouts that would change this
+ranking are tracked in [[analysis/yet-to-publish]].
+
 The big shift since the previous version of this page is that **2025
 delivered four new mouse-lifespan wins above 20%**
 ([[papers/il11-inhibition-2024]], [[papers/klotho-skl-aav-2025]],

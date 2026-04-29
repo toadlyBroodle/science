@@ -62,5 +62,10 @@ for CV-risk adults, replacing the older 140 / 90 target.
 - [[papers/ctt-2012-statins-low-risk]] — lipid counterpart.
 - [[papers/sniderman-2011-apob-meta]] — apoB > LDL-C as the lipid
   measure of choice.
+- [[papers/kamstrup-2009-lpa-mendelian]] — Lp(a) as the
+  unaddressed residual lipid risk.
+- [[papers/select-2023-semaglutide-cv-outcomes]] — modern
+  pharmacological comparison: GLP-1 in obesity, similar
+  effect-size range on hard CV endpoints.
 - [[topics/cardiovascular-prevention]], [[topics/clinical-trials]],
   [[topics/interventions]].

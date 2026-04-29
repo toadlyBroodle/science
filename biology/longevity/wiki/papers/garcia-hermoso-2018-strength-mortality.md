@@ -50,5 +50,7 @@ confounder in [[papers/leong-2015-pure-grip-strength]]).
 - [[papers/leong-2015-pure-grip-strength]] — single-cohort flagship.
 - [[papers/saeidifard-2019-resistance-mortality]] — interventional
   evidence.
+- [[papers/chilibeck-2017-creatine-older-adults]] — creatine
+  adjunct meta-analysis on the same lean-mass / 1RM biomarkers.
 - [[topics/muscle-strength]], [[topics/interventions]],
   [[topics/lifespan]].

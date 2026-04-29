@@ -92,6 +92,15 @@ Follow in order; each step assumes the previous one.
 - [[analysis/promising-reverse-aging]]: tier ranking of current
   reverse-aging technologies (April 2026). Read this after you
   have the topic vocabulary from steps 1 through 4.
+- [[analysis/evidence-tiers]]: T0–T7 evidence-maturity ladder used
+  to grade every intervention in the wiki, plus within-tier quality
+  dimensions (endpoint clarity, effect size, replication,
+  population, confounding, dose-response).
+- [[analysis/yet-to-publish]]: pending trial readouts the wiki will
+  ingest when they publish — Lp(a)-lowering Phase 3 (HORIZON,
+  OCEAN(a), ACCLAIM-Lp(a)), tirzepatide CV (SURMOUNT-MMO),
+  trametinib+rapamycin combo, anti-IL-11 human, klotho s-KL,
+  partial-reprogramming FIH, more.
 - [[topics/competitions]]: [[papers/biomarkers-aging-challenge]],
   [[papers/xprize-healthspan]]. Active coordinated efforts that
   reveal what the field believes is close to tractable.
@@ -159,16 +168,41 @@ Follow in order; each step assumes the previous one.
 ### General prevention (load-bearing for healthspan)
 - [[topics/cardiorespiratory-fitness]] — VO2max as a mortality
   predictor; the 4x4 protocol.
-- [[topics/muscle-strength]] — grip strength + resistance training.
-- [[topics/sleep]] — U-shaped duration-mortality curve.
-- [[topics/body-composition]] — waist circumference beyond BMI.
-- [[topics/cardiovascular-prevention]] — BP, apoB, statins.
+- [[topics/muscle-strength]] — grip strength + resistance training
+  + creatine adjunct ([[papers/chilibeck-2017-creatine-older-adults]]).
+- [[topics/sleep]] — U-shaped duration-mortality curve; SAVE RCT
+  shows CPAP for OSA does NOT cut CV events
+  ([[papers/save-2016-cpap-cv-prevention]]).
+- [[topics/body-composition]] — waist circumference beyond BMI;
+  MASLD as cardiometabolic biomarker
+  ([[papers/younossi-2023-nafld-masld-epidemiology]]).
+- [[topics/cardiovascular-prevention]] — BP, ApoB, Lp(a), statins,
+  GLP-1s. New: SELECT
+  ([[papers/select-2023-semaglutide-cv-outcomes]]) for GLP-1 hard
+  CV endpoint, Kamstrup
+  ([[papers/kamstrup-2009-lpa-mendelian]]) for Lp(a) causality,
+  Manson 2017 ([[papers/manson-2017-whi-hrt-mortality]]) for HRT
+  long-term mortality (neutral), Mortensen Q-SYMBIO
+  ([[papers/mortensen-2014-coq10-qsymbio]]) for CoQ10 in HF,
+  Laukkanen ([[papers/laukkanen-2015-sauna-mortality]]) for sauna,
+  Ma ([[papers/ma-2019-glucosamine-cv-mortality]]) for glucosamine.
 - [[topics/smoking]], [[topics/alcohol]] — modifiable mortality
   accelerators.
 - [[topics/vitamins-supplements]] — what works, what doesn't.
+- [[topics/built-environment]] — Ulrich 1984 nature views, Marucha
+  1998 stress-impaired wound healing. Small-N evidence; cited as
+  context, not primary lever.
+
+### Built environment / context
+- [[topics/built-environment]] — biophilic design, healing
+  environment, stress-immune interactions.
 
 ### Syntheses
 - [[topics/review]]
+- [[analysis/promising-reverse-aging]] — tier-ranked frontier.
+- [[analysis/evidence-tiers]] — T0–T7 ladder + within-tier
+  quality rubric.
+- [[analysis/yet-to-publish]] — pending trial readouts.
 
 ## All papers
 See `wiki/papers/` — one file per source, enumerated in

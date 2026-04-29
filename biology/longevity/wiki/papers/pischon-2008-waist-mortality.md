@@ -60,5 +60,11 @@ as a routine vital sign.
   evidence.
 - [[papers/lifestyle-atlas-tirolgesund-2025]] — human IF multi-omic
   intervention.
+- [[papers/younossi-2023-nafld-masld-epidemiology]] — MASLD
+  (visceral-fat-driven steatosis) prevalence 30% globally;
+  cardiovascular causes dominate MASLD mortality.
+- [[papers/select-2023-semaglutide-cv-outcomes]] — GLP-1 in
+  obesity reduces hard CV events; the pharmacological lever for
+  the visceral-adiposity-CVD pathway.
 - [[topics/body-composition]], [[topics/interventions]],
   [[topics/lifespan]].

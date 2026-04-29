@@ -49,6 +49,10 @@ metformin and rapamycin ([[papers/pearl-rapamycin-2025]],
   metabolic cohorts.
 
 ## Related
+- [[papers/select-2023-semaglutide-cv-outcomes]] — SELECT trial:
+  same drug, hard CV endpoint, n=17,604, HR 0.80 MACE. The
+  biological-age signal here aligns with the cardiovascular-event
+  signal.
 - [[papers/pearl-rapamycin-2025]] — first PEARL human trial of
   rapamycin with healthspan endpoints.
 - [[papers/nr-longcovid-2025]] — comparator NAD+-axis trial.

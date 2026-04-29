@@ -71,5 +71,16 @@ result with a mortality-adjacent hard endpoint.
   and biological-age clocks (separate, smaller trial).
 - [[papers/ctt-2012-statins-low-risk]] — statin counterpart for
   LDL-C lowering.
+- [[papers/sprint-2015-intensive-bp]] — BP counterpart in the
+  same primary-prevention bucket.
+- [[papers/sniderman-2011-apob-meta]] — ApoB / lipid axis;
+  semaglutide modestly lowers ApoB but the SELECT effect
+  exceeds what the ApoB change alone predicts.
+- [[papers/pischon-2008-waist-mortality]] — visceral adiposity
+  is the upstream lever; semaglutide's CV benefit tracks weight
+  loss + non-weight-loss mechanisms.
+- [[papers/manson-2017-whi-hrt-mortality]] — comparable T7
+  long-term mortality readout for an earlier hormone-class CV
+  question.
 - [[topics/cardiovascular-prevention]], [[topics/clinical-trials]],
   [[topics/interventions]].

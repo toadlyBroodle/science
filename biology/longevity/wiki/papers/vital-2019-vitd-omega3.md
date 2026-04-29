@@ -68,5 +68,10 @@ the evidence is null**.
   — interventions that DO move CV / mortality endpoints.
 - [[papers/nr-longcovid-2025]] — comparable null result for
   NAD+ precursor supplementation.
+- [[papers/ma-2019-glucosamine-cv-mortality]] — observational
+  glucosamine signal for context. The Reddit claim that
+  glucosamine has "much better data than vitamin D" inverts the
+  evidence hierarchy: VITAL is RCT-level negative on hard
+  endpoints; glucosamine is large-cohort observational only.
 - [[topics/vitamins-supplements]], [[topics/clinical-trials]],
   [[topics/interventions]].

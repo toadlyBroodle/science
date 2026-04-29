@@ -27,6 +27,13 @@ weeks**. Primary endpoints: NAD+ levels, cognition, symptom recovery.
   to [[topics/nad-mitophagy]] in healthy aging.
 
 ## Related
-- [[papers/urolithin-a-immune-2025]] — mitophagy inducer companion trial
+- [[papers/urolithin-a-immune-2025]] — mitophagy inducer companion
+  trial (positive on immune surrogate endpoint).
+- [[papers/mortensen-2014-coq10-qsymbio]] — different
+  mitochondrial intervention (CoQ10) with positive
+  hard-endpoint result but only in symptomatic chronic heart
+  failure.
 - [[papers/pearl-rapamycin-2025]]
+- [[papers/vital-2019-vitd-omega3]] — comparable null result for
+  another widely-marketed supplement intervention.
 - [[topics/nad-mitophagy]], [[topics/clinical-trials]]
