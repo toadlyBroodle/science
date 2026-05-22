@@ -45,3 +45,12 @@ tess_data/
 # Credentials
 *.env
 credentials.json
+
+# Project-specific ignores
+aliens/
+artemis2/
+bible/
+biology/
+bpu/
+comsci/
+moon-explore/
