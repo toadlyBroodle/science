@@ -73,7 +73,7 @@ Once a domain field exists in front matter, `index.md` and synthesis pages can a
 - Test delta: n/a (prose skill, no automated tests).
 
 **Review follow-ups (open — schedule as the next `/sst-dev-cycle` cycle):**
-- [ ] 4.3 [easy] [should-fix] `.claude/skills/ssp-wiki-curator/SKILL.md:325` — Example 2 in §Aggregating by domain field asserts "`comsci/edge-llm/` adds a `benchmark_maturity` field" in present tense, but no such field exists in any edge-llm page or its `CLAUDE.md` schema spec. An LLM maintaining the edge-llm wiki reads this as a declared domain field and may attempt to aggregate by a non-existent field. Proposed fix: change "adds" to "could add" (or annotate explicitly that this is a prospective illustration, not a field that currently exists in the wiki).
+- [x] 4.3 [easy] [should-fix] `.claude/skills/ssp-wiki-curator/SKILL.md:325` — Example 2 in §Aggregating by domain field asserts "`comsci/edge-llm/` adds a `benchmark_maturity` field" in present tense, but no such field exists in any edge-llm page or its `CLAUDE.md` schema spec. An LLM maintaining the edge-llm wiki reads this as a declared domain field and may attempt to aggregate by a non-existent field. Proposed fix: change "adds" to "could add" (or annotate explicitly that this is a prospective illustration, not a field that currently exists in the wiki).
 
 ### Phase 5: reading paths / guided tours
 

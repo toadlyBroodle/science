@@ -322,7 +322,7 @@ How the aggregation looks in `index.md` (snippet, commented out in the scaffold 
 
 **Example 2 — edge-llm benchmark maturity (maturity-sorted model table)**
 
-`comsci/edge-llm/` adds a `benchmark_maturity` field (enum: `provisional | established | replicated`) to model pages. The aggregation view in `index.md` is a table sorted by maturity descending, then by VRAM tier ascending — so a reader can find the smallest model with replicated benchmark performance for a given device class. No reading path is warranted here; the maturity axis is a power-user filter, not a newcomer tour.
+`comsci/edge-llm/` could add a `benchmark_maturity` field (enum: `provisional | established | replicated`) to model pages (prospective illustration; the field does not currently exist in the wiki). The aggregation view in `index.md` would be a table sorted by maturity descending, then by VRAM tier ascending — so a reader can find the smallest model with replicated benchmark performance for a given device class. No reading path is warranted here; the maturity axis is a power-user filter, not a newcomer tour.
 
 ```markdown
 <!-- domain-field-aggregation: benchmark_maturity -->
