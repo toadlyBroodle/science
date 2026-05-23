@@ -41,6 +41,8 @@
   Ordered by priority (highest-impact-low-effort first), not by SPEC phase number.
 -->
 
+- [medium] [should-fix] 7.7 SKILL.md:729 check_orphans() flags all pages; paper pages double-reported as [orphan]+[unlinked-paper] after 7.5 added check_unlinked_papers — review of 22bb187
+- [easy] [should-fix] 7.8 docs/SPEC.md:116 batch-pick declared 2 items but diff closed 3 ([x] 7.6 absent from batch-pick declaration) — review of 22bb187
 - [medium] Add variant-boundary assertion to lint (both LLM-judgment and scripted) + mirror in scripted `lint.py`. Reason: SPEC 8.1 + 8.2 — surfaces ambiguous variant claims observed in comsci wikis.
 - [medium] Embed a real contradiction-resolution worked example from longevity in §Contradiction handling. Reason: SPEC 11.1 — grounds aspirational guidance.
 - [medium] Add §"Adjacent patterns, not wikis" + one-question gate at top of Mode A. Reason: SPEC 12.1 + 12.2 — prevents wiki-ifying bible/, astronomy/, moon-explore/-shaped artifacts.
