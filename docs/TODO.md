@@ -19,6 +19,7 @@
   Trim to last 10.
 -->
 
+- Close 7.9+8.1+8.2+11.1+12.1+12.2: variant-boundary lint check, NAD+ contradiction worked example, adjacent-patterns section + Mode A gate — by sst-dev-cycle at 2026-05-24T02:00:00Z
 - Fix 7.7+7.8: scope check_orphans to kind==topic only (eliminates paper double-reporting) + annotate SPEC 7.6 batch-pick omission — by sst-dev-cycle at 2026-05-24T01:00:00Z
 - Fix 7.4+7.5: correct Mode D variant inference (sources.json required for scripted) + add check_unlinked_papers to middle lint.py (closes items 1-5 coverage gap) — by sst-dev-cycle at 2026-05-24T00:30:00Z
 - Close 6.1+6.2 (middle-variant lint.py template + A.6.5 step) and 7.1+7.2+7.3 (Mode D umbrella spec + template + argument-hint) — by sst-dev-cycle at 2026-05-23T23:00:00Z
@@ -28,11 +29,6 @@
 - Close 3.4 (rename Step 5 label to synthesis-page aggregation) + 3.5 (re-tier 6.1/7.1/13.1 hard→medium) — by sst-dev-cycle at 2026-05-23T19:00:00Z
 - Close Phase 3 (3.1 + 3.2 + 3.3) — add §"Extending the schema for your domain" with longevity evidence_tier worked example and `domain-fields:` schema-spec template block — by sst-dev-cycle at 2026-05-23T18:00:00Z
 - Append lint-spectrum update reminder to SPEC 6.2; close 11.3 — by sst-dev-cycle at 2026-05-23T16:00:00Z
-- Close batch-sizing advisory (1.5), add contradiction-handling skip softener (11.2), add lint output spectrum section (6.3) — by sst-dev-cycle at 2026-05-23T14:00:00Z
-- Add synthesis page kind (Phase 1 1.1-1.4), fix maintain-pass criteria (10.2), close batch-sizing advisory (10.3) — by sst-dev-cycle at 2026-05-23T12:00:00Z
-- Add drafts/ optional layer, reading paths pattern, lint-output reconciliation, source-papers table to ssp-wiki-curator (SPEC 2.1-2.4, 5.1-5.2, 9.1-9.2, 10.1) — by sst-dev-cycle at 2026-05-23T00:00:00Z
-- Bootstrap: SPEC + TODO moved to ~/Dev/science/docs/; proprietary working copy ssp-wiki-curator created at .claude/skills/ssp-wiki-curator/SKILL.md (body identical to canonical sst-wiki-curator v1.0.1); Phase 14 (promote-back) appended to SPEC — by claude (manual) at 2026-05-23
-- SPEC + TODO scaffolded for the 13-phase sst-wiki-curator evolution plan — by claude (manual) at 2026-05-23
 
 ## Next up (queued for next cycle)
 
@@ -42,8 +38,4 @@
   Ordered by priority (highest-impact-low-effort first), not by SPEC phase number.
 -->
 
-- [easy] [should-fix] 7.9 docs/TODO.md:## Next up dev-skill input ~38k (medium, undersize threshold 100k, fifth consecutive); bundle ≥4 medium items next cycle — review of 3cd6ae5
-- [medium] Add variant-boundary assertion to lint (both LLM-judgment and scripted) + mirror in scripted `lint.py`. Reason: SPEC 8.1 + 8.2 — surfaces ambiguous variant claims observed in comsci wikis.
-- [medium] Embed a real contradiction-resolution worked example from longevity in §Contradiction handling. Reason: SPEC 11.1 — grounds aspirational guidance.
-- [medium] Add §"Adjacent patterns, not wikis" + one-question gate at top of Mode A. Reason: SPEC 12.1 + 12.2 — prevents wiki-ifying bible/, astronomy/, moon-explore/-shaped artifacts.
 - [medium] Spec the `profile:` axis (personal vs publishable) orthogonal to `variant:`; extend §"The three variants" table; add to Mode A. Reason: SPEC 13.1 + 13.2 + 13.3 — biggest mental-model change; do last so other phases inform the profile defaults; re-tiered hard→medium (3.5 advisory).

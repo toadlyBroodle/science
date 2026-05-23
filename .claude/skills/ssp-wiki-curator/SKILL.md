@@ -180,6 +180,17 @@ When two sources disagree on the same claim, the topic page records the disagree
 
 If your domain has no contested claims — a factual catalog with a single authoritative source, or a topic space where sources reinforce rather than contradict — omit this section from your schema spec. The guidance applies only when a domain genuinely produces competing interpretations of the same evidence.
 
+**Worked example — NAD⁺ precursors in the longevity wiki**
+
+Two bodies of evidence pull in opposite directions on the same question: does supplementing NR (nicotinamide riboside) improve health outcomes in humans?
+
+- *Preclinical literature*: NAD⁺ levels decline ~50% by midlife; restoring them via NR or NMN supplementation extends healthspan in mice and worms. The mechanism is established; the translation expectation was that higher NAD⁺ should improve downstream health endpoints in humans.
+- *`papers/nr-longcovid-2025`* (eClinicalMedicine, 2025): double-blind RCT, n=58 long-COVID patients, NR 2 g/day for 24 weeks. Blood NAD⁺ rose substantially. Primary endpoints — cognition and symptom recovery — did not change.
+
+**Resolution in `wiki/topics/nad-mitophagy.md`:** The topic page picks the RCT result as the higher-quality evidence class and states the contradiction explicitly: "NAD⁺ precursors (negative on clinical endpoints): Blood NAD⁺ rose reliably; cardiovascular, metabolic, and muscle endpoints are largely null. Recommendation: do not supplement NR/NMN on current evidence." The mechanistic prediction is not discarded — it explains why the hypothesis was plausible — but the clinical endpoint takes precedence over the mechanism. The topic is not marked `unresolved` because the evidence hierarchy makes the decision: RCT > mechanistic prediction.
+
+Apply the same pattern in any domain: name both sources, state why one outranks the other, record the decision, leave the reasoning visible. A future paper that does show clinical benefit can update the resolution in one place.
+
 ### Append-only log
 
 `log.md` records every ingest, query, and lint pass. Two formats both grep cleanly; pick one and stick with it:
@@ -361,7 +372,23 @@ Add an aggregation view the first time you answer a query by mentally sorting th
 
 Promote aggregation to a reading path when the aggregation view is the right "first pass" for a newcomer (not just a power-user filter). Name it and link it from the `## If you're new here` section of `index.md`.
 
+## Adjacent patterns, not wikis
+
+Some artifacts look like wikis but aren't. Scaffolding wiki structure on top of them creates friction with no payoff. Four common patterns from `~/Dev/science/` that trigger the confusion:
+
+**Comparative-prose set** — a small folder of flat markdown files comparing two or three versions of the same text. Example: `bible/` contains four files (`genesis_creation_evolution.md`, `genesis_creation_priestly_baseline.md`, `genesis_eden_fall_baseline.md`, `genesis_eden_fall_evolution.md`), each a different lens on the same Genesis passage. There is no accumulation across sources, no taxonomy, no agent-maintained index. Use instead: a single comparison document or a shared-notes folder. A wiki adds no value when every file is a standalone unit with no cross-references.
+
+**Research-output folder** — a project directory containing notebooks, figures, a draft paper, and submission materials. Example: `astronomy/Gaia-light-curve-anom-detect/` holds Jupyter notebooks, a published research note, figure outputs, and a `submissions/` directory. The knowledge lives in the notebooks and the paper, not in a curated wiki. Use instead: a code repository or research workspace. Adding `wiki/` and `index.md` would duplicate the paper's narrative without adding anything.
+
+**Project tracker** — a directory of PR drafts, TODO lists, and reference docs tied to active contribution work on external projects. Example: `moon-explore/` contains `TODO.md`, draft PR comments, architecture gap analyses, and one-off reference docs per issue. The content is ephemeral and action-oriented, not accumulating. Use instead: a task tracker (plain TODO, Linear, GitHub Issues). A wiki's append-only, cross-referenced structure is wrong for content that gets discarded when the task closes.
+
+**Single-document deep dive** — one long markdown file synthesizing a topic from scratch. The depth is real, but the source set is one document or one sitting. Use instead: write the document. A wiki earns its overhead when there are 5+ sources and future ingests are expected; a solo synthesis page is just a document.
+
+**Quick test:** "Will this artifact accumulate knowledge across many sources over time, maintained by an agent?" If the honest answer is no, don't scaffold a wiki. If the user insists, explain the mismatch and scaffold the minimal variant if they still want to proceed.
+
 ## Mode A: scaffold a new wiki
+
+**Before scaffolding, answer one question: "Is this prose knowledge accumulated from many sources that an agent will maintain over time?"** If no — it's a research-project folder, a text-comparison set, a project tracker, or a one-time synthesis — redirect to §Adjacent patterns, not wikis instead of scaffolding.
 
 The user passes `scaffold <wiki-root> [--variant minimal|middle|scripted]`. If `--variant` is omitted, default to **minimal** and tell the user; prompt to switch only if the user explicitly mentions a defined corpus or automated lint.
 
@@ -978,6 +1005,7 @@ Same as B.1.
 6. **Stale claims.** Claims contradicted by a newer source. (LLM judgment; flag for human review rather than auto-fix.)
 7. **Contradiction handling.** Topics with multiple sources making incompatible claims that the topic page hasn't surfaced.
 8. **Gaps.** Topics referenced repeatedly across paper pages with no dedicated topic page.
+9. **Variant boundary.** If the schema spec declares a `variant:` field (or describes itself as scripted / middle / minimal), check that the directory structure matches the claim: scripted requires `sources.json`; middle requires `raw/` with per-source subdirectories (not a flat `raw/`); minimal has flat `raw/` or no `raw/`. A mismatch — e.g., `variant: middle` in a wiki without `raw/` subdirs, or `variant: scripted` without `sources.json` — is a `[review]` finding. Do not auto-fix; flag for the human to clarify whether the variant label or the directory structure should change.
 
 **Middle variant** — run `scripts/lint.py` first (if present) for the deterministic subset of checks (items 1-5 above), then apply LLM judgment for the fuzzy checks (items 6-8). Incorporate all findings into `LINT-REPORT.md`.
 
@@ -1129,7 +1157,7 @@ When scaffolding the scripted variant, the script kit is small and follows conve
   - `wiki/build/keywords.json` — top-N keywords per page (TF-IDF rank)
   - `wiki/build/pages.json` — full text of every page (for downstream tools)
   - `wiki/build/tfidf.npz` + `tfidf_vocab.json` — sparse matrix for similarity queries
-- `lint.py` — exit 0 on success, 1 on errors. Checks: front-matter required-fields, slug ↔ filename match, wikilink target exists, `sources.json` ↔ `wiki/papers/` parity, `topics:` references existing topic pages, license-required-when-committed-source.
+- `lint.py` — exit 0 on success, 1 on errors. Checks: front-matter required-fields, slug ↔ filename match, wikilink target exists, `sources.json` ↔ `wiki/papers/` parity, `topics:` references existing topic pages, license-required-when-committed-source, declared-variant ↔ directory-structure match (`sources.json` required for scripted; `raw/<src>/` subdirs for middle; flat `raw/` for minimal).
 - `licenses.py` — `licenses.py all` walks `sources.json`, fills missing `license` from `LICENSE_MAP` (URL-prefix-keyed), regenerates `LICENSES.md` at `<wiki-root>/LICENSES.md` and `<wiki-root>/wiki/LICENSES.md`.
 
 These scripts assume the directory shape in §Three-layer architecture. Don't reorganize without updating every script's path constants.

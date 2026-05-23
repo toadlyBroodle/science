@@ -120,14 +120,19 @@ The middle variant has no automated lint; every maintain pass re-derives the sam
 - [x] 7.8 [easy] [should-fix] [batch-coherence] `docs/SPEC.md:116` — batch-pick declared "2 items @ easy" (7.4 + 7.5) but the diff contains 3 `[x]` flips (7.4, 7.5, 7.6). Item 7.6 was closed in the commit without appearing in the batch-pick declaration, violating rule (b) of the batch-coherence protocol. Proposed fix: when closing meta/advisory items alongside declared items, include them in the batch-pick block; or annotate the batch-pick rationale with "plus closing meta-item 7.6 (no implementation work, spec `[x]` flip only)."
 
 **Review follow-ups (open — schedule as the next `/sst-dev-cycle` cycle):**
-- [ ] 7.9 [easy] [should-fix] [batch-sizing] `docs/TODO.md:## Next up` — dev-skill input ~38k tokens (medium undersize threshold: 100k; band 200-300k); window-target ~200k, actual ~19% of lower edge. Fifth consecutive batch-sizing undersize for this prose skill. Queue held 4 compatible medium items (SPEC 8.1+8.2, 11.1, 12.1+12.2, 13.1+13.2+13.3). Proposed fix: bundle ≥4 medium items from Next up at the start of the next cycle.
+- [x] 7.9 [easy] [should-fix] [batch-sizing] `docs/TODO.md:## Next up` — dev-skill input ~38k tokens (medium undersize threshold: 100k; band 200-300k); window-target ~200k, actual ~19% of lower edge. Fifth consecutive batch-sizing undersize for this prose skill. Queue held 4 compatible medium items (SPEC 8.1+8.2, 11.1, 12.1+12.2, 13.1+13.2+13.3). Proposed fix: bundle ≥4 medium items from Next up at the start of the next cycle.
 
 ### Phase 8: variant-boundary assertion in lint
 
 `comsci/ai-empowerment/` and `comsci/edge-llm/` call themselves "middle variant" in their schema specs but have no raw dumps yet; their actual implementation is closer to minimal-scaffold. Make variant claims testable.
 
-- [ ] 8.1 [medium] Add a variant-check assertion to lint (both LLM-judgment and scripted): scripted requires `sources.json`; middle requires `raw/` with per-source subdirs; minimal has flat `raw/`. Mismatch is a `[review]` finding, not auto-fixed.
-- [ ] 8.2 [easy] Mirror the assertion in the scripted-variant `lint.py` (longevity-style) so the check stays in sync across both lint paths.
+- [x] 8.1 [medium] Add a variant-check assertion to lint (both LLM-judgment and scripted): scripted requires `sources.json`; middle requires `raw/` with per-source subdirs; minimal has flat `raw/`. Mismatch is a `[review]` finding, not auto-fixed.
+- [x] 8.2 [easy] Mirror the assertion in the scripted-variant `lint.py` (longevity-style) so the check stays in sync across both lint paths.
+
+**Phase 8 completed 2026-05-24.** Added item 9 (variant-boundary) to the Mode C.2 LLM-judgment checklist: check that the declared `variant:` in the schema spec matches the actual directory structure (scripted = `sources.json` present; middle = `raw/<src>/` subdirs; minimal = flat `raw/` or absent), flag mismatch as `[review]`. Updated the scripted `lint.py` description in §Scripts reference to include `declared-variant ↔ directory-structure match` in its checks list.
+
+- Changes: `.claude/skills/ssp-wiki-curator/SKILL.md` (§Mode C.2 item 9, §Scripts reference lint.py), `docs/SPEC.md`, `docs/TODO.md`.
+- Test delta: n/a (prose skill, no automated tests).
 
 ### Phase 9: reconcile LINT-REPORT.md vs script exit code
 
@@ -150,8 +155,13 @@ Spec §C.3 says every maintain pass writes `LINT-REPORT.md`. Longevity skips thi
 
 Spec §Contradiction handling is aspirational — only longevity actually uses it. Either ground it in a real disagreement or downgrade.
 
-- [ ] 11.1 [medium] Pull one real contradiction from the longevity corpus (or another wiki) and embed it as a worked example in §Contradiction handling, showing both source citations and the resolution prose.
+- [x] 11.1 [medium] Pull one real contradiction from the longevity corpus (or another wiki) and embed it as a worked example in §Contradiction handling, showing both source citations and the resolution prose.
 - [x] 11.2 [easy] Add a "skip if your domain doesn't have contested claims" softener so wikis that don't need this section don't pretend to.
+
+**Phase 11 completed 2026-05-24.** Added a worked example to §Contradiction handling using the NAD⁺ precursor (NR) contradiction from the longevity wiki: preclinical literature predicted clinical benefit from raising NAD⁺; `papers/nr-longcovid-2025` (eClinicalMedicine RCT, n=58) confirmed NAD⁺ rose but clinical endpoints did not. Resolution: `wiki/topics/nad-mitophagy.md` picks the RCT result as the higher-quality evidence class, states the contradiction explicitly, and explains that RCT > mechanistic prediction in this evidence hierarchy. The worked example closes with a transferable template for the pattern. The "skip if no contested claims" softener (11.2) was shipped in a prior cycle.
+
+- Changes: `.claude/skills/ssp-wiki-curator/SKILL.md` (§Contradiction handling worked example), `docs/SPEC.md`, `docs/TODO.md`.
+- Test delta: n/a (prose skill, no automated tests).
 
 **Review follow-ups (open — schedule as the next `/sst-dev-cycle` cycle):**
 - [x] 11.3 [easy] [should-fix] `SKILL.md:113` & `docs/SPEC.md:6.2` — §Lint output spectrum table says "LLM judgment" for middle (correct today, since lint.py doesn't exist yet), but SPEC 6.2 ("Add Mode A step A.6.5") has no reminder to also update this row after lint.py lands. A cycle closing 6.1+6.2 will leave middle's row stale, contradicting the newly-scaffolded script. Proposed fix: append "also update §Lint output spectrum middle row (SKILL.md §Lint output spectrum) to reflect scripts/lint.py" to SPEC 6.2's description.
@@ -160,8 +170,13 @@ Spec §Contradiction handling is aspirational — only longevity actually uses i
 
 `bible/` (4 flat comparison files), `astronomy/` (research project with notebook), `moon-explore/` (project tracker) all sit under `~/Dev/science/` but aren't wikis. The spec should help disambiguate before the user (or agent) tries to wiki-ify the wrong artifact.
 
-- [ ] 12.1 [medium] Add §"Adjacent patterns, not wikis": comparative-prose folders, research-output folders with notebooks, project trackers, single-document deep dives. For each, name the pattern, give a one-line "use X instead" pointer, and reference a concrete example from `~/Dev/science/`.
-- [ ] 12.2 [easy] Add a one-question gate at the top of Mode A: "Is this prose knowledge accumulated across many sources?" — if no, redirect per the §Adjacent patterns guidance instead of scaffolding.
+- [x] 12.1 [medium] Add §"Adjacent patterns, not wikis": comparative-prose folders, research-output folders with notebooks, project trackers, single-document deep dives. For each, name the pattern, give a one-line "use X instead" pointer, and reference a concrete example from `~/Dev/science/`.
+- [x] 12.2 [easy] Add a one-question gate at the top of Mode A: "Is this prose knowledge accumulated across many sources?" — if no, redirect per the §Adjacent patterns guidance instead of scaffolding.
+
+**Phase 12 completed 2026-05-24.** Added §"Adjacent patterns, not wikis" between §Aggregating by domain field and §Mode A. The section names four concrete non-wiki patterns with `~/Dev/science/` examples: comparative-prose set (`bible/` — 4 flat Genesis-comparison files; use a single comparison doc), research-output folder (`astronomy/Gaia-light-curve-anom-detect/` — notebooks + paper draft + submissions; use a code/research workspace), project tracker (`moon-explore/` — PR drafts + TODO; use a task tracker), and single-document deep dive (write the document; wiki overhead not warranted). Closes with a quick test: "Will this artifact accumulate knowledge across many sources over time, maintained by an agent?" Added a one-question gate at the top of Mode A that redirects to §Adjacent patterns if the answer is no.
+
+- Changes: `.claude/skills/ssp-wiki-curator/SKILL.md` (new §Adjacent patterns, not wikis + Mode A gate), `docs/SPEC.md`, `docs/TODO.md`.
+- Test delta: n/a (prose skill, no automated tests).
 
 ### Phase 13: personal vs publishable profiles
 
