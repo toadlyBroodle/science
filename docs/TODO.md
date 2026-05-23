@@ -33,4 +33,5 @@
   Ordered by priority (highest-impact-low-effort first), not by SPEC phase number.
 -->
 
+- [easy] [should-fix] 13.5 SKILL.md:908 Mode B.1 "Note:" list omits profile: declaration; C.1 inherits same gap — review of c993a27
 - [medium] Promote working SKILL.md to canonical transferable via sst-sanitize-transferable + sst-promote-skill-proposal. Reason: SPEC 14.1+14.2+14.3+14.4 — all Phases 1-13 now closed.
