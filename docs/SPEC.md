@@ -74,6 +74,8 @@ Once a domain field exists in front matter, `index.md` and synthesis pages can a
 
 **Review follow-ups (open — schedule as the next `/sst-dev-cycle` cycle):**
 - [x] 4.3 [easy] [should-fix] `.claude/skills/ssp-wiki-curator/SKILL.md:325` — Example 2 in §Aggregating by domain field asserts "`comsci/edge-llm/` adds a `benchmark_maturity` field" in present tense, but no such field exists in any edge-llm page or its `CLAUDE.md` schema spec. An LLM maintaining the edge-llm wiki reads this as a declared domain field and may attempt to aggregate by a non-existent field. Proposed fix: change "adds" to "could add" (or annotate explicitly that this is a prospective illustration, not a field that currently exists in the wiki).
+- [ ] 4.4 [easy] [should-fix] `.claude/skills/ssp-wiki-curator/SKILL.md:342` — Example 3 claims `access_tier` (enum: `no-signup | email | account | waitlist`) exists in `comsci/ai-empowerment/` but no page in that wiki uses it. Same false-present-tense pattern as 4.3. An LLM maintaining ai-empowerment reads this as a declared domain field and attempts to aggregate by a non-existent key. Proposed fix: annotate `access_tier` as prospective with the same pattern as 4.3 ("could add" + parenthetical).
+- [ ] 4.5 [easy] [should-fix] `.claude/skills/ssp-wiki-curator/SKILL.md:342` — Example 3 states `cost_tier` enum as `free | freemium | paid` but ai-empowerment pages use freeform cost strings (e.g. "low ($0-20/mo)", "usage-based ($0.10-0.40/sec)"). An LLM adding a new tool page would apply the wrong enum values. Proposed fix: update the enum to reflect actual wiki values, or add a note that this is a template suggestion for new wikis rather than a declared enum for ai-empowerment.
 
 ### Phase 5: reading paths / guided tours
 
