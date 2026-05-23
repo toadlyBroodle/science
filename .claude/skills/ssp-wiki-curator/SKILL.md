@@ -103,6 +103,18 @@ Subdir names under `wiki/` are domain-specific. Common choices: `papers/`, `topi
 | Middle    | Raw dumps in `raw/<src>/`| None    | LLM-written report| Bigger corpus, lots of source material, but no need for automation yet. |
 | Scripted  | `sources.json` manifest  | Full    | Automated checks  | Defined corpus of primary sources, automated ingest desired.    |
 
+### Lint output spectrum
+
+Quick-reference summary of which lint path each variant uses. Full details in §Mode C.
+
+| Variant  | Lint method                        | Report artifact                  |
+|----------|------------------------------------|----------------------------------|
+| Minimal  | LLM judgment (Mode C.2 checklist)  | `LINT-REPORT.md` in `wiki/`      |
+| Middle   | LLM judgment (Mode C.2 checklist)  | `LINT-REPORT.md` in `wiki/`      |
+| Scripted | `scripts/lint.py` exit code        | Entry in `log.md` only           |
+
+Pick one path per wiki and keep it. Writing both `LINT-REPORT.md` and a `log.md` entry for the same lint run creates two sources of truth that drift apart across passes.
+
 ## File conventions
 
 ### Naming
@@ -165,6 +177,8 @@ Favor long, self-contained pages over many stubs. If a topic page is a paragraph
 ### Contradiction handling
 
 When two sources disagree on the same claim, the topic page records the disagreement explicitly, names both sources, and either picks the better-supported claim with a one-line rationale or marks the topic `unresolved`. Never silently average or paraphrase away the conflict.
+
+If your domain has no contested claims — a factual catalog with a single authoritative source, or a topic space where sources reinforce rather than contradict — omit this section from your schema spec. The guidance applies only when a domain genuinely produces competing interpretations of the same evidence.
 
 ### Append-only log
 

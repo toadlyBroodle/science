@@ -32,7 +32,7 @@ Make the wiki-curator skill produce wikis that are more useful, more powerful, a
 - Test delta: n/a (prose skill, no automated tests).
 
 **Review follow-ups (open — schedule as the next `/sst-dev-cycle` cycle):**
-- [ ] 1.5 [easy] [should-fix] [batch-sizing] `docs/TODO.md:## Next up` — dev-skill input ~56k tokens (medium undersize threshold 100k); window-target stated ~200k but actual filled ~28%; queue held 5+ compatible medium/hard items (SPEC 4.1, 8.1, 11.1, 12.1, plus 3.1/6.1/7.1/13.1). Prior 10.3 fix (pick ≥2 medium items) was applied but did not close the gap — this prose skill's pages are short enough that picking additional items alone will not reach threshold. Proposed fix: next cycle, bundle enough medium/hard items to push context above 100k, or acknowledge that a pure-prose skill's natural fill is structurally below medium threshold and adjust the difficulty tag to [easy] for future cycles.
+- [x] 1.5 [easy] [should-fix] [batch-sizing] `docs/TODO.md:## Next up` — dev-skill input ~56k tokens (medium undersize threshold 100k); window-target stated ~200k but actual filled ~28%; queue held 5+ compatible medium/hard items (SPEC 4.1, 8.1, 11.1, 12.1, plus 3.1/6.1/7.1/13.1). Prior 10.3 fix (pick ≥2 medium items) was applied but did not close the gap — this prose skill's pages are short enough that picking additional items alone will not reach threshold. Proposed fix: next cycle, bundle enough medium/hard items to push context above 100k, or acknowledge that a pure-prose skill's natural fill is structurally below medium threshold and adjust the difficulty tag to [easy] for future cycles. **Resolved:** closed by bundling 1.5 + 11.2 + 6.3 in one easy cycle; structural fill-rate limitation acknowledged — prose-only skill edits should batch 3+ items to approach window targets.
 
 ### Phase 2: drafts/ working layer
 
@@ -71,7 +71,7 @@ The middle variant has no automated lint; every maintain pass re-derives the sam
 
 - [ ] 6.1 [hard] Write a middle-variant `lint.py` template (~100 LoC, no dependencies beyond stdlib): checks broken relative links, missing index entries, orphan files, optional YAML front-matter requirements, empty pages.
 - [ ] 6.2 [medium] Add Mode A step A.6.5 that drops the template into middle-variant scaffolds (skipped for minimal; the scripted variant uses its own fuller `lint.py`).
-- [ ] 6.3 [easy] Add §"Lint output spectrum" documenting the three lint paths (LLM judgment for minimal, script + LINT-REPORT.md for middle, script + log-only for scripted).
+- [x] 6.3 [easy] Add §"Lint output spectrum" documenting the three lint paths (LLM judgment for minimal, script + LINT-REPORT.md for middle, script + log-only for scripted).
 
 ### Phase 7: umbrella / super-wiki mode
 
@@ -110,7 +110,7 @@ Spec §C.3 says every maintain pass writes `LINT-REPORT.md`. Longevity skips thi
 Spec §Contradiction handling is aspirational — only longevity actually uses it. Either ground it in a real disagreement or downgrade.
 
 - [ ] 11.1 [medium] Pull one real contradiction from the longevity corpus (or another wiki) and embed it as a worked example in §Contradiction handling, showing both source citations and the resolution prose.
-- [ ] 11.2 [easy] Add a "skip if your domain doesn't have contested claims" softener so wikis that don't need this section don't pretend to.
+- [x] 11.2 [easy] Add a "skip if your domain doesn't have contested claims" softener so wikis that don't need this section don't pretend to.
 
 ### Phase 12: adjacent-patterns filter ("is this even a wiki?")
 
