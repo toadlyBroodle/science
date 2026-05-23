@@ -19,6 +19,7 @@
   Trim to last 10.
 -->
 
+- Fix 7.7+7.8: scope check_orphans to kind==topic only (eliminates paper double-reporting) + annotate SPEC 7.6 batch-pick omission — by sst-dev-cycle at 2026-05-24T01:00:00Z
 - Fix 7.4+7.5: correct Mode D variant inference (sources.json required for scripted) + add check_unlinked_papers to middle lint.py (closes items 1-5 coverage gap) — by sst-dev-cycle at 2026-05-24T00:30:00Z
 - Close 6.1+6.2 (middle-variant lint.py template + A.6.5 step) and 7.1+7.2+7.3 (Mode D umbrella spec + template + argument-hint) — by sst-dev-cycle at 2026-05-23T23:00:00Z
 - Fix 4.4+4.5: annotate access_tier as prospective, fix cost_tier to reflect freeform wiki values (not a categorical enum) — by sst-dev-cycle at 2026-05-23T22:00:00Z
@@ -41,8 +42,6 @@
   Ordered by priority (highest-impact-low-effort first), not by SPEC phase number.
 -->
 
-- [medium] [should-fix] 7.7 SKILL.md:729 check_orphans() flags all pages; paper pages double-reported as [orphan]+[unlinked-paper] after 7.5 added check_unlinked_papers — review of 22bb187
-- [easy] [should-fix] 7.8 docs/SPEC.md:116 batch-pick declared 2 items but diff closed 3 ([x] 7.6 absent from batch-pick declaration) — review of 22bb187
 - [medium] Add variant-boundary assertion to lint (both LLM-judgment and scripted) + mirror in scripted `lint.py`. Reason: SPEC 8.1 + 8.2 — surfaces ambiguous variant claims observed in comsci wikis.
 - [medium] Embed a real contradiction-resolution worked example from longevity in §Contradiction handling. Reason: SPEC 11.1 — grounds aspirational guidance.
 - [medium] Add §"Adjacent patterns, not wikis" + one-question gate at top of Mode A. Reason: SPEC 12.1 + 12.2 — prevents wiki-ifying bible/, astronomy/, moon-explore/-shaped artifacts.

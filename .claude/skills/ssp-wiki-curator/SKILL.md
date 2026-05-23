@@ -734,7 +734,9 @@ def check_orphans(root, pages):
                 t = (p.parent / link).resolve()
                 for rel, absp in pages.items():
                     if absp.resolve() == t: linked.add(rel)
-    return [f"[orphan] {r}: no inbound links" for r in pages if r not in linked]
+    return [f"[orphan] {r}: no inbound links" for r in pages
+            if r not in linked
+            and parse_front_matter(pages[r].read_text(errors="replace")).get("kind") == "topic"]
 
 def check_front_matter(root, pages):
     errs = []
