@@ -19,6 +19,7 @@
   Trim to last 10.
 -->
 
+- Append lint-spectrum update reminder to SPEC 6.2; close 11.3 — by sst-dev-cycle at 2026-05-23T16:00:00Z
 - Close batch-sizing advisory (1.5), add contradiction-handling skip softener (11.2), add lint output spectrum section (6.3) — by sst-dev-cycle at 2026-05-23T14:00:00Z
 - Add synthesis page kind (Phase 1 1.1-1.4), fix maintain-pass criteria (10.2), close batch-sizing advisory (10.3) — by sst-dev-cycle at 2026-05-23T12:00:00Z
 - Add drafts/ optional layer, reading paths pattern, lint-output reconciliation, source-papers table to ssp-wiki-curator (SPEC 2.1-2.4, 5.1-5.2, 9.1-9.2, 10.1) — by sst-dev-cycle at 2026-05-23T00:00:00Z
@@ -33,7 +34,6 @@
   Ordered by priority (highest-impact-low-effort first), not by SPEC phase number.
 -->
 
-- [easy] [should-fix] 11.3 Update SPEC 6.2 to include reminder to update §Lint output spectrum middle row when lint.py ships (SKILL.md:113 will be stale post-6.1) — review of dcc6a4b
 - [hard] Write §"Extending the schema for your domain" with longevity's evidence_tier as worked example; add `domain-fields:` block to schema-spec template. Reason: SPEC 3.1 + 3.2 + 3.3 — the most leveraged change; every future scripted/middle wiki benefits.
 - [medium] Spec the domain-field → navigation-axis → reading-path loop with three reference examples. Reason: SPEC 4.1 — depends on Phase 3 landing first; pairs naturally as a follow-up.
 - [hard] Write the middle-variant `lint.py` template (~100 LoC, stdlib only) + wire into Mode A.6.5. Reason: SPEC 6.1 + 6.2 — fills the biggest middle-variant gap.

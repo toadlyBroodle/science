@@ -70,7 +70,7 @@ Once a domain field exists in front matter, `index.md` and synthesis pages can a
 The middle variant has no automated lint; every maintain pass re-derives the same checks via LLM judgment. Ship a ~100 LoC `lint.py` so middle-variant wikis get fast, deterministic lint.
 
 - [ ] 6.1 [hard] Write a middle-variant `lint.py` template (~100 LoC, no dependencies beyond stdlib): checks broken relative links, missing index entries, orphan files, optional YAML front-matter requirements, empty pages.
-- [ ] 6.2 [medium] Add Mode A step A.6.5 that drops the template into middle-variant scaffolds (skipped for minimal; the scripted variant uses its own fuller `lint.py`).
+- [ ] 6.2 [medium] Add Mode A step A.6.5 that drops the template into middle-variant scaffolds (skipped for minimal; the scripted variant uses its own fuller `lint.py`). Also update the §Lint output spectrum table's Middle row (SKILL.md §Lint output spectrum) to replace "LLM judgment" with the new script path once lint.py exists.
 - [x] 6.3 [easy] Add §"Lint output spectrum" documenting the three lint paths (LLM judgment for minimal, script + LINT-REPORT.md for middle, script + log-only for scripted).
 
 ### Phase 7: umbrella / super-wiki mode
@@ -113,7 +113,7 @@ Spec §Contradiction handling is aspirational — only longevity actually uses i
 - [x] 11.2 [easy] Add a "skip if your domain doesn't have contested claims" softener so wikis that don't need this section don't pretend to.
 
 **Review follow-ups (open — schedule as the next `/sst-dev-cycle` cycle):**
-- [ ] 11.3 [easy] [should-fix] `SKILL.md:113` & `docs/SPEC.md:6.2` — §Lint output spectrum table says "LLM judgment" for middle (correct today, since lint.py doesn't exist yet), but SPEC 6.2 ("Add Mode A step A.6.5") has no reminder to also update this row after lint.py lands. A cycle closing 6.1+6.2 will leave middle's row stale, contradicting the newly-scaffolded script. Proposed fix: append "also update §Lint output spectrum middle row (SKILL.md §Lint output spectrum) to reflect scripts/lint.py" to SPEC 6.2's description.
+- [x] 11.3 [easy] [should-fix] `SKILL.md:113` & `docs/SPEC.md:6.2` — §Lint output spectrum table says "LLM judgment" for middle (correct today, since lint.py doesn't exist yet), but SPEC 6.2 ("Add Mode A step A.6.5") has no reminder to also update this row after lint.py lands. A cycle closing 6.1+6.2 will leave middle's row stale, contradicting the newly-scaffolded script. Proposed fix: append "also update §Lint output spectrum middle row (SKILL.md §Lint output spectrum) to reflect scripts/lint.py" to SPEC 6.2's description.
 
 ### Phase 12: adjacent-patterns filter ("is this even a wiki?")
 
