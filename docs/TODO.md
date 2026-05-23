@@ -32,6 +32,7 @@
   Ordered by priority (highest-impact-low-effort first), not by SPEC phase number.
 -->
 
+- [easy] [should-fix] 1.5 batch-sizing persists: dev input ~56k (< 100k medium threshold); prior 10.3 fix did not close gap; consider adjusting difficulty tag or bundling more items — review of c3c2d43
 - [hard] Write §"Extending the schema for your domain" with longevity's evidence_tier as worked example; add `domain-fields:` block to schema-spec template. Reason: SPEC 3.1 + 3.2 + 3.3 — the most leveraged change; every future scripted/middle wiki benefits.
 - [medium] Spec the domain-field → navigation-axis → reading-path loop with three reference examples. Reason: SPEC 4.1 — depends on Phase 3 landing first; pairs naturally as a follow-up.
 - [hard] Write the middle-variant `lint.py` template (~100 LoC, stdlib only) + wire into Mode A.6.5 + document the lint-output spectrum. Reason: SPEC 6.1 + 6.2 + 6.3 — fills the biggest middle-variant gap.

@@ -31,6 +31,9 @@ Make the wiki-curator skill produce wikis that are more useful, more powerful, a
 - Changes: `.claude/skills/ssp-wiki-curator/SKILL.md` (§File conventions, §Synthesis page kind, §Mode A A.5b), `docs/SPEC.md`, `docs/TODO.md`.
 - Test delta: n/a (prose skill, no automated tests).
 
+**Review follow-ups (open — schedule as the next `/sst-dev-cycle` cycle):**
+- [ ] 1.5 [easy] [should-fix] [batch-sizing] `docs/TODO.md:## Next up` — dev-skill input ~56k tokens (medium undersize threshold 100k); window-target stated ~200k but actual filled ~28%; queue held 5+ compatible medium/hard items (SPEC 4.1, 8.1, 11.1, 12.1, plus 3.1/6.1/7.1/13.1). Prior 10.3 fix (pick ≥2 medium items) was applied but did not close the gap — this prose skill's pages are short enough that picking additional items alone will not reach threshold. Proposed fix: next cycle, bundle enough medium/hard items to push context above 100k, or acknowledge that a pure-prose skill's natural fill is structurally below medium threshold and adjust the difficulty tag to [easy] for future cycles.
+
 ### Phase 2: drafts/ working layer
 
 `aliens/drafts/reddit-r-ufos-post.md` exists with no schema coverage; the LLM has nowhere clean to iterate on long-form synthesis before committing to a wiki page. Formalize `drafts/` as an optional directory between `raw/` and `wiki/`.
