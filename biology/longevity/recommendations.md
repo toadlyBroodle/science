@@ -1,3 +1,10 @@
+---
+id: recommendations
+title: "Personal longevity recommendations"
+kind: synthesis
+covers: [rapamycin, blood-pressure, statins-apob, aerobic-exercise, resistance-training, sleep, omega-3, vitamin-d, creatine, gip-glp1, senolytics, partial-reprogramming, nad-mitophagy, aging-clocks, biomarkers-of-aging]
+---
+
 # Personal longevity recommendations
 
 A reader-facing summary of what the wiki's research base supports

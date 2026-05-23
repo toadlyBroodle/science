@@ -1,6 +1,7 @@
 ---
 id: yet-to-publish
 title: "Pending publications and trial readouts to ingest"
+kind: analysis
 ---
 
 # Yet-to-publish: pending readouts to track and ingest

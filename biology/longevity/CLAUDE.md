@@ -1,3 +1,6 @@
+variant: scripted
+profile: personal
+
 # Longevity Research Knowledge Base
 
 Scripted Karpathy-style wiki. The human curates sources; the LLM maintains
@@ -96,6 +99,36 @@ front matter minimally `id:` and `title:`.
 - Internal: `[[papers/<id>]]`, `[[topics/<slug>]]`, `[[analysis/<slug>]]`.
   Parsed by `scripts/index.py` into a graph; broken links fail lint.
 - External: normal markdown `[text](url)`.
+
+## Domain fields
+
+This wiki extends the standard schema with two YAML front-matter fields
+specific to evidence-based intervention review. See
+[[analysis/evidence-tiers]] for the full rubric.
+
+```yaml
+domain-fields:
+  evidence_tier:
+    type: enum
+    values: [T0, T1, T2, T3, T4, T5, T6, T7]
+    applies-to: [paper, topic, synthesis]
+    required-when: [paper]
+    rubric: wiki/analysis/evidence-tiers.md
+    gloss: "Maturity ladder from in vitro (T0) through hard-endpoint RCT meta-analysis (T7)."
+  endpoint:
+    type: enum
+    values: [primary_met, primary_not_met, secondary_only, observational, n/a]
+    applies-to: [paper]
+    required-when: [paper]
+    rubric: wiki/analysis/evidence-tiers.md
+    gloss: "Whether the paper's primary endpoint was pre-specified and met."
+```
+
+The `resource` page kind is a local extension for program portals,
+datasets, and competitions (e.g. ITP, XPRIZE Healthspan, Biomarkers of
+Aging Consortium). Treated by lint as paper-equivalent for front-matter
+checks; `evidence_tier` is required but `endpoint: n/a` is the common
+value.
 
 ## Workflows
 

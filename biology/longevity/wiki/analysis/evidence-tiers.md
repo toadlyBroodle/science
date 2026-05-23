@@ -1,6 +1,8 @@
 ---
 id: evidence-tiers
 title: "Evidence maturity tiers for longevity interventions"
+kind: synthesis
+covers: [rapamycin, vitamin-d, omega-3, creatine, blood-pressure, statins-apob, aerobic-exercise, resistance-training, sleep, gip-glp1, senolytics, partial-reprogramming, nad-mitophagy, biomarkers-of-aging, aging-clocks]
 ---
 
 # Evidence maturity tiers
