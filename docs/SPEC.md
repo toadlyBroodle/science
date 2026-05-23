@@ -64,8 +64,13 @@ Make the wiki-curator skill produce wikis that are more useful, more powerful, a
 
 Once a domain field exists in front matter, `index.md` and synthesis pages can aggregate by it (tier-weighted reading paths, maturity-sorted lists, cost-friction-filtered tool tables). Document the feedback loop so the pattern is reused.
 
-- [ ] 4.1 [medium] Spec the loop in a new §"Aggregating by domain field": domain field → navigation axis → reading path. Three reference examples (longevity evidence_tier, edge-llm benchmark maturity, ai-empowerment cost/access).
-- [ ] 4.2 [easy] Add an "aggregation by domain field" snippet to the scaffolded `index.md` template (commented out by default; user uncomments after adding a domain field in Phase 3).
+- [x] 4.1 [medium] Spec the loop in a new §"Aggregating by domain field": domain field → navigation axis → reading path. Three reference examples (longevity evidence_tier, edge-llm benchmark maturity, ai-empowerment cost/access).
+- [x] 4.2 [easy] Add an "aggregation by domain field" snippet to the scaffolded `index.md` template (commented out by default; user uncomments after adding a domain field in Phase 3).
+
+**Phase 4 completed 2026-05-23.** Added §"Aggregating by domain field" between §Declaring fields in the schema spec and §Mode A. The section codifies the domain-field → navigation-axis → reading-path feedback loop, explains when each promotion step fires (aggregation added at first sort-by-field query; reading path added when aggregation becomes the newcomer entry point), and walks three reference examples end-to-end: longevity `evidence_tier` (tier-ordered listing with reading-path promotion), edge-llm `benchmark_maturity` (maturity-sorted model table without reading path), and ai-empowerment `cost_tier + access_tier` (cross-filtered free/friction tool table with reading-path promotion). Mode A.5's `wiki/index.md` skeleton grew a commented-out `<!-- domain-field-aggregation -->` block with a two-value template for users to uncomment after adding their first domain field.
+
+- Changes: `.claude/skills/ssp-wiki-curator/SKILL.md` (new §Aggregating by domain field + Mode A.5 index.md skeleton aggregation snippet), `docs/SPEC.md`, `docs/TODO.md`.
+- Test delta: n/a (prose skill, no automated tests).
 
 ### Phase 5: reading paths / guided tours
 

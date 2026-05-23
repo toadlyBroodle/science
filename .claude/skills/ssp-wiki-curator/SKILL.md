@@ -282,6 +282,85 @@ The same field also drives the recommendations synthesis page (`biology/longevit
 
 Every wiki declares its domain fields in one block at the top of its schema spec (`AGENTS.md` or `CLAUDE.md`), under a `## Domain fields` heading. The block is YAML-shaped for parsing by future tooling and human-readable today. See the `domain-fields:` template inserted by Mode A.3 below.
 
+## Aggregating by domain field
+
+Once a domain field exists in front matter, it becomes a **navigation axis**: a way to sort, filter, or group pages beyond alphabetical order. This is where the field earns its weight. Without aggregation, a domain field is just metadata; with aggregation, `index.md` and synthesis pages become the structured interface that makes the corpus readable as a body of evidence, not just a list of summaries.
+
+### The feedback loop
+
+```
+domain field  →  navigation axis  →  reading path
+```
+
+1. **Domain field** (defined per §Extending the schema for your domain): a categorical front-matter field every in-scope page carries (e.g., `evidence_tier: T6`).
+2. **Navigation axis**: one or more aggregation views built from that field — grouped listings in `index.md`, tier-sorted sections in a synthesis page, or a filtered table showing only pages that meet a threshold.
+3. **Reading path**: when the aggregation consistently guides newcomers ("start at Tier 5+, skip Tier 2"), promote it to a named reading path in the `## If you're new here` section of `index.md`.
+
+The loop closes when a maintain pass detects that a reading path recommendation is stale (the field values on the cited pages have changed) and rewrites the aggregation. The field, the aggregation, and the reading path stay in sync through lint signals: a field missing on a new paper page is a lint error; a reading path citing a retracted tier-assignment is a `[review]` finding.
+
+### Three reference examples
+
+**Example 1 — longevity `evidence_tier` (tier-weighted reading path)**
+
+`biology/longevity/wiki/analysis/evidence-tiers.md` aggregates every intervention by its maximum tier reached. The aggregation is tier-ordered (T7 down to T1), not alphabetical. The recommendations synthesis page (`biology/longevity/recommendations.md`) uses the same axis to sort interventions by evidence weight. The reading path in `index.md` uses the tier as a filter: "If you want only well-powered human evidence, start with Tier 6+ pages."
+
+How the aggregation looks in `index.md` (snippet, commented out in the scaffold template — see §Mode A.5):
+
+```markdown
+<!-- domain-field-aggregation: evidence_tier -->
+<!--
+## By evidence tier (T7 = strongest)
+
+### Tier 7 — hard-endpoint RCT or meta-analysis
+- [Smoking cessation](wiki/papers/jha-2013-smoking-mortality.md) — T7; mortality endpoint.
+- [Blood pressure control](wiki/papers/sprint-2015-intensive-bp.md) — T7; cardiovascular mortality.
+
+### Tier 6 — Phase 2/3 RCT or large prospective cohort
+- [Rapamycin (PEARL)](wiki/papers/pearl-rapamycin-2025.md) — T6; primary endpoint negative.
+-->
+```
+
+**Example 2 — edge-llm benchmark maturity (maturity-sorted model table)**
+
+`comsci/edge-llm/` adds a `benchmark_maturity` field (enum: `provisional | established | replicated`) to model pages. The aggregation view in `index.md` is a table sorted by maturity descending, then by VRAM tier ascending — so a reader can find the smallest model with replicated benchmark performance for a given device class. No reading path is warranted here; the maturity axis is a power-user filter, not a newcomer tour.
+
+```markdown
+<!-- domain-field-aggregation: benchmark_maturity -->
+<!--
+## By benchmark maturity
+
+| Model | Maturity | VRAM tier | Notes |
+|-------|----------|-----------|-------|
+| ... | replicated | 8 GB | |
+| ... | established | 4 GB | |
+| ... | provisional | 2 GB | |
+-->
+```
+
+**Example 3 — ai-empowerment cost/access (cost-friction-filtered tool table)**
+
+`comsci/ai-empowerment/` adds `cost_tier` (enum: `free | freemium | paid`) and `access_tier` (enum: `no-signup | email | account | waitlist`) to tool pages. The aggregation is a cross-filtered view: tools that are `free` + `no-signup` or `email` are the lowest-friction entry points. This becomes a reading path: "Start with free, no-signup tools before evaluating paid options."
+
+```markdown
+<!-- domain-field-aggregation: cost_tier + access_tier -->
+<!--
+## By cost and access friction
+
+### Free + immediate access
+- [Tool A](wiki/tools/tool-a.md) — free; no signup.
+- [Tool B](wiki/tools/tool-b.md) — free; email only.
+
+### Free + friction (account or waitlist)
+- [Tool C](wiki/tools/tool-c.md) — free; waitlist.
+-->
+```
+
+### When to add aggregation
+
+Add an aggregation view the first time you answer a query by mentally sorting the corpus by the domain field. That is the signal that the field has value as a navigation axis. If you never sort by the field, it is passive metadata — useful for lint enforcement, not for navigation.
+
+Promote aggregation to a reading path when the aggregation view is the right "first pass" for a newcomer (not just a power-user filter). Name it and link it from the `## If you're new here` section of `index.md`.
+
 ## Mode A: scaffold a new wiki
 
 The user passes `scaffold <wiki-root> [--variant minimal|middle|scripted]`. If `--variant` is omitted, default to **minimal** and tell the user; prompt to switch only if the user explicitly mentions a defined corpus or automated lint.
@@ -490,6 +569,17 @@ _(no entries yet)_
 ## <Sub-2>
 
 _(no entries yet)_
+
+<!-- domain-field-aggregation — uncomment after adding a domain field per §Extending the schema for your domain -->
+<!--
+## By <field-name> (<value-1> = <meaning>)
+
+### <value-1>
+- [<Page title>](wiki/<subdir>/<slug>.md) — <one-line context>.
+
+### <value-2>
+- [<Page title>](wiki/<subdir>/<slug>.md) — <one-line context>.
+-->
 ```
 
 ### A.5a — optional: source-papers table

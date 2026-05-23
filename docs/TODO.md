@@ -19,6 +19,7 @@
   Trim to last 10.
 -->
 
+- Add §Aggregating by domain field (4.1) + aggregation snippet to index.md scaffold template (4.2) — by sst-dev-cycle at 2026-05-23T20:00:00Z
 - Close 3.4 (rename Step 5 label to synthesis-page aggregation) + 3.5 (re-tier 6.1/7.1/13.1 hard→medium) — by sst-dev-cycle at 2026-05-23T19:00:00Z
 - Close Phase 3 (3.1 + 3.2 + 3.3) — add §"Extending the schema for your domain" with longevity evidence_tier worked example and `domain-fields:` schema-spec template block — by sst-dev-cycle at 2026-05-23T18:00:00Z
 - Append lint-spectrum update reminder to SPEC 6.2; close 11.3 — by sst-dev-cycle at 2026-05-23T16:00:00Z
@@ -36,8 +37,6 @@
   Ordered by priority (highest-impact-low-effort first), not by SPEC phase number.
 -->
 
-- [medium] Spec the domain-field → navigation-axis → reading-path loop with three reference examples. Reason: SPEC 4.1 — depends on Phase 3 landing first; pairs naturally as a follow-up. Bundle with 4.2 per 3.5 advisory. (Phase 3 closed 2026-05-23, this is now actionable.)
-- [easy] Add an "aggregation by domain field" snippet to the scaffolded `index.md` template, commented out by default. Reason: SPEC 4.2 — natural pair with 4.1.
 - [medium] Write the middle-variant `lint.py` template (~100 LoC, stdlib only) + wire into Mode A.6.5. Reason: SPEC 6.1 + 6.2 — fills the biggest middle-variant gap; re-tiered hard→medium (3.5 advisory: prose-only edits cannot meet hard-tier 200k threshold).
 - [medium] Spec Mode D `umbrella <parent-dir>` + template + argument-hint update. Reason: SPEC 7.1 + 7.2 + 7.3 — useful at exactly 3+ sibling wikis (science/ already there); re-tiered hard→medium (3.5 advisory).
 - [medium] Add variant-boundary assertion to lint (both LLM-judgment and scripted) + mirror in scripted `lint.py`. Reason: SPEC 8.1 + 8.2 — surfaces ambiguous variant claims observed in comsci wikis.
