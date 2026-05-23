@@ -5,7 +5,7 @@ user-invocable: true
 version: 1.0.1
 transferable: sst-wiki-curator
 transferable-version: ">=1.0.1"
-argument-hint: "scaffold <wiki-root> [--variant minimal|middle|scripted] | ingest <wiki-root> <source-url-or-file> | maintain <wiki-root> [--lint]"
+argument-hint: "scaffold <wiki-root> [--variant minimal|middle|scripted] | ingest <wiki-root> <source-url-or-file> | maintain <wiki-root> [--lint] | umbrella <parent-dir>"
 ---
 
 # Wiki curator
@@ -110,7 +110,7 @@ Quick-reference summary of which lint path each variant uses. Full details in §
 | Variant  | Lint method                        | Report artifact                  |
 |----------|------------------------------------|----------------------------------|
 | Minimal  | LLM judgment (Mode C.2 checklist)  | `LINT-REPORT.md` in `wiki/`      |
-| Middle   | LLM judgment (Mode C.2 checklist)  | `LINT-REPORT.md` in `wiki/`      |
+| Middle   | `scripts/lint.py` (stdlib) + LLM judgment (stale claims, contradictions, gaps) | `LINT-REPORT.md` in `wiki/` |
 | Scripted | `scripts/lint.py` exit code        | Entry in `log.md` only           |
 
 Pick one path per wiki and keep it. Writing both `LINT-REPORT.md` and a `log.md` entry for the same lint run creates two sources of truth that drift apart across passes.
@@ -665,6 +665,121 @@ Also write `sources.json` with one or two seed entries:
 }
 ```
 
+### A.6.5 — middle variant only: drop the lint.py template
+
+For the middle variant, create `scripts/lint.py` from the template below. This gives the wiki fast, deterministic link-checking and front-matter enforcement without the full scripted-variant infrastructure (no `sources.json`, no download/convert/index pipeline). Skip for minimal wikis (use LLM judgment only). Skip for scripted wikis (they already have a fuller `lint.py` per §Scripts reference).
+
+```bash
+mkdir -p <wiki-root>/scripts
+```
+
+Template (stdlib only, no pip installs required):
+
+```python
+#!/usr/bin/env python3
+"""Middle-variant wiki lint — stdlib only.
+Usage: python3 scripts/lint.py [wiki-root]  (default: .)
+Checks: broken relative links, missing index entries, orphan pages,
+        front-matter fields, empty pages.
+Exit 0 on clean, 1 on errors.
+"""
+import re, sys
+from pathlib import Path
+
+WIKI_DIR = "wiki"
+INDEX = "wiki/index.md"
+REQUIRED_FIELDS = {"id", "title", "kind"}
+KINDS = {"paper", "topic", "analysis", "entity", "event", "concept", "synthesis"}
+
+def parse_front_matter(text):
+    if not text.startswith("---"): return {}
+    end = text.find("\n---", 3)
+    if end == -1: return {}
+    fields = {}
+    for line in text[3:end].splitlines():
+        m = re.match(r"^([\w-]+):\s*(.*)$", line)
+        if m: fields[m.group(1)] = m.group(2).strip()
+    return fields
+
+def wiki_pages(root):
+    skip = {"index.md", "LINT-REPORT.md"}
+    return {str(p.relative_to(root)): p
+            for p in (root / WIKI_DIR).rglob("*.md") if p.name not in skip}
+
+def rel_links(text):
+    return [m.split("#")[0].strip()
+            for m in re.findall(r"\[[^\]]*\]\(([^)#]+\.md[^)]*)\)", text)]
+
+def check_broken_links(root, pages):
+    errs = []
+    for rel, absp in pages.items():
+        for link in rel_links(absp.read_text(errors="replace")):
+            if not (absp.parent / link).resolve().exists():
+                errs.append(f"[broken-link] {rel}: '{link}'")
+    return errs
+
+def check_index(root, pages):
+    idx = root / INDEX
+    if not idx.exists():
+        return [f"[missing-index] {INDEX} not found"]
+    body = idx.read_text(errors="replace")
+    return [f"[missing-index-entry] {r}"
+            for r in pages if Path(r).stem not in body and Path(r).name not in body]
+
+def check_orphans(root, pages):
+    linked = set()
+    for p in list(pages.values()) + [root / INDEX]:
+        if p.exists():
+            for link in rel_links(p.read_text(errors="replace")):
+                t = (p.parent / link).resolve()
+                for rel, absp in pages.items():
+                    if absp.resolve() == t: linked.add(rel)
+    return [f"[orphan] {r}: no inbound links" for r in pages if r not in linked]
+
+def check_front_matter(root, pages):
+    errs = []
+    for rel, absp in pages.items():
+        fm = parse_front_matter(absp.read_text(errors="replace"))
+        for f in REQUIRED_FIELDS:
+            if f not in fm: errs.append(f"[missing-front-matter] {rel}: '{f}'")
+        if "kind" in fm and fm["kind"] not in KINDS:
+            errs.append(f"[bad-kind] {rel}: '{fm['kind']}'")
+    return errs
+
+def check_empty(root, pages):
+    errs = []
+    for rel, absp in pages.items():
+        text = absp.read_text(errors="replace")
+        body = text[text.find("\n---", 3) + 4:] if text.startswith("---") else text
+        if len(body.strip()) < 50:
+            errs.append(f"[empty-page] {rel}")
+    return errs
+
+def main():
+    root = Path(sys.argv[1] if len(sys.argv) > 1 else ".")
+    if not (root / WIKI_DIR).exists():
+        sys.exit(f"error: no {WIKI_DIR}/ at {root}")
+    pages = wiki_pages(root)
+    errs = (check_broken_links(root, pages) + check_index(root, pages) +
+            check_orphans(root, pages) + check_front_matter(root, pages) +
+            check_empty(root, pages))
+    for e in errs: print(e)
+    sys.exit(1 if errs else 0)
+
+if __name__ == "__main__":
+    main()
+```
+
+After dropping the template, verify it exits 0 against the empty scaffold:
+
+```bash
+cd <wiki-root> && python3 scripts/lint.py
+```
+
+An empty wiki (no pages yet) has nothing to check and should exit 0. If it errors, the template has a path bug — fix before declaring scaffold done.
+
+During **maintain passes** on a middle-variant wiki: run `python3 scripts/lint.py` first to get the deterministic findings (broken links, missing front matter, orphans, index drift, empty pages), then apply LLM judgment for the fuzzy checks that the script cannot perform (stale claims, contradiction handling, gaps in coverage). Incorporate all findings into `LINT-REPORT.md`.
+
 ### A.7 — write `.gitignore`
 
 Track scripts, manifests, schema, and the curated wiki. Ignore:
@@ -833,7 +948,7 @@ Same as B.1.
 
 ### C.2 — run the lint checks
 
-**Minimal/middle variants** (no scripts) — LLM walks the wiki and checks:
+**Minimal variant** — LLM walks the wiki and checks:
 
 1. **Broken cross-references.** Walk every relative link or wikilink; flag targets that don't exist.
 2. **Orphan topic pages.** Topics with no inbound links from any paper or analysis page.
@@ -843,6 +958,12 @@ Same as B.1.
 6. **Stale claims.** Claims contradicted by a newer source. (LLM judgment; flag for human review rather than auto-fix.)
 7. **Contradiction handling.** Topics with multiple sources making incompatible claims that the topic page hasn't surfaced.
 8. **Gaps.** Topics referenced repeatedly across paper pages with no dedicated topic page.
+
+**Middle variant** — run `scripts/lint.py` first (if present) for the deterministic subset of checks (items 1-5 above), then apply LLM judgment for the fuzzy checks (items 6-8). Incorporate all findings into `LINT-REPORT.md`.
+
+```bash
+python3 scripts/lint.py
+```
 
 **Scripted variant** — additionally:
 
@@ -873,6 +994,64 @@ YYYY-MM-DD LINT: <N> findings; <M> auto-applied; <K> for review. See LINT-REPORT
 ### C.6 — commit
 
 One commit: `<wiki-name>: lint pass — <one-line summary>`.
+
+## Mode D: umbrella (parent-dir index)
+
+The user passes `umbrella <parent-dir>`. Mode D is for three or more sibling wikis under a shared parent directory; it writes a single master index at the parent level without merging the individual wikis.
+
+Worked example: `~/Dev/science/` holds five wikis (`aliens/`, `bpu/`, `biology/longevity/`, `comsci/ai-empowerment/`, `comsci/edge-llm/`). Running `umbrella ~/Dev/science/` produces `~/Dev/science/index.md` with one row per detected wiki.
+
+### D.1 — walk sibling wikis
+
+Walk `<parent-dir>` up to two levels deep. A directory qualifies as a wiki when it contains both:
+- a `wiki/index.md` (or `wiki/` subdir with `index.md`), AND
+- at least one schema spec (`AGENTS.md` or `CLAUDE.md`).
+
+Skip directories that don't meet both criteria. For each qualifying directory, collect:
+
+- **Name**: the path relative to `<parent-dir>` (e.g., `aliens`, `comsci/edge-llm`).
+- **Variant**: infer from directory structure — `scripts/lint.py` present → scripted; `raw/` with subdirectories → middle; otherwise minimal.
+- **Page count**: count `*.md` files under `wiki/`, excluding `index.md`, `LINT-REPORT.md`, and anything under `wiki/build/`.
+- **Last-ingest date**: the most recent `YYYY-MM-DD INGEST:` line in `log.md`, or the most recent file modification date under `wiki/` if `log.md` is absent or has no INGEST line.
+- **One-line description**: the first non-blank, non-heading paragraph of `README.md`, trimmed to 80 characters. Fall back to the first sentence of the schema spec's opening paragraph if no README exists.
+
+### D.2 — write the umbrella index
+
+Write or refresh `<parent-dir>/index.md` using the template in §D.3. If the file already exists, locate the `<!-- umbrella-index: auto-generated, do not hand-edit below -->` sentinel and overwrite everything from that line through the end of the table (the last `|` row). Preserve any human-written prose above the sentinel.
+
+### D.3 — umbrella-index template
+
+```markdown
+# <parent-dirname> wikis
+
+_Last refreshed: YYYY-MM-DD._
+
+<!-- umbrella-index: auto-generated, do not hand-edit below -->
+| Wiki | Variant | Pages | Last ingest | Description |
+|------|---------|-------|-------------|-------------|
+| [<name>](./<name>/wiki/index.md) | <variant> | <n> | <YYYY-MM-DD> | <one-line> |
+```
+
+Each row's **Wiki** column links directly to the wiki's `wiki/index.md`. Sort rows alphabetically by name. For nested wikis (e.g., `comsci/edge-llm`), the link path is `./comsci/edge-llm/wiki/index.md`.
+
+### D.4 — append to parent log.md (if present)
+
+If `<parent-dir>/log.md` exists, append one line:
+
+```
+YYYY-MM-DD UMBRELLA: refreshed index.md; N wikis indexed (<name-1>, <name-2>, ...).
+```
+
+If no parent `log.md` exists, skip this step — Mode D does not create a parent `log.md`.
+
+### D.5 — commit
+
+One commit from `<parent-dir>`:
+
+```bash
+git add index.md log.md
+git commit -m "<parent-dirname>: umbrella index refresh — N wikis"
+```
 
 ## Wikilinks vs. relative links
 

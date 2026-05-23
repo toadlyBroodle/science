@@ -88,17 +88,27 @@ Once a domain field exists in front matter, `index.md` and synthesis pages can a
 
 The middle variant has no automated lint; every maintain pass re-derives the same checks via LLM judgment. Ship a ~100 LoC `lint.py` so middle-variant wikis get fast, deterministic lint.
 
-- [ ] 6.1 [medium] Write a middle-variant `lint.py` template (~100 LoC, no dependencies beyond stdlib): checks broken relative links, missing index entries, orphan files, optional YAML front-matter requirements, empty pages.
-- [ ] 6.2 [medium] Add Mode A step A.6.5 that drops the template into middle-variant scaffolds (skipped for minimal; the scripted variant uses its own fuller `lint.py`). Also update the §Lint output spectrum table's Middle row (SKILL.md §Lint output spectrum) to replace "LLM judgment" with the new script path once lint.py exists.
+- [x] 6.1 [medium] Write a middle-variant `lint.py` template (~100 LoC, no dependencies beyond stdlib): checks broken relative links, missing index entries, orphan files, optional YAML front-matter requirements, empty pages.
+- [x] 6.2 [medium] Add Mode A step A.6.5 that drops the template into middle-variant scaffolds (skipped for minimal; the scripted variant uses its own fuller `lint.py`). Also update the §Lint output spectrum table's Middle row (SKILL.md §Lint output spectrum) to replace "LLM judgment" with the new script path once lint.py exists.
 - [x] 6.3 [easy] Add §"Lint output spectrum" documenting the three lint paths (LLM judgment for minimal, script + LINT-REPORT.md for middle, script + log-only for scripted).
+
+**Phase 6 completed 2026-05-23.** Added middle-variant `lint.py` template (~80 executable LoC, stdlib only) as §A.6.5 in Mode A. The template checks: broken relative links, missing index entries, orphan pages (no inbound links), required front-matter fields (`id`, `title`, `kind`), bad `kind` values, and empty pages (body < 50 chars). Updated §Lint output spectrum Middle row from "LLM judgment" to "scripts/lint.py (stdlib) + LLM judgment (stale claims, contradictions, gaps)". Updated Mode C.2 to separate minimal/middle into distinct lint paths: middle variant runs `scripts/lint.py` first for deterministic checks (items 1-5) then LLM judgment for fuzzy checks (items 6-8).
+
+- Changes: `.claude/skills/ssp-wiki-curator/SKILL.md` (§Lint output spectrum table, §Mode A.6.5, §Mode C.2), `docs/SPEC.md`, `docs/TODO.md`.
+- Test delta: n/a (prose skill, no automated tests).
 
 ### Phase 7: umbrella / super-wiki mode
 
 `~/Dev/science/` holds 5 wikis with no master catalog. Add a fourth mode `umbrella` that walks sibling wikis and writes a parent-level index.
 
-- [ ] 7.1 [medium] Spec Mode D `umbrella <parent-dir>`: walks child directories, identifies which are wikis (by presence of `index.md` + schema spec), reads each one's variant + page count + last-ingest date, writes/refreshes `<parent-dir>/index.md` with one row per child wiki.
-- [ ] 7.2 [medium] Define the umbrella-index template (`# <Parent> wikis`, table: name | variant | pages | last-ingest | one-line description).
-- [ ] 7.3 [easy] Update `argument-hint:` frontmatter to include the new umbrella invocation form.
+- [x] 7.1 [medium] Spec Mode D `umbrella <parent-dir>`: walks child directories, identifies which are wikis (by presence of `index.md` + schema spec), reads each one's variant + page count + last-ingest date, writes/refreshes `<parent-dir>/index.md` with one row per child wiki.
+- [x] 7.2 [medium] Define the umbrella-index template (`# <Parent> wikis`, table: name | variant | pages | last-ingest | one-line description).
+- [x] 7.3 [easy] Update `argument-hint:` frontmatter to include the new umbrella invocation form.
+
+**Phase 7 completed 2026-05-23.** Added §Mode D: umbrella as a new top-level mode section after Mode C. Mode D walks `<parent-dir>` up to two levels deep, identifies wikis by the presence of `wiki/index.md` + schema spec, infers variant from directory structure, collects name/variant/page-count/last-ingest/description per wiki, and writes/refreshes `<parent-dir>/index.md` using the umbrella-index template. The template uses a `<!-- umbrella-index: auto-generated -->` sentinel so the table block can be overwritten on re-runs without touching human-written prose above it. Updated `argument-hint:` frontmatter to include `umbrella <parent-dir>`. Worked example cites `~/Dev/science/` with its five wikis.
+
+- Changes: `.claude/skills/ssp-wiki-curator/SKILL.md` (new §Mode D + frontmatter `argument-hint:`), `docs/SPEC.md`, `docs/TODO.md`.
+- Test delta: n/a (prose skill, no automated tests).
 
 ### Phase 8: variant-boundary assertion in lint
 
