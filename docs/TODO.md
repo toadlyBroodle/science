@@ -37,6 +37,7 @@
   Ordered by priority (highest-impact-low-effort first), not by SPEC phase number.
 -->
 
+- [easy] [should-fix] 4.3 `.claude/skills/ssp-wiki-curator/SKILL.md:325` — edge-llm benchmark_maturity example claims field exists (present tense) but it doesn't; change "adds" to "could add" — review of 765a33c
 - [medium] Write the middle-variant `lint.py` template (~100 LoC, stdlib only) + wire into Mode A.6.5. Reason: SPEC 6.1 + 6.2 — fills the biggest middle-variant gap; re-tiered hard→medium (3.5 advisory: prose-only edits cannot meet hard-tier 200k threshold).
 - [medium] Spec Mode D `umbrella <parent-dir>` + template + argument-hint update. Reason: SPEC 7.1 + 7.2 + 7.3 — useful at exactly 3+ sibling wikis (science/ already there); re-tiered hard→medium (3.5 advisory).
 - [medium] Add variant-boundary assertion to lint (both LLM-judgment and scripted) + mirror in scripted `lint.py`. Reason: SPEC 8.1 + 8.2 — surfaces ambiguous variant claims observed in comsci wikis.

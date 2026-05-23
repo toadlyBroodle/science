@@ -72,6 +72,9 @@ Once a domain field exists in front matter, `index.md` and synthesis pages can a
 - Changes: `.claude/skills/ssp-wiki-curator/SKILL.md` (new §Aggregating by domain field + Mode A.5 index.md skeleton aggregation snippet), `docs/SPEC.md`, `docs/TODO.md`.
 - Test delta: n/a (prose skill, no automated tests).
 
+**Review follow-ups (open — schedule as the next `/sst-dev-cycle` cycle):**
+- [ ] 4.3 [easy] [should-fix] `.claude/skills/ssp-wiki-curator/SKILL.md:325` — Example 2 in §Aggregating by domain field asserts "`comsci/edge-llm/` adds a `benchmark_maturity` field" in present tense, but no such field exists in any edge-llm page or its `CLAUDE.md` schema spec. An LLM maintaining the edge-llm wiki reads this as a declared domain field and may attempt to aggregate by a non-existent field. Proposed fix: change "adds" to "could add" (or annotate explicitly that this is a prospective illustration, not a field that currently exists in the wiki).
+
 ### Phase 5: reading paths / guided tours
 
 `longevity/wiki/index.md` opens with a 6-step "Grok the field" path. The spec currently prescribes only an alphabetized catalog. Make guided tours a documented pattern.
