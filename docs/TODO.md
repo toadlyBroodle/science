@@ -42,6 +42,7 @@
   Ordered by priority (highest-impact-low-effort first), not by SPEC phase number.
 -->
 
+- [easy] [should-fix] 7.9 docs/TODO.md:## Next up dev-skill input ~38k (medium, undersize threshold 100k, fifth consecutive); bundle ≥4 medium items next cycle — review of 3cd6ae5
 - [medium] Add variant-boundary assertion to lint (both LLM-judgment and scripted) + mirror in scripted `lint.py`. Reason: SPEC 8.1 + 8.2 — surfaces ambiguous variant claims observed in comsci wikis.
 - [medium] Embed a real contradiction-resolution worked example from longevity in §Contradiction handling. Reason: SPEC 11.1 — grounds aspirational guidance.
 - [medium] Add §"Adjacent patterns, not wikis" + one-question gate at top of Mode A. Reason: SPEC 12.1 + 12.2 — prevents wiki-ifying bible/, astronomy/, moon-explore/-shaped artifacts.
