@@ -21,6 +21,9 @@ inflammaging.
 - [[papers/ipsc-mononuclear-phagocyte-aging-brain-2025]] — IV iPSC-
   derived young immune cells rejuvenate aging brain via systemic
   immune signalling.
+- [[papers/nitazoxanide-foxn1-thymic-regeneration-2026]] — repurposed
+  antiparasitic induces FOXN1 and thymic regeneration in mice via
+  proteasome inhibition.
 - [[papers/tpe-ivig-biological-age-rct-2025]] — TPE+IVIG cuts
   biological age, with immune-cell composition shift.
 - [[papers/plasma-proteomics-brain-immune-2025]] — immune proteomic

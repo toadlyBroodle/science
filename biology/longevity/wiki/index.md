@@ -37,6 +37,10 @@ Follow in order; each step assumes the previous one.
 - [[papers/longevity-llm-2026]],
   [[papers/longevity-bench-2026]]: foundation models and benchmarks
   framing aging clocks as one task class among many.
+- [[papers/universal-transcriptomic-aging-clock-2026]]: conserved
+  cross-mammal transcriptomic age and mortality clocks.
+  [[papers/plasma-cellular-aging-proteomic-clock-2026]]: cell-type-
+  resolved plasma proteomic ages of 40+ cell types in 60,542 people.
 
 ### 3. What we intervene with
 - [[topics/reprogramming]] (umbrella) then
@@ -60,7 +64,8 @@ Follow in order; each step assumes the previous one.
   [[papers/plasmapheresis-aging-trial-2025]] (negative RCT).
 - [[topics/caloric-restriction]]: [[papers/dr-960-mice-nature-2024]]
   is the flagship DO-mouse study; human longitudinal evidence in
-  [[papers/lifestyle-atlas-tirolgesund-2025]].
+  [[papers/lifestyle-atlas-tirolgesund-2025]]; CALERIE-2 RCT
+  metabolomics in [[papers/calerie-cr-metabolomics-pca-2026]].
 - [[topics/mtor]] (now: [[papers/trametinib-rapamycin-itp-2025]]
   additive MEK+mTOR), [[topics/nad-mitophagy]],
   [[topics/gene-therapy]] (incl. [[papers/klotho-skl-aav-2025]]
@@ -72,11 +77,19 @@ Follow in order; each step assumes the previous one.
   intervention space.
 - New cytokine-axis hits: [[papers/il11-inhibition-2024]] (anti-IL-11
   antibody, +22-25% lifespan late-life).
+- New 2026 hits: [[papers/sirt6-chromatin-liver-rejuvenation-2026]]
+  (SIRT6 reverses ~80% of chromatin aging in aged mouse liver),
+  [[papers/nitazoxanide-foxn1-thymic-regeneration-2026]] (repurposed
+  drug induces FOXN1 / thymic regeneration). Evidence synthesis:
+  [[papers/nad-supplementation-aging-systematic-review-2026]] (PRISMA
+  review: NAD+ target engagement does not translate to healthspan).
 
 ### 4. Evidence pipelines
 - [[topics/itp-mice]] then [[papers/itp-nia]] and
   [[papers/itp-mpd-portal]]: the NIH Interventions Testing
-  Program, gold-standard mouse lifespan data.
+  Program, gold-standard mouse lifespan data. New positives:
+  [[papers/itp-epicatechin-halofuginone-mitoglitazone-2025]]
+  (epicatechin/halofuginone/mitoglitazone, male-only).
 - [[topics/uk-biobank]]: human-scale cohort behind most large
   clock training sets. New parallel UKB analysis:
   [[papers/plasma-proteomics-brain-immune-2025]] (brain and immune

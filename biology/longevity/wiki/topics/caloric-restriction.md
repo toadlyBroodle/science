@@ -14,6 +14,9 @@ topic: caloric-restriction
 - [[papers/lifestyle-atlas-tirolgesund-2025]] — multi-omic intermittent
   fasting cohort; high-compliance fasters show age-opposing molecular
   trajectories within 6 months.
+- [[papers/calerie-cr-metabolomics-pca-2026]] — CALERIE-2 RCT ancillary
+  metabolomics; ~25% CR stabilizes carbohydrate intermediates vs ad
+  libitum rebound at 24 months.
 
 ## Adjacent
 - [[topics/itp-mice]], [[topics/interventions]], [[topics/mtor]]

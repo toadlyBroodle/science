@@ -27,6 +27,9 @@ in-vivo test bed for candidate lifespan-extending compounds.
   lifespan-extending compounds
 - [[papers/trametinib-rapamycin-itp-2025]] — additive lifespan
   extension, Cologne replication framework.
+- [[papers/itp-epicatechin-halofuginone-mitoglitazone-2025]] — 2025 ITP
+  positives: epicatechin (+~5%), halofuginone (+~9%), mitoglitazone
+  (+~9%) male median lifespan; no female benefit.
 - [[topics/drug-repurposing]] candidate projects
 
 ## Open problems

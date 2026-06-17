@@ -27,6 +27,10 @@ sub-mechanisms and have very different evidence strengths.
   rises reliably; cardiovascular, metabolic, and muscle endpoints
   are largely null. Recommendation: do not supplement NR/NMN on
   current evidence.
+- [[papers/nad-supplementation-aging-systematic-review-2026]] — PRISMA
+  review of 113 studies (33 human, 80 rodent): reliable NAD⁺ target
+  engagement, but functional/healthspan outcomes frequently null.
+  Reinforces the no-supplement recommendation.
 
 ### CoQ10 (positive, indication-specific)
 - [[papers/mortensen-2014-coq10-qsymbio]] — Q-SYMBIO RCT in chronic

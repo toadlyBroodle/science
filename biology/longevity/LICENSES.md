@@ -45,6 +45,7 @@ per-paper before redistributing full text.
 | `senolytic-methylation-2024` | `CC-BY-3.0` | https://www.aging-us.com/article/205581/text | Aging (Albany NY) — CC-BY-3.0. |
 | `senolytic-predictor-2025` | `CC-BY-4.0` | https://pmc.ncbi.nlm.nih.gov/articles/PMC12196162/ | MDPI Molecules (fully OA). |
 | `singular-rejuv-atlas-2024` | `CC-BY-3.0` | https://pmc.ncbi.nlm.nih.gov/articles/PMC11424581/ | Aging (Albany NY) — CC-BY-3.0 by default. |
+| `sirt6-chromatin-liver-rejuvenation-2026` | `CC-BY-4.0` | https://doi.org/10.1038/s41467-026-73115-y | Nature Communications (fully OA). |
 | `smerbarreto2023-senolytics` | `CC-BY-4.0` | https://www.nature.com/articles/s41467-023-39120-1 | Nature Communications (fully OA). Zenodo code typically MIT-like; check repo. |
 | `tpe-ivig-biological-age-rct-2025` | `CC-BY-4.0` | https://onlinelibrary.wiley.com/doi/10.1111/acel.70103 | Aging Cell (CC-BY-4.0); PMC OA primary. |
 | `trametinib-rapamycin-itp-2025` | `CC-BY-4.0` | https://www.nature.com/articles/s43587-025-00876-4 | Nature Aging (CC-BY-4.0); PMC OA primary. |
@@ -75,6 +76,7 @@ per-paper before redistributing full text.
 
 | ID | License | URL | Note |
 |---|---|---|---|
+| `calerie-cr-metabolomics-pca-2026` | `preprint-author-choice` | https://www.medrxiv.org/content/10.64898/2026.02.20.26346654v1 | medRxiv preprint; verify license on abstract page. |
 | `computagebench` | `preprint-author-choice` | https://www.biorxiv.org/content/10.1101/2024.06.06.597715v2 | bioRxiv primary; KDD 2025 proceedings may differ. GitHub code usually MIT/Apache. |
 | `lifestyle-atlas-tirolgesund-2025` | `preprint-author-choice` | https://www.biorxiv.org/content/10.1101/2025.08.30.673115v2 | bioRxiv preprint; verify license on abstract page. |
 | `lipid-droplets-reprog-2025` | `preprint-author-choice` | https://www.biorxiv.org/content/10.1101/2025.06.25.661123v1.full | bioRxiv primary; Wiley Aging Cell version may be paywalled. |
@@ -98,20 +100,25 @@ per-paper before redistributing full text.
 | `fgf17-young-csf-2022` | `ARR` | https://www.nature.com/articles/s41586-022-04722-0 | Nature (main). Paywalled; no known preprint. |
 | `gpld1-tnap-brain-vasculature-2026` | `ARR` | https://www.cell.com/cell/fulltext/S0092-8674(26)00111-X | Cell (Elsevier paywall); PMC author manuscript OA (PMC13070421). |
 | `helgerud-2007-4x4-vo2max` | `ARR` | https://pubmed.ncbi.nlm.nih.gov/17414804/ | Lippincott / ACSM. Paywalled; PubMed abstract free. |
+| `itp-epicatechin-halofuginone-mitoglitazone-2025` | `ARR` | https://doi.org/10.1007/s11357-025-01881-6 | GeroScience (Springer). Paywalled; NIH-funded ITP study, expect PMC public-access mirror. |
 | `itp-mpd-portal` | `website-tos` | https://phenome.jax.org/projects/ITP1 | Jackson Lab Mouse Phenome Database site terms. |
 | `kamstrup-2009-lpa-mendelian` | `ARR` | https://jamanetwork.com/journals/jama/fullarticle/184063 | JAMA paywalled; PubMed abstract free. |
 | `laukkanen-2015-sauna-mortality` | `ARR` | https://pubmed.ncbi.nlm.nih.gov/25705824/ | JAMA Intern Med paywalled; PubMed abstract free. No PMC OA available. |
 | `marucha-1998-stress-wound-healing` | `ARR` | https://journals.lww.com/psychosomaticmedicine/abstract/1998/05000/mucosal_wound_healing_is_impaired_by_examination.25.aspx | Psychosomatic Medicine (Wolters Kluwer) paywalled; PubMed abstract free. |
 | `mesenchymal-drift-cell-2025` | `ARR` | https://www.cell.com/cell/abstract/S0092-8674(25)00853-0 | Cell (Elsevier). Paywalled; no known preprint at time of writing. |
 | `mortensen-2014-coq10-qsymbio` | `ARR` | https://www.jacc.org/doi/10.1016/j.jchf.2014.06.008 | JACC paywalled; PubMed abstract free. |
+| `nad-supplementation-aging-systematic-review-2026` | `ARR` | https://www.sciencedirect.com/science/article/pii/S1568163726000498 | Elsevier (Ageing Research Reviews). Not redistributable. |
+| `nitazoxanide-foxn1-thymic-regeneration-2026` | `ARR` | https://doi.org/10.1038/s41418-026-01724-7 | Cell Death & Differentiation (Springer Nature). Paywalled. |
 | `organ-proteomic-clocks-2025` | `ARR` | https://www.nature.com/articles/s43587-025-01016-8 | Nature Aging. Paywalled unless CC-BY paid; verify per-article. |
 | `paine-partial-reprog-review-2024` | `ARR` | https://onlinelibrary.wiley.com/doi/10.1111/acel.14039 | Wiley Aging Cell. Check OA status per-article; often paywalled. |
+| `plasma-cellular-aging-proteomic-clock-2026` | `ARR` | https://doi.org/10.1038/s41591-026-04446-y | Nature Medicine (paywalled unless CC-BY paid); bioRxiv preprint open. |
 | `plasma-proteomics-brain-immune-2025` | `ARR` | https://www.nature.com/articles/s41591-025-03798-1 | Nature Medicine (paywalled unless CC-BY paid); bioRxiv preprint author-choice. |
 | `retro-precision-reprog-2025` | `ARR` | https://www.liebertpub.com/doi/10.1089/cell.2025.0018 | Liebert Cellular Reprogramming. Paywalled; verify per-article OA status. |
 | `save-2016-cpap-cv-prevention` | `ARR` | https://www.nejm.org/doi/full/10.1056/NEJMoa1606599 | NEJM paywalled; abstract + figures free. |
 | `select-2023-semaglutide-cv-outcomes` | `ARR` | https://www.nejm.org/doi/full/10.1056/NEJMoa2307563 | NEJM paywalled; abstract + figures free. |
 | `tert-knockin-2025` | `ARR` | https://onlinelibrary.wiley.com/doi/10.1111/acel.14445 | Wiley Aging Cell. Verify CC-BY OA status per-article; some articles are OA. |
 | `ulrich-1984-window-view-recovery` | `ARR` | https://www.science.org/doi/10.1126/science.6143402 | Science (AAAS) paywalled; PubMed abstract free. |
+| `universal-transcriptomic-aging-clock-2026` | `ARR` | https://doi.org/10.1038/s41586-026-10542-3 | Nature (main). Paywalled; NIH-funded, expect PMC public-access mirror. |
 | `urolithin-a-immune-2025` | `ARR` | https://www.nature.com/articles/s43587-025-00996-x | Nature Aging. Verify CC-BY OA status per-article. |
 | `xprize-healthspan` | `website-tos` | https://www.xprize.org/competitions/healthspan | XPRIZE Foundation website; subject to xprize.org site terms. |
 
@@ -126,12 +133,12 @@ per-paper before redistributing full text.
 
 | Category | Count |
 |---|---|
-| Redistributable | 37 |
+| Redistributable | 38 |
 | Restricted | 14 |
-| Varies per paper | 10 |
-| Not redistributable | 24 |
+| Varies per paper | 11 |
+| Not redistributable | 29 |
 | Unknown | 2 |
-| **Total** | **87** |
+| **Total** | **94** |
 
 ## Safe-to-commit pipeline contract
 

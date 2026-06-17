@@ -161,6 +161,13 @@ LICENSE_MAP: dict[str, tuple[str, str]] = {
     "kamstrup-2009-lpa-mendelian": ("ARR", "JAMA paywalled; PubMed abstract free."),
     "younossi-2023-nafld-masld-epidemiology": ("CC-BY-NC-ND-4.0", "Hepatology (Wolters Kluwer) PMC author manuscript OA, CC-BY-NC-ND."),
     "save-2016-cpap-cv-prevention": ("ARR", "NEJM paywalled; abstract + figures free."),
+    "universal-transcriptomic-aging-clock-2026": ("ARR", "Nature (main). Paywalled; NIH-funded, expect PMC public-access mirror."),
+    "itp-epicatechin-halofuginone-mitoglitazone-2025": ("ARR", "GeroScience (Springer). Paywalled; NIH-funded ITP study, expect PMC public-access mirror."),
+    "nitazoxanide-foxn1-thymic-regeneration-2026": ("ARR", "Cell Death & Differentiation (Springer Nature). Paywalled."),
+    "plasma-cellular-aging-proteomic-clock-2026": ("ARR", "Nature Medicine (paywalled unless CC-BY paid); bioRxiv preprint open."),
+    "sirt6-chromatin-liver-rejuvenation-2026": ("CC-BY-4.0", "Nature Communications (fully OA)."),
+    "nad-supplementation-aging-systematic-review-2026": ("ARR", "Elsevier (Ageing Research Reviews). Not redistributable."),
+    "calerie-cr-metabolomics-pca-2026": ("preprint-author-choice", "medRxiv preprint; verify license on abstract page."),
 }
 
 

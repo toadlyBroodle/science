@@ -16,6 +16,9 @@ Chiefly DNA methylation in the context of this wiki.
   semaglutide using PCGrimAge, GrimAgeV2, PhenoAge, DunedinPACE.
 - [[papers/lifestyle-atlas-tirolgesund-2025]] — multi-omic lifestyle
   intervention atlas with DNA methylation timecourse.
+- [[papers/sirt6-chromatin-liver-rejuvenation-2026]] — SIRT6
+  overexpression reverses ~80% of age-related chromatin-accessibility
+  changes in aged mouse liver within ~1 month.
 
 ## Adjacent
 - [[topics/aging-clocks]], [[topics/partial-reprogramming]],

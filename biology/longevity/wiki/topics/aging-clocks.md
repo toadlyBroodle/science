@@ -32,6 +32,13 @@ Computational models estimating biological age from omics data.
   clocks, 1,081 donors
 - [[papers/spatial-aging-clocks-brain-2024]] — first spatial aging
   clock; cell-proximity effects in mouse brain
+- [[papers/plasma-cellular-aging-proteomic-clock-2026]] — cell-type-
+  resolved plasma proteomic ages of 40+ cell types in 60,542 people
+
+## Cross-species
+- [[papers/universal-transcriptomic-aging-clock-2026]] — conserved
+  transcriptomic age and mortality clocks across mouse, rat, macaque,
+  human; universal aging genes (GPNMB, CDKN1A, LGALS3)
 
 ## Foundation-model framing
 - [[papers/longevity-llm-2026]] — Qwen3-14B fine-tuned, beats Horvath

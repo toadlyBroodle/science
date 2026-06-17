@@ -1665,6 +1665,128 @@
       "note": "McEvoy et al. 2016 NEJM. SAVE RCT, n=2,687 patients with moderate-severe OSA and prior CVD, randomised to CPAP + usual care vs usual care alone. Mean follow-up 3.7 yr; mean CPAP adherence 3.3 hr/night. Primary composite (CV death + MI + stroke + hospitalisation for unstable angina/HF/TIA): 17.0% CPAP vs 15.4% control, HR 1.10 (95% CI 0.91-1.32, p=0.34). Primary endpoint NOT met. CPAP did improve sleep, snoring, and quality-of-life secondary endpoints.",
       "license": "ARR",
       "license_note": "NEJM paywalled; abstract + figures free."
+    },
+    {
+      "id": "universal-transcriptomic-aging-clock-2026",
+      "title": "Universal transcriptomic hallmarks of mammalian ageing and mortality",
+      "url": "https://doi.org/10.1038/s41586-026-10542-3",
+      "alt_url": [
+        "https://pubmed.ncbi.nlm.nih.gov/42203874/"
+      ],
+      "topics": [
+        "aging-clocks",
+        "transcriptomics",
+        "biomarkers-of-aging",
+        "deep-learning"
+      ],
+      "kind": "paper",
+      "access": "gated",
+      "note": "Tyshkovskiy et al., Nature (Epub 2026-05-27). >11,000 transcriptomes across >25 tissues and 4 mammals (mouse, rat, macaque, human). Interpretable chronological-age and mortality clocks; conserved universal aging/mortality genes (GPNMB, CDKN1A, LGALS3) change near-identically across species. Separate clocks for inflammation, energy-production, and DNA-repair modules show aging is multi-process. Mortality clock predicts proximity to death and detects rejuvenation signatures across species.",
+      "license": "ARR",
+      "license_note": "Nature (main). Paywalled; NIH-funded, expect PMC public-access mirror."
+    },
+    {
+      "id": "itp-epicatechin-halofuginone-mitoglitazone-2025",
+      "title": "Extension of lifespan by epicatechin, halofuginone and mitoglitazone in male but not female genetically heterogeneous mice",
+      "url": "https://doi.org/10.1007/s11357-025-01881-6",
+      "topics": [
+        "itp-mice",
+        "lifespan",
+        "interventions",
+        "drug-repurposing",
+        "sex-specific"
+      ],
+      "kind": "paper",
+      "access": "gated",
+      "note": "NIA Interventions Testing Program (Strong, Harrison, Miller et al.), GeroScience 2025. UM-HET3 mice, 3 sites (JAX, U Michigan, UT Health San Antonio). Epicatechin +~5% male median lifespan; halofuginone and mitoglitazone each +~9% male median. Epicatechin and halofuginone also raised 90th-percentile (late-life) survival in males. No female lifespan benefit for any of the three; continues the ITP male bias.",
+      "license": "ARR",
+      "license_note": "GeroScience (Springer). Paywalled; NIH-funded ITP study, expect PMC public-access mirror."
+    },
+    {
+      "id": "nitazoxanide-foxn1-thymic-regeneration-2026",
+      "title": "Proteasome inhibition promotes Foxn1 expression in thymic epithelial cells and induces thymic regeneration in mice",
+      "url": "https://doi.org/10.1038/s41418-026-01724-7",
+      "alt_url": [
+        "https://pubmed.ncbi.nlm.nih.gov/41888548/"
+      ],
+      "topics": [
+        "immune-rejuvenation",
+        "drug-repurposing",
+        "interventions"
+      ],
+      "kind": "paper",
+      "access": "gated",
+      "note": "Genah, Pellegrino, Giansanti et al., Cell Death & Differentiation (2026-03-26). Proteasome inhibition upregulates FOXN1 in murine and human primary thymic epithelial cells. Repurposed antiparasitic nitazoxanide (NTZ) induced Foxn1 while preserving viability and accelerated functional thymic recovery after radiation damage, restoring stromal and hematopoietic compartments.",
+      "license": "ARR",
+      "license_note": "Cell Death & Differentiation (Springer Nature). Paywalled."
+    },
+    {
+      "id": "plasma-cellular-aging-proteomic-clock-2026",
+      "title": "Cellular aging signatures in the plasma proteome record human health and disease",
+      "url": "https://doi.org/10.1038/s41591-026-04446-y",
+      "alt_url": [
+        "https://doi.org/10.1038/s41591-026-04447-x"
+      ],
+      "topics": [
+        "aging-clocks",
+        "biomarkers-of-aging",
+        "proteomics",
+        "deep-learning",
+        "disease-prediction"
+      ],
+      "kind": "paper",
+      "access": "gated",
+      "note": "Ding et al. (Wyss-Coray lab, Stanford), Nature Medicine 2026 (bioRxiv preprint 2026-02). >7,000 plasma proteins in 60,542 individuals model biological age of >40 cell types. Extreme astrocyte aging tripled Alzheimer's risk in APOE4/4 carriers; respiratory-cell aging flagged smokers at +58% lung-cancer risk; myeloid aging flagged higher diabetes risk in normoglycemic individuals. Cell-type aging predicted incident disease and mortality over 15-year follow-up.",
+      "license": "ARR",
+      "license_note": "Nature Medicine (paywalled unless CC-BY paid); bioRxiv preprint open."
+    },
+    {
+      "id": "sirt6-chromatin-liver-rejuvenation-2026",
+      "title": "SIRT6 overexpression counteracts chromatin aging in the male murine liver",
+      "url": "https://doi.org/10.1038/s41467-026-73115-y",
+      "topics": [
+        "epigenetics",
+        "gene-therapy",
+        "hallmarks-of-aging",
+        "organ-specific"
+      ],
+      "kind": "paper",
+      "access": "open",
+      "note": "Cohen et al. (Bar-Ilan; with NIA and Tel Aviv U), Nature Communications 2026-05. Multi-omics (ATAC-seq, methylome, RNA-seq): aging raises chromatin accessibility in male mouse liver with upregulated inflammation and downregulated metabolism. SIRT6 overexpression in ~24-month-old mice reversed ~80% of age-related chromatin changes within ~1 month; reduced inflammation and improved metabolic/liver function. First SIRT6 reversal (not slowing) of established aging changes in already-aged animals. Males only, single study.",
+      "license": "CC-BY-4.0",
+      "license_note": "Nature Communications (fully OA)."
+    },
+    {
+      "id": "nad-supplementation-aging-systematic-review-2026",
+      "title": "NAD+ supplementation for anti-aging and wellness: a PRISMA-guided systematic review of preclinical and clinical evidence",
+      "url": "https://www.sciencedirect.com/science/article/pii/S1568163726000498",
+      "topics": [
+        "nad-mitophagy",
+        "clinical-trials",
+        "interventions",
+        "review"
+      ],
+      "kind": "paper",
+      "access": "gated",
+      "note": "Ageing Research Reviews 2026. PRISMA synthesis of 113 studies (33 human intervention, 80 rodent). Oral NMN/NR consistently achieved biochemical target engagement (raised NAD+/metabolites) and was well tolerated in humans, but functional/metabolic/vascular/healthspan outcomes were heterogeneous and frequently null or endpoint-specific. Conclusion: reliable NAD+ elevation does not translate to consistent clinical aging benefit.",
+      "license": "ARR",
+      "license_note": "Elsevier (Ageing Research Reviews). Not redistributable."
+    },
+    {
+      "id": "calerie-cr-metabolomics-pca-2026",
+      "title": "Metabolic adaptations to long-term caloric restriction: principal components analysis of mass-spectrometry metabolomics from the CALERIE Phase 2 trial",
+      "url": "https://www.medrxiv.org/content/10.64898/2026.02.20.26346654v1",
+      "topics": [
+        "caloric-restriction",
+        "metabolomics",
+        "biomarkers-of-aging",
+        "clinical-trials"
+      ],
+      "kind": "paper",
+      "access": "open",
+      "note": "CALERIE Phase 2 investigators, medRxiv 2026-02-20. Untargeted metabolomics on fasted plasma at baseline/12/24 months; ~25% CR vs ad libitum. 864 known metabolites in 9 super-pathways; PCA + linear mixed models. 3 components showed significant group x time interaction: PC2 (carbohydrate), PC4 (lipid/sphingolipids), PC5 (partially characterized). CR stabilized carbohydrate intermediates while ad libitum rebounded at 24 months.",
+      "license": "preprint-author-choice",
+      "license_note": "medRxiv preprint; verify license on abstract page."
     }
   ]
 }
