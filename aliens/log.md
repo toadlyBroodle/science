@@ -15,3 +15,4 @@
 2026-04-06 COMPILE: Created wiki/conclusions.md — synthesis of 8 established findings, unsupported claims, and open questions
 2026-04-06 COMPILE: Created wiki/unanswered-questions.md — 7 prioritized open questions in 3 tiers + meta-question
 2026-04-06 INDEX: Updated index.md to 41 articles with new Analysis section
+2026-06-17 LINT: maintain pass. 41 pages; 0 broken links, 0 index drift, 0 orphans; 1 em-dash file (index.md, pre-existing, [review]). See wiki/LINT-REPORT.md.

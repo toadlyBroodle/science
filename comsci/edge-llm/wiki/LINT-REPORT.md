@@ -4,7 +4,7 @@ _Last run: 2026-06-17 (sst-wiki-curator maintain pass)._
 
 | Check | Result |
 |---|---|
-| Pages scanned | 48 |
+| Pages scanned | 66 |
 | Broken relative links | 0 |
 | Em dashes (style rule: none) | 0 |
 | Pages missing from index.md | 0 |
