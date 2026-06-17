@@ -46,11 +46,15 @@ tess_data/
 *.env
 credentials.json
 
-# Project-specific ignores
-aliens/
+# Non-wiki project dirs (not curated wikis; excluded by choice)
 artemis2/
 bible/
-biology/
-bpu/
-comsci/
 moon-explore/
+
+# Wiki generated/downloaded artifacts: curated markdown is TRACKED; these regenerate.
+# Wiki directories themselves (aliens/ biology/ bpu/ comsci/) are intentionally NOT ignored.
+**/wiki/build/
+**/sources/html/
+**/sources/pdf/
+**/sources/md/
+**/sources/download_log.json
