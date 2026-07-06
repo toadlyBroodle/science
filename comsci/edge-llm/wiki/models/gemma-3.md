@@ -1,5 +1,7 @@
 # Gemma 3
 
+> **Superseded:** Gemma 4 (April 2026, QAT checkpoints June 2026) replaces this family for new deployments; see [Gemma 4](gemma-4.md).
+
 > **Summary:** Google DeepMind's lightweight open-weight family (1B / 4B / 12B / 27B), March 2025. Multimodal, 128K+ context. The architectural headline is a rebalanced local-vs-global attention ratio with shorter local-attention spans, specifically to control KV-cache memory at long context. Trained with knowledge distillation. Gemma3-4B-IT competitive with Gemma2-27B-IT.
 
 **Sources:** [raw/gemma-3.md](../../raw/gemma-3.md)

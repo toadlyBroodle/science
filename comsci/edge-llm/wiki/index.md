@@ -1,6 +1,6 @@
 # Edge-LLM Knowledge Base
 
-> SOTA in small/edge LLMs, scoped to running an agentic coding harness on 4 GB VRAM. Last updated: 2026-06-17. 67 articles compiled from 50 source extracts (cutting-edge 2026 work weighted; foundational reference where needed).
+> SOTA in small/edge LLMs, scoped to running an agentic coding harness on 4 GB VRAM. Last updated: 2026-07-06. 70 articles compiled from 54 source extracts (cutting-edge 2026 work weighted; foundational reference where needed).
 
 ## Goal
 
@@ -9,10 +9,12 @@ Compile what's needed to make an informed choice about (model × quant × runtim
 ## Models
 
 - [Qwen3-Coder-Next](models/qwen3-coder-next.md): 80B-total / 3B-active MoE for coding agents (Feb 2026). Trained on verifiable coding tasks with executable environments via mid-training + RL. The canonical 2026 reference for "agentic-coder MoE."
-- [Gemma 3](models/gemma-3.md): Google DeepMind, March 2025. 1B / 4B / 12B / 27B. 128K+ context with rebalanced local-vs-global attention to control KV cache. Gemma 3-4B is the leading dense candidate at 4 GB.
+- [Gemma 4](models/gemma-4.md): Google DeepMind, April 2026; QAT checkpoints June 2026. E2B / E4B / 12B / 26B-A4B / 31B, Per-Layer Embeddings + shared KV cache. QAT cuts memory ~72%: E2B text-only under 1 GB. E4B (LiveCodeBench v6 52.0) is the new leading sub-5B-active candidate at 4 GB.
+- [Gemma 3](models/gemma-3.md): Google DeepMind, March 2025 (superseded by Gemma 4). 1B / 4B / 12B / 27B. 128K+ context with rebalanced local-vs-global attention to control KV cache.
 - [Phi-4-Mini](models/phi-4-mini.md): Microsoft, March 2025. 3.8B; Mixture-of-LoRAs multimodal. Reasoning variant rivals DeepSeek-R1-Distill-Qwen-7B and -Llama-8B.
 - [DeepSeek-R1 and Distill family](models/deepseek-r1.md): Pure-RL reasoning training (Nature 2025). Distill-Qwen-1.5B / 7B and Distill-Llama-8B are the edge-relevant variants.
-- [LFM2](models/lfm2.md): Liquid AI, November 2025. 350M-8.3B family, hybrid (gated short conv + GQA), HW-in-the-loop NAS. 2x faster prefill/decode on CPU.
+- [LFM2.5](models/lfm2-5.md): Liquid AI, May-June 2026. 8B-A1B on-device MoE (128K ctx, BFCL v3 64.79, Tau^2 Telecom 88.07, <6 GB quantized, 146-253 tok/s CPU decode) + 230M CPU-anywhere agent base (<400 MB at 4-bit).
+- [LFM2](models/lfm2.md): Liquid AI, November 2025 (superseded by LFM2.5). 350M-8.3B family, hybrid (gated short conv + GQA), HW-in-the-loop NAS. 2x faster prefill/decode on CPU.
 - [Nemotron-3-Nano-4B](models/nemotron-3-nano.md): NVIDIA, March 2026. 3.97B hybrid Mamba-2 + Transformer; LiveCodeBench 51.8, BFCL v3 61.1; Q4_K_M 2.9 GB. Ready-to-run 4 GB default with strong tool-calling.
 - [Mellum2](models/mellum2.md): JetBrains, June 2026 (Apache-2.0). 12B-total / 2.5B-active code MoE; BFCL v3 66.3, LiveCodeBench v6 69.9 (Thinking). First open code MoE tuned for commodity-GPU inference.
 
@@ -49,14 +51,14 @@ Compile what's needed to make an informed choice about (model × quant × runtim
 
 ## Runtimes
 
-- [llama.cpp](runtimes/llama-cpp.md): Universal CPU/GPU inference, GGUF, every quant flavor. The default. Partial offload via `-ngl` is the load-bearing 4 GB feature. **April 2026 wave** brought tensor parallelism, 1-bit, Hexagon NPU backend.
+- [llama.cpp](runtimes/llama-cpp.md): Universal CPU/GPU inference, GGUF, every quant flavor. The default. Partial offload via `-ngl` is the load-bearing 4 GB feature. **April 2026 wave** brought tensor parallelism, 1-bit, Hexagon NPU backend; **May 2026** added MTP speculative decoding (~2x on dense Qwen 3.6 27B, no gain on MoE at batch=1).
 - [KTransformers](runtimes/ktransformers.md): Tsinghua, SOSP 2025. Heterogeneous MoE inference. 4.62-19.74x prefill speedup. Substrate for DALI/HybriMoE/FlashMoE.
 - [vLLM](runtimes/vllm.md): Server-side throughput. PagedAttention, prefix caching, native EAGLE-style SD.
 - [DALI](runtimes/dali-moe.md): Workload-aware MoE offloading for local PCs (Feb 2026). 0-1 integer optimization for expert-to-device assignment.
 - [FlashMoE](runtimes/flashmoe.md): SSD-based MoE caching with ML cache replacement (Jan 2026). +51% hit rate vs LRU/LFU.
 - [ExecuTorch](runtimes/executorch.md): PyTorch's edge runtime, GA October 2025. Wins on mobile and Snapdragon NPU; loses to llama.cpp on laptop NVIDIA dGPU.
 - [ExLlamaV3 / EXL3](runtimes/exllamav3.md): turboderp, through June 2026. Arbitrary bits-per-weight QTIP-variant quant (1.6 bpw 70B coherent) + 2-8 bit KV quant + consumer tensor/expert parallel. Strongest at the extreme-low-VRAM end.
-- [Ollama / LM Studio / ExLlamaV2 / MLX](runtimes/ollama-and-friends.md): Next-tier runtimes for specific niches.
+- [Ollama / LM Studio / ExLlamaV2 / MLX](runtimes/ollama-and-friends.md): Next-tier runtimes for specific niches. May-June 2026: Ollama v0.24-0.30.x (Gemma 4 QAT + MTP, KV-cache reuse), LM Studio MTP stable, MLX M5 Neural Accelerators.
 
 ## Training
 
@@ -82,6 +84,7 @@ Compile what's needed to make an informed choice about (model × quant × runtim
 - [LongCodeBench](benchmarks/longcodebench.md): Coding eval at 32K-1M context (May 2025). Claude 3.5 Sonnet drops 29% → 3% from 32K to 256K. Long-context is broken even for frontier; route around it via filesystem tools.
 - [BFCL (v3 / v4)](benchmarks/bfcl.md): Berkeley Function Calling Leaderboard. Multi-turn, state-based. The most diagnostic small-model agentic benchmark. GLM-4.5 leads v3 at 0.778.
 - [Aider polyglot](benchmarks/aider-polyglot.md): 225 Exercism exercises, 6 languages, two-attempt protocol. Tests both code-correctness and structured-edit-format adherence. 2026 leaders: Claude Opus 4.5 (89.4%), GPT-5 (88.0%), DeepSeek V3.2-Exp (74.2%).
+- [SWE-Chain](benchmarks/swe-chain.md) (May 2026): Chained release-level package upgrades; 155 transitions, errors compound across chains. Best frontier result 60.8% resolving (Claude-Opus-4.7 + Claude Code). No small-model numbers yet: open eval gap.
 - [Terminal-Bench (1.0 / 2.0)](benchmarks/terminal-bench.md): Stanford + Laude, January 2026. 89 hard CLI tasks. Frontier models <65%.
 - [LiveCodeBench](benchmarks/livecodebench.md): Holistic, contamination-free coding eval. Time-segmented. Tests self-repair, execution, test-output prediction.
 - [Dense vs MoE reasoning tradeoffs (Manik & Wang)](benchmarks/dense-vs-moe-reasoning-tradeoffs.md) (April 2026): Best overall: Gemma-4-E4B (0.675 weighted accuracy / 14.9 GB VRAM). **Sparse activation alone does not guarantee the best operating point.**

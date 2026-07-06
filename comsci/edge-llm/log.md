@@ -49,3 +49,6 @@
 2026-06-17 INGEST: 7 new wiki pages (models/nemotron-3-nano, models/mellum2, training/swe-hero, training/swe-trace, runtimes/exllamav3, techniques/harp, harnesses/openhands). Cross-linked into mamba-ssm-hybrids, moe-active-param, agentic-rl-coding, llama-cpp; index.md updated to 67 articles / 50 source extracts.
 2026-06-17 LINT: relative-link check on the 7 new pages -- fixed 2 path bugs (training pages -> ../models/qwen3-coder-next.md); 0 broken links and 0 broken raw refs remaining.
 2026-06-17 LINT: maintain pass. 66 pages; 0 broken links, 0 em dashes, 0 index drift, 0 orphans. See wiki/LINT-REPORT.md. Clean.
+2026-07-06 INGEST: 4 new source extracts covering May-June 2026 window (lfm2-5: LFM2.5-8B-A1B 2026-05-28 + LFM2.5-230M 2026-06-25; gemma-4: family 2026-04-02 + QAT checkpoints 2026-06-05; swe-chain arXiv:2605.14415; runtimes-may-june-2026: llama.cpp MTP PR #22673, Ollama v0.24-0.30.x, vLLM EAGLE 3.1, MLX M5, LM Studio MTP).
+2026-07-06 INGEST: 3 new wiki pages (models/lfm2-5.md, models/gemma-4.md, benchmarks/swe-chain.md); updates to runtimes/llama-cpp.md (May 2026 MTP wave), runtimes/ollama-and-friends.md (May-June updates), superseded banners on models/lfm2.md and models/gemma-3.md; index.md to 70 articles / 54 extracts.
+2026-07-06 LINT: touched-page check. 0 em dashes, 0 broken relative links across 8 touched pages.

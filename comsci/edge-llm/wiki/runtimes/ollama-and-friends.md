@@ -2,7 +2,7 @@
 
 > **Summary:** The next-tier runtimes after llama.cpp / vLLM / KTransformers. Each fills a niche: Ollama and LM Studio wrap llama.cpp with friendlier UX; ExLlamaV2 is the fastest CUDA-only path; MLX is Apple Silicon's first-class runtime.
 
-**Sources:** project documentation; ecosystem references throughout the wiki.
+**Sources:** project documentation; ecosystem references throughout the wiki; [raw/runtimes-may-june-2026.md](../../raw/runtimes-may-june-2026.md).
 
 ---
 
@@ -21,6 +21,13 @@ CUDA-only, the fastest path on NVIDIA for AWQ / GPTQ / EXL2-quantized models. Fo
 ## MLX
 
 Apple's first-party ML framework with growing LLM support. On Apple Silicon laptops with unified memory, MLX models run with substantially less overhead than llama.cpp Metal backend on the same hardware. Quant support is narrower (4-bit, 8-bit, MLX-native formats); model coverage lags llama.cpp by weeks-to-months.
+
+## May-June 2026 updates
+
+- **Ollama** v0.23-0.24 (May): Gemma 4 MTP speculative decoding via the MLX runner (>2x on Gemma 4 31B coding tasks on Mac); `ollama launch codex-app`; ~6.7x lower median latency on cached `/api/show`. v0.30.x (June): broadened GGUF compatibility beyond Apple Silicon, Gemma 4 QAT weights (2026-06-05), MLX engine upgrade (2026-06-11), improved prompt/KV-cache reuse. The KV-cache-reuse work narrows one of the reproducibility gaps that kept Ollama out of benchmark duty.
+- **LM Studio** 0.4.13-0.4.14 (May): MTP stable, 1.5-3x tok/s depending on hardware/model.
+- **MLX** 0.31.x (May): M5 Neural Accelerator support, up to 4x faster time-to-first-token; +19-27% generation vs M4 from bandwidth alone.
+- **vLLM** v0.21.0 (May): speculative decoding respects reasoning budgets; EAGLE 3.1 (up to 2x longer acceptance on long context) lands in v0.22.0. See [EAGLE-3](../techniques/eagle-3.md).
 
 ## Position chart for 4 GB target
 

@@ -46,6 +46,17 @@ For MoE models, `-ngl` is the entry-level offload. [KTransformers](ktransformers
 
 For a 4 GB-class deployment, the Hexagon backend is the most consequential: it brings llama.cpp's quant catalog to Snapdragon laptops without needing the PyTorch toolchain.
 
+## May 2026 release wave
+
+Builds b8607 through b9196+ (source: [raw/runtimes-may-june-2026.md](../../raw/runtimes-may-june-2026.md)):
+
+- **Multi-Token Prediction (MTP) speculative decoding** (PR #22673, for Qwen 3.6): ~2x generation throughput on the dense 27B. On the 35B-A3B MoE: no net speedup at batch=1 on RTX 3090; the drafted-token expert union defeats the sparse-activation win. Consistent with [MoE-Spec](../techniques/moe-spec.md)'s finding that MoE targets need expert budgeting for speculative decoding to pay.
+- **CUDA kernel fusion**: RTX 4090 77 -> 96 tok/s (+24%) on the measured baseline.
+- **b9196** (2026-05-18): Windows prebuilts for CUDA 13.1, Vulkan, HIP, SYCL.
+- **Gemma 4 QAT GGUF** (Q4_0, 2026-06-05): vendor-quantized weights land directly in the GGUF ecosystem; see [Gemma 4](../models/gemma-4.md).
+
+MTP is the notable one for the 4 GB target: model-native draft heads remove the separate-draft-model VRAM cost that makes classic speculative decoding awkward in a 4 GB envelope ([spec decoding at 4 GB](../analysis/spec-decoding-at-4gb.md)), but the MoE batch=1 result says it currently pays only on dense targets.
+
 ## Pairs with
 
 - [AWQ](../techniques/awq.md) (convert AWQ → GGUF for distribution).

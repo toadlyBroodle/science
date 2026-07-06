@@ -1,5 +1,7 @@
 # LFM2 (Liquid Foundation Models v2)
 
+> **Superseded:** the LFM2.5 generation (May-June 2026) replaces this family for new deployments; see [LFM2.5](lfm2-5.md).
+
 > **Summary:** Liquid AI, November 2025 (arXiv:2511.23404). Family of edge-targeted models 350M to 8.3B parameters. Hybrid architecture: gated short convolutions + grouped query attention. Hardware-in-the-loop architecture search. Pre-trained on 10-12T tokens with tempered, decoupled top-K knowledge distillation. Up to 2x faster prefill/decode on CPUs vs same-sized models.
 
 **Sources:** [raw/lfm2.md](../../raw/lfm2.md)
