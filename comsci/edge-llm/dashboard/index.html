@@ -226,6 +226,7 @@ function chart(el, pts, opts) {
     if (gp.length > 1) {
       const d = gp.map((p, i) => `${i ? "L" : "M"} ${X(dnum(p.date))} ${Y(p.score)}`).join(" ");
       g += `<path class="fr" data-g="${gr}" d="${d}" fill="none" stroke="${col(gr)}" stroke-width="1.5" stroke-linejoin="round" opacity="0.45"/>`;
+      g += `<path class="frhit" data-g="${gr}" d="${d}" fill="none" stroke="transparent" stroke-width="11" pointer-events="stroke"/>`;
     }
     // least-squares trendline over ALL family points, first release -> future edge
     const fx = gp.map(p => dnum(p.date) / DAY), fy = gp.map(p => p.score);
@@ -243,6 +244,7 @@ function chart(el, pts, opts) {
     const y0 = n >= 3 ? clampY(a + b * (t0 / DAY)) : a;
     const yEnd = n >= 3 ? clampY(a + b * (x1 / DAY)) : a;
     g += `<path class="fr ex" data-g="${gr}" d="M ${X(t0)} ${Y(y0)} L ${X(x1)} ${Y(yEnd)}" fill="none" stroke="${col(gr)}" stroke-width="2" stroke-dasharray="7 5" opacity="0.7"/>`;
+    g += `<path class="frhit" data-g="${gr}" d="M ${X(t0)} ${Y(y0)} L ${X(x1)} ${Y(yEnd)}" fill="none" stroke="transparent" stroke-width="11" pointer-events="stroke"/>`;
     if (o.labels) {
       let ly = Y(yEnd) + 4;
       while (labelYs.some(y => Math.abs(y - ly) < 13)) ly += 13;
@@ -284,8 +286,12 @@ function chart(el, pts, opts) {
       c.style.stroke = sel ? "var(--ink)" : "";
       c.style.strokeWidth = sel ? "2.5" : "";
     });
-    lines.forEach(l => l.style.opacity = l.dataset.g === gr ? "0.95" : "0.08");
+    lines.forEach(l => { if (l.dataset.g === gr) l.style.opacity = "1"; });
   }
+  el.querySelectorAll("path.frhit").forEach(h => {
+    h.addEventListener("mouseenter", () => setState(h.dataset.g, null));
+    h.addEventListener("mouseleave", () => setState(null, null));
+  });
   el.querySelectorAll(".legend span[data-g]").forEach(s => {
     s.addEventListener("mouseenter", () => setState(s.dataset.g, null));
     s.addEventListener("mouseleave", () => setState(null, null));
