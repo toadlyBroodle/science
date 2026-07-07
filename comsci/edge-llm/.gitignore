@@ -2,3 +2,10 @@ raw/*.pdf
 raw/*.html
 __pycache__/
 *.pyc
+
+# Local deep-dive reports (kept out of git)
+reports/
+
+# dashboard/index.html is authored code, not scraped data; re-include it
+# past the repo-root *.html rule
+!dashboard/index.html

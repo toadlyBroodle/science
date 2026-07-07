@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Edge-LLM benchmark trends</title>
+<style>
+  :root {
+    --page: #f9f9f7; --surface: #fcfcfb; --ink: #0b0b0b; --ink2: #52514e;
+    --muted: #898781; --grid: #e1e0d9; --axis: #c3c2b7; --ring: rgba(11,11,11,.10);
+    --anthropic:#2a78d6; --openai:#1baf7a; --google:#eda100; --xai:#008300;
+    --openLarge:#4a3aa7; --openSmall:#e34948;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --page:#0d0d0d; --surface:#1a1a19; --ink:#ffffff; --ink2:#c3c2b7;
+      --muted:#898781; --grid:#2c2c2a; --axis:#383835; --ring: rgba(255,255,255,.10);
+      --anthropic:#3987e5; --openai:#199e70; --google:#c98500; --xai:#008300;
+      --openLarge:#9085e9; --openSmall:#e66767;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--page); color:var(--ink);
+         font:14px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif; }
+  main { max-width:1180px; margin:0 auto; padding:20px 16px 48px; }
+  h1 { font-size:20px; margin:8px 0 2px; }
+  h2 { font-size:15px; margin:0 0 2px; }
+  .sub { color:var(--ink2); font-size:12.5px; margin:0 0 4px; }
+  .meta { color:var(--muted); font-size:12px; margin:2px 0 18px; display:flex; flex-wrap:wrap; gap:2px 14px; }
+  .meta span, .meta em { white-space:nowrap; font-style:normal; }
+  .src-ok { color:var(--ink2); } .src-bad { color:#d03b3b; font-weight:600; }
+  .card { background:var(--surface); border:1px solid var(--ring); border-radius:10px;
+          padding:14px 16px 10px; margin-bottom:18px; }
+  .row { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  .cwrap { display:grid; grid-template-columns:minmax(0,1fr) 250px; gap:14px; align-items:start; }
+  @media (max-width:900px){ .row, .cwrap { grid-template-columns:1fr; } }
+  .legend { display:flex; flex-wrap:wrap; gap:4px 14px; margin:6px 0 4px; font-size:12px; color:var(--ink2); }
+  .legend span { display:inline-flex; align-items:center; gap:5px; }
+  .legend i { width:10px; height:10px; border-radius:3px; display:inline-block; }
+  svg { display:block; width:100%; height:auto; }
+  .grid line { stroke:var(--grid); stroke-width:1; }
+  .axis line { stroke:var(--axis); stroke-width:1; }
+  .tick { fill:var(--muted); font-size:11px; font-variant-numeric:tabular-nums; }
+  .dlabel { font-size:11px; font-weight:600; fill:var(--ink2); paint-order:stroke; stroke:var(--surface); stroke-width:3px; }
+  .tip { position:fixed; pointer-events:none; z-index:9; background:var(--surface);
+         border:1px solid var(--ring); border-radius:7px; padding:7px 10px; font-size:12px;
+         box-shadow:0 2px 10px rgba(0,0,0,.18); max-width:260px; display:none; }
+  .tip b { display:block; font-size:12.5px; }
+  .tip .v { font-variant-numeric:tabular-nums; }
+  .rank { border:1px solid var(--ring); border-radius:8px; overflow:hidden; }
+  .rank .fbar { display:flex; gap:4px; padding:6px 8px; border-bottom:1px solid var(--grid); }
+  .rank .fbar button { font:600 11px/1 system-ui,sans-serif; color:var(--ink2); background:none;
+        border:1px solid var(--ring); border-radius:12px; padding:4px 9px; cursor:pointer; }
+  .rank .fbar button.on { background:var(--ink); color:var(--surface); border-color:var(--ink); }
+  .rank ol { list-style:none; margin:0; padding:0; overflow-y:auto; }
+  .rank li { display:flex; align-items:center; gap:7px; padding:3.5px 9px; font-size:12px; cursor:default;
+             border-bottom:1px solid var(--grid); }
+  .rank li:hover { background:var(--page); }
+  .rank li .rk { color:var(--muted); width:20px; text-align:right; font-variant-numeric:tabular-nums; flex:none; }
+  .rank li i { width:9px; height:9px; border-radius:3px; flex:none; }
+  .rank li .nm { flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; color:var(--ink2); }
+  .rank li .sc { font-variant-numeric:tabular-nums; font-weight:600; flex:none; }
+  .rank li.nodate .nm { color:var(--muted); font-style:italic; }
+  details { margin:4px 0 2px; } summary { cursor:pointer; color:var(--muted); font-size:12px; }
+  table { border-collapse:collapse; width:100%; font-size:12px; margin-top:6px; }
+  th,td { text-align:left; padding:3px 10px 3px 0; border-bottom:1px solid var(--grid); }
+  td.n, th.n { text-align:right; font-variant-numeric:tabular-nums; }
+  .note { color:var(--muted); font-size:11.5px; margin:6px 0 2px; }
+  footer { color:var(--muted); font-size:12px; margin-top:8px; }
+  footer code { background:var(--surface); border:1px solid var(--ring); border-radius:4px; padding:1px 5px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Edge-LLM benchmark trends</h1>
+  <p class="meta" id="meta"></p>
+
+  <div class="card">
+    <h2>SWE-bench Verified over time</h2>
+    <p class="sub">Agentic issue resolution (%). Thin lines connect each family's releases; dashed line is the family's linear trend fit on all its points, extended past today. Hollow points: approximate release date. Hover the list to locate a model.</p>
+    <div class="cwrap"><div id="c-swe"></div><aside class="rank" id="r-swe"></aside></div>
+    <p class="note" id="swe-note"></p>
+  </div>
+
+  <div class="card">
+    <h2>SWE-rebench: decontaminated resolved rate over time</h2>
+    <p class="sub">Continuously refreshed with post-release GitHub tasks (harder than SWE-bench Verified; honest for open models). Fully rebuilt from the live leaderboard on every refresh.</p>
+    <div class="cwrap"><div id="c-rebench"></div><aside class="rank" id="r-rebench"></aside></div>
+  </div>
+
+  <div class="row">
+    <div class="card">
+      <h2>BFCL v4: tool calling over time</h2>
+      <p class="sub">Berkeley Function Calling overall (%), live leaderboard, best variant per model.</p>
+      <div id="c-bfcl"></div>
+      <p class="note" id="bfcl-note"></p>
+    </div>
+    <div class="card">
+      <h2>LiveCodeBench over time</h2>
+      <p class="sub">Contamination-free code generation (%); live leaderboard plus wiki-curated edge checkpoints.</p>
+      <div id="c-lcb"></div>
+      <p class="note" id="lcb-note"></p>
+    </div>
+  </div>
+
+  <footer>
+    Sources: <a href="https://benchlm.ai/benchmarks/sweVerified">benchlm.ai</a> &middot;
+    <a href="https://swe-rebench.com/">swe-rebench.com</a> &middot;
+    <a href="https://gorilla.cs.berkeley.edu/leaderboard.html">BFCL</a> &middot;
+    curated seed from the <a href="../wiki/index.md">edge-llm wiki</a>.
+    Refresh: <code>./open-dashboard.sh</code> (scrapes, then opens this page).
+    Dashed extrapolations are naive linear fits of each frontier; read as direction, not prediction.
+  </footer>
+</main>
+<div class="tip" id="tip"></div>
+<script src="data.js"></script>
+<script src="live.js"></script>
+<script>
+const S = window.DASH_SEED, L = window.DASH_LIVE || null;
+const GROUPS = S.groups;
+const DATES = (window.DASH_DATES || []).map(d => [new RegExp(d[0], "i"), d[1], d[2]]);
+const col = g => `var(--${g})`;
+const tip = document.getElementById("tip");
+const DAY = 864e5;
+const dnum = d => new Date(d + "T00:00:00Z").getTime();
+const fmtM = t => { const d = new Date(t);
+  return d.toLocaleString("en", {month:"short", timeZone:"UTC"}) + " '" + String(d.getUTCFullYear()).slice(2); };
+const norm = s => s.toLowerCase().replace(/[^a-z0-9.]/g, "");
+
+// --- name -> release date (embedded date first, then the curated map)
+function resolveDate(name) {
+  let m = name.match(/20(2[4-6])-(\d{2})-(\d{2})/);
+  if (m) return {date: `20${m[1]}-${m[2]}-${m[3]}`, approx: false};
+  m = name.match(/20(2[4-6])(0[1-9]|1[0-2])(0[1-9]|[12]\d|3[01])/);
+  if (m) return {date: `20${m[1]}-${m[2]}-${m[3]}`, approx: false};
+  for (const [re, date, approx] of DATES) if (re.test(name)) return {date, approx};
+  m = name.match(/[- ](2[4-6])(0[1-9]|1[0-2])\b/);   // e.g. Mistral-Small-2506
+  if (m) return {date: `20${m[1]}-${m[2]}-15`, approx: true};
+  return null;
+}
+// --- name -> group
+function resolveGroup(name) {
+  if (/gpt-oss|gemma/i.test(name)) { /* open-weight despite lab */ }
+  else if (/claude/i.test(name)) return "anthropic";
+  else if (/gpt|^o[1-9]|codex/i.test(name)) return "openai";
+  else if (/gemini/i.test(name)) return "google";
+  else if (/grok/i.test(name)) return "xai";
+  if (/lfm|nano|mellum|arch-agent|toolace|hammer|nanbeige|bitagent|xlam-2-(1|3|8)b|small|mini\b/i.test(name)) return "openSmall";
+  const sizes = [...name.matchAll(/(\d+(?:\.\d+)?)\s*b\b/gi).map ? name.matchAll(/(\d+(?:\.\d+)?)[bB]\b/g) : []].map(m => +m[1]);
+  if (sizes.length && Math.max(...sizes) <= 35) return "openSmall";
+  return "openLarge";
+}
+// --- collapse harness/effort variants: keep best score per base model
+function dedupe(rows) {
+  const base = n => n.replace(/\s*\((FC|Prompt)[^)]*\)/ig, "")
+                     .replace(/[- ](xhigh|high|medium|minimal|low)$/i, "").trim();
+  const best = new Map();
+  for (const r of rows) {
+    const b = base(r.name);
+    if (!best.has(b) || r.score > best.get(b).score) best.set(b, {...r, name: b});
+  }
+  return [...best.values()];
+}
+
+// merge live benchlm scores into seed SWE points (match by normalized name)
+let liveHits = 0, liveNew = [];
+const swe = S.swe.map(d => ({...d}));
+if (L && L.benchlm) {
+  const idx = new Map(swe.map(d => [norm(d.name), d]));
+  for (const r of L.benchlm) {
+    const hit = idx.get(norm(r.name));
+    if (hit) { hit.score = r.score; hit.live = true; liveHits++; }
+    else liveNew.push(r);
+  }
+}
+
+// header meta
+{
+  const bits = [];
+  bits.push(`Curated seed: ${S.updated}`);
+  if (L) {
+    bits.push(`live scrape: ${L.fetched}`);
+    for (const [k, s] of Object.entries(L.sources))
+      bits.push(s.ok ? `<span class="src-ok">${k} &#10003; ${s.n}</span>`
+                     : `<span class="src-bad">${k} &#10007; ${s.error}</span>`);
+  } else bits.push(`<span class="src-bad">live.js missing: run scrape.py</span>`);
+  document.getElementById("meta").innerHTML = bits.map(b => b.startsWith("<span") ? b : `<em>${b}</em>`).join("");
+}
+
+// dated scatter + per-family running-max frontier + dashed linear extrapolation
+function chart(el, pts, opts) {
+  const o = Object.assign({h: 330, w: 1000, ticks: 6, ymin: 0, ymax: 100,
+                           future: 150, labels: true}, opts);
+  const W = o.w, H = o.h, m = {t: 14, r: o.labels ? 150 : 30, b: 34, l: 40};
+  const xs = pts.map(p => dnum(p.date));
+  let x0 = Math.min(...xs), xData = Math.max(...xs);
+  let x1 = xData + o.future * DAY;
+  x0 -= (x1 - x0) * 0.02;
+  const X = t => m.l + (t - x0) / (x1 - x0) * (W - m.l - m.r);
+  const Y = v => m.t + (1 - (v - o.ymin) / (o.ymax - o.ymin)) * (H - m.t - m.b);
+  const clampY = v => Math.max(o.ymin + 1, Math.min(o.ymax - 0.5, v));
+  let g = `<svg viewBox="0 0 ${W} ${H}" role="img">`;
+  g += `<g class="grid">`;
+  const step = (o.ymax - o.ymin) <= 50 ? 10 : 20;
+  for (let v = o.ymin; v <= o.ymax; v += step)
+    g += `<line x1="${m.l}" x2="${W - m.r}" y1="${Y(v)}" y2="${Y(v)}"/>`;
+  g += `</g><g class="axis"><line x1="${m.l}" x2="${W - m.r}" y1="${Y(o.ymin)}" y2="${Y(o.ymin)}"/></g>`;
+  for (let v = o.ymin; v <= o.ymax; v += step)
+    g += `<text class="tick" x="${m.l - 6}" y="${Y(v) + 4}" text-anchor="end">${v}</text>`;
+  let lastTick = "";
+  for (let i = 0; i <= o.ticks; i++) {
+    const t = x0 + (x1 - x0) * i / o.ticks;
+    const lab = fmtM(t);
+    if (lab === lastTick) continue;
+    lastTick = lab;
+    g += `<text class="tick" x="${X(t)}" y="${H - m.b + 18}" text-anchor="middle">${lab}</text>`;
+  }
+  // "today" divider between data and extrapolation zone
+  g += `<line x1="${X(xData)}" x2="${X(xData)}" y1="${m.t}" y2="${H - m.b}" stroke="var(--grid)" stroke-dasharray="2 4"/>`;
+
+  const groups = [...new Set(pts.map(p => p.group))];
+  const labelYs = [];
+  for (const gr of groups) {
+    const gp = pts.filter(p => p.group === gr).sort((a, b) => dnum(a.date) - dnum(b.date));
+    // thin polyline through every release in the family, in date order
+    if (gp.length > 1) {
+      const d = gp.map((p, i) => `${i ? "L" : "M"} ${X(dnum(p.date))} ${Y(p.score)}`).join(" ");
+      g += `<path class="fr" d="${d}" fill="none" stroke="${col(gr)}" stroke-width="1.5" stroke-linejoin="round" opacity="0.45"/>`;
+    }
+    // least-squares trendline over ALL family points, first release -> future edge
+    const fx = gp.map(p => dnum(p.date) / DAY), fy = gp.map(p => p.score);
+    const n = fx.length;
+    let a = fy[0], b = 0;
+    if (n >= 3) {
+      const mx = fx.reduce((s, v) => s + v) / n, my = fy.reduce((s, v) => s + v) / n;
+      let num = 0, den = 0;
+      for (let i = 0; i < n; i++) { num += (fx[i] - mx) * (fy[i] - my); den += (fx[i] - mx) ** 2; }
+      b = den ? num / den : 0;
+      a = my - b * mx;
+    }
+    if (n === 2) { a = (fy[0] + fy[1]) / 2; b = 0; }
+    const t0 = dnum(gp[0].date);
+    const y0 = n >= 3 ? clampY(a + b * (t0 / DAY)) : a;
+    const yEnd = n >= 3 ? clampY(a + b * (x1 / DAY)) : a;
+    g += `<path class="fr ex" d="M ${X(t0)} ${Y(y0)} L ${X(x1)} ${Y(yEnd)}" fill="none" stroke="${col(gr)}" stroke-width="2" stroke-dasharray="7 5" opacity="0.7"/>`;
+    if (o.labels) {
+      let ly = Y(yEnd) + 4;
+      while (labelYs.some(y => Math.abs(y - ly) < 13)) ly += 13;
+      labelYs.push(ly);
+      const lastScore = gp[gp.length - 1].score;
+      g += `<text class="dlabel" x="${W - m.r + 6}" y="${ly}" fill="${col(gr)}">${GROUPS[gr].short || GROUPS[gr].label} ${lastScore}</text>`;
+    }
+  }
+  pts.forEach((p, i) => {
+    const cx = X(dnum(p.date)), cy = Y(p.score);
+    g += p.approx
+      ? `<circle class="pt" data-p="${i}" cx="${cx}" cy="${cy}" r="4" fill="var(--surface)" stroke="${col(p.group)}" stroke-width="2" opacity="0.9"/>`
+      : `<circle class="pt" data-p="${i}" cx="${cx}" cy="${cy}" r="4.2" fill="${col(p.group)}" stroke="var(--surface)" stroke-width="1.5" opacity="0.9"/>`;
+    g += `<circle cx="${cx}" cy="${cy}" r="12" fill="transparent" data-i="${i}"/>`;
+  });
+  g += `</svg>`;
+  let lg = `<div class="legend">` + groups.map(gr =>
+    `<span><i style="background:${col(gr)}"></i>${GROUPS[gr].label}</span>`).join("") +
+    `<span><i style="background:var(--surface);border:2px solid var(--muted)"></i>approx. date</span></div>`;
+  let tb = `<details><summary>table view</summary><table><tr><th>Model</th><th>Group</th><th>Date</th><th class="n">Score</th></tr>` +
+    [...pts].sort((a, b) => b.score - a.score).map(p =>
+      `<tr><td>${p.name}${p.live ? " &#9679;" : ""}</td><td>${GROUPS[p.group].label}</td><td>${p.date}${p.approx ? " ~" : ""}</td><td class="n">${p.score}</td></tr>`).join("") +
+    `</table></details>`;
+  el.innerHTML = lg + g + tb;
+  el.querySelectorAll("circle[data-i]").forEach(c => {
+    const p = pts[+c.dataset.i];
+    c.addEventListener("mousemove", e => {
+      tip.style.display = "block";
+      tip.innerHTML = `<b>${p.name}</b><span class="v">${p.score}${o.unit || "%"}</span> &middot; ${p.date}${p.approx ? " (approx.)" : ""} &middot; ${GROUPS[p.group].label}${p.live ? " &middot; live score" : ""}${p.extra ? "<br>" + p.extra : ""}`;
+      const w = tip.offsetWidth;
+      tip.style.left = Math.min(e.clientX + 14, innerWidth - w - 8) + "px";
+      tip.style.top = (e.clientY - 14) + "px";
+    });
+    c.addEventListener("mouseleave", () => tip.style.display = "none");
+  });
+  const marks = [...el.querySelectorAll("circle.pt")];
+  const lines = [...el.querySelectorAll("path.fr")];
+  return function highlight(i) {
+    if (i == null) {
+      marks.forEach(c => { c.style.opacity = ""; c.setAttribute("r", c.dataset.r0 || c.getAttribute("r")); });
+      lines.forEach(l => l.style.opacity = "");
+      return;
+    }
+    marks.forEach(c => {
+      if (!c.dataset.r0) c.dataset.r0 = c.getAttribute("r");
+      const on = +c.dataset.p === i;
+      c.style.opacity = on ? "1" : "0.15";
+      c.setAttribute("r", on ? 7.5 : c.dataset.r0);
+    });
+    lines.forEach(l => l.style.opacity = "0.12");
+  };
+}
+
+// ranked list beside a chart
+function rankList(el, rows, highlight, maxH) {
+  let mode = "all";
+  const render = () => {
+    const vis = rows.filter(r => mode === "all" || (mode === "open" ? !r.closed : r.closed));
+    el.innerHTML =
+      `<div class="fbar">` +
+      ["all", "open", "closed"].map(f =>
+        `<button data-f="${f}" class="${f === mode ? "on" : ""}">${f[0].toUpperCase() + f.slice(1)}</button>`).join("") +
+      `<span style="margin-left:auto;font-size:11px;color:var(--muted);align-self:center">${vis.length}</span></div>` +
+      `<ol style="max-height:${maxH}px">` +
+      vis.map((r, k) =>
+        `<li data-i="${r.i}" class="${r.i < 0 ? "nodate" : ""}" title="${r.name}${r.sub ? " · " + r.sub : ""}">` +
+        `<span class="rk">${k + 1}</span><i style="background:${r.i < 0 ? "var(--muted)" : col(r.group)}"></i>` +
+        `<span class="nm">${r.name}</span><span class="sc">${Math.round(r.score * 10) / 10}</span></li>`).join("") +
+      `</ol>`;
+    el.querySelectorAll(".fbar button").forEach(b =>
+      b.addEventListener("click", () => { mode = b.dataset.f; render(); }));
+    el.querySelectorAll("li").forEach(li => {
+      const i = +li.dataset.i;
+      if (i >= 0) {
+        li.addEventListener("mouseenter", () => highlight(i));
+        li.addEventListener("mouseleave", () => highlight(null));
+      }
+    });
+  };
+  render();
+}
+
+// 1. SWE-bench Verified
+{
+  const hl = chart(document.getElementById("c-swe"), swe, {h: 400, w: 860, ymin: 30, ymax: 100});
+  const rows = swe.map((p, i) => ({name: p.name, score: p.score, group: p.group,
+                                   closed: GROUPS[p.group].closed, i, sub: p.date}))
+    .concat(liveNew.map(r => ({name: r.name, score: r.score, group: null,
+                               closed: /^prop/i.test(r.sourceType || ""), i: -1,
+                               sub: (r.creator || "") + " · release date unknown, not plotted"})));
+  rows.sort((a, b) => b.score - a.score);
+  rankList(document.getElementById("r-swe"), rows, hl, 400);
+  document.getElementById("swe-note").textContent =
+    (liveHits ? `● ${liveHits} scores refreshed from benchlm.ai. ` : "") +
+    "Grayed list entries come from the live leaderboard without a known release date (not plotted).";
+}
+
+// 2. SWE-rebench (fully from live data)
+{
+  const devmap = {anthropic: "anthropic", openai: "openai", google: "google", xai: "xai"};
+  const pts = dedupe(L && L.rebench ? L.rebench : [])
+    .map(r => ({name: r.name, date: r.date, score: r.score,
+                group: (devmap[r.developer] && !/gemma|gpt-oss/i.test(r.name)) ? devmap[r.developer] : resolveGroup(r.name),
+                closed: !!devmap[r.developer] && !/gemma|gpt-oss/i.test(r.name),
+                dev: r.developer}));
+  const el = document.getElementById("c-rebench");
+  if (pts.length) {
+    const hl = chart(el, pts, {h: 400, w: 860, ymin: 0, ymax: 70});
+    const rows = pts.map((p, i) => ({name: p.name, score: p.score, group: p.group,
+                                     closed: p.closed, i, sub: p.dev + " · " + p.date}))
+      .sort((a, b) => b.score - a.score);
+    rankList(document.getElementById("r-rebench"), rows, hl, 400);
+  } else el.innerHTML = `<p class="note">No live data: run scrape.py (swe-rebench source failed or live.js missing).</p>`;
+}
+
+// 3. BFCL v4 (live gorilla leaderboard, dated by name or the curated map)
+{
+  const raw = dedupe(L && L.bfcl ? L.bfcl.map(r => ({name: r.name, score: r.overall, mt: r.multiTurn})) : []);
+  const pts = [], undated = [];
+  for (const r of raw) {
+    const d = resolveDate(r.name);
+    if (!d) { undated.push(r); continue; }
+    pts.push({name: r.name, date: d.date, approx: d.approx, score: r.score,
+              group: resolveGroup(r.name),
+              extra: r.mt != null ? `multi-turn: ${r.mt}` : ""});
+  }
+  if (pts.length) chart(document.getElementById("c-bfcl"), pts,
+    {h: 330, w: 560, ticks: 4, ymin: 20, ymax: 90, labels: false, future: 120});
+  document.getElementById("bfcl-note").textContent =
+    `${pts.length} models dated and plotted; ${undated.length} live entries lack a known release date. ` +
+    `Wiki edge checkpoints on BFCL v3 (not comparable): Nemotron-3-Nano-4B 61.1, LFM2.5-8B-A1B 64.8, Mellum2 66.3.`;
+}
+
+// 4. LiveCodeBench (live benchlm + wiki-curated edge checkpoints)
+{
+  const seen = new Set(), pts = [];
+  for (const r of (L && L.lcb ? L.lcb : [])) {
+    const d = resolveDate(r.name);
+    if (!d || seen.has(norm(r.name))) continue;
+    seen.add(norm(r.name));
+    pts.push({name: r.name, date: d.date, approx: d.approx, score: r.score,
+              group: /open/i.test(r.sourceType || "") ? resolveGroup(r.name)
+                     : resolveGroup(r.name), live: true});
+  }
+  for (const p of S.lcb) if (!seen.has(norm(p.name))) pts.push({...p});
+  chart(document.getElementById("c-lcb"), pts,
+    {h: 330, w: 560, ticks: 4, ymin: 20, ymax: 100, labels: false, future: 120});
+  document.getElementById("lcb-note").textContent =
+    "Version caveat: live scores are the current LCB window; wiki edge checkpoints are v6 vendor-reported. Treat small deltas as noise.";
+}
+</script>
+</body>
+</html>
