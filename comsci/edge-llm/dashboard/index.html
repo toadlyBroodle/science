@@ -77,7 +77,7 @@
 
   <div class="card">
     <h2>SWE-bench Verified over time</h2>
-    <p class="sub">Agentic issue resolution (%). Thin lines connect each family's releases; dashed line is the family's linear trend fit on all its points, extended past today. Hollow points: approximate release date. Hover the list to locate a model.</p>
+    <p class="sub">Agentic issue resolution (%). Thin lines connect releases within one model family (Claude, Qwen, Gemma, ...); dashed lines are per-family linear trends (families with 3+ points), extended past today. Color = class. Hollow points: approximate release date. Hover the list to locate a model.</p>
     <div class="cwrap"><div id="c-swe"></div><aside class="rank" id="r-swe"></aside></div>
     <p class="note" id="swe-note"></p>
   </div>
@@ -116,6 +116,25 @@
 <script src="data.js"></script>
 <script src="live.js"></script>
 <script>
+// model-family resolver: lines connect within a family, color stays by class
+const FAMS = [
+  ["claude", "Claude"], ["gpt-oss", "gpt-oss"], ["gpt|^o[1-9]|codex", "GPT"],
+  ["gemini", "Gemini"], ["gemma", "Gemma"], ["grok", "Grok"],
+  ["deepseek", "DeepSeek"], ["qwen", "Qwen"], ["glm", "GLM"],
+  ["kimi|k2", "Kimi"], ["minimax", "MiniMax"], ["llama", "Llama"],
+  ["mistral|devstral", "Mistral"], ["mimo", "MiMo"], ["ornith", "Ornith"],
+  ["lfm", "LFM"], ["nemotron", "Nemotron"], ["mellum", "Mellum"],
+  ["swe-hero", "SWE-HERO"], ["swe-trace", "SWE-TRACE"], ["swe-agent", "SWE-agent"],
+  ["xlam", "xLAM"], ["toolace", "ToolACE"], ["step-", "Step"],
+  ["horizon", "horizon"], ["kat-", "KAT"], ["command", "Command"],
+  ["hy3", "Hy3"], ["laguna", "Laguna"], ["muse", "Muse"], ["zaya", "ZAYA"],
+  ["mai-", "MAI"], ["arch-agent", "Arch"], ["nanbeige", "Nanbeige"], ["bitagent", "BitAgent"]
+].map(f => [new RegExp(f[0], "i"), f[1]]);
+function famOf(name) {
+  for (const [re, fam] of FAMS) if (re.test(name)) return fam;
+  return name.split(/[ \-]/)[0];
+}
+
 const S = window.DASH_SEED, L = window.DASH_LIVE || null;
 const GROUPS = S.groups;
 const DATES = (window.DASH_DATES || []).map(d => [new RegExp(d[0], "i"), d[1], d[2]]);
@@ -218,46 +237,44 @@ function chart(el, pts, opts) {
   // "today" divider between data and extrapolation zone
   g += `<line x1="${X(xData)}" x2="${X(xData)}" y1="${m.t}" y2="${H - m.b}" stroke="var(--grid)" stroke-dasharray="2 4"/>`;
 
+  pts.forEach(p => { if (!p.fam) p.fam = famOf(p.name); });
   const groups = [...new Set(pts.map(p => p.group))];
+  const fams = [...new Set(pts.map(p => p.fam))];
   const labelYs = [];
-  for (const gr of groups) {
-    const gp = pts.filter(p => p.group === gr).sort((a, b) => dnum(a.date) - dnum(b.date));
-    // thin polyline through every release in the family, in date order
+  for (const fam of fams) {
+    const gp = pts.filter(p => p.fam === fam).sort((a, b) => dnum(a.date) - dnum(b.date));
+    const gr = gp[gp.length - 1].group;
+    // polyline through the family's releases, in date order
     if (gp.length > 1) {
       const d = gp.map((p, i) => `${i ? "L" : "M"} ${X(dnum(p.date))} ${Y(p.score)}`).join(" ");
-      g += `<path class="fr" data-g="${gr}" d="${d}" fill="none" stroke="${col(gr)}" stroke-width="1.5" stroke-linejoin="round" opacity="0.45"/>`;
-      g += `<path class="frhit" data-g="${gr}" d="${d}" fill="none" stroke="transparent" stroke-width="11" pointer-events="stroke"/>`;
+      g += `<path class="fr" data-f="${fam}" data-g="${gr}" d="${d}" fill="none" stroke="${col(gr)}" stroke-width="1.5" stroke-linejoin="round" opacity="0.5"/>`;
+      g += `<path class="frhit" data-f="${fam}" d="${d}" fill="none" stroke="transparent" stroke-width="11" pointer-events="stroke"/>`;
     }
-    // least-squares trendline over ALL family points, first release -> future edge
-    const fx = gp.map(p => dnum(p.date) / DAY), fy = gp.map(p => p.score);
-    const n = fx.length;
-    let a = fy[0], b = 0;
+    // least-squares trendline over the family's points (needs >=3), to future edge
+    const n = gp.length;
     if (n >= 3) {
+      const fx = gp.map(p => dnum(p.date) / DAY), fy = gp.map(p => p.score);
       const mx = fx.reduce((s, v) => s + v) / n, my = fy.reduce((s, v) => s + v) / n;
       let num = 0, den = 0;
       for (let i = 0; i < n; i++) { num += (fx[i] - mx) * (fy[i] - my); den += (fx[i] - mx) ** 2; }
-      b = den ? num / den : 0;
-      a = my - b * mx;
-    }
-    if (n === 2) { a = (fy[0] + fy[1]) / 2; b = 0; }
-    const t0 = dnum(gp[0].date);
-    const y0 = n >= 3 ? clampY(a + b * (t0 / DAY)) : a;
-    const yEnd = n >= 3 ? clampY(a + b * (x1 / DAY)) : a;
-    g += `<path class="fr ex" data-g="${gr}" d="M ${X(t0)} ${Y(y0)} L ${X(x1)} ${Y(yEnd)}" fill="none" stroke="${col(gr)}" stroke-width="2" stroke-dasharray="7 5" opacity="0.7"/>`;
-    g += `<path class="frhit" data-g="${gr}" d="M ${X(t0)} ${Y(y0)} L ${X(x1)} ${Y(yEnd)}" fill="none" stroke="transparent" stroke-width="11" pointer-events="stroke"/>`;
-    if (o.labels) {
-      let ly = Y(yEnd) + 4;
-      while (labelYs.some(y => Math.abs(y - ly) < 13)) ly += 13;
-      labelYs.push(ly);
-      const lastScore = gp[gp.length - 1].score;
-      g += `<text class="dlabel" x="${W - m.r + 6}" y="${ly}" fill="${col(gr)}">${GROUPS[gr].short || GROUPS[gr].label} ${lastScore}</text>`;
+      const b = den ? num / den : 0, a = my - b * mx;
+      const t0 = dnum(gp[0].date);
+      const y0 = clampY(a + b * (t0 / DAY)), yEnd = clampY(a + b * (x1 / DAY));
+      g += `<path class="fr ex" data-f="${fam}" data-g="${gr}" d="M ${X(t0)} ${Y(y0)} L ${X(x1)} ${Y(yEnd)}" fill="none" stroke="${col(gr)}" stroke-width="2" stroke-dasharray="7 5" opacity="0.7"/>`;
+      g += `<path class="frhit" data-f="${fam}" d="M ${X(t0)} ${Y(y0)} L ${X(x1)} ${Y(yEnd)}" fill="none" stroke="transparent" stroke-width="11" pointer-events="stroke"/>`;
+      if (o.labels) {
+        let ly = Y(yEnd) + 4;
+        while (labelYs.some(y => Math.abs(y - ly) < 13)) ly += 13;
+        labelYs.push(ly);
+        g += `<text class="dlabel" data-f="${fam}" x="${W - m.r + 6}" y="${ly}" fill="${col(gr)}">${fam} ${gp[n - 1].score}</text>`;
+      }
     }
   }
   pts.forEach((p, i) => {
     const cx = X(dnum(p.date)), cy = Y(p.score);
     g += p.approx
-      ? `<circle class="pt" data-p="${i}" data-g="${p.group}" cx="${cx}" cy="${cy}" r="4" fill="var(--surface)" stroke="${col(p.group)}" stroke-width="2" opacity="0.9"/>`
-      : `<circle class="pt" data-p="${i}" data-g="${p.group}" cx="${cx}" cy="${cy}" r="4.2" fill="${col(p.group)}" stroke="var(--surface)" stroke-width="1.5" opacity="0.9"/>`;
+      ? `<circle class="pt" data-p="${i}" data-g="${p.group}" data-f="${p.fam}" cx="${cx}" cy="${cy}" r="4" fill="var(--surface)" stroke="${col(p.group)}" stroke-width="2" opacity="0.9"/>`
+      : `<circle class="pt" data-p="${i}" data-g="${p.group}" data-f="${p.fam}" cx="${cx}" cy="${cy}" r="4.2" fill="${col(p.group)}" stroke="var(--surface)" stroke-width="1.5" opacity="0.9"/>`;
     g += `<circle cx="${cx}" cy="${cy}" r="12" fill="transparent" data-i="${i}"/>`;
   });
   g += `</svg>`;
@@ -271,37 +288,38 @@ function chart(el, pts, opts) {
   el.innerHTML = lg + g + tb;
   const marks = [...el.querySelectorAll("circle.pt")];
   const lines = [...el.querySelectorAll("path.fr")];
-  function setState(gr, pi) {
-    if (gr == null) {
+  function setState(key, pi, byGroup) {
+    if (key == null) {
       marks.forEach(c => { c.style.opacity = ""; c.setAttribute("r", c.dataset.r0 || c.getAttribute("r"));
                            c.style.stroke = ""; c.style.strokeWidth = ""; });
       lines.forEach(l => l.style.opacity = "");
       return;
     }
+    const hit = el2 => byGroup ? el2.dataset.g === key : el2.dataset.f === key;
     marks.forEach(c => {
       if (!c.dataset.r0) c.dataset.r0 = c.getAttribute("r");
-      const same = c.dataset.g === gr, sel = pi != null && +c.dataset.p === pi;
+      const same = hit(c), sel = pi != null && +c.dataset.p === pi;
       c.style.opacity = same ? "1" : "0.12";
       c.setAttribute("r", sel ? 8 : (same ? +c.dataset.r0 + 0.8 : c.dataset.r0));
       c.style.stroke = sel ? "var(--ink)" : "";
       c.style.strokeWidth = sel ? "2.5" : "";
     });
-    lines.forEach(l => { if (l.dataset.g === gr) l.style.opacity = "1"; });
+    lines.forEach(l => { if (hit(l)) l.style.opacity = "1"; });
   }
   el.querySelectorAll("path.frhit").forEach(h => {
-    h.addEventListener("mouseenter", () => setState(h.dataset.g, null));
+    h.addEventListener("mouseenter", () => setState(h.dataset.f, null));
     h.addEventListener("mouseleave", () => setState(null, null));
   });
   el.querySelectorAll(".legend span[data-g]").forEach(s => {
-    s.addEventListener("mouseenter", () => setState(s.dataset.g, null));
+    s.addEventListener("mouseenter", () => setState(s.dataset.g, null, true));
     s.addEventListener("mouseleave", () => setState(null, null));
   });
   el.querySelectorAll("circle[data-i]").forEach(c => {
     const p = pts[+c.dataset.i];
-    c.addEventListener("mouseenter", () => setState(p.group, +c.dataset.i));
+    c.addEventListener("mouseenter", () => setState(p.fam, +c.dataset.i));
     c.addEventListener("mousemove", e => {
       tip.style.display = "block";
-      tip.innerHTML = `<b>${p.name}</b><span class="v">${p.score}${o.unit || "%"}</span> &middot; ${p.date}${p.approx ? " (approx.)" : ""} &middot; ${GROUPS[p.group].label}${p.live ? " &middot; live score" : ""}${p.extra ? "<br>" + p.extra : ""}`;
+      tip.innerHTML = `<b>${p.name}</b><span class="v">${p.score}${o.unit || "%"}</span> &middot; ${p.date}${p.approx ? " (approx.)" : ""} &middot; ${p.fam} &middot; ${GROUPS[p.group].label}${p.live ? " &middot; live score" : ""}${p.extra ? "<br>" + p.extra : ""}`;
       const w = tip.offsetWidth;
       tip.style.left = Math.min(e.clientX + 14, innerWidth - w - 8) + "px";
       tip.style.top = (e.clientY - 14) + "px";
@@ -310,7 +328,7 @@ function chart(el, pts, opts) {
   });
   return function highlight(i) {
     if (i == null) setState(null, null);
-    else setState(pts[i].group, i);
+    else setState(pts[i].fam, i);
   };
 }
 
