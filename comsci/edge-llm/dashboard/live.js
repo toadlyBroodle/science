@@ -1,22 +1,34 @@
 window.DASH_LIVE = {
- "fetched": "2026-07-07 00:59 UTC",
+ "fetched": "2026-07-07 01:20 UTC",
  "sources": {
   "benchlm": {
    "ok": true,
    "n": 57,
-   "secs": 0.3,
+   "secs": 0.2,
    "url": "https://benchlm.ai/benchmarks/sweVerified"
+  },
+  "lcb": {
+   "ok": true,
+   "n": 20,
+   "secs": 0.1,
+   "url": "https://benchlm.ai/benchmarks/liveCodeBench"
+  },
+  "bfclv4": {
+   "ok": true,
+   "n": 9,
+   "secs": 0.1,
+   "url": "https://benchlm.ai/benchmarks/bfclV4"
   },
   "bfcl": {
    "ok": true,
    "n": 109,
-   "secs": 0.3,
+   "secs": 0.1,
    "url": "https://gorilla.cs.berkeley.edu/leaderboard.html"
   },
   "rebench": {
    "ok": true,
    "n": 101,
-   "secs": 1.1,
+   "secs": 1.4,
    "url": "https://swe-rebench.com/"
   }
  },
@@ -362,6 +374,184 @@ window.DASH_LIVE = {
    "creator": "OpenAI",
    "sourceType": "Proprietary",
    "score": 23.6
+  }
+ ],
+ "lcb": [
+  {
+   "name": "DeepSeek V4 Pro (Max)",
+   "creator": "DeepSeek",
+   "sourceType": "Open Weight",
+   "score": 93.5
+  },
+  {
+   "name": "Qwen3.7 Max",
+   "creator": "Alibaba",
+   "sourceType": "Proprietary",
+   "score": 91.6
+  },
+  {
+   "name": "DeepSeek V4 Flash (Max)",
+   "creator": "DeepSeek",
+   "sourceType": "Open Weight",
+   "score": 91.6
+  },
+  {
+   "name": "DeepSeek V4 Pro (High)",
+   "creator": "DeepSeek",
+   "sourceType": "Open Weight",
+   "score": 89.8
+  },
+  {
+   "name": "Qwen3.7 Plus",
+   "creator": "Alibaba",
+   "sourceType": "Proprietary",
+   "score": 89.6
+  },
+  {
+   "name": "Kimi K2.6",
+   "creator": "Moonshot AI",
+   "sourceType": "Open Weight",
+   "score": 89.6
+  },
+  {
+   "name": "Nemotron 3 Ultra",
+   "creator": "NVIDIA",
+   "sourceType": "Open Weight",
+   "score": 89
+  },
+  {
+   "name": "DeepSeek V4 Flash (High)",
+   "creator": "DeepSeek",
+   "sourceType": "Open Weight",
+   "score": 88.4
+  },
+  {
+   "name": "MAI-Thinking-1",
+   "creator": "Microsoft",
+   "sourceType": "Proprietary",
+   "score": 87.7
+  },
+  {
+   "name": "Kimi K2.5",
+   "creator": "Moonshot AI",
+   "sourceType": "Open Weight",
+   "score": 85
+  },
+  {
+   "name": "GLM-4.7",
+   "creator": "Z.AI",
+   "sourceType": "Open Weight",
+   "score": 84.9
+  },
+  {
+   "name": "Qwen3.6-27B",
+   "creator": "Alibaba",
+   "sourceType": "Open Weight",
+   "score": 83.9
+  },
+  {
+   "name": "Qwen3.6-35B-A3B",
+   "creator": "Alibaba",
+   "sourceType": "Open Weight",
+   "score": 80.4
+  },
+  {
+   "name": "Gemma 4 12B",
+   "creator": "Google",
+   "sourceType": "Open Weight",
+   "score": 72
+  },
+  {
+   "name": "Mellum2-12B-A2.5B-Thinking",
+   "creator": "JetBrains",
+   "sourceType": "Open Weight",
+   "score": 69.9
+  },
+  {
+   "name": "Nemotron 3 Nano Omni 30B A3B",
+   "creator": "NVIDIA",
+   "sourceType": "Open Weight",
+   "score": 63.2
+  },
+  {
+   "name": "DeepSeek V4 Pro",
+   "creator": "DeepSeek",
+   "sourceType": "Open Weight",
+   "score": 56.8
+  },
+  {
+   "name": "DeepSeek V4 Flash",
+   "creator": "DeepSeek",
+   "sourceType": "Open Weight",
+   "score": 55.2
+  },
+  {
+   "name": "DeepSeek V3",
+   "creator": "DeepSeek",
+   "sourceType": "Open Weight",
+   "score": 37.6
+  },
+  {
+   "name": "Mellum2-12B-A2.5B-Instruct",
+   "creator": "JetBrains",
+   "sourceType": "Open Weight",
+   "score": 37.2
+  }
+ ],
+ "bfclv4": [
+  {
+   "name": "Qwen3.7 Max",
+   "creator": "Alibaba",
+   "sourceType": "Proprietary",
+   "score": 75
+  },
+  {
+   "name": "Qwen3.7 Plus",
+   "creator": "Alibaba",
+   "sourceType": "Proprietary",
+   "score": 72.9
+  },
+  {
+   "name": "LFM2.5-8B-A1B",
+   "creator": "LiquidAI",
+   "sourceType": "Open Weight",
+   "score": 49.73
+  },
+  {
+   "name": "Mellum2-12B-A2.5B-Thinking",
+   "creator": "JetBrains",
+   "sourceType": "Open Weight",
+   "score": 45.6
+  },
+  {
+   "name": "Mellum2-12B-A2.5B-Instruct",
+   "creator": "JetBrains",
+   "sourceType": "Open Weight",
+   "score": 44.2
+  },
+  {
+   "name": "ZAYA1-8B",
+   "creator": "Zyphra",
+   "sourceType": "Open Weight",
+   "score": 39.22
+  },
+  {
+   "name": "MiniCPM5-1B",
+   "creator": "OpenBMB",
+   "sourceType": "Open Weight",
+   "score": 25.15
+  },
+  {
+   "name": "LFM2.5-VL-450M",
+   "creator": "LiquidAI",
+   "sourceType": "Open Weight",
+   "score": 21.08
+  },
+  {
+   "name": "LFM2.5-230M",
+   "creator": "LiquidAI",
+   "sourceType": "Open Weight",
+   "score": 21.03
   }
  ],
  "bfcl": [

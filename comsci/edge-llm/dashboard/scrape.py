@@ -30,8 +30,8 @@ def fetch(url, timeout=60):
         return r.read().decode("utf-8", errors="replace")
 
 
-def scrape_benchlm():
-    html = fetch("https://benchlm.ai/benchmarks/sweVerified")
+def scrape_benchlm(slug="sweVerified"):
+    html = fetch(f"https://benchlm.ai/benchmarks/{slug}")
     m = re.search(r'__NEXT_DATA__" type="application/json">(.*?)</script>', html, re.S)
     rows = json.loads(m.group(1))["props"]["pageProps"]["leaderboard"]
     return [
@@ -124,7 +124,9 @@ def main():
         "sources": {},
     }
     for key, fn, url in [
-        ("benchlm", scrape_benchlm, "https://benchlm.ai/benchmarks/sweVerified"),
+        ("benchlm", lambda: scrape_benchlm("sweVerified"), "https://benchlm.ai/benchmarks/sweVerified"),
+        ("lcb", lambda: scrape_benchlm("liveCodeBench"), "https://benchlm.ai/benchmarks/liveCodeBench"),
+        ("bfclv4", lambda: scrape_benchlm("bfclV4"), "https://benchlm.ai/benchmarks/bfclV4"),
         ("bfcl", scrape_bfcl, "https://gorilla.cs.berkeley.edu/leaderboard.html"),
         ("rebench", scrape_rebench, "https://swe-rebench.com/"),
     ]:
@@ -144,7 +146,7 @@ def main():
     with open(HERE / "history.jsonl", "a") as f:
         f.write(json.dumps({"date": str(date.today()), "sources": live["sources"]}) + "\n")
     ok = sum(1 for s in live["sources"].values() if s["ok"])
-    print(f"live.js written ({ok}/3 sources ok)")
+    print(f"live.js written ({ok}/5 sources ok)")
 
 
 if __name__ == "__main__":
