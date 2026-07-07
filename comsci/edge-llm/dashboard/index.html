@@ -278,24 +278,38 @@ function chart(el, pts, opts) {
   // trendlines: one per closed lab, one shared for all open-source points
   const trendSets = groups.map(gr =>
     ({key: gr, gr, label: GROUPS[gr].short || GROUPS[gr].label, tp: pts.filter(p => p.group === gr)}));
+  const legendRows = [];
   for (const ts of trendSets) {
     const gp = ts.tp.filter(p => !p.out).sort((a, b) => dnum(a.date) - dnum(b.date));
-    if (gp.length < 3) continue;
+    if (!gp.length) continue;
     // fit the trend to the running-best frontier, not the middle of the scatter
     let best = -Infinity; const fr = [];
     for (const p of gp) if (p.score > best) { best = p.score; fr.push(p); }
-    const fit = fr.length >= 3 ? fr : gp;
-    const [a, b] = lsq(fit);
-    const t0 = dnum(fit[0].date);
-    const y0 = clampY(a + b * (t0 / DAY)), yEnd = clampY(a + b * (x1 / DAY));
-    g += `<path class="fr ex" data-g="${ts.key}" d="M ${X(t0)} ${Y(y0)} L ${X(x1)} ${Y(yEnd)}" fill="none" stroke="${col(ts.gr)}" stroke-width="2" stroke-dasharray="7 5" opacity="0.7"/>`;
-    g += `<path class="frhit" data-g="${ts.key}" d="M ${X(t0)} ${Y(y0)} L ${X(x1)} ${Y(yEnd)}" fill="none" stroke="transparent" stroke-width="11" pointer-events="stroke"/>`;
-    if (o.labels) {
-      let ly = Y(yEnd) + 4;
-      while (labelYs.some(y => Math.abs(y - ly) < 13)) ly += 13;
-      labelYs.push(ly);
-      g += `<text class="dlabel" x="${W - m.r + 6}" y="${ly}" fill="${col(ts.gr)}">${ts.label} ${fr[fr.length - 1].score}</text>`;
+    let yEndPx = Y(fr[fr.length - 1].score);
+    if (gp.length >= 3) {
+      const fit = fr.length >= 3 ? fr : gp;
+      const [a, b] = lsq(fit);
+      const t0 = dnum(fit[0].date);
+      const y0 = clampY(a + b * (t0 / DAY)), yEnd = clampY(a + b * (x1 / DAY));
+      g += `<path class="fr ex" data-g="${ts.key}" d="M ${X(t0)} ${Y(y0)} L ${X(x1)} ${Y(yEnd)}" fill="none" stroke="${col(ts.gr)}" stroke-width="2" stroke-dasharray="7 5" opacity="0.7"/>`;
+      g += `<path class="frhit" data-g="${ts.key}" d="M ${X(t0)} ${Y(y0)} L ${X(x1)} ${Y(yEnd)}" fill="none" stroke="transparent" stroke-width="11" pointer-events="stroke"/>`;
+      yEndPx = Y(yEnd);
     }
+    legendRows.push({key: ts.key, gr: ts.gr, label: ts.label, yEnd: yEndPx,
+                     score: fr[fr.length - 1].score, hasTrend: gp.length >= 3});
+  }
+  // right-hand colored legend, ranked by extrapolated trendline endpoint
+  if (o.labels) {
+    legendRows.sort((a, b) => a.yEnd - b.yEnd);
+    let ly = -Infinity;
+    for (const r of legendRows) {
+      ly = Math.max(ly + 16, Math.max(m.t + 8, r.yEnd + 4));
+      g += `<g class="rleg" data-g="${r.key}" style="cursor:default">` +
+           `<rect x="${W - m.r + 6}" y="${ly - 8}" width="9" height="9" rx="2" fill="${col(r.gr)}"/>` +
+           `<text class="dlabel" x="${W - m.r + 20}" y="${ly}" fill="var(--ink2)">${r.label} ${r.score}${r.hasTrend ? "" : " *"}</text></g>`;
+    }
+    if (legendRows.some(r => !r.hasTrend))
+      g += `<text class="tick" x="${W - m.r + 6}" y="${H - m.b - 4}">* too few points for a trend</text>`;
   }
   pts.forEach((p, i) => {
     const cx = X(dnum(p.date)), cy = Y(p.score);
@@ -306,7 +320,7 @@ function chart(el, pts, opts) {
     g += `<circle cx="${cx}" cy="${cy}" r="12" fill="transparent" data-i="${i}"/>`;
   });
   g += `</svg>`;
-  let lg = `<div class="legend">` + groups.map(gr =>
+  let lg = o.labels ? "" : `<div class="legend">` + groups.map(gr =>
     `<span data-g="${gr}"><i style="background:${col(gr)}"></i>${GROUPS[gr].label}</span>`).join("") +
     `<span><i style="background:var(--surface);border:2px solid var(--muted)"></i>approx. date</span></div>`;
   let tb = `<details><summary>table view</summary><table><tr><th>Model</th><th>Group</th><th>Date</th><th class="n">Score</th></tr>` +
@@ -340,7 +354,7 @@ function chart(el, pts, opts) {
     h.addEventListener("mouseenter", () => setState(h.dataset.g, null));
     h.addEventListener("mouseleave", () => setState(null, null));
   });
-  el.querySelectorAll(".legend span[data-g]").forEach(s => {
+  el.querySelectorAll(".legend span[data-g], g.rleg").forEach(s => {
     s.addEventListener("mouseenter", () => setState(s.dataset.g, null));
     s.addEventListener("mouseleave", () => setState(null, null));
   });
