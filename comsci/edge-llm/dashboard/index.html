@@ -84,8 +84,10 @@
 
   <div class="card">
     <h2>SWE-rebench: decontaminated resolved rate over time</h2>
-    <p class="sub">Continuously refreshed with post-release GitHub tasks (harder than SWE-bench Verified; honest for open models). Fully rebuilt from the live leaderboard on every refresh.</p>
+    <p class="sub">Continuously refreshed with post-release GitHub tasks (harder than SWE-bench Verified; honest for open models). SWE-rebench draws a fresh task batch every month and never re-runs older models, and batch difficulty varies a lot, so scores are only comparable <em>within one task window</em>. Pick a window: only models actually evaluated on those tasks are plotted.</p>
+    <p class="sub"><label for="rebench-win">Task window:</label> <select id="rebench-win"></select></p>
     <div class="cwrap"><div id="c-rebench"></div><aside class="rank" id="r-rebench"></aside></div>
+    <p class="note" id="rebench-note"></p>
   </div>
 
   <div class="row">
@@ -426,22 +428,53 @@ function rankList(el, rows, highlight, maxH) {
     "Grayed list entries come from the live leaderboard without a known release date (not plotted).";
 }
 
-// 2. SWE-rebench (fully from live data)
+// 2. SWE-rebench (fully from live data, one task window at a time)
 {
   const devmap = {anthropic: "anthropic", openai: "openai", google: "google", xai: "xai"};
-  const pts = dedupe(L && L.rebench ? L.rebench : [])
-    .map(r => ({name: r.name, date: r.date, score: r.score,
-                group: (devmap[r.developer] && !/gemma|gpt-oss/i.test(r.name)) ? devmap[r.developer] : resolveGroup(r.name),
-                closed: !!devmap[r.developer] && !/gemma|gpt-oss/i.test(r.name),
-                dev: r.developer}));
   const el = document.getElementById("c-rebench");
-  if (pts.length) {
-    const hl = chart(el, pts, {h: 400, w: 860, ymin: 0, ymax: 70});
-    const rows = pts.map((p, i) => ({name: p.name, score: p.score, group: p.group,
-                                     closed: p.closed, i, sub: p.dev + " · " + p.date}))
-      .sort((a, b) => b.score - a.score);
-    rankList(document.getElementById("r-rebench"), rows, hl, 400);
-  } else el.innerHTML = `<p class="note">No live data: run scrape.py (swe-rebench source failed or live.js missing).</p>`;
+  const sel = document.getElementById("rebench-win");
+  const note = document.getElementById("rebench-note");
+  const R = L && L.rebench && L.rebench.models ? L.rebench : null;
+
+  if (!R || !R.windows.length) {
+    sel.style.display = "none";
+    el.innerHTML = `<p class="note">No live data: run scrape.py (swe-rebench source failed or live.js missing).</p>`;
+  } else {
+    // Count after dedupe, so the dropdown agrees with what actually gets plotted
+    // (dedupe folds effort variants like gpt-5.5-xhigh/-medium into one family).
+    const inWindow = key => dedupe(R.models.filter(m => m.scores[key] != null)
+                                           .map(m => ({name: m.name, date: m.date, score: m.scores[key],
+                                                       dev: m.developer})));
+    for (const w of R.windows) {
+      const o = document.createElement("option");
+      o.value = w.key;
+      o.textContent = `${w.from} → ${w.to}  (${inWindow(w.key).length} models)`;
+      sel.appendChild(o);
+    }
+    sel.value = R.windows[0].key;   // newest task batch first
+
+    const draw = () => {
+      const key = sel.value;
+      const pts = inWindow(key)
+        .map(r => ({...r,
+                    group: (devmap[r.dev] && !/gemma|gpt-oss/i.test(r.name)) ? devmap[r.dev] : resolveGroup(r.name),
+                    closed: !!devmap[r.dev] && !/gemma|gpt-oss/i.test(r.name)}));
+      el.innerHTML = "";
+      const hl = chart(el, pts, {h: 400, w: 860, ymin: 0, ymax: 70});
+      const rows = pts.map((p, i) => ({name: p.name, score: p.score, group: p.group,
+                                       closed: p.closed, i, sub: p.dev + " · " + p.date}))
+        .sort((a, b) => b.score - a.score);
+      rankList(document.getElementById("r-rebench"), rows, hl, 400);
+      const [from, to] = key.split(":");
+      const total = dedupe(R.models.map(m => ({name: m.name, score: m.score}))).length;
+      note.textContent =
+        `${pts.length} models were run on the ${from} → ${to} task batch; only those are plotted. `
+        + `The other ${total - pts.length} on the leaderboard never touched these tasks, so no honest `
+        + `comparison to them exists. Points are release date (x) vs resolved rate on this batch (y).`;
+    };
+    sel.addEventListener("change", draw);
+    draw();
+  }
 }
 
 // 3. BFCL v4 (live gorilla leaderboard, dated by name or the curated map)

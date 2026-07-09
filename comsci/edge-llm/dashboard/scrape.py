@@ -66,56 +66,99 @@ def scrape_bfcl():
     return out
 
 
+def _iso(ms):
+    return datetime.fromtimestamp(ms / 1000, timezone.utc).strftime("%Y-%m-%d")
+
+
 def scrape_rebench():
+    """Parse the swe-rebench leaderboard into window-aware records.
+
+    SWE-rebench draws fresh GitHub tasks every month and never backfills older
+    models, so each model carries its own `taskRangeTimestamp` evaluation
+    window. Its `rangeStats` buckets silently CLAMP to the intersection of the
+    requested window and the tasks that model actually ran: asking a
+    Feb-2026-only model for its 2025-01-01..2026-05-15 rate returns its Feb
+    number unchanged. Reading the widest bucket therefore yields a headline
+    score that looks global but is really scoped to whatever batch existed at
+    submission time, so cross-model comparison is meaningless whenever the
+    windows differ (Qwen3.5-27B ran on Feb 2026, Qwen3.6-27B on Mar-May 2026;
+    the 22-point gap between them is mostly batch difficulty, not capability).
+
+    So: emit each model's native window plus its rate on every candidate window
+    FULLY CONTAINED in that native window. Two models are comparable on a
+    window only if both report a score for it.
+    """
     html = fetch("https://swe-rebench.com/")
     s = html.replace('\\"', '"')
     dec = json.JSONDecoder()
-    out, seen = [], set()
-    for m in re.finditer(r'"instance_type":"model"', s):
-        window = s[max(0, m.start() - 2000): m.start() + 20000]
-        name_m = None
-        for nm in re.finditer(r'"modelName":"([^"]{2,80})"', window[: window.find('"instance_type"')]):
-            name_m = nm  # last modelName before the meta block is this record
-        rel = re.search(r'"release":\{"timestamp":\d+,"date":"(\d{4}-\d{2}-\d{2})"', window)
-        dev = re.search(r'"developer":"([^"]+)"', window)
-        rs_rel = window.find('"rangeStats":')
-        if not (name_m and rel and rs_rel != -1):
-            continue
-        rs_abs = max(0, m.start() - 2000) + rs_rel + len('"rangeStats":')
+
+    recs, seen_ids = [], set()
+    for m in re.finditer(r'\{"modelId":"', s):
         try:
-            stats, _ = dec.raw_decode(s, rs_abs)
+            o, _ = dec.raw_decode(s, m.start())
         except (ValueError, json.JSONDecodeError):
             continue
-        # Full-range bucket spans the widest from:to window; fall back to max.
-        best_key, best_span, rate = None, -1, None
-        for k in stats:
-            try:
-                lo, hi = (int(x) for x in k.split(":"))
-            except ValueError:
-                continue
-            if hi - lo > best_span:
-                best_span, best_key = hi - lo, k
-        if best_key and isinstance(stats[best_key], dict):
-            rate = stats[best_key].get("resolvedRate")
-        if rate is None:
-            rates = [v.get("resolvedRate", 0) for v in stats.values() if isinstance(v, dict)]
-            rate = max(rates) if rates else None
-        if rate is None:
+        if not isinstance(o, dict) or "rangeStats" not in o:
             continue
-        score = round(rate * 100, 1) if rate <= 1 else round(rate, 1)
-        name = name_m.group(1)
-        if name in seen:
+        if o.get("meta", {}).get("instance_type") != "model":
+            continue  # skip harness entries (Claude Code, Codex, Cursor, Junie)
+        if not o.get("taskRangeTimestamp") or not o.get("release"):
             continue
-        seen.add(name)
-        out.append(
-            {
-                "name": name,
-                "date": rel.group(1),
-                "developer": (dev.group(1) if dev else "").lower(),
-                "score": score,
-            }
-        )
-    return out
+        if o["modelId"] in seen_ids:
+            continue
+        seen_ids.add(o["modelId"])
+        recs.append(o)
+
+    # One record per model: the `tools` agent scaffold beats `text` where both exist.
+    by_name = {}
+    for o in recs:
+        prev = by_name.get(o["modelName"])
+        if prev is None or (o.get("agentVersion") == "tools" and prev.get("agentVersion") != "tools"):
+            by_name[o["modelName"]] = o
+
+    candidates = sorted({(o["taskRangeTimestamp"]["from"], o["taskRangeTimestamp"]["to"])
+                         for o in by_name.values()})
+
+    models, win_counts = [], {}
+    for o in by_name.values():
+        trt = o["taskRangeTimestamp"]
+        stats = o["rangeStats"]
+        own = stats.get(f"{trt['from']}:{trt['to']}")
+        if not isinstance(own, dict) or own.get("resolvedRate") is None:
+            continue
+
+        scores = {}
+        for lo, hi in candidates:
+            if not (trt["from"] <= lo and trt["to"] >= hi):
+                continue  # window not fully covered by this model's own tasks
+            v = stats.get(f"{lo}:{hi}")
+            if not isinstance(v, dict) or not v.get("totalTokenUsage"):
+                continue  # model never actually ran on this window
+            key = f"{_iso(lo)}:{_iso(hi)}"
+            scores[key] = round(v["resolvedRate"], 1)
+            win_counts[key] = win_counts.get(key, 0) + 1
+
+        models.append({
+            "name": o["modelName"],
+            "agent": o.get("agentVersion", ""),
+            "developer": o.get("meta", {}).get("developer", "").lower(),
+            "date": o["release"]["date"],
+            "from": _iso(trt["from"]),
+            "to": _iso(trt["to"]),
+            "score": round(own["resolvedRate"], 1),
+            "sem": round(own.get("sem") or 0, 2),
+            "scores": scores,
+        })
+
+    # Newest batch first, then widest coverage: the default view should show the
+    # current frontier, not whichever stale window happens to have the most models.
+    windows = sorted(
+        ({"key": k, "from": k.split(":")[0], "to": k.split(":")[1], "n": n}
+         for k, n in win_counts.items() if n >= 2),
+        key=lambda w: (w["to"], w["n"]),
+        reverse=True,
+    )
+    return {"windows": windows, "models": sorted(models, key=lambda m: m["date"])}
 
 
 def main():
@@ -134,8 +177,9 @@ def main():
         try:
             data = fn()
             live[key] = data
-            live["sources"][key] = {"ok": True, "n": len(data), "secs": round(time.time() - t0, 1), "url": url}
-            print(f"{key}: {len(data)} rows in {time.time() - t0:.1f}s")
+            n = len(data["models"]) if isinstance(data, dict) else len(data)
+            live["sources"][key] = {"ok": True, "n": n, "secs": round(time.time() - t0, 1), "url": url}
+            print(f"{key}: {n} rows in {time.time() - t0:.1f}s")
         except Exception as e:  # noqa: BLE001 - each source fails independently
             live["sources"][key] = {"ok": False, "error": f"{type(e).__name__}: {e}", "url": url}
             print(f"{key}: FAILED {type(e).__name__}: {e}", file=sys.stderr)

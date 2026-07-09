@@ -44,6 +44,23 @@ Small models trained primarily on Python often degrade sharply on Rust and C. Mu
 
 **Why it matters at 4 GB**: contamination lifts small-model SWE-Bench-Verified scores disproportionately. A 3B model that scores 25% on Verified might score 12% on SWE-rebench v2. The latter is the honest number.
 
+### Leaderboard scores are not comparable across models by default
+
+The property that makes SWE-rebench honest (fresh tasks monthly) is also a trap. Older models are never re-run on newer batches, so each model's score is scoped to whatever batch existed when it was submitted; the site exposes this as a per-model `taskRangeTimestamp`. Its range buckets **clamp** to the intersection of the requested range and the tasks that model actually ran, so a wide range returns a number that looks global but is not.
+
+Batch difficulty varies a lot. Across the 10 models evaluated on both the Feb 2026 and Mar-May 2026 batches, the later batch scored **9.4 points lower on average**, and weaker open models fell hardest:
+
+| Model | Feb 2026 | Mar-May 2026 | Delta |
+|---|---|---|---|
+| Claude Opus 4.6-high | 65.3 | 47.8 | -17.4 |
+| GLM-4.7 | 58.7 | 38.2 | -20.5 |
+| Gemma 4 31B | 41.6 | 16.5 | -25.0 |
+| Claude Code (harness) | 58.4 | 59.6 | +1.2 |
+
+Worked example: **Qwen3.5-27B scores 58.9 and Qwen3.6-27B scores 36.5**, which reads as a 22-point regression. They share no tasks (Feb 2026, n=57 vs Mar-May 2026, n=55). Applying GLM-4.7's batch offset puts 3.6-27B near 57, level with its predecessor; on [SWE-Bench Verified](swe-bench.md) the ordering flips (77.2 vs 72.4). Two further cautions: at n≈56 the per-model 95% CI is roughly ±13 points, and Qwen3.6-27B used 28% fewer tokens per instance (1.88M vs 2.62M), which points at early agent-loop termination, a harness failure mode, not weaker reasoning.
+
+**Rule**: only compare models that report a score on the *same* task window. The [dashboard](../../dashboard/index.html) enforces this with a window selector.
+
 ## SWE-Universe
 
 **arXiv:2602.02361**, February 2026. Scaling verifiable SWE training environments to millions of instances. This is the training-data-scale companion to SWE-rebench's eval-quality story.
