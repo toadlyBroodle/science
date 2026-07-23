@@ -3,7 +3,7 @@
 Open `claude` (or cursor, codex, whatever) in a directory you don't mind it touching, then prompt:
 
 **Clone:**
-> Clone https://github.com/toadlyBroodle/science.git here. Then read biology/longevity/CLAUDE.md so you know how the wiki works.
+> Clone https://github.com/clankwright/science.git here. Then read biology/longevity/CLAUDE.md so you know how the wiki works.
 
 **Add a paper:**
 > Ingest this paper into the longevity wiki: <PMC or DOI URL>. Follow biology/longevity/CLAUDE.md.

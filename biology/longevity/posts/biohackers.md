@@ -77,6 +77,6 @@ The wiki tracks pending readouts that will reshape this list at `wiki/analysis/y
 - `wiki/analysis/promising-reverse-aging.md` is the research-frontier ranking (partial reprogramming, gene therapies, foundation-model clocks).
 - `wiki/papers/` has one page per source with summary, key findings, primary-source link, and tier tag.
 
-[GitHub: open-source longevity research wiki](https://github.com/toadlyBroodle/science/tree/main/biology/longevity)
+[GitHub: open-source longevity research wiki](https://github.com/clankwright/science/tree/main/biology/longevity)
 
 87 papers, 146 wiki pages, full citation graph, every effect size traces to a primary source. The wiki is maintained with AI assistance, audited against primary sources, and reviewed before publication. If you find an error, the contribution path is in `posts/biohackers-howto.md` or just open an issue.

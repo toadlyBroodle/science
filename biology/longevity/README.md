@@ -39,7 +39,7 @@ and prompt:
 
 **Clone:**
 
-> Clone <https://github.com/toadlyBroodle/science.git> here. Then read
+> Clone <https://github.com/clankwright/science.git> here. Then read
 > biology/longevity/CLAUDE.md so you know how the wiki works.
 
 **Add a paper:**

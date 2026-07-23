@@ -92,7 +92,7 @@ Guardrails so a public endpoint with no auth doesn't burn the budget on day one.
 
 The VPS needs the wiki content + the TF-IDF build artifacts. Build artifacts are gitignored (`wiki/build/` per longevity's `.gitignore`), so they must be rebuilt on the VPS.
 
-- [ ] 6.1 [medium] `bin/sync_wiki.sh` — sparse-checkout clone of `github.com/toadlyBroodle/science` at `WIKI_REPO_DIR` (default `/srv/longevity-chat/science`), pull main, run `python3 scripts/index.py` from the wiki dir to regenerate `wiki/build/{index,graph,keywords,pages}.json` + `tfidf.npz` + `tfidf_vocab.json`. Exit non-zero if `scripts/lint.py` fails. Re-runnable, idempotent.
+- [ ] 6.1 [medium] `bin/sync_wiki.sh` — sparse-checkout clone of `github.com/clankwright/science` at `WIKI_REPO_DIR` (default `/srv/longevity-chat/science`), pull main, run `python3 scripts/index.py` from the wiki dir to regenerate `wiki/build/{index,graph,keywords,pages}.json` + `tfidf.npz` + `tfidf_vocab.json`. Exit non-zero if `scripts/lint.py` fails. Re-runnable, idempotent.
 - [ ] 6.2 [medium] After successful sync, send `SIGHUP` to the longevity-chat systemd unit so the app reloads the in-memory `WikiIndex` without a full restart. Alternatively: write a sentinel file and have the app watch it.
 - [ ] 6.3 [easy] Cron entry `/etc/cron.d/longevity-chat-sync` running `bin/sync_wiki.sh` every 30 minutes as user `rob`, logging to `/var/log/longevity-chat-sync.log`.
 - [ ] 6.4 [easy] `tests/test_sync_wiki_dryrun.py` — runs the sync against a local fixture wiki, asserts the build artifacts appear and the lint script passes.

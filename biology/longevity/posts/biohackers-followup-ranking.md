@@ -2,7 +2,7 @@
 
 Quick update on the [open-source longevity wiki](https://www.reddit.com/r/Biohackers/comments/1sv0cyu/analyzed_75_longevity_papers_most_of_your_stack/), 698 score, 252 comments) I posted a few days ago. Several commenters asked the obvious next question: of all the interventions in the wiki, which ones actually move the needle the most? I worked it up as an analysis page and the rank ordering is non-obvious enough to be worth sharing.
 
-Wiki page with the full table and per-row sourcing: [intervention-impact-ranking.md](https://github.com/toadlyBroodle/science/blob/main/biology/longevity/wiki/analysis/intervention-impact-ranking.md).
+Wiki page with the full table and per-row sourcing: [intervention-impact-ranking.md](https://github.com/clankwright/science/blob/main/biology/longevity/wiki/analysis/intervention-impact-ranking.md).
 
 ## Methodology
 
@@ -64,7 +64,7 @@ Ranks 11–20 (glucose management, alcohol moderation, creatine, CoQ10 in HF, de
 - The tier weights (T6 = 0.6 etc.) are choices, not measurements. Top 6 ordering is robust; lower half is more sensitive to the constants.
 - Adherence is not modeled. Sauna 4–7x/week requires owning a sauna.
 
-[GitHub: open-source longevity research wiki](https://github.com/toadlyBroodle/science/tree/main/biology/longevity)
+[GitHub: open-source longevity research wiki](https://github.com/clankwright/science/tree/main/biology/longevity)
 
 90+ papers, every effect size traces to a primary source, every intervention tier-tagged. If you find an error, open an issue or PR.
 

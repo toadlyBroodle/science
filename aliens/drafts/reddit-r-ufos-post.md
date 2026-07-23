@@ -6,7 +6,7 @@ I compiled 22 Grokipedia UFO/UAP pages into a Karpathy-style LLM knowledge base.
 
 I used an LLM to scrape, compile, and cross-reference 22 Grokipedia pages on UFOs/UAP into a structured knowledge base: 41 interlinked articles organized across concepts, entities, events, and culture. Then I systematically queried it to see what the evidence actually supports when you lay it all out together.
 
-**Repo:** https://github.com/toadlyBroodle/science/tree/main/aliens
+**Repo:** https://github.com/clankwright/science/tree/main/aliens
 
 ## 8 things the evidence establishes
 
